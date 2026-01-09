@@ -1,0 +1,15 @@
+{
+  "qubits_per_node": 3,
+  "nodes": ["SOURCE", "A", "SINK", "E", "D", "C"],
+  "source": "SOURCE",
+  "sink": "SINK",
+  "edges": [
+    ["SOURCE", "A", 0.06],
+    ["A", "SINK", 0.06],
+    ["SOURCE", "E", 0.01],
+    ["E", "D", 0.01],
+    ["D", "C", 0.01],
+    ["C", "SINK", 0.01],
+    ["A", "D", 0.04]
+  ]
+}

@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Secrets and API keys
+secrets/
+
+# MacOS files
+.DS_Store
