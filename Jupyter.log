@@ -1,0 +1,341 @@
+Visual Studio Code (1.107.1, undefined, desktop)
+Jupyter Extension Version: 2025.9.1.
+Python Extension Version: 2026.0.0.
+Python Environment Extension Version: 1.16.0.
+Pylance Extension Version: 2025.10.4.
+Platform: darwin (arm64).
+Home = /Users/ashutoshtiwari
+Temp Storage folder ~/Library/Application Support/Code/User/globalStorage/ms-toolsai.jupyter/version-2025.9.1
+Workspace folder ~/Desktop/Research-Code/qiskit-network-sim
+18:01:35.529 [info] Starting Kernel (Python Path: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python, Venv, 3.13.2) for '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/EncodedQubitTransportSmallEdge.ipynb' (disableUI=true)
+18:01:35.530 [info] Starting Kernel (Python Path: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python, Venv, 3.13.2) for '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/EncodedQubitTransportLargeEdge.ipynb' (disableUI=true)
+18:01:35.602 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+18:01:35.603 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v3e3d55867eb0128f5b3bea9f0e38dd0cf8fb75f37.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+18:01:35.605 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m pip list
+18:01:35.610 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+18:01:35.611 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v3ef3c0f5a985044d14a35203ed46afee2c4855b0e.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+18:01:36.503 [info] Kernel successfully started
+18:01:36.505 [info] Kernel successfully started
+18:01:36.507 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python ~/.vscode/extensions/ms-toolsai.jupyter-2025.9.1-darwin-arm64/pythonFiles/printJupyterDataDir.py
+18:01:38.964 [error] Widget Error: Failed to access CDN https://unpkg.com/ after 0 attempt(s), TypeError: Failed to fetch
+18:01:39.541 [info] Starting Kernel (Python Path: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python, Venv, 3.13.2) for '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/QiskitLargeQubitsSimulator.ipynb' (disableUI=true)
+18:01:39.546 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+18:01:39.627 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v353c7963b5620abd165becb543734df7307e68cbb.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+18:01:39.654 [info] Starting Kernel (Python Path: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python, Venv, 3.13.2) for '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/EntanglementSwappingNoisy.ipynb' (disableUI=true)
+18:01:39.660 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+18:01:39.773 [info] Starting Kernel (Python Path: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python, Venv, 3.13.2) for '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/QuantumStateTransport.ipynb' (disableUI=true)
+18:01:39.781 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+18:01:39.884 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v3d776c112262d967ea3253975f80e1d96f52c2519.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+18:01:39.885 [info] Starting Kernel (Python Path: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python, Venv, 3.13.2) for '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/QuantumNetworkPathfinding.ipynb' (disableUI=true)
+18:01:39.890 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+18:01:40.002 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v341a56621e74ac334b54b9ea399dc848a344a831b.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+18:01:40.052 [info] Starting Kernel (Python Path: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python, Venv, 3.13.2) for '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/EmulateDQCSimple.ipynb' (disableUI=true)
+18:01:40.055 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v3f022684318fc34892c23e10581bcf744d1abe6f6.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+18:01:40.062 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+18:01:40.163 [info] Starting Kernel (Python Path: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python, Venv, 3.13.2) for '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/CheckFakeBrisbane.ipynb' (disableUI=true)
+18:01:40.242 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+18:01:40.344 [info] Kernel successfully started
+18:01:40.400 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v36349ae8842ddcef01d9f7f016051b4d2c34265ba.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+18:01:40.608 [info] Kernel successfully started
+18:01:40.619 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v308fa8751e17215d7245c853f071e846c79ab11ba.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+18:01:40.694 [info] Kernel successfully started
+18:01:40.717 [info] Kernel successfully started
+18:01:40.887 [info] Kernel successfully started
+18:01:41.074 [info] Kernel successfully started
+18:15:53.549 [info] Starting Kernel (Python Path: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python, Venv, 3.13.2) for '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/EncodedQubitTransportDiagonalEdge.ipynb' (disableUI=true)
+18:15:53.625 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m pip list
+18:15:53.637 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+18:15:53.637 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v3a4f6b3b9c7a33688ea326ba31eb989042ac32e6c.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+18:15:54.090 [info] Kernel successfully started
+18:15:54.890 [error] Widget Error: Failed to access CDN https://unpkg.com/ after 0 attempt(s), TypeError: Failed to fetch
+18:15:55.498 [warn] Cell completed with errors Iu [Error]: name 'backend' is not defined
+    at n.execute (~/.vscode/extensions/ms-toolsai.jupyter-2025.9.1-darwin-arm64/dist/extension.node.js:302:4958) {
+  ename: 'NameError',
+  evalue: "name 'backend' is not defined",
+  traceback: [
+    '\x1B[31m---------------------------------------------------------------------------\x1B[39m',
+    '\x1B[31mNameError\x1B[39m                                 Traceback (most recent call last)',
+    '\x1B[36mCell\x1B[39m\x1B[36m \x1B[39m\x1B[32mIn[1]\x1B[39m\x1B[32m, line 20\x1B[39m\n' +
+      '\x1B[32m     17\x1B[39m \x1B[38;5;250m    \x1B[39m\x1B[33;03m"""Returns True if physical wire exists between u and v."""\x1B[39;00m\n' +
+      '\x1B[32m     18\x1B[39m     \x1B[38;5;28;01mreturn\x1B[39;00m u \x1B[38;5;129;01min\x1B[39;00m coupling_map.neighbors(v) \x1B[38;5;129;01mor\x1B[39;00m v \x1B[38;5;129;01min\x1B[39;00m coupling_map.neighbors(u)\n' +
+      '\x1B[32m---> \x1B[39m\x1B[32m20\x1B[39m \x1B[38;5;28mprint\x1B[39m(\x1B[33mf\x1B[39m\x1B[33m"\x1B[39m\x1B[33m=== Checking Topology on \x1B[39m\x1B[38;5;132;01m{\x1B[39;00m\x1B[43mbackend\x1B[49m.name\x1B[38;5;132;01m}\x1B[39;00m\x1B[33m ===\x1B[39m\x1B[38;5;130;01m\\n\x1B[39;00m\x1B[33m"\x1B[39m)\n' +
+      '\x1B[32m     22\x1B[39m \x1B[38;5;66;03m# A. Source Check - Data qubit must connect to encoding ancillas\x1B[39;00m\n' +
+      '\x1B[32m     23\x1B[39m valid_src_1 = check_connection(src_data, src_top)\n',
+    "\x1B[31mNameError\x1B[39m: name 'backend' is not defined"
+  ]
+}
+18:15:55.500 [warn] Cancel all remaining cells due to cancellation or failure in execution
+18:16:36.322 [info] Restart requested ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/EncodedQubitTransportDiagonalEdge.ipynb
+18:16:36.328 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+18:16:36.337 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v32584e629a7e19229e14daab2919494bec9f8a796.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+18:16:36.749 [info] Restarted 61077c0c-7494-4477-aab9-5f6bb5355ec7
+18:37:46.814 [info] Restart requested ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/EncodedQubitTransportDiagonalEdge.ipynb
+18:37:46.866 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+18:37:46.867 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v3c7bf2fdcfc7c5af666cae98fb4f5b97644ccb5b5.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+18:37:47.274 [info] Restarted 61077c0c-7494-4477-aab9-5f6bb5355ec7
+18:45:20.452 [info] Restart requested ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/EncodedQubitTransportDiagonalEdge.ipynb
+18:45:20.459 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+18:45:20.466 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v37549999c818eb52133196b6317fe606e9c400b71.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+18:45:20.883 [info] Restarted 61077c0c-7494-4477-aab9-5f6bb5355ec7
+21:29:15.476 [info] Starting Kernel (Python Path: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python, Venv, 3.13.2) for '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/FakeFezTopologyExplorer.ipynb' (disableUI=false)
+21:29:15.538 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+21:29:15.538 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v362433f4f40750fd3b9801b584b042859c478b792.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+21:29:15.539 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m pip list
+21:29:15.992 [info] Kernel successfully started
+21:29:16.787 [error] Widget Error: Failed to access CDN https://unpkg.com/ after 0 attempt(s), TypeError: Failed to fetch
+21:34:44.735 [info] Starting Kernel (Python Path: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python, Venv, 3.13.2) for '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/FakeFezEncodedQubitTransport.ipynb' (disableUI=true)
+21:34:44.737 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m pip list
+21:34:44.741 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+21:34:44.772 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v37cadd3fc1261e8ceee6b8a62f559add848e59c95.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+21:34:45.043 [info] Kernel successfully started
+21:34:45.683 [error] Widget Error: Failed to access CDN https://unpkg.com/ after 0 attempt(s), TypeError: Failed to fetch
+11:26:41.846 [error] Widget Error: Failed to access CDN https://unpkg.com/ after 0 attempt(s), TypeError: Failed to fetch
+11:34:20.280 [warn] Cell completed with errors Iu [Error]: cannot unpack non-iterable int object
+    at n.execute (~/.vscode/extensions/ms-toolsai.jupyter-2025.9.1-darwin-arm64/dist/extension.node.js:302:4958) {
+  ename: 'TypeError',
+  evalue: 'cannot unpack non-iterable int object',
+  traceback: [
+    '\x1B[31m---------------------------------------------------------------------------\x1B[39m',
+    '\x1B[31mTypeError\x1B[39m                                 Traceback (most recent call last)',
+    '\x1B[36mCell\x1B[39m\x1B[36m \x1B[39m\x1B[32mIn[13]\x1B[39m\x1B[32m, line 35\x1B[39m\n' +
+      '\x1B[32m     32\x1B[39m spring_pos = rx.spring_layout(graph, seed=\x1B[32m42\x1B[39m)\n' +
+      '\x1B[32m     34\x1B[39m \x1B[38;5;66;03m# Convert to dict format\x1B[39;00m\n' +
+      '\x1B[32m---> \x1B[39m\x1B[32m35\x1B[39m \x1B[38;5;28;01mfor\x1B[39;00m i, (x, y) \x1B[38;5;129;01min\x1B[39;00m \x1B[38;5;28menumerate\x1B[39m(spring_pos):\n' +
+      '\x1B[32m     36\x1B[39m     pos[i] = (x, y)\n' +
+      '\x1B[32m     38\x1B[39m \x1B[38;5;66;03m# Create figure with two subplots\x1B[39;00m\n',
+    '\x1B[31mTypeError\x1B[39m: cannot unpack non-iterable int object'
+  ]
+}
+17:29:29.273 [info] Restart requested ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/FakeFezEncodedQubitTransport.ipynb
+17:29:29.501 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+17:29:29.501 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v3a438a90c44df9617ad4ba17de47150864e88f139.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+17:29:29.982 [info] Restarted 41b01d73-b342-48b6-888f-b58d75646052
+17:50:05.860 [info] Restart requested ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/FakeFezEncodedQubitTransport.ipynb
+17:50:05.908 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+17:50:05.908 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v3c03f4f9c37a01653ccf04d28e5d49d977aa381de.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+17:50:06.324 [info] Restarted 41b01d73-b342-48b6-888f-b58d75646052
+17:56:49.269 [info] Restart requested ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/FakeFezEncodedQubitTransport.ipynb
+17:56:49.273 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+17:56:49.281 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v33ed6b843ecc6c5697066437a6a0f458c83babc3d.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+17:56:49.690 [info] Restarted 41b01d73-b342-48b6-888f-b58d75646052
+17:57:02.707 [info] Restart requested ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/FakeFezEncodedQubitTransport.ipynb
+17:57:02.712 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+17:57:02.717 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v3bf79f42cf85211d2e651d418a5e5f5a745ed1b12.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+17:57:03.131 [info] Restarted 41b01d73-b342-48b6-888f-b58d75646052
+17:57:13.599 [warn] Cell completed with errors Iu [Error]: 'channel' can only be 'ibm_cloud', or 'ibm_quantum_platform
+    at n.execute (~/.vscode/extensions/ms-toolsai.jupyter-2025.9.1-darwin-arm64/dist/extension.node.js:302:4958) {
+  ename: 'ValueError',
+  evalue: "'channel' can only be 'ibm_cloud', or 'ibm_quantum_platform",
+  traceback: [
+    '\x1B[31m---------------------------------------------------------------------------\x1B[39m',
+    '\x1B[31mValueError\x1B[39m                                Traceback (most recent call last)',
+    '\x1B[36mCell\x1B[39m\x1B[36m \x1B[39m\x1B[32mIn[1]\x1B[39m\x1B[32m, line 31\x1B[39m\n' +
+      "\x1B[32m     28\x1B[39m \x1B[38;5;28;01mwith\x1B[39;00m \x1B[38;5;28mopen\x1B[39m(\x1B[33m'\x1B[39m\x1B[33m../secrets/keys.json\x1B[39m\x1B[33m'\x1B[39m) \x1B[38;5;28;01mas\x1B[39;00m f:\n" +
+      '\x1B[32m     29\x1B[39m     keys = json.load(f)\n' +
+      '\x1B[32m---> \x1B[39m\x1B[32m31\x1B[39m service = \x1B[43mQiskitRuntimeService\x1B[49m\x1B[43m(\x1B[49m\n' +
+      "\x1B[32m     32\x1B[39m \x1B[43m    \x1B[49m\x1B[43mchannel\x1B[49m\x1B[43m=\x1B[49m\x1B[33;43m'\x1B[39;49m\x1B[33;43mibm_quantum\x1B[39;49m\x1B[33;43m'\x1B[39;49m\x1B[43m,\x1B[49m\n" +
+      '\x1B[32m     33\x1B[39m \x1B[43m    \x1B[49m\x1B[43mtoken\x1B[49m\x1B[43m=\x1B[49m\x1B[43mkeys\x1B[49m\x1B[43m[\x1B[49m\x1B[33;43m"\x1B[39;49m\x1B[33;43mqiksit-api-key\x1B[39;49m\x1B[33;43m"\x1B[39;49m\x1B[43m]\x1B[49m\x1B[43m,\x1B[49m\n' +
+      '\x1B[32m     34\x1B[39m \x1B[43m    \x1B[49m\x1B[43minstance\x1B[49m\x1B[43m=\x1B[49m\x1B[43mkeys\x1B[49m\x1B[43m[\x1B[49m\x1B[33;43m"\x1B[39;49m\x1B[33;43mqiskit-crn-instance\x1B[39;49m\x1B[33;43m"\x1B[39;49m\x1B[43m]\x1B[49m\n' +
+      '\x1B[32m     35\x1B[39m \x1B[43m\x1B[49m\x1B[43m)\x1B[49m\n' +
+      '\x1B[32m     37\x1B[39m \x1B[38;5;66;03m# Get ibm_fez backend (156 qubits, same topology as FakeFez)\x1B[39;00m\n' +
+      "\x1B[32m     38\x1B[39m backend = service.backend(\x1B[33m'\x1B[39m\x1B[33mibm_fez\x1B[39m\x1B[33m'\x1B[39m)\n",
+    '\x1B[36mFile \x1B[39m\x1B[32m~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/qiskit_ibm_runtime/qiskit_runtime_service.py:204\x1B[39m, in \x1B[36mQiskitRuntimeService.__init__\x1B[39m\x1B[34m(self, channel, token, url, filename, name, instance, proxies, verify, private_endpoint, url_resolver, region, plans_preference, tags)\x1B[39m\n' +
+      '\x1B[32m    202\x1B[39m \x1B[38;5;28mself\x1B[39m._all_instances: \x1B[38;5;28mlist\x1B[39m[\x1B[38;5;28mdict\x1B[39m[\x1B[38;5;28mstr\x1B[39m, Any]] = []\n' +
+      '\x1B[32m    203\x1B[39m \x1B[38;5;28mself\x1B[39m._saved_instances: \x1B[38;5;28mlist\x1B[39m[\x1B[38;5;28mstr\x1B[39m] = []\n' +
+      '\x1B[32m--> \x1B[39m\x1B[32m204\x1B[39m \x1B[38;5;28mself\x1B[39m._account = \x1B[38;5;28;43mself\x1B[39;49m\x1B[43m.\x1B[49m\x1B[43m_discover_account\x1B[49m\x1B[43m(\x1B[49m\n' +
+      '\x1B[32m    205\x1B[39m \x1B[43m    \x1B[49m\x1B[43mtoken\x1B[49m\x1B[43m=\x1B[49m\x1B[43mtoken\x1B[49m\x1B[43m,\x1B[49m\n' +
+      '\x1B[32m    206\x1B[39m \x1B[43m    \x1B[49m\x1B[43murl\x1B[49m\x1B[43m=\x1B[49m\x1B[43murl\x1B[49m\x1B[43m,\x1B[49m\n' +
+      '\x1B[32m    207\x1B[39m \x1B[43m    \x1B[49m\x1B[43minstance\x1B[49m\x1B[43m=\x1B[49m\x1B[43minstance\x1B[49m\x1B[43m,\x1B[49m\n' +
+      '\x1B[32m    208\x1B[39m \x1B[43m    \x1B[49m\x1B[43mchannel\x1B[49m\x1B[43m=\x1B[49m\x1B[43mchannel\x1B[49m\x1B[43m,\x1B[49m\n' +
+      '\x1B[32m    209\x1B[39m \x1B[43m    \x1B[49m\x1B[43mfilename\x1B[49m\x1B[43m=\x1B[49m\x1B[43mfilename\x1B[49m\x1B[43m,\x1B[49m\n' +
+      '\x1B[32m    210\x1B[39m \x1B[43m    \x1B[49m\x1B[43mname\x1B[49m\x1B[43m=\x1B[49m\x1B[43mname\x1B[49m\x1B[43m,\x1B[49m\n' +
+      '\x1B[32m    211\x1B[39m \x1B[43m    \x1B[49m\x1B[43mproxies\x1B[49m\x1B[43m=\x1B[49m\x1B[43mProxyConfiguration\x1B[49m\x1B[43m(\x1B[49m\x1B[43m*\x1B[49m\x1B[43m*\x1B[49m\x1B[43mproxies\x1B[49m\x1B[43m)\x1B[49m\x1B[43m \x1B[49m\x1B[38;5;28;43;01mif\x1B[39;49;00m\x1B[43m \x1B[49m\x1B[43mproxies\x1B[49m\x1B[43m \x1B[49m\x1B[38;5;28;43;01melse\x1B[39;49;00m\x1B[43m \x1B[49m\x1B[38;5;28;43;01mNone\x1B[39;49;00m\x1B[43m,\x1B[49m\n' +
+      '\x1B[32m    212\x1B[39m \x1B[43m    \x1B[49m\x1B[43mverify\x1B[49m\x1B[43m=\x1B[49m\x1B[43mverify\x1B[49m\x1B[43m,\x1B[49m\n' +
+      '\x1B[32m    213\x1B[39m \x1B[43m\x1B[49m\x1B[43m)\x1B[49m\n' +
+      '\x1B[32m    215\x1B[39m \x1B[38;5;28;01mif\x1B[39;00m private_endpoint \x1B[38;5;129;01mis\x1B[39;00m \x1B[38;5;129;01mnot\x1B[39;00m \x1B[38;5;28;01mNone\x1B[39;00m:\n' +
+      '\x1B[32m    216\x1B[39m     \x1B[38;5;28mself\x1B[39m._account.private_endpoint = private_endpoint\n',
+    '\x1B[36mFile \x1B[39m\x1B[32m~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/qiskit_ibm_runtime/qiskit_runtime_service.py:399\x1B[39m, in \x1B[36mQiskitRuntimeService._discover_account\x1B[39m\x1B[34m(self, token, url, instance, channel, filename, name, proxies, verify)\x1B[39m\n' +
+      '\x1B[32m    397\x1B[39m \x1B[38;5;28;01melif\x1B[39;00m channel:\n' +
+      '\x1B[32m    398\x1B[39m     \x1B[38;5;28;01mif\x1B[39;00m channel \x1B[38;5;129;01mand\x1B[39;00m channel \x1B[38;5;129;01mnot\x1B[39;00m \x1B[38;5;129;01min\x1B[39;00m [\x1B[33m"\x1B[39m\x1B[33mibm_cloud\x1B[39m\x1B[33m"\x1B[39m, \x1B[33m"\x1B[39m\x1B[33mibm_quantum_platform\x1B[39m\x1B[33m"\x1B[39m]:\n' +
+      `\x1B[32m--> \x1B[39m\x1B[32m399\x1B[39m         \x1B[38;5;28;01mraise\x1B[39;00m \x1B[38;5;167;01mValueError\x1B[39;00m(\x1B[33m"\x1B[39m\x1B[33m'\x1B[39m\x1B[33mchannel\x1B[39m\x1B[33m'\x1B[39m\x1B[33m can only be \x1B[39m\x1B[33m'\x1B[39m\x1B[33mibm_cloud\x1B[39m\x1B[33m'\x1B[39m\x1B[33m, or \x1B[39m\x1B[33m'\x1B[39m\x1B[33mibm_quantum_platform\x1B[39m\x1B[33m"\x1B[39m)\n` +
+      '\x1B[32m    400\x1B[39m     \x1B[38;5;28;01mif\x1B[39;00m token:\n' +
+      '\x1B[32m    401\x1B[39m         account = Account.create_account(\n' +
+      '\x1B[32m    402\x1B[39m             channel=channel,\n' +
+      '\x1B[32m    403\x1B[39m             token=token,\n' +
+      '\x1B[32m   (...)\x1B[39m\x1B[32m    407\x1B[39m             verify=verify_,\n' +
+      '\x1B[32m    408\x1B[39m         )\n',
+    "\x1B[31mValueError\x1B[39m: 'channel' can only be 'ibm_cloud', or 'ibm_quantum_platform"
+  ]
+}
+17:57:13.600 [warn] Cancel all remaining cells due to cancellation or failure in execution
+17:57:57.213 [info] Starting Kernel (Python Path: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python, Venv, 3.13.2) for '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/TestQiskitSetup.ipynb' (disableUI=true)
+17:57:57.215 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m pip list
+17:57:57.247 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+17:57:57.294 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v3867e0d23336a03ee1ec48dd689c27d7bb50121d9.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+17:57:57.744 [info] Kernel successfully started
+17:57:58.538 [error] Widget Error: Failed to access CDN https://unpkg.com/ after 0 attempt(s), TypeError: Failed to fetch
+17:58:24.995 [info] Dispose Kernel '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/TestQiskitSetup.ipynb' associated with '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/TestQiskitSetup.ipynb'
+17:58:25.586 [error] Widget Error: Failed to access CDN https://unpkg.com/ after 0 attempt(s), TypeError: Failed to fetch
+17:58:33.882 [error] Widget Error: Failed to access CDN https://unpkg.com/ after 0 attempt(s), TypeError: Failed to fetch
+18:00:08.594 [info] Starting Kernel (Python Path: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python, Venv, 3.13.2) for '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/TestQiskitSetup.ipynb' (disableUI=true)
+18:00:08.769 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+18:00:08.770 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v3c909e63bf89849b65a5ee72a8b0f70eba7a95d39.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+18:00:09.223 [info] Kernel successfully started
+18:00:09.776 [error] Widget Error: Failed to access CDN https://unpkg.com/ after 0 attempt(s), TypeError: Failed to fetch
+18:00:49.622 [info] Dispose Kernel '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/TestQiskitSetup.ipynb' associated with '~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/TestQiskitSetup.ipynb'
+18:04:12.469 [info] Restart requested ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks/FakeFezEncodedQubitTransport.ipynb
+18:04:12.481 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import ipykernel; print(ipykernel.__version__); print("5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d"); print(ipykernel.__file__)"
+18:04:12.483 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m ipykernel_launcher --f=~/Library/Jupyter/runtime/kernel-v30b5f1da7c252abce76d505132e60f12fc71f087e.json
+    > cwd: ~/Desktop/Research-Code/qiskit-network-sim/testnotebooks
+18:04:12.899 [info] Restarted 41b01d73-b342-48b6-888f-b58d75646052
+18:09:10.902 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import nbconvert;print('6af208d0-cb9c-427f-b937-ff563e17efdf')"
+18:09:12.585 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -c "import jupyter;print('6af208d0-cb9c-427f-b937-ff563e17efdf')"
+18:09:12.650 [info] Process Execution: ~/Desktop/Research-Code/qiskit-network-sim/.venv/bin/python -m jupyter nbconvert /var/folders/t2/g8j2h9dd5gj5c2454fz6jz980000gn/T/434ab8e8-f65a-482e-9607-05156d4e36f0/IBMFezEncodedQubitTransport0109_1.ipynb --to pdf --output tmp-75977-BMVfTaLb2nmi-.pdf --output-dir /private/var/folders/t2/g8j2h9dd5gj5c2454fz6jz980000gn/T --debug
+18:09:14.494 [error] Export failed Error: [NbConvertApp] Searching ['~/Desktop/Research-Code/qiskit-network-sim/.venv/etc/jupyter', '~/.jupyter', '/usr/local/etc/jupyter', '/etc/jupyter'] for config files
+[NbConvertApp] Looking for jupyter_config in /etc/jupyter
+[NbConvertApp] Looking for jupyter_config in /usr/local/etc/jupyter
+[NbConvertApp] Looking for jupyter_config in ~/.jupyter
+[NbConvertApp] Looking for jupyter_config in ~/Desktop/Research-Code/qiskit-network-sim/.venv/etc/jupyter
+[NbConvertApp] Looking for jupyter_nbconvert_config in /etc/jupyter
+[NbConvertApp] Looking for jupyter_nbconvert_config in /usr/local/etc/jupyter
+[NbConvertApp] Looking for jupyter_nbconvert_config in ~/.jupyter
+[NbConvertApp] Looking for jupyter_nbconvert_config in ~/Desktop/Research-Code/qiskit-network-sim/.venv/etc/jupyter
+[NbConvertApp] Looping through config variables with prefix "JUPYTER_NBCONVERT"
+[NbConvertApp] Converting notebook /var/folders/t2/g8j2h9dd5gj5c2454fz6jz980000gn/T/434ab8e8-f65a-482e-9607-05156d4e36f0/IBMFezEncodedQubitTransport0109_1.ipynb to pdf
+[NbConvertApp] Notebook name is 'tmp-75977-BMVfTaLb2nmi-'
+[NbConvertApp] Template paths:
+	~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/latex
+	~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/base
+	~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter
+	~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates
+	~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/compatibility
+	~/Library/Jupyter
+	~/Library/Jupyter/nbconvert/templates
+	~/Library/Jupyter/nbconvert/templates/compatibility
+	/usr/local/share/jupyter
+	/usr/local/share/jupyter/nbconvert/templates
+	/usr/local/share/jupyter/nbconvert/templates/compatibility
+	/usr/share/jupyter
+	/usr/share/jupyter/nbconvert/templates
+	/usr/share/jupyter/nbconvert/templates/compatibility
+	~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates
+[NbConvertApp] Applying preprocessor: TagRemovePreprocessor
+[NbConvertApp] Applying preprocessor: RegexRemovePreprocessor
+[NbConvertApp] Applying preprocessor: SVG2PDFPreprocessor
+[NbConvertApp] Applying preprocessor: LatexPreprocessor
+[NbConvertApp] Applying preprocessor: HighlightMagicsPreprocessor
+[NbConvertApp] Applying preprocessor: ExtractOutputPreprocessor
+[NbConvertApp] Applying preprocessor: ExtractAttachmentsPreprocessor
+[NbConvertApp] Attempting to load template index.tex.j2
+[NbConvertApp]     template_paths: ~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/latex:~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/base:~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter:~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates:~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/compatibility:~/Library/Jupyter:~/Library/Jupyter/nbconvert/templates:~/Library/Jupyter/nbconvert/templates/compatibility:/usr/local/share/jupyter:/usr/local/share/jupyter/nbconvert/templates:/usr/local/share/jupyter/nbconvert/templates/compatibility:/usr/share/jupyter:/usr/share/jupyter/nbconvert/templates:/usr/share/jupyter/nbconvert/templates/compatibility:~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates
+[NbConvertApp] ERROR | Error while converting '/var/folders/t2/g8j2h9dd5gj5c2454fz6jz980000gn/T/434ab8e8-f65a-482e-9607-05156d4e36f0/IBMFezEncodedQubitTransport0109_1.ipynb'
+Traceback (most recent call last):
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/nbconvert/nbconvertapp.py", line 487, in export_single_notebook
+    output, resources = self.exporter.from_filename(
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        notebook_filename, resources=resources
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/nbconvert/exporters/templateexporter.py", line 390, in from_filename
+    return super().from_filename(filename, resources, **kw)  # type:ignore[return-value]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/nbconvert/exporters/exporter.py", line 201, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/nbconvert/exporters/templateexporter.py", line 396, in from_file
+    return super().from_file(file_stream, resources, **kw)  # type:ignore[return-value]
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/nbconvert/exporters/exporter.py", line 220, in from_file
+    return self.from_notebook_node(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        nbformat.read(file_stream, as_version=4), resources=resources, **kw
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/nbconvert/exporters/pdf.py", line 184, in from_notebook_node
+    latex, resources = super().from_notebook_node(nb, resources=resources, **kw)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/nbconvert/exporters/latex.py", line 92, in from_notebook_node
+    return super().from_notebook_node(nb, resources, **kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/nbconvert/exporters/templateexporter.py", line 429, in from_notebook_node
+    output = self.template.render(nb=nb_copy, resources=resources)
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/latex/index.tex.j2", line 8, in top-level template code
+    ((* extends cell_style *))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/latex/style_jupyter.tex.j2", line 176, in top-level template code
+    \prompt{(((prompt)))}{(((prompt_color)))}{(((execution_count)))}{(((extra_space)))}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/latex/base.tex.j2", line 7, in top-level template code
+    ((*- extends 'document_contents.tex.j2' -*))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/latex/document_contents.tex.j2", line 51, in top-level template code
+    ((*- block figure scoped -*))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/latex/display_priority.j2", line 5, in top-level template code
+    ((*- extends 'null.j2' -*))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/latex/null.j2", line 30, in top-level template code
+    ((*- block body -*))
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/latex/base.tex.j2", line 241, in block 'body'
+    ((( super() )))
+    ~~~~~~~~~^^~~~~
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/latex/null.j2", line 32, in block 'body'
+    ((*- block any_cell scoped -*))
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/latex/null.j2", line 85, in block 'any_cell'
+    ((*- block markdowncell scoped-*)) ((*- endblock markdowncell -*))
+    ^^^^^^^^^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/share/jupyter/nbconvert/templates/latex/document_contents.tex.j2", line 68, in block 'markdowncell'
+    ((( cell.source | citation2latex | strip_files_prefix | convert_pandoc('markdown+tex_math_double_backslash', 'json',extra_args=[]) | resolve_references | convert_explicitly_relative_paths | convert_pandoc('json','latex'))))
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/nbconvert/filters/pandoc.py", line 36, in convert_pandoc
+    return pandoc(source, from_format, to_format, extra_args=extra_args)
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/nbconvert/utils/pandoc.py", line 50, in pandoc
+    check_pandoc_version()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/nbconvert/utils/pandoc.py", line 98, in check_pandoc_version
+    v = get_pandoc_version()
+  File "~/Desktop/Research-Code/qiskit-network-sim/.venv/lib/python3.13/site-packages/nbconvert/utils/pandoc.py", line 75, in get_pandoc_version
+    raise PandocMissing()
+nbconvert.utils.pandoc.PandocMissing: Pandoc wasn't found.
+Please check that pandoc is installed:
+https://pandoc.org/installing.html
+[NbConvertApp] Exiting application: jupyter-nbconvert
+
+    at jf.executeCommand (~/.vscode/extensions/ms-toolsai.jupyter-2025.9.1-darwin-arm64/dist/extension.node.js:326:9525)
+    at J0.export (~/.vscode/extensions/ms-toolsai.jupyter-2025.9.1-darwin-arm64/dist/extension.node.js:327:412)
+    at oI.performNbConvertExport (~/.vscode/extensions/ms-toolsai.jupyter-2025.9.1-darwin-arm64/dist/extension.node.js:329:2500)
+    at oI.performExport (~/.vscode/extensions/ms-toolsai.jupyter-2025.9.1-darwin-arm64/dist/extension.node.js:329:2190)
+    at oI.exportImpl (~/.vscode/extensions/ms-toolsai.jupyter-2025.9.1-darwin-arm64/dist/extension.node.js:329:1798)
+    at oI.export (~/.vscode/extensions/ms-toolsai.jupyter-2025.9.1-darwin-arm64/dist/extension.node.js:329:1530)
+    at y1.export (~/.vscode/extensions/ms-toolsai.jupyter-2025.9.1-darwin-arm64/dist/extension.node.js:385:3134)
+    at cA.h (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:116:41740)
+18:09:14.495 [error] If you have not installed xelatex (TeX), you will need to do so before you can export to PDF. For further instructions, please see https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex. 
+To avoid installing xelatex (TeX), you might want to try exporting to HTML and using your browser's "Print to PDF" feature.
