@@ -15,7 +15,8 @@ Includes multi-hop transport for paths spanning multiple nodes.
 """
 
 from typing import Dict, List, Tuple, Optional
-from qiskit import QuantumCircuit
+from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
+from qiskit.circuit import Clbit
 
 
 def build_swapping_circuit(
@@ -182,7 +183,8 @@ def build_multihop_swapping_circuit(
     nodes: Dict[int, dict],
     routes: Dict[Tuple[int, int], dict],
     num_qubits: int,
-    measure_at: Optional[List[int]] = None
+    measure_at: Optional[List[int]] = None,
+    node_names: Optional[Dict[int, str]] = None
 ) -> QuantumCircuit:
     """
     Build a quantum circuit for multi-hop transport across multiple nodes.
@@ -210,34 +212,42 @@ def build_multihop_swapping_circuit(
                     If None, measure only at the final node.
                     If specified, measure ONLY at those nodes (include final node if desired).
                     Ancillas are reset after measurement at intermediate nodes.
+        node_names: Optional dictionary mapping node IDs to names for register naming.
+                    If None, uses node IDs as names (e.g., 'syndrome_1').
+                    If provided, uses names (e.g., 'syndrome_B').
     
     Returns:
-        QuantumCircuit with classical bits for syndrome measurements.
-        Number of classical bits = 2 * (number of measurement points).
-        Classical bits are ordered by measurement point along the path.
+        QuantumCircuit with separate ClassicalRegisters for each measurement node.
+        Each register is named 'syndrome_<node>' (e.g., 'syndrome_B', 'syndrome_F')
+        and contains 2 bits for the two syndrome measurements.
         
     Example:
+        >>> from network_emulation import NODE_NAMES
         >>> # Path A → B → D → F, measure at B and F
         >>> circuit = build_multihop_swapping_circuit(
         ...     node_path=[Node.A, Node.B, Node.D, Node.F],
         ...     initial_state='+',
         ...     nodes=NODES, routes=ROUTES, num_qubits=156,
-        ...     measure_at=[Node.B, Node.F]
+        ...     measure_at=[Node.B, Node.F],
+        ...     node_names=NODE_NAMES
         ... )
-        >>> # Classical bits: c[0:2] = syndromes at B, c[2:4] = syndromes at F
+        >>> # Circuit has registers: 'syndrome_B' (2 bits), 'syndrome_F' (2 bits)
+        >>> # Results will show: {'syndrome_F syndrome_B': '00 00', ...}
         
         >>> # Path A → C → F, measure only at final node (default)
         >>> circuit = build_multihop_swapping_circuit(
         ...     node_path=[Node.A, Node.C, Node.F],
         ...     initial_state='0',
-        ...     nodes=NODES, routes=ROUTES, num_qubits=156
+        ...     nodes=NODES, routes=ROUTES, num_qubits=156,
+        ...     node_names=NODE_NAMES
         ... )
-        >>> # Classical bits: c[0:2] = syndromes at F
+        >>> # Circuit has register: 'syndrome_F' (2 bits)
         
     Notes:
         - Syndrome extraction uses SWAP-based method due to heavy-hex topology
         - Mid-circuit measurements include ancilla reset to avoid interference
         - The encoded state continues propagating after intermediate measurements
+        - Classical registers are added in path order for easy result interpretation
     """
     if len(node_path) < 2:
         raise ValueError("node_path must contain at least 2 nodes")
@@ -246,23 +256,36 @@ def build_multihop_swapping_circuit(
     final_node = node_path[-1]
     if measure_at is None:
         # Default: measure only at final node
-        measurement_nodes = {final_node}
+        measurement_nodes_ordered = [final_node]
     else:
-        measurement_nodes = set(measure_at)
+        # Filter to only nodes that are in the path (excluding start node)
+        valid_nodes = set(node_path[1:])
+        measurement_nodes_ordered = [n for n in node_path[1:] if n in measure_at]
+        
+        if len(measurement_nodes_ordered) == 0:
+            raise ValueError(
+                f"measure_at={measure_at} contains no valid nodes. "
+                f"Valid measurement nodes for this path: {list(valid_nodes)}"
+            )
     
-    # Calculate number of classical bits needed (2 per measurement point)
-    # Only count nodes that are actually in the path (excluding start node)
-    num_measurements = sum(1 for node in node_path[1:] if node in measurement_nodes)
-    if num_measurements == 0:
-        # If no valid measurement points, measure at final node
-        measurement_nodes = {final_node}
-        num_measurements = 1
+    measurement_nodes = set(measurement_nodes_ordered)
     
-    num_classical_bits = 2 * num_measurements
-    circuit = QuantumCircuit(num_qubits, num_classical_bits)
+    # Helper to get node name for register naming
+    def get_node_label(node_id: int) -> str:
+        if node_names is not None and node_id in node_names:
+            return node_names[node_id]
+        return str(node_id)
     
-    # Track which classical bit index we're at
-    classical_idx = 0
+    # Create circuit with quantum register
+    circuit = QuantumCircuit(num_qubits)
+    
+    # Create and add classical registers for each measurement node (in path order)
+    syndrome_registers: Dict[int, ClassicalRegister] = {}
+    for node_id in measurement_nodes_ordered:
+        reg_name = f"syndrome_{get_node_label(node_id)}"
+        creg = ClassicalRegister(2, name=reg_name)
+        circuit.add_register(creg)
+        syndrome_registers[node_id] = creg
     
     # === PHASE 1: Initial State Preparation at first node ===
     start_node = node_path[0]
@@ -293,14 +316,16 @@ def build_multihop_swapping_circuit(
         swapping_sequence = [list(zip(path, path[1:])) for path in route]
         
         # Transport via SWAP chains
-        circuit.barrier(label=f"Transport {src_node}→{dst_node}")
+        src_label = get_node_label(src_node)
+        dst_label = get_node_label(dst_node)
+        circuit.barrier(label=f"Transport {src_label}→{dst_label}")
         for path_swaps in swapping_sequence:
             for q1, q2 in path_swaps:
                 circuit.swap(q1, q2)
         
         # Check if we should measure at destination node
         if dst_node in measurement_nodes:
-            circuit.barrier(label=f"Syndrome @ Node {dst_node}")
+            circuit.barrier(label=f"Syndrome @ Node {dst_label}")
             
             # Get destination node qubits
             dst_ancilla = nodes[dst_node]['ancilla']
@@ -320,10 +345,10 @@ def build_multihop_swapping_circuit(
             circuit.cx(dst_encoding[1], dst_ancilla[1])
             circuit.swap(dst_encoding[1], dst_data)  # Restore positions
             
-            # Measure syndromes
-            circuit.measure(dst_ancilla[0], classical_idx)
-            circuit.measure(dst_ancilla[1], classical_idx + 1)
-            classical_idx += 2
+            # Measure syndromes into the node's dedicated register
+            creg = syndrome_registers[dst_node]
+            circuit.measure(dst_ancilla[0], creg[0])
+            circuit.measure(dst_ancilla[1], creg[1])
             
             # Reset ancillas if this is NOT the final measurement
             # (to prepare for potential future measurements or to avoid interference)

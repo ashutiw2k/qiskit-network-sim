@@ -28,7 +28,8 @@ from .circuit_builder import build_swapping_circuit
 
 def initialize_backend(
     use_real_hardware: bool,
-    secrets_path: str = '../secrets/keys.json'
+    secrets_path: str = '../secrets/keys.json',
+    simulation_method: str = 'automatic'
 ) -> Tuple:
     """
     Initialize the quantum backend and simulator.
@@ -37,6 +38,12 @@ def initialize_backend(
         use_real_hardware: If True, connect to real IBM Fez hardware.
                           If False, use FakeFez simulator.
         secrets_path: Path to JSON file containing IBM Quantum credentials
+        simulation_method: Aer simulation method to use. Options:
+            - 'automatic': Let Aer choose the best method (default)
+            - 'matrix_product_state': Best for SWAP-chain circuits (recommended)
+            - 'statevector': Full state-vector (only for small active qubit counts)
+            - 'density_matrix': For mixed states
+            - 'stabilizer': For Clifford-only circuits
         
     Returns:
         Tuple of (backend, simulator, coupling_map, is_real_hardware)
@@ -51,6 +58,10 @@ def initialize_backend(
             "qiskit-api-key": "your-api-key",
             "qiskit-crn-instance": "your-instance"
         }
+        
+        For large circuits with SWAP chains (like multi-hop transport),
+        'matrix_product_state' is highly recommended as it scales with
+        entanglement rather than qubit count.
     """
     if use_real_hardware:
         # Load real IBM Quantum backend
@@ -78,13 +89,18 @@ def initialize_backend(
         
         return backend, simulator, coupling_map, True
     else:
-        # Use FakeFez simulator
+        # Use FakeFez simulator with specified method
         backend = FakeFez()
         coupling_map = backend.coupling_map
-        simulator = AerSimulator.from_backend(backend)
+        
+        # Create simulator with chosen method
+        # 'automatic' lets Aer pick the best method based on circuit
+        # 'matrix_product_state' is excellent for SWAP-chain circuits
+        simulator = AerSimulator.from_backend(backend, method=simulation_method)
         
         print(f"Loaded SIMULATOR backend: {backend.name}")
         print(f"  Qubits: {backend.num_qubits}")
+        print(f"  Simulation method: {simulation_method}")
         
         return backend, simulator, coupling_map, False
 
