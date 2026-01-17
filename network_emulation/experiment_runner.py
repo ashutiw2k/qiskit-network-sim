@@ -169,6 +169,7 @@ def run_single_experiment(
         from qiskit_ibm_runtime import SamplerV2
         sampler = SamplerV2(backend)
         job = sampler.run([transpiled], shots=num_shots)
+        print(f"Job submitted to {backend.name}: {job.job_id()}")
         result = job.result()
         counts = result[0].data.c.get_counts()
     else:
