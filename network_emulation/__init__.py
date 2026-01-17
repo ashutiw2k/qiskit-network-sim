@@ -52,7 +52,8 @@ from .node_utils import (
     INITIAL_STATES,
     STATE_LABELS,
     CONNECTION_TUPLES,
-    node_name,
+    get_node_name,
+    get_node_id,
     route_name,
     route_key,
     get_connection_tuples
@@ -78,7 +79,8 @@ from .experiment_runner import (
     initialize_backend,
     run_single_experiment,
     run_all_routes_experiment,
-    run_full_experiment
+    run_full_experiment,
+    run_provided_circuit
 )
 
 # Visualization and export
@@ -98,13 +100,13 @@ __all__ = [
     # Node utilities
     'Node', 'NODE_NAMES', 'NODE_IDS', 'NUM_NODES',
     'INITIAL_STATES', 'STATE_LABELS', 'CONNECTION_TUPLES',
-    'node_name', 'route_name', 'route_key', 'get_connection_tuples',
+    'get_node_name', 'route_name', 'route_key', 'get_connection_tuples', 'get_node_id'
     # Config loading
     'load_nodes_config', 'load_routes_config', 'load_all_configs', 'print_config_summary',
     # Circuit building
     'build_swapping_circuit', 'build_multihop_swapping_circuit', 'build_circuit_batch',
     # Experiment execution
-    'initialize_backend', 'run_single_experiment', 
+    'initialize_backend', 'run_single_experiment', 'run_provided_circuit',
     'run_all_routes_experiment', 'run_full_experiment',
     # Visualization
     'plot_syndrome_matrix', 'plot_all_states_comparison', 'plot_state_averages_bar',

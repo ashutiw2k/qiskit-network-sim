@@ -15,9 +15,8 @@ Includes multi-hop transport for paths spanning multiple nodes.
 """
 
 from typing import Dict, List, Tuple, Optional
-from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
-from qiskit.circuit import Clbit
-
+from qiskit import QuantumCircuit, ClassicalRegister
+from .node_utils import get_node_name, get_node_id
 
 def build_swapping_circuit(
     source: int, 
@@ -25,7 +24,8 @@ def build_swapping_circuit(
     initial_state: str,
     nodes: Dict[int, dict],
     routes: Dict[Tuple[int, int], dict],
-    num_qubits: int
+    num_qubits: int,
+    syndrome_type: str = "bit"
 ) -> QuantumCircuit:
     """
     Build a quantum circuit for transporting an encoded qubit between nodes.
@@ -79,6 +79,8 @@ def build_swapping_circuit(
         routes: Transport routes dictionary with structure:
             {(src, dst): {'movements': [[path1], [path2], [path3]]}}
         num_qubits: Total number of qubits in the backend
+        syndrome_type: Syndrome basis; "bit" (default) detects X errors, 
+                       "phase" rotates to X basis (via H) to detect Z errors
         
     Returns:
         QuantumCircuit with num_qubits quantum bits and 2 classical bits
@@ -91,15 +93,23 @@ def build_swapping_circuit(
         ... )
         >>> print(f"Circuit depth: {circuit.depth()}")
     """
-    circuit = QuantumCircuit(num_qubits, 2)
+    # --- Validation ---
+    if (source, sink) not in routes:
+        raise ValueError(f"No route defined between source {source} and sink {sink}")
+    if syndrome_type not in ("bit", "phase"):
+        raise ValueError("syndrome_type must be 'bit' or 'phase'")
+
+    # Initialize circuit
+    circuit = QuantumCircuit(num_qubits)
+    # Add classical register for syndrome measurement
+    syndrome_reg = ClassicalRegister(len(nodes[sink]['ancilla']), name=f'syndrome_{get_node_name(sink)}')
+    circuit.add_register(syndrome_reg)
     
-    # Get route information
-    route = routes[(source, sink)]["movements"]
-    # Convert paths to SWAP pairs: [61,62,63] -> [(61,62), (62,63)]
-    swapping_sequence = [list(zip(path, path[1:])) for path in route]
-    
-    # === PHASE 1: Initial State Preparation ===
+    # ==========================================
+    # PHASE 1: Initial State Preparation
+    # ==========================================
     data_qubit = nodes[source]['data']
+    
     if initial_state == '1':
         circuit.x(data_qubit)
     elif initial_state == '+':
@@ -107,42 +117,78 @@ def build_swapping_circuit(
     elif initial_state == '-':
         circuit.x(data_qubit)
         circuit.h(data_qubit)
-    # '0' is the default state after reset
+    # '0' is default
     
-    # === PHASE 2: Encode using [3,1,1] repetition code ===
+    # ==========================================
+    # PHASE 2: Encode
+    # ==========================================
     encoding_qubits = nodes[source]['encoding']
-    circuit.cx(data_qubit, encoding_qubits[0])
-    circuit.cx(data_qubit, encoding_qubits[1])
     
-    # === PHASE 3: Transport via SWAP chains ===
-    # Execute all three paths (encoding[0], data, encoding[1]) sequentially
+    # 1. Standard Bit-Flip Encoding (Creates |000> or |111>)
+    for enc_q in encoding_qubits:
+        circuit.cx(data_qubit, enc_q)
+        
+    # 2. If using Phase Code, rotate entire logical qubit to X-basis
+    #    This converts the Bit-Flip code (|000>) into a Phase-Flip code (|+++>)
+    if syndrome_type == "phase":
+        circuit.h(data_qubit)
+        for enc_q in encoding_qubits:
+            circuit.h(enc_q)
+    
+    # ==========================================
+    # PHASE 3: Transport via SWAP chains
+    # ==========================================
+    # WARNING: Sequential execution assumes paths are node-disjoint. 
+    # If paths overlap, qubits may collide during transport.
+    route = routes[(source, sink)]["movements"]
+    swapping_sequence = [list(zip(path, path[1:])) for path in route]
+    
     for path_swaps in swapping_sequence:
         for q1, q2 in path_swaps:
             circuit.swap(q1, q2)
     
-    # === PHASE 4: Syndrome Extraction ===
-    # Note: Using SWAP-based extraction due to topology constraints
-    # (no direct edge between data and ancilla qubits in heavy-hex)
+    # ==========================================
+    # PHASE 4: Syndrome Extraction
+    # ==========================================
     sink_ancilla = nodes[sink]['ancilla']
     sink_encoding = nodes[sink]['encoding']
     sink_data = nodes[sink]['data']
     
-    # Syndrome 1: Compare encoding[0] with data
-    circuit.cx(sink_encoding[0], sink_ancilla[0])
-    circuit.swap(sink_encoding[0], sink_data)
-    circuit.cx(sink_encoding[0], sink_ancilla[0])
-    circuit.swap(sink_encoding[0], sink_data)  # Restore positions
+    # List of all logical qubits at the sink
+    logical_qubits = [sink_data] + sink_encoding
     
-    # Syndrome 2: Compare encoding[1] with data
-    circuit.cx(sink_encoding[1], sink_ancilla[1])
-    circuit.swap(sink_encoding[1], sink_data)
-    circuit.cx(sink_encoding[1], sink_ancilla[1])
-    circuit.swap(sink_encoding[1], sink_data)  # Restore positions
+    # 1. Basis Rotation (Pre-Measurement)
+    #    If we have a Phase Code (|+++>), H rotates it to Z-basis (|000>)
+    #    so the CNOTs can measure parity correctly.
+    if syndrome_type == "phase":
+        for q in logical_qubits:
+            circuit.h(q)
     
-    # === PHASE 5: Measure syndrome ===
+    # 2. Measure Syndromes (Iterate over encoding/ancilla pairs)
+    #    Logic: Uses encoding wire to mediate interaction between Data and Ancilla
+    for i, (enc_q, anc_q) in enumerate(zip(sink_encoding, sink_ancilla)):
+        # A. Parity with Encoding Qubit
+        circuit.cx(enc_q, anc_q)
+        
+        # B. Parity with Data Qubit (via SWAP trick due to connectivity constraints)
+        circuit.swap(enc_q, sink_data)
+        circuit.cx(enc_q, anc_q)
+        circuit.swap(enc_q, sink_data) # Restore positions
+    
+    # 3. Basis Restoration (Post-Measurement)
+    #    Rotate back to X-basis (|+++>) to preserve the logical state.
+    if syndrome_type == "phase":
+        for q in logical_qubits:
+            circuit.h(q)
+    
+    # ==========================================
+    # PHASE 5: Measure Ancillas
+    # ==========================================
     circuit.measure(sink_ancilla, [0, 1])
     
     return circuit
+
+
 
 
 def build_circuit_batch(
@@ -184,7 +230,7 @@ def build_multihop_swapping_circuit(
     routes: Dict[Tuple[int, int], dict],
     num_qubits: int,
     measure_at: Optional[List[int]] = None,
-    node_names: Optional[Dict[int, str]] = None
+    syndrome_type: str = "bit"
 ) -> QuantumCircuit:
     """
     Build a quantum circuit for multi-hop transport across multiple nodes.
@@ -212,82 +258,58 @@ def build_multihop_swapping_circuit(
                     If None, measure only at the final node.
                     If specified, measure ONLY at those nodes (include final node if desired).
                     Ancillas are reset after measurement at intermediate nodes.
-        node_names: Optional dictionary mapping node IDs to names for register naming.
-                    If None, uses node IDs as names (e.g., 'syndrome_1').
-                    If provided, uses names (e.g., 'syndrome_B').
+        syndrome_type: Syndrome basis; "bit" (default) detects X errors, 
+                       "phase" rotates to X basis (via H) to detect Z errors
     
     Returns:
         QuantumCircuit with separate ClassicalRegisters for each measurement node.
         Each register is named 'syndrome_<node>' (e.g., 'syndrome_B', 'syndrome_F')
-        and contains 2 bits for the two syndrome measurements.
-        
-    Example:
-        >>> from network_emulation import NODE_NAMES
-        >>> # Path A → B → D → F, measure at B and F
-        >>> circuit = build_multihop_swapping_circuit(
-        ...     node_path=[Node.A, Node.B, Node.D, Node.F],
-        ...     initial_state='+',
-        ...     nodes=NODES, routes=ROUTES, num_qubits=156,
-        ...     measure_at=[Node.B, Node.F],
-        ...     node_names=NODE_NAMES
-        ... )
-        >>> # Circuit has registers: 'syndrome_B' (2 bits), 'syndrome_F' (2 bits)
-        >>> # Results will show: {'syndrome_F syndrome_B': '00 00', ...}
-        
-        >>> # Path A → C → F, measure only at final node (default)
-        >>> circuit = build_multihop_swapping_circuit(
-        ...     node_path=[Node.A, Node.C, Node.F],
-        ...     initial_state='0',
-        ...     nodes=NODES, routes=ROUTES, num_qubits=156,
-        ...     node_names=NODE_NAMES
-        ... )
-        >>> # Circuit has register: 'syndrome_F' (2 bits)
-        
+        and contains bits for the syndrome measurements.
+                
     Notes:
         - Syndrome extraction uses SWAP-based method due to heavy-hex topology
         - Mid-circuit measurements include ancilla reset to avoid interference
         - The encoded state continues propagating after intermediate measurements
         - Classical registers are added in path order for easy result interpretation
     """
+    # --- Input Validation ---
     if len(node_path) < 2:
         raise ValueError("node_path must contain at least 2 nodes")
+    if syndrome_type not in ("bit", "phase"):
+        raise ValueError("syndrome_type must be 'bit' or 'phase'")
     
-    # Determine measurement points
+    # --- Measurement Point Logic ---
     final_node = node_path[-1]
     if measure_at is None:
-        # Default: measure only at final node
         measurement_nodes_ordered = [final_node]
     else:
-        # Filter to only nodes that are in the path (excluding start node)
         valid_nodes = set(node_path[1:])
         measurement_nodes_ordered = [n for n in node_path[1:] if n in measure_at]
         
-        if len(measurement_nodes_ordered) == 0:
+        if not measurement_nodes_ordered:
+             # Fallback or Error depending on preference; keeping error from your snippet
             raise ValueError(
                 f"measure_at={measure_at} contains no valid nodes. "
-                f"Valid measurement nodes for this path: {list(valid_nodes)}"
+                f"Valid measurement nodes: {list(valid_nodes)}"
             )
     
     measurement_nodes = set(measurement_nodes_ordered)
     
-    # Helper to get node name for register naming
-    def get_node_label(node_id: int) -> str:
-        if node_names is not None and node_id in node_names:
-            return node_names[node_id]
-        return str(node_id)
-    
-    # Create circuit with quantum register
+    # --- Circuit Setup ---
     circuit = QuantumCircuit(num_qubits)
     
-    # Create and add classical registers for each measurement node (in path order)
+    # Create classical registers
     syndrome_registers: Dict[int, ClassicalRegister] = {}
     for node_id in measurement_nodes_ordered:
-        reg_name = f"syndrome_{get_node_label(node_id)}"
-        creg = ClassicalRegister(2, name=reg_name)
+        # Assuming get_node_name is defined elsewhere in your code
+        reg_name = f"syndrome_{node_id}" 
+        creg = ClassicalRegister(len(nodes[node_id]['ancilla']), name=reg_name)
         circuit.add_register(creg)
         syndrome_registers[node_id] = creg
     
-    # === PHASE 1: Initial State Preparation at first node ===
+    # ==========================================
+    # PHASE 1: Initial State Preparation
+    # ==========================================
     start_node = node_path[0]
     data_qubit = nodes[start_node]['data']
     
@@ -298,62 +320,82 @@ def build_multihop_swapping_circuit(
     elif initial_state == '-':
         circuit.x(data_qubit)
         circuit.h(data_qubit)
-    # '0' is the default state
     
-    # === PHASE 2: Encode using [3,1,1] repetition code at start node ===
+    # ==========================================
+    # PHASE 2: Encode
+    # ==========================================
     encoding_qubits = nodes[start_node]['encoding']
-    circuit.cx(data_qubit, encoding_qubits[0])
-    circuit.cx(data_qubit, encoding_qubits[1])
     
-    # === PHASE 3: Multi-hop transport with optional syndrome measurements ===
+    # 1. Standard Bit-Flip Encoding (Creates |000>)
+    for enc_q in encoding_qubits:
+        circuit.cx(data_qubit, enc_q)
+        
+    # 2. If Phase Code, rotate to X-basis (|+++>)
+    # This prepares the state to be protected against Z-errors
+    if syndrome_type == "phase":
+        circuit.h(data_qubit)
+        for enc_q in encoding_qubits:
+            circuit.h(enc_q)
+    
+    # ==========================================
+    # PHASE 3: Multi-hop Transport Loop
+    # ==========================================
     for hop_idx in range(len(node_path) - 1):
         src_node = node_path[hop_idx]
         dst_node = node_path[hop_idx + 1]
         is_final_hop = (hop_idx == len(node_path) - 2)
         
-        # Get route for this hop
+        # --- A. Transport ---
         route = routes[(src_node, dst_node)]["movements"]
         swapping_sequence = [list(zip(path, path[1:])) for path in route]
         
-        # Transport via SWAP chains
-        src_label = get_node_label(src_node)
-        dst_label = get_node_label(dst_node)
-        circuit.barrier(label=f"Transport {src_label}→{dst_label}")
+        circuit.barrier(label=f"Transport {get_node_name(src_node)}->{get_node_name(dst_node)}")
         for path_swaps in swapping_sequence:
             for q1, q2 in path_swaps:
                 circuit.swap(q1, q2)
         
-        # Check if we should measure at destination node
+        # --- B. Intermediate/Final Measurement ---
         if dst_node in measurement_nodes:
-            circuit.barrier(label=f"Syndrome @ Node {dst_label}")
+            circuit.barrier(label=f"Syndrome @ {get_node_name(dst_node)}")
             
-            # Get destination node qubits
             dst_ancilla = nodes[dst_node]['ancilla']
             dst_encoding = nodes[dst_node]['encoding']
             dst_data = nodes[dst_node]['data']
+            logical_qubits = [dst_data] + dst_encoding
             
-            # Syndrome extraction using SWAP-based method
-            # Syndrome 1: Compare encoding[0] with data
-            circuit.cx(dst_encoding[0], dst_ancilla[0])
-            circuit.swap(dst_encoding[0], dst_data)
-            circuit.cx(dst_encoding[0], dst_ancilla[0])
-            circuit.swap(dst_encoding[0], dst_data)  # Restore positions
+            # 1. ROTATE Basis (X -> Z) if Phase Code
+            # We must map the X-information to the Z-basis so CNOTs can read it.
+            if syndrome_type == "phase":
+                for q in logical_qubits:
+                    circuit.h(q)
             
-            # Syndrome 2: Compare encoding[1] with data
-            circuit.cx(dst_encoding[1], dst_ancilla[1])
-            circuit.swap(dst_encoding[1], dst_data)
-            circuit.cx(dst_encoding[1], dst_ancilla[1])
-            circuit.swap(dst_encoding[1], dst_data)  # Restore positions
+            # 2. EXTRACT Syndromes
+            # Loop over ancilla/encoding pairs (Standardized logic)
+            for anc_q, enc_q in zip(dst_ancilla, dst_encoding):
+                # Parity with encoding
+                circuit.cx(enc_q, anc_q)
+                
+                # Parity with data (via SWAP trick)
+                circuit.swap(enc_q, dst_data)
+                circuit.cx(enc_q, anc_q)
+                circuit.swap(enc_q, dst_data) # Restore positions
             
-            # Measure syndromes into the node's dedicated register
+            # 3. RESTORE Basis (Z -> X) if Phase Code
+            # CRITICAL: We must restore before any further transport or reset!
+            if syndrome_type == "phase":
+                for q in logical_qubits:
+                    circuit.h(q)
+            
+            # 4. MEASURE Ancillas
             creg = syndrome_registers[dst_node]
-            circuit.measure(dst_ancilla[0], creg[0])
-            circuit.measure(dst_ancilla[1], creg[1])
+            # Assumes ancilla list matches register size
+            for i, anc_q in enumerate(dst_ancilla):
+                circuit.measure(anc_q, creg[i])
             
-            # Reset ancillas if this is NOT the final measurement
-            # (to prepare for potential future measurements or to avoid interference)
+            # 5. RESET Ancillas
+            # Only if we might need them again or to clear the slate
             if not is_final_hop:
-                circuit.reset(dst_ancilla[0])
-                circuit.reset(dst_ancilla[1])
-    
+                for anc_q in dst_ancilla:
+                    circuit.reset(anc_q)
+
     return circuit

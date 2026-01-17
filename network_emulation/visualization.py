@@ -20,7 +20,7 @@ from typing import Dict, List, Tuple, Optional
 
 from .node_utils import (
     NODE_NAMES, STATE_LABELS, NUM_NODES,
-    node_name, route_name, route_key
+    get_node_name, route_name, route_key
 )
 
 
@@ -96,9 +96,9 @@ def plot_syndrome_matrix(
     # Labels
     ax.set_xticks(range(num_nodes))
     ax.set_yticks(range(num_nodes))
-    ax.set_xticklabels([f'Node {node_name(i)}' for i in range(num_nodes)], 
+    ax.set_xticklabels([f'Node {get_node_name(i)}' for i in range(num_nodes)], 
                        color=text_color, fontsize=11)
-    ax.set_yticklabels([f'Node {node_name(i)}' for i in range(num_nodes)], 
+    ax.set_yticklabels([f'Node {get_node_name(i)}' for i in range(num_nodes)], 
                        color=text_color, fontsize=11)
     ax.set_xlabel('Destination (Sink)', color=text_color, fontsize=14)
     ax.set_ylabel('Source', color=text_color, fontsize=14)
@@ -160,8 +160,8 @@ def plot_all_states_comparison(
         
         ax.set_xticks(range(num_nodes))
         ax.set_yticks(range(num_nodes))
-        ax.set_xticklabels([node_name(i) for i in range(num_nodes)], color='white')
-        ax.set_yticklabels([node_name(i) for i in range(num_nodes)], color='white')
+        ax.set_xticklabels([get_node_name(i) for i in range(num_nodes)], color='white')
+        ax.set_yticklabels([get_node_name(i) for i in range(num_nodes)], color='white')
         ax.set_xlabel('Destination', color='white', fontsize=11)
         ax.set_ylabel('Source', color='white', fontsize=11)
         
@@ -252,12 +252,12 @@ def print_matrix_summary(
     print("-"*50)
     
     # Header
-    header = "      " + "    ".join([f"→{node_name(i)}" for i in range(matrix.shape[0])])
+    header = "      " + "    ".join([f"→{get_node_name(i)}" for i in range(matrix.shape[0])])
     print(header)
     
     # Rows
     for src in range(matrix.shape[0]):
-        row_str = f"{node_name(src)}:   "
+        row_str = f"{get_node_name(src)}:   "
         for dst in range(matrix.shape[1]):
             if np.isnan(matrix[src, dst]):
                 row_str += "  -  "

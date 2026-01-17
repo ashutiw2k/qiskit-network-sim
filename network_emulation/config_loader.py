@@ -112,13 +112,13 @@ def print_config_summary(
         nodes: Loaded nodes configuration
         routes: Loaded routes configuration
     """
-    from .node_utils import node_name
+    from .node_utils import get_node_name
     
     print("="*60)
     print("LOADED CONFIGURATIONS")
     print("="*60)
     print(f"\nNodes ({len(nodes)} total):")
     for node_id, qubits in nodes.items():
-        print(f"  Node {node_name(node_id)}: data={qubits['data']}, "
+        print(f"  Node {get_node_name(node_id)}: data={qubits['data']}, "
               f"encoding={qubits['encoding']}, ancilla={qubits['ancilla']}")
     print(f"\nRoutes ({len(routes)} total)")

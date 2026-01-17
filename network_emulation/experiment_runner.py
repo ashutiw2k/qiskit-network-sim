@@ -9,19 +9,20 @@ This module provides:
 - All-routes experiment with matrix output
 - Full experiment across all states and routes
 - Backend initialization helpers
+- Provided-circuit execution helper
 """
 
 import json
 import numpy as np
 from typing import Dict, List, Tuple, Optional
 
-from qiskit import transpile
+from qiskit import QuantumCircuit, transpile
 from qiskit_ibm_runtime.fake_provider import FakeFez
 from qiskit_aer import AerSimulator
 
 from .node_utils import (
     NODE_NAMES, STATE_LABELS, NUM_NODES,
-    node_name, route_name
+    get_node_name, route_name
 )
 from .circuit_builder import build_swapping_circuit
 
@@ -182,6 +183,69 @@ def run_single_experiment(
     percentage = (correct_count / num_shots) * 100
     
     return counts, percentage
+
+
+def run_provided_circuit(
+    circuit: QuantumCircuit,
+    backend,
+    simulator,
+    is_real_hardware: bool,
+    num_shots: int,
+    optimization_level: int = 0,
+    initial_layout: Optional[List[int]] = None,
+    return_timing: bool = False,
+) -> Dict[str, int] | Tuple[Dict[str, int], Dict[str, Optional[float]]]:
+    """
+    Transpile and execute a provided circuit and return raw counts.
+    
+    Args:
+        circuit: Fully constructed QuantumCircuit to execute
+        backend: Qiskit backend (FakeFez or real IBM Fez)
+        simulator: AerSimulator instance (None if using real hardware)
+        is_real_hardware: Whether using real quantum hardware
+        num_shots: Number of measurement shots
+        optimization_level: Transpiler optimization level (0-3)
+        initial_layout: Optional initial layout for transpilation
+        return_timing: If True, also return backend-reported execution timing
+        
+    Returns:
+        Counts dictionary from execution, e.g., {'00': n, '01': m, ...}
+        If return_timing=True, also returns a timing dict with backend-reported
+        values (seconds) when available. Keys: 'time_taken', 'queue_time'.
+    """
+    transpiled = transpile(
+        circuit,
+        backend,
+        optimization_level=optimization_level,
+        initial_layout=initial_layout
+    )
+    
+    timing: Dict[str, Optional[float]] = {"time_taken": None, "queue_time": None}
+    
+    if is_real_hardware:
+        from qiskit_ibm_runtime import SamplerV2
+        sampler = SamplerV2(backend)
+        job = sampler.run([transpiled], shots=num_shots)
+        print(f"Job submitted to {backend.name}: {job.job_id()}")
+        result = job.result()
+        counts = result[0].data.c.get_counts()
+        
+        # Attempt to pull IBM Runtime metadata (if provided)
+        meta_list = getattr(result, "metadata", None)
+        if meta_list and len(meta_list) > 0 and isinstance(meta_list[0], dict):
+            timing["time_taken"] = meta_list[0].get("time_taken")
+            timing["queue_time"] = meta_list[0].get("queue_time")
+    else:
+        job = simulator.run(transpiled, shots=num_shots)
+        sim_result = job.result()
+        counts = sim_result.get_counts()
+        
+        # Aer reports wall time in result.time_taken when available
+        timing["time_taken"] = getattr(sim_result, "time_taken", None)
+    
+    if return_timing:
+        return counts, timing
+    return counts
 
 
 def run_all_routes_experiment(

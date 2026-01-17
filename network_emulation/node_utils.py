@@ -38,7 +38,7 @@ STATE_LABELS = {'0': '|0⟩', '1': '|1⟩', '+': '|+⟩', '-': '|−⟩'}
 CONNECTION_TUPLES = list(itertools.permutations(range(NUM_NODES), 2))
 
 
-def node_name(node_id: int) -> str:
+def get_node_name(node_id: int) -> str:
     """
     Convert node ID to name.
     
@@ -50,6 +50,16 @@ def node_name(node_id: int) -> str:
     """
     return NODE_NAMES.get(node_id, str(node_id))
 
+def get_node_id(node_name: str) -> int:
+    """
+    Convert node name into ID
+    
+    :param node_name: Description
+    :type node_name: str
+    :return: Description
+    :rtype: int
+    """
+    return NODE_IDS.get(node_name, -1)
 
 def route_name(src: int, dst: int) -> str:
     """
@@ -62,7 +72,7 @@ def route_name(src: int, dst: int) -> str:
     Returns:
         Formatted route string (e.g., (0,1) -> 'A→B')
     """
-    return f"{node_name(src)}→{node_name(dst)}"
+    return f"{get_node_name(src)}→{get_node_name(dst)}"
 
 
 def route_key(src: int, dst: int) -> str:
@@ -76,7 +86,7 @@ def route_key(src: int, dst: int) -> str:
     Returns:
         Route key string (e.g., (0,1) -> 'A->B')
     """
-    return f"{node_name(src)}->{node_name(dst)}"
+    return f"{get_node_name(src)}->{get_node_name(dst)}"
 
 
 def get_connection_tuples(num_nodes: int = NUM_NODES) -> List[Tuple[int, int]]:
