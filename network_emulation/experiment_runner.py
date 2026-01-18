@@ -243,6 +243,8 @@ def run_provided_circuit(
         # Aer reports wall time in result.time_taken when available
         timing["time_taken"] = getattr(sim_result, "time_taken", None)
     
+    counts = dict(sorted(counts.items()))
+    
     if return_timing:
         return counts, timing
     return counts
