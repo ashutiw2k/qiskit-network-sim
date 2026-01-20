@@ -106,6 +106,29 @@ def initialize_backend(
         return backend, simulator, coupling_map, False
 
 
+def execute_transpiled_circuit(
+    transpiled_circuit: QuantumCircuit,
+    backend,
+    simulator,
+    is_real_hardware: bool,
+    num_shots: int,
+) -> Dict[str, int]:
+    """
+    Execute a transpiled circuit and return counts.
+    """
+    if is_real_hardware:
+        from qiskit_ibm_runtime import SamplerV2
+        sampler = SamplerV2(backend)
+        job = sampler.run([transpiled_circuit], shots=num_shots)
+        print(f"Job submitted to {backend.name}: {job.job_id()}")
+        result = job.result()
+        counts = result[0].data.c.get_counts()
+    else:
+        job = simulator.run(transpiled_circuit, shots=num_shots)
+        counts = job.result().get_counts()
+    return counts
+
+
 def run_single_experiment(
     source: int,
     sink: int,
@@ -150,6 +173,7 @@ def run_single_experiment(
         ... )
         >>> print(f"Success rate: {pct:.1f}%")
     """
+
     # Build circuit
     circuit = build_swapping_circuit(
         source, sink, initial_state,
@@ -164,19 +188,13 @@ def run_single_experiment(
         optimization_level=optimization_level
     )
     
-    # Execute
-    if is_real_hardware:
-        # Use Qiskit Runtime SamplerV2 for real hardware
-        from qiskit_ibm_runtime import SamplerV2
-        sampler = SamplerV2(backend)
-        job = sampler.run([transpiled], shots=num_shots)
-        print(f"Job submitted to {backend.name}: {job.job_id()}")
-        result = job.result()
-        counts = result[0].data.c.get_counts()
-    else:
-        # Use AerSimulator for fake backend
-        job = simulator.run(transpiled, shots=num_shots)
-        counts = job.result().get_counts()
+    counts = execute_transpiled_circuit(
+        transpiled,
+        backend,
+        simulator,
+        is_real_hardware,
+        num_shots,
+    )
     
     # Calculate syndrome '00' percentage (no errors detected)
     correct_count = counts.get('00', 0)

@@ -80,7 +80,8 @@ from .experiment_runner import (
     run_single_experiment,
     run_all_routes_experiment,
     run_full_experiment,
-    run_provided_circuit
+    run_provided_circuit,
+    execute_transpiled_circuit
 )
 
 # Visualization and export
@@ -106,7 +107,7 @@ __all__ = [
     # Circuit building
     'build_swapping_circuit', 'build_multihop_swapping_circuit', 'build_circuit_batch',
     # Experiment execution
-    'initialize_backend', 'run_single_experiment', 'run_provided_circuit',
+    'initialize_backend', 'run_single_experiment', 'run_provided_circuit', 'execute_transpiled_circuit',
     'run_all_routes_experiment', 'run_full_experiment',
     # Visualization
     'plot_syndrome_matrix', 'plot_all_states_comparison', 'plot_state_averages_bar',
