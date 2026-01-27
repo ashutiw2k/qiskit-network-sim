@@ -75,7 +75,7 @@ def initialize_backend(
         service = QiskitRuntimeService(
             channel='ibm_quantum_platform',
             token=keys["qiskit-api-key"],
-            instance=keys["qiskit-crn-instance"]
+            # instance=keys["qiskit-crn-instance"]
         )
         
         # Get ibm_fez backend
@@ -122,7 +122,20 @@ def execute_transpiled_circuit(
         job = sampler.run([transpiled_circuit], shots=num_shots)
         print(f"Job submitted to {backend.name}: {job.job_id()}")
         result = job.result()
-        counts = result[0].data.c.get_counts()
+        # Get counts from the first available classical register
+        data_bin = result[0].data
+        # Find the first classical register attribute that has get_counts
+        creg_name = None
+        for attr_name in dir(data_bin):
+            if not attr_name.startswith('_'):
+                attr = getattr(data_bin, attr_name)
+                if hasattr(attr, 'get_counts'):
+                    creg_name = attr_name
+                    break
+        if creg_name:
+            counts = getattr(data_bin, creg_name).get_counts()
+        else:
+            raise AttributeError("Could not find classical register with counts in result")
     else:
         job = simulator.run(transpiled_circuit, shots=num_shots)
         counts = job.result().get_counts()
@@ -246,20 +259,35 @@ def run_provided_circuit(
         job = sampler.run([transpiled], shots=num_shots)
         print(f"Job submitted to {backend.name}: {job.job_id()}")
         result = job.result()
-        counts = result[0].data.c.get_counts()
+        # counts = result[0].data.c.get_counts()
+        # Get counts from the first available classical register
+        data_bin = result[0].data
+        creg_name = None
+        for attr_name in dir(data_bin):
+            if not attr_name.startswith('_'):
+                attr = getattr(data_bin, attr_name)
+                if hasattr(attr, 'get_counts'):
+                    creg_name = attr_name
+                    break
+        if creg_name:
+            counts = getattr(data_bin, creg_name).get_counts()
+        else:
+            raise AttributeError("Could not find classical register with counts in result")
+
+
         
         # Attempt to pull IBM Runtime metadata (if provided)
-        meta_list = getattr(result, "metadata", None)
-        if meta_list and len(meta_list) > 0 and isinstance(meta_list[0], dict):
-            timing["time_taken"] = meta_list[0].get("time_taken")
-            timing["queue_time"] = meta_list[0].get("queue_time")
+        # meta_list = getattr(result, "metadata", None)
+        # if meta_list and len(meta_list) > 0 and isinstance(meta_list[0], dict):
+        #     timing["time_taken"] = meta_list[0].get("time_taken")
+        #     timing["queue_time"] = meta_list[0].get("queue_time")
     else:
         job = simulator.run(transpiled, shots=num_shots)
         sim_result = job.result()
         counts = sim_result.get_counts()
         
         # Aer reports wall time in result.time_taken when available
-        timing["time_taken"] = getattr(sim_result, "time_taken", None)
+        # timing["time_taken"] = getattr(sim_result, "time_taken", None)
     
     counts = dict(sorted(counts.items()))
     
