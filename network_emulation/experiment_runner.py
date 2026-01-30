@@ -71,11 +71,12 @@ def initialize_backend(
         # Load credentials from secrets
         with open(secrets_path) as f:
             keys = json.load(f)
-        
+        api_key = keys.get("apikey")
+        crn_instance = keys.get("crn", None)
         service = QiskitRuntimeService(
             channel='ibm_quantum_platform',
-            token=keys["qiskit-api-key"],
-            # instance=keys["qiskit-crn-instance"]
+            token=api_key,
+            instance=crn_instance
         )
         
         # Get ibm_fez backend

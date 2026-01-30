@@ -373,12 +373,15 @@ def build_multihop_swapping_circuit(
             # Loop over ancilla/encoding pairs (Standardized logic)
             for anc_q, enc_q in zip(dst_ancilla, dst_encoding):
                 # Parity with encoding
+                circuit.cx(dst_data, enc_q)
                 circuit.cx(enc_q, anc_q)
-                
+                circuit.cx(dst_data, enc_q)
+
+                # Swap Trick too noisy...
                 # Parity with data (via SWAP trick)
-                circuit.swap(enc_q, dst_data)
-                circuit.cx(enc_q, anc_q)
-                circuit.swap(enc_q, dst_data) # Restore positions
+                # circuit.swap(enc_q, dst_data)
+                # circuit.cx(enc_q, anc_q)
+                # circuit.swap(enc_q, dst_data) # Restore positions
             
             # 3. RESTORE Basis (Z -> X) if Phase Code
             # CRITICAL: We must restore before any further transport or reset!
@@ -399,3 +402,4 @@ def build_multihop_swapping_circuit(
                     circuit.reset(anc_q)
 
     return circuit
+
