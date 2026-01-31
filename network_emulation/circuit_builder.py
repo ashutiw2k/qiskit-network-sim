@@ -302,7 +302,7 @@ def build_multihop_swapping_circuit(
     syndrome_registers: Dict[int, ClassicalRegister] = {}
     for node_id in measurement_nodes_ordered:
         # Assuming get_node_name is defined elsewhere in your code
-        reg_name = "syndrome" 
+        reg_name = "syndrome_" + get_node_name(node_id)
         creg = ClassicalRegister(len(nodes[node_id]['ancilla']), name=reg_name)
         circuit.add_register(creg)
         syndrome_registers[node_id] = creg
@@ -337,6 +337,13 @@ def build_multihop_swapping_circuit(
         for enc_q in encoding_qubits:
             circuit.h(enc_q)
     
+    elif syndrome_type == "bitphase":
+        circuit.h(data_qubit)
+        circuit.s(data_qubit)
+        for enc_q in encoding_qubits:
+            circuit.h(enc_q)
+            circuit.s(enc_q)
+    
     # ==========================================
     # PHASE 3: Multi-hop Transport Loop
     # ==========================================
@@ -368,6 +375,11 @@ def build_multihop_swapping_circuit(
             if syndrome_type == "phase":
                 for q in logical_qubits:
                     circuit.h(q)
+
+            elif syndrome_type == "bitphase":
+                for q in logical_qubits:
+                    circuit.sdg(q)
+                    circuit.h(q)
             
             # 2. EXTRACT Syndromes
             # Loop over ancilla/encoding pairs (Standardized logic)
@@ -388,6 +400,11 @@ def build_multihop_swapping_circuit(
             if syndrome_type == "phase":
                 for q in logical_qubits:
                     circuit.h(q)
+            
+            elif syndrome_type == "bitphase":
+                for q in logical_qubits:
+                    circuit.h(q)
+                    circuit.s(q)
             
             # 4. MEASURE Ancillas
             creg = syndrome_registers[dst_node]
