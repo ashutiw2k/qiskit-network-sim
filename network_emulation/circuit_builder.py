@@ -302,7 +302,7 @@ def build_multihop_swapping_circuit(
     syndrome_registers: Dict[int, ClassicalRegister] = {}
     for node_id in measurement_nodes_ordered:
         # Assuming get_node_name is defined elsewhere in your code
-        reg_name = f"syndrome_{node_id}" 
+        reg_name = "syndrome" 
         creg = ClassicalRegister(len(nodes[node_id]['ancilla']), name=reg_name)
         circuit.add_register(creg)
         syndrome_registers[node_id] = creg
