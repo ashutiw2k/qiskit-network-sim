@@ -259,7 +259,8 @@ def build_multihop_swapping_circuit(
                     If specified, measure ONLY at those nodes (include final node if desired).
                     Ancillas are reset after measurement at intermediate nodes.
         syndrome_type: Syndrome basis; "bit" (default) detects X errors, 
-                       "phase" rotates to X basis (via H) to detect Z errors
+                       "phase" rotates to X basis (via H) to detect Z errors,
+                       "bitphase" detects both bit and phase errors (Y basis)
     
     Returns:
         QuantumCircuit with separate ClassicalRegisters for each measurement node.
@@ -275,8 +276,8 @@ def build_multihop_swapping_circuit(
     # --- Input Validation ---
     if len(node_path) < 2:
         raise ValueError("node_path must contain at least 2 nodes")
-    if syndrome_type not in ("bit", "phase"):
-        raise ValueError("syndrome_type must be 'bit' or 'phase'")
+    if syndrome_type not in ("bit", "phase", "bitphase"):
+        raise ValueError("syndrome_type must be 'bit', 'phase', or 'bitphase'")
     
     # --- Measurement Point Logic ---
     final_node = node_path[-1]
