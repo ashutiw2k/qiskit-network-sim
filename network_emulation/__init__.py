@@ -96,12 +96,49 @@ from .visualization import (
     results_to_matrices
 )
 
+# Qubit mapping for [[5,1,3]] code
+from .qubit_mapping import (
+    # Static mapping (SWAP-based)
+    NODE_PHYSICAL_QUBITS_513,
+    PATH_PHYSICAL_QUBITS_513,
+    TOTAL_QUBITS_513,
+    get_node_qubits_513,
+    get_path_qubits_513,
+    get_edge_key,
+    apply_swap_along_edge,
+    apply_multihop_swap,
+    print_qubit_mapping_513,
+    # Static mapping (Entanglement Swapping)
+    EDGE_PHYSICAL_QUBITS_ES,
+    PATH_PHYSICAL_QUBITS_ES,
+    TOTAL_QUBITS_ES,
+    print_qubit_mapping_es,
+    # Dynamic allocation
+    PathQubitAllocation,
+    remap_noise_model,
+    create_simple_remapped_noise_model,
+)
+
+# [[5,1,3]] code operations
+from .codes import (
+    STABILIZERS_513,
+    SYNDROME_TO_CORRECTION_513,
+    apply_encoding_513,
+    apply_decoding_513,
+    apply_syndrome_extraction_513,
+    apply_syndrome_measurement_513,
+    apply_classical_correction_513,
+)
+from .dataclass import (
+    TimeAwareMeasurement
+    )
+
 __version__ = '0.1.0'
 __all__ = [
     # Node utilities
     'Node', 'NODE_NAMES', 'NODE_IDS', 'NUM_NODES',
     'INITIAL_STATES', 'STATE_LABELS', 'CONNECTION_TUPLES',
-    'get_node_name', 'route_name', 'route_key', 'get_connection_tuples', 'get_node_id'
+    'get_node_name', 'route_name', 'route_key', 'get_connection_tuples', 'get_node_id',
     # Config loading
     'load_nodes_config', 'load_routes_config', 'load_all_configs', 'print_config_summary',
     # Circuit building
@@ -112,5 +149,21 @@ __all__ = [
     # Visualization
     'plot_syndrome_matrix', 'plot_all_states_comparison', 'plot_state_averages_bar',
     'print_matrix_summary', 'print_full_comparison',
-    'save_results_to_json', 'load_results_from_json', 'results_to_matrices'
+    'save_results_to_json', 'load_results_from_json', 'results_to_matrices',
+    # [[5,1,3]] qubit mapping (static)
+    'NODE_PHYSICAL_QUBITS_513', 'PATH_PHYSICAL_QUBITS_513', 'TOTAL_QUBITS_513',
+    'get_node_qubits_513', 'get_path_qubits_513', 'get_edge_key',
+    'apply_swap_along_edge', 'apply_multihop_swap', 'print_qubit_mapping_513',
+    # Entanglement swapping static mapping
+    'EDGE_PHYSICAL_QUBITS_ES', 'PATH_PHYSICAL_QUBITS_ES', 'TOTAL_QUBITS_ES',
+    'print_qubit_mapping_es',
+    # Dynamic allocation
+    'PathQubitAllocation', 'remap_noise_model', 'create_simple_remapped_noise_model',
+    # [[5,1,3]] code operations
+    'STABILIZERS_513', 'SYNDROME_TO_CORRECTION_513',
+    'apply_encoding_513', 'apply_decoding_513',
+    'apply_syndrome_extraction_513', 'apply_syndrome_measurement_513',
+    'apply_classical_correction_513',
+    # Dataclass
+    'TimeAwareMeasurement'
 ]
