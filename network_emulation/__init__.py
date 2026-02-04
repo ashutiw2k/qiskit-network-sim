@@ -98,17 +98,6 @@ from .visualization import (
 
 # Qubit mapping for [[5,1,3]] code
 from .qubit_mapping import (
-    # NEW layout (shared ancillas) - PREFERRED
-    CODE_LAYOUT_513,
-    TOTAL_QUBITS_513_NEW,
-    get_ancilla_qubits,
-    get_node_data_qubits,
-    get_path_qubits,
-    get_layout_info,
-    print_code_layout_513,
-    apply_swap_along_edge_v2,
-    apply_multihop_swap_v2,
-    # Legacy mapping (per-node ancillas) - DEPRECATED
     NODE_PHYSICAL_QUBITS_513,
     PATH_PHYSICAL_QUBITS_513,
     TOTAL_QUBITS_513,
