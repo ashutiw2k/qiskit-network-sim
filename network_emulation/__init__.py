@@ -98,7 +98,17 @@ from .visualization import (
 
 # Qubit mapping for [[5,1,3]] code
 from .qubit_mapping import (
-    # Static mapping (SWAP-based)
+    # NEW layout (shared ancillas) - PREFERRED
+    CODE_LAYOUT_513,
+    TOTAL_QUBITS_513_NEW,
+    get_ancilla_qubits,
+    get_node_data_qubits,
+    get_path_qubits,
+    get_layout_info,
+    print_code_layout_513,
+    apply_swap_along_edge_v2,
+    apply_multihop_swap_v2,
+    # Legacy mapping (per-node ancillas) - DEPRECATED
     NODE_PHYSICAL_QUBITS_513,
     PATH_PHYSICAL_QUBITS_513,
     TOTAL_QUBITS_513,
@@ -150,7 +160,12 @@ __all__ = [
     'plot_syndrome_matrix', 'plot_all_states_comparison', 'plot_state_averages_bar',
     'print_matrix_summary', 'print_full_comparison',
     'save_results_to_json', 'load_results_from_json', 'results_to_matrices',
-    # [[5,1,3]] qubit mapping (static)
+    # [[5,1,3]] qubit mapping - NEW layout (shared ancillas)
+    'CODE_LAYOUT_513', 'TOTAL_QUBITS_513_NEW',
+    'get_ancilla_qubits', 'get_node_data_qubits', 'get_path_qubits',
+    'get_layout_info', 'print_code_layout_513',
+    'apply_swap_along_edge_v2', 'apply_multihop_swap_v2',
+    # [[5,1,3]] qubit mapping - LEGACY (per-node ancillas)
     'NODE_PHYSICAL_QUBITS_513', 'PATH_PHYSICAL_QUBITS_513', 'TOTAL_QUBITS_513',
     'get_node_qubits_513', 'get_path_qubits_513', 'get_edge_key',
     'apply_swap_along_edge', 'apply_multihop_swap', 'print_qubit_mapping_513',

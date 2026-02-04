@@ -178,7 +178,8 @@ def apply_syndrome_measurement_513(
     qc: QuantumCircuit,
     data_qubits: List[int],
     ancilla_qubits: List[int],
-    classical_bits
+    classical_bits,
+    reset_ancillas: bool = True
 ) -> None:
     """
     Extract syndrome and measure ancilla qubits.
@@ -190,11 +191,16 @@ def apply_syndrome_measurement_513(
         data_qubits: List of 5 data qubit indices [q0, q1, q2, q3, q4]
         ancilla_qubits: List of 4 ancilla qubit indices [a0, a1, a2, a3]
         classical_bits: ClassicalRegister or list of 4 classical bit indices
+        reset_ancillas: If True, reset ancillas to |0⟩ before extraction (required for shared ancillas)
     """
     if len(data_qubits) != 5:
         raise ValueError(f"Expected 5 data qubits, got {len(data_qubits)}")
     if len(ancilla_qubits) != 4:
         raise ValueError(f"Expected 4 ancilla qubits, got {len(ancilla_qubits)}")
+
+    if reset_ancillas:
+        for ancilla in ancilla_qubits:
+            qc.reset(ancilla)
 
     for idx, stabilizer in enumerate(STABILIZERS_513):
         ancilla = ancilla_qubits[idx]

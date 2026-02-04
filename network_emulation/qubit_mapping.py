@@ -20,8 +20,48 @@ from qiskit_aer.noise import NoiseModel
 
 
 # =============================================================================
-# [[5,1,3]] CODE - STATIC QUBIT MAPPING (SWAP-based transport)
+# [[5,1,3]] CODE - NEW LAYOUT (Shared Ancillas)
 # =============================================================================
+# Layout structure:
+#   ancillas: [0, a-1]           - Shared ancilla qubits (only needed at sink)
+#   nodes:    [a, a+n*N-1]       - Data qubits (n per node, N nodes)
+#   paths:    [a+n*N, ...]       - Path qubits (k per edge, C(N,2) edges)
+#
+# For [[5,1,3]] with 6 nodes:
+#   a = 4 ancillas, n = 5 data/node, N = 6 nodes, k = 1 path/edge
+#   Total = 4 + 30 + 15 = 49 qubits
+
+# Layout parameters
+_A_513 = 4   # Number of ancilla qubits (shared)
+_N_513 = 5   # Data qubits per node
+_NUM_NODES_513 = 6  # Number of nodes
+_K_513 = 1   # Path qubits per edge
+
+CODE_LAYOUT_513 = {
+    "ancillas": list(range(_A_513)),  # [0, 1, 2, 3]
+    "nodes": {
+        i: list(range(_A_513 + i * _N_513, _A_513 + (i + 1) * _N_513))
+        for i in range(_NUM_NODES_513)
+    },
+    "paths": {},  # Populated below
+}
+
+# Compute path qubit indices: start at a + n*N = 4 + 30 = 34
+_path_start = _A_513 + _N_513 * _NUM_NODES_513
+_path_idx = _path_start
+for i in range(_NUM_NODES_513):
+    for j in range(i + 1, _NUM_NODES_513):
+        CODE_LAYOUT_513["paths"][(i, j)] = list(range(_path_idx, _path_idx + _K_513))
+        _path_idx += _K_513
+
+TOTAL_QUBITS_513_NEW: int = _path_idx
+"""Total qubits with new layout: 4 + 30 + 15 = 49."""
+
+
+# =============================================================================
+# [[5,1,3]] CODE - LEGACY LAYOUT (Per-Node Ancillas) - DEPRECATED
+# =============================================================================
+# Kept for backwards compatibility. Use CODE_LAYOUT_513 for new code.
 
 NODE_PHYSICAL_QUBITS_513: Dict[int, List[int]] = {
     0: list(range(0, 9)),      # Node 0 → physical qubits 0-8
@@ -31,7 +71,7 @@ NODE_PHYSICAL_QUBITS_513: Dict[int, List[int]] = {
     4: list(range(36, 45)),    # Node 4 → physical qubits 36-44
     5: list(range(45, 54)),    # Node 5 → physical qubits 45-53
 }
-"""Node qubits: 9 per node (5 data + 4 ancilla)."""
+"""LEGACY: Node qubits: 9 per node (5 data + 4 ancilla). Use CODE_LAYOUT_513 instead."""
 
 PATH_PHYSICAL_QUBITS_513: Dict[Tuple[int, int], List[int]] = {
     # All 15 edges of a fully connected 6-node graph
@@ -56,10 +96,10 @@ PATH_PHYSICAL_QUBITS_513: Dict[Tuple[int, int], List[int]] = {
     # Node 4 edges (excluding all above)
     (4, 5): [68],
 }
-"""Path qubits for SWAP transport: 1 per edge (fully connected 6-node graph)."""
+"""LEGACY: Path qubits for SWAP transport. Use CODE_LAYOUT_513 instead."""
 
 TOTAL_QUBITS_513: int = 69
-"""Total for SWAP-based: 54 (nodes) + 15 (paths) = 69."""
+"""LEGACY: Total for old layout: 54 (nodes) + 15 (paths) = 69."""
 
 
 # =============================================================================
@@ -135,7 +175,99 @@ def get_path_qubits_513(node_a: int, node_b: int) -> List[int]:
 
 
 # =============================================================================
-# SWAP HELPERS
+# NEW LAYOUT HELPER FUNCTIONS
+# =============================================================================
+
+def get_ancilla_qubits() -> List[int]:
+    """Get the shared ancilla qubit indices (new layout)."""
+    return CODE_LAYOUT_513["ancillas"]
+
+
+def get_node_data_qubits(node_id: int) -> List[int]:
+    """Get data qubit indices for a node (new layout)."""
+    if node_id not in CODE_LAYOUT_513["nodes"]:
+        raise ValueError(f"Invalid node_id: {node_id}. Valid: 0-{_NUM_NODES_513-1}")
+    return CODE_LAYOUT_513["nodes"][node_id]
+
+
+def get_path_qubits(node_a: int, node_b: int) -> List[int]:
+    """Get path qubit(s) for an edge (new layout)."""
+    edge_key = get_edge_key(node_a, node_b)
+    if edge_key not in CODE_LAYOUT_513["paths"]:
+        raise ValueError(f"No path defined for edge {edge_key}")
+    return CODE_LAYOUT_513["paths"][edge_key]
+
+
+def get_layout_info() -> Dict:
+    """Get layout parameters and statistics."""
+    return {
+        "ancillas": _A_513,
+        "data_per_node": _N_513,
+        "num_nodes": _NUM_NODES_513,
+        "paths_per_edge": _K_513,
+        "total_qubits": TOTAL_QUBITS_513_NEW,
+        "ancilla_range": (0, _A_513 - 1),
+        "data_range": (_A_513, _A_513 + _N_513 * _NUM_NODES_513 - 1),
+        "path_range": (_A_513 + _N_513 * _NUM_NODES_513, TOTAL_QUBITS_513_NEW - 1),
+    }
+
+
+def print_code_layout_513() -> None:
+    """Print the new CODE_LAYOUT_513 structure."""
+    info = get_layout_info()
+    print("=" * 60)
+    print("[[5,1,3]] Code Layout (Shared Ancillas)")
+    print("=" * 60)
+    print(f"\nParameters: a={info['ancillas']}, n={info['data_per_node']}, "
+          f"N={info['num_nodes']}, k={info['paths_per_edge']}")
+    print(f"Total qubits: {info['total_qubits']}")
+
+    print(f"\nAncillas [{info['ancilla_range'][0]}-{info['ancilla_range'][1]}]:")
+    print(f"  {CODE_LAYOUT_513['ancillas']}")
+
+    print(f"\nNode Data Qubits [{info['data_range'][0]}-{info['data_range'][1]}]:")
+    for node_id, qubits in CODE_LAYOUT_513["nodes"].items():
+        print(f"  Node {node_id}: {qubits}")
+
+    print(f"\nPath Qubits [{info['path_range'][0]}-{info['path_range'][1]}]:")
+    for edge, qubits in CODE_LAYOUT_513["paths"].items():
+        print(f"  Edge {edge}: {qubits}")
+    print("=" * 60)
+
+
+# =============================================================================
+# SWAP HELPERS (New Layout)
+# =============================================================================
+
+def apply_swap_along_edge_v2(qc, source_node: int, sink_node: int) -> None:
+    """
+    SWAP all 5 data qubits from source to sink via path qubits (new layout).
+
+    Args:
+        qc: QuantumCircuit
+        source_node: Source node ID
+        sink_node: Sink node ID
+    """
+    source_qubits = get_node_data_qubits(source_node)
+    sink_qubits = get_node_data_qubits(sink_node)
+    path_qubits = get_path_qubits(source_node, sink_node)
+
+    num_path = len(path_qubits)
+    for i in range(5):
+        qc.swap(source_qubits[i], path_qubits[0])
+        for j in range(num_path - 1):
+            qc.swap(path_qubits[j], path_qubits[j + 1])
+        qc.swap(path_qubits[num_path - 1], sink_qubits[i])
+
+
+def apply_multihop_swap_v2(qc, path: List[int]) -> None:
+    """SWAP encoded state along a multi-hop path (new layout)."""
+    for i in range(len(path) - 1):
+        apply_swap_along_edge_v2(qc, path[i], path[i + 1])
+
+
+# =============================================================================
+# SWAP HELPERS (Legacy)
 # =============================================================================
 
 def apply_swap_along_edge(qc, source_qubits: List[int], sink_qubits: List[int],
