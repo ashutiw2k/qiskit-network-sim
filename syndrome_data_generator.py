@@ -709,12 +709,12 @@ def generate_syndrome_data(code_type: str, network_graph, node_qubits, path_qubi
     Generate syndrome data for a single code type.
     
     Args:
-        code_type: '513' or '713'
+        code_type: '513', '713', or '913'
         network_graph: NetworkX graph
         node_qubits: Node qubit mapping
         path_qubits: Path qubit mapping
         total_qubits: Total number of qubits
-        noisy_sim: Noisy AerSimulator instance
+        noisy_sim: AerSimulator instance with noise model
         basis_gates: List of basis gates
         output_dir: Directory to save output files (code-specific subdirectory)
         min_hops: Minimum path length
@@ -749,14 +749,14 @@ def generate_syndrome_data(code_type: str, network_graph, node_qubits, path_qubi
     
     measurements = []
     
-    for path in tqdm(all_paths, desc=f"[{code_type}] Syndrome measurements", unit="path"):
-        # Build and transpile
+    for path in tqdm(all_paths, desc=f"[{code_type}] Circuits", unit="circuit"):
+        # Build and transpile circuit
         circuit = build_swap_circuit(code_class, node_qubits, path_qubits, 
                                      total_qubits, path, initial_state='0')
         transpiled = transpile(circuit, basis_gates=basis_gates, 
                                optimization_level=optimization_level)
         
-        # Run
+        # Execute
         result = noisy_sim.run(transpiled, shots=num_shots).result()
         counts = result.get_counts()
         
@@ -767,7 +767,7 @@ def generate_syndrome_data(code_type: str, network_graph, node_qubits, path_qubi
             dtype=np.float32
         )
         
-        # Store
+        # Store measurement
         path_edges = [(path[i], path[i+1]) for i in range(len(path)-1)]
         measurements.append(
             TimeAwareMeasurement(path_edges, histogram, duration=0.0, 
@@ -781,8 +781,8 @@ def generate_syndrome_data(code_type: str, network_graph, node_qubits, path_qubi
     print("-" * 50)
     
     ground_truth_data = {}
-    
     edges_list = list(network_graph.edges())
+    
     for edge in tqdm(edges_list, desc=f"[{code_type}] Ground truth", unit="edge"):
         # Build circuits for each measurement basis
         circuit_Z = build_ground_truth_circuit(code_class, node_qubits, path_qubits,
@@ -796,22 +796,21 @@ def generate_syndrome_data(code_type: str, network_graph, node_qubits, path_qubi
                                                measurement_basis='Y')
         
         # Transpile
-        decomposed_Z = transpile(circuit_Z, basis_gates=basis_gates, 
+        transpiled_Z = transpile(circuit_Z, basis_gates=basis_gates, 
                                  optimization_level=optimization_level)
-        decomposed_X = transpile(circuit_X, basis_gates=basis_gates, 
+        transpiled_X = transpile(circuit_X, basis_gates=basis_gates, 
                                  optimization_level=optimization_level)
-        decomposed_Y = transpile(circuit_Y, basis_gates=basis_gates, 
+        transpiled_Y = transpile(circuit_Y, basis_gates=basis_gates, 
                                  optimization_level=optimization_level)
         
-        # Run
-        counts_Z = noisy_sim.run(decomposed_Z, shots=num_shots).result().get_counts()
-        counts_X = noisy_sim.run(decomposed_X, shots=num_shots).result().get_counts()
-        counts_Y = noisy_sim.run(decomposed_Y, shots=num_shots).result().get_counts()
+        # Execute
+        counts_Z = noisy_sim.run(transpiled_Z, shots=num_shots).result().get_counts()
+        counts_X = noisy_sim.run(transpiled_X, shots=num_shots).result().get_counts()
+        counts_Y = noisy_sim.run(transpiled_Y, shots=num_shots).result().get_counts()
         
         # Calculate error rates
         error_rates = calculate_exact_pauli_rates(counts_Z, counts_X, counts_Y, 
                                                   expected_state='0')
-        
         ground_truth_data[edge] = [error_rates['p_x'], error_rates['p_y'], error_rates['p_z']]
     
     # ===================
