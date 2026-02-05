@@ -1,0 +1,37 @@
+# Exclude everything not needed in the cloud container
+.git
+.gitignore
+.dockerignore
+.venv
+.python-version
+.DS_Store
+*.log
+*.png
+*.ipynb
+*.md
+
+# Data/output dirs (inputs come from S3)
+networkgraphs/
+outputs/
+pickle_files/
+syndrome_data_*/
+*out*/
+ref_figs/
+
+# Dev/notebook dirs
+datagennotebooks/
+notes/
+configs/
+secrets/
+
+# Files not needed in container
+main.py
+QuantumSim.py
+NetworkGraph.py
+QiskitLocalAuth.py
+syndrome_data_generator.py
+test_*.py
+example_network.json
+notebook_review_log.txt
+pyproject.toml
+run_job_on_cloud.sh

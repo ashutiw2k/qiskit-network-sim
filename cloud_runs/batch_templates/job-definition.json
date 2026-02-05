@@ -17,5 +17,5 @@
     "readonlyRootFilesystem": false
   },
   "retryStrategy": {"attempts": 3},
-  "timeout": {"attemptDurationSeconds": 3600}
+  "timeout": {"attemptDurationSeconds": 600}
 }

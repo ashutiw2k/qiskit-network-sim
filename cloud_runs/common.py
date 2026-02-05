@@ -26,21 +26,21 @@ def build_simulator(
 ):
     """
     Create simulator and basis gates for syndrome data generation.
-    
+
     Args:
         noise_type: Type of noise model to use:
             - "thermal": Only thermal relaxation from FakeFez (original behavior)
             - "depolarizing": 1Q depolarizing from FakeFez + custom 2Q depolarizing
         num_circuit_qubits: Number of qubits in the circuit (for all-to-all 2Q errors)
         error_rate_2q: 2Q depolarizing error rate (only used if noise_type="depolarizing")
-    
+
     Returns:
         Tuple of (noisy_sim, basis_gates, fake_backend)
     """
     fake_backend = FakeFez()
     # FakeFez native gates: cz (2Q), id, rz, sx, x (1Q)
     basis_gates = ["cz", "id", "rz", "sx", "x"]
-    
+
     if noise_type == "thermal":
         # Original behavior: thermal relaxation only
         noise_model = NoiseModel.from_backend(
@@ -56,7 +56,7 @@ def build_simulator(
         )
     else:
         raise ValueError(f"Unknown noise_type: {noise_type}. Use 'thermal' or 'depolarizing'")
-    
+
     noisy_sim = AerSimulator(noise_model=noise_model, method="matrix_product_state")
     return noisy_sim, basis_gates, fake_backend
 
@@ -67,14 +67,14 @@ def _build_depolarizing_noise_model(
     error_rate_2q: float,
 ) -> NoiseModel:
     """
-    Build a noise model with 1Q depolarizing errors from FakeFez 
+    Build a noise model with 1Q depolarizing errors from FakeFez
     and custom all-to-all 2Q depolarizing errors.
-    
+
     This matches the noise model used in 513DataGenerationSelfContained.ipynb.
     """
     target = fake_backend.target
     noise_model = NoiseModel()
-    
+
     # --- 1. Add 1Q DEPOLARIZING ERRORS from FakeFez ---
     gates_to_use = ['sx', 'x', 'rz', 'id']
     for gate in gates_to_use:
@@ -85,15 +85,15 @@ def _build_depolarizing_noise_model(
             if props and props.error and props.error > 0:
                 depol_err = depolarizing_error(props.error, 1)
                 noise_model.add_quantum_error(depol_err, gate, list(qargs))
-    
-    # --- 2. Add CUSTOM 2Q GATE ERRORS (all-to-all for circuit qubits) ---
-    # FakeFez only has CZ as 2Q gate, so only add CZ errors
-    error_2q = depolarizing_error(error_rate_2q, 2)
 
-    for i in range(num_circuit_qubits):
-        for j in range(i + 1, num_circuit_qubits):
-            noise_model.add_quantum_error(error_2q, 'cz', [i, j])
-            noise_model.add_quantum_error(error_2q, 'cz', [j, i])
+    # --- 2. Uniform 2Q depolarizing error on CZ (single call) ---
+    # Use add_all_qubit_quantum_error instead of O(n²) per-pair loop.
+    # This applies the same error to any CZ regardless of qubit pair,
+    # which is equivalent to the previous all-to-all loop but builds
+    # the noise model in O(1) instead of O(n²).
+    noise_model.add_all_qubit_quantum_error(
+        depolarizing_error(error_rate_2q, 2), "cz"
+    )
 
     return noise_model
 
@@ -120,8 +120,11 @@ def run_single_path(
     initial_state: str = "0",
 ) -> TimeAwareMeasurement:
     """Run a single (code, path) syndrome circuit and return a measurement."""
+    import time as _time
+
     code_class = AVAILABLE_CODES[code_type]
 
+    _t = _time.time()
     circuit = build_swap_circuit(
         code_class,
         node_qubits,
@@ -130,12 +133,19 @@ def run_single_path(
         path,
         initial_state=initial_state,
     )
+    print(f"    build_circuit: {_time.time()-_t:.1f}s  depth={circuit.depth()} ops={circuit.size()}", flush=True)
+
+    _t = _time.time()
     transpiled = transpile(
         circuit,
         basis_gates=basis_gates,
         optimization_level=optimization_level,
     )
+    print(f"    transpile:     {_time.time()-_t:.1f}s  depth={transpiled.depth()} ops={transpiled.size()}", flush=True)
+
+    _t = _time.time()
     result = noisy_sim.run(transpiled, shots=num_shots).result()
+    print(f"    simulate:      {_time.time()-_t:.1f}s  ({num_shots} shots)", flush=True)
     counts = result.get_counts()
 
     histogram = build_histogram(
