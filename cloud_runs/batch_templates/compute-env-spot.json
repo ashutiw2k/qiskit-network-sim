@@ -1,0 +1,21 @@
+{
+  "computeEnvironmentName": "qec-spot-ce",
+  "type": "MANAGED",
+  "state": "ENABLED",
+  "serviceRole": "__BATCH_SERVICE_ROLE_ARN__",
+  "computeResources": {
+    "type": "SPOT",
+    "allocationStrategy": "SPOT_CAPACITY_OPTIMIZED",
+    "minvCpus": 0,
+    "desiredvCpus": 0,
+    "maxvCpus": 1024,
+    "instanceTypes": ["c7a", "c7i", "c6a", "c6i"],
+    "subnets": ["__SUBNET_ID_1__", "__SUBNET_ID_2__"],
+    "securityGroupIds": ["__SECURITY_GROUP_ID__"],
+    "instanceRole": "__INSTANCE_PROFILE_ARN__",
+    "spotIamFleetRole": "__SPOT_FLEET_ROLE_ARN__",
+    "tags": {
+      "Name": "qec-batch-spot"
+    }
+  }
+}

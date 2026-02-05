@@ -1,0 +1,21 @@
+{
+  "jobDefinitionName": "qec-syndrome-job",
+  "type": "container",
+  "platformCapabilities": ["EC2"],
+  "containerProperties": {
+    "image": "__ECR_IMAGE__",
+    "vcpus": 1,
+    "memory": 4096,
+    "environment": [
+      {"name": "S3_JOBS", "value": "__S3_JOBS__"},
+      {"name": "S3_GRAPH", "value": "__S3_GRAPH__"},
+      {"name": "S3_OUTPUT_PREFIX", "value": "__S3_OUTPUT_PREFIX__"},
+      {"name": "SHOTS", "value": "4096"},
+      {"name": "OPT_LEVEL", "value": "1"},
+      {"name": "INITIAL_STATE", "value": "0"}
+    ],
+    "readonlyRootFilesystem": false
+  },
+  "retryStrategy": {"attempts": 3},
+  "timeout": {"attemptDurationSeconds": 3600}
+}

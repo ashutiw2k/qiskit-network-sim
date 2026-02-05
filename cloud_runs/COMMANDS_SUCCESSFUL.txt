@@ -1,0 +1,29 @@
+# Commands run successfully (in order)
+# Note: adjust paths only if your graph/jobs locations change.
+
+# 1) Generate jobs.json (24 paths, code 513)
+python cloud_runs/generate_jobs.py \
+  --graph networkgraphs/2x3_grid_network_graph.pkl \
+  --codes 513 \
+  --min-hops 2 \
+  --max-hops 3 \
+  --max-per-code 24 \
+  --output cloud_runs/jobs.json
+
+# 2) Submit array job (size=24) via setup script
+BUCKET_NAME=qiskit-net-sim-ashutosh \
+LOCAL_JOBS_JSON=cloud_runs/jobs.json \
+LOCAL_GRAPH_PKL=networkgraphs/2x3_grid_network_graph.pkl \
+SUBMIT_ARRAY=1 \
+ARRAY_SIZE=24 \
+cloud_runs/setup_batch.sh
+
+# 3) Watch the submitted job (uses last_job_id.txt written by setup script)
+JOB_ID=$(cat cloud_runs/last_job_id.txt)
+cloud_runs/watch_batch.sh "$JOB_ID" 10
+
+# 4) Download outputs from S3 (AWS CLI)
+aws s3 sync s3://qiskit-net-sim-ashutosh/outputs/ ./out
+
+# 5) Merge results into measurements.pkl
+python cloud_runs/merge_results.py --input-dir ./out

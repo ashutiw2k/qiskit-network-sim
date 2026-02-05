@@ -2,7 +2,7 @@
 """
 Syndrome Data Generator for QEC Codes
 
-Self-contained script for generating syndrome data using [[5,1,3]], [[7,1,3]], and/or [[9,1,3]] codes.
+Self-contained script for generating syndrome data using [[5,1,3]], [[7,1,3]], [[8,2,3]], and/or [[9,1,3]] codes.
 Supports SWAP-based transport through a quantum network with noisy simulation.
 
 Usage:
@@ -10,7 +10,7 @@ Usage:
     python syndrome_data_generator.py --code 513 --graph path/to/graph.pkl --output path/to/output/
     
     # Multiple codes
-    python syndrome_data_generator.py --code 513 713 913 --graph path/to/graph.pkl --output path/to/output/
+    python syndrome_data_generator.py --code 513 713 823 913 --graph path/to/graph.pkl --output path/to/output/
     
     # All available codes (omit --code)
     python syndrome_data_generator.py --graph path/to/graph.pkl --output path/to/output/
@@ -27,6 +27,11 @@ Output Structure:
     │   ├── measurements_test.pkl
     │   ├── graph.pkl
     │   └── ground_truth.pkl
+    ├── 823/
+    │   ├── measurements.pkl
+    │   ├── measurements_test.pkl
+    │   ├── graph.pkl
+    │   └── ground_truth.pkl
     └── 913/
         ├── measurements.pkl
         ├── measurements_test.pkl
@@ -36,10 +41,10 @@ Output Structure:
 measurements.pkl Format:
     List of TimeAwareMeasurement objects, each containing:
     - path_edges: List[Tuple[int, int]] - e.g., [(0, 1), (1, 2)]
-    - histogram: np.ndarray - syndrome counts (16-dim for 513, 64-dim for 713, 256-dim for 913)
+    - histogram: np.ndarray - syndrome counts (16-dim for 513, 64-dim for 713/823, 256-dim for 913)
     - duration: float - measurement duration
     - latency_stats: dict - latency statistics
-    - code_type: str - '513', '713', or '913'
+    - code_type: str - '513', '713', '823', or '913'
 """
 
 import argparse
@@ -54,7 +59,7 @@ import numpy as np
 from tqdm import tqdm
 from qiskit import ClassicalRegister, QuantumCircuit, transpile
 from qiskit_aer import AerSimulator
-from qiskit_aer.noise import NoiseModel
+from qiskit_aer.noise import NoiseModel, depolarizing_error, thermal_relaxation_error
 from qiskit_ibm_runtime.fake_provider import FakeFez
 
 
@@ -513,12 +518,285 @@ class Code913:
 
 
 # =============================================================================
+# [[8,2,3]] CODE IMPLEMENTATION
+# =============================================================================
+
+class Code823:
+    """[[8,2,3]] Stabilizer Code implementation.
+
+    Six stabilizer generators from codetables.de (Grassl).
+    Encodes 2 logical qubits into 8 physical qubits with distance 3.
+
+    Symplectic (X|Z) matrix:
+        [1 0 0 0 1 0 0 0|0 0 0 0 1 1 1 1]
+        [0 0 0 1 0 1 0 0|1 0 0 0 0 1 0 0]
+        [0 1 0 0 1 1 0 1|0 0 0 1 1 0 0 0]
+        [0 0 0 1 0 1 1 1|0 1 0 1 1 0 0 1]
+        [0 0 1 1 1 0 1 0|0 0 0 1 0 1 1 1]
+        [0 0 0 0 0 0 1 1|0 0 1 0 0 0 1 0]
+
+    IMPORTANT: Stabilizer strings use Qiskit's little-endian convention:
+    - String index 0 (leftmost) corresponds to the highest qubit index (q7)
+    - String index 7 (rightmost) corresponds to qubit index 0 (q0)
+    """
+
+    # Code parameters
+    NUM_DATA_QUBITS = 8
+    NUM_ANCILLA_QUBITS = 6
+    NUM_LOGICAL_QUBITS = 2  # This code encodes 2 logical qubits!
+    QUBITS_PER_NODE = 14  # 8 data + 6 ancilla
+    NUM_SYNDROME_BITS = 6
+    NUM_SYNDROMES = 64  # 2^6
+
+    # Stabilizers (Qiskit little-endian: index 0 = qubit 7, index 7 = qubit 0)
+    STABILIZERS = (
+        "XIIIYZZZ",
+        "ZIIXIYII",
+        "IXIZYXIX",
+        "IZIYZXXY",
+        "IIXYXZYZ",
+        "IIZIIIYX",
+    )
+
+    # Logical qubit index within node (for ground truth measurement)
+    # For [[8,2,3]], we use qubit 0 as the primary "logical" qubit for ground truth
+    LOGICAL_QUBIT_INDEX = 0
+
+    # Pre-computed encoding circuit (verified to produce +1 eigenstate of all stabilizers)
+    _ENCODING_CIRCUIT = None
+
+    @classmethod
+    def _build_encoding_circuit(cls):
+        """
+        Build the verified static encoding circuit for [[8,2,3]] code.
+
+        This circuit prepares |00⟩_L from |00000000⟩.
+        Derived from StabilizerState using the 6 stabilizers and 2 logical Z operators,
+        then verified to produce +1 eigenvalue for all stabilizers.
+        """
+        if cls._ENCODING_CIRCUIT is None:
+            qc = QuantumCircuit(8)
+            qc.s(4)
+            qc.h(4)
+            qc.cx(5, 7)
+            qc.cx(2, 5)
+            qc.cx(3, 5)
+            qc.cx(4, 5)
+            qc.cx(6, 5)
+            qc.h(2)
+            qc.s(7)
+            qc.h(7)
+            qc.s(7)
+            qc.s(6)
+            qc.h(6)
+            qc.s(6)
+            qc.cx(0, 6)
+            qc.cx(2, 6)
+            qc.cx(7, 3)
+            qc.cx(3, 6)
+            qc.cx(6, 7)
+            qc.s(3)
+            qc.h(3)
+            qc.s(3)
+            qc.h(4)
+            qc.s(4)
+            qc.cx(7, 0)
+            qc.cx(3, 4)
+            qc.cx(4, 0)
+            qc.cx(0, 3)
+            qc.h(7)
+            qc.h(2)
+            qc.swap(7, 1)
+            qc.cx(4, 7)
+            qc.cx(2, 7)
+            qc.cx(1, 7)
+            qc.h(4)
+            qc.s(2)
+            qc.s(3)
+            qc.swap(4, 1)
+            qc.cx(4, 2)
+            qc.cx(4, 3)
+            qc.cx(1, 4)
+            qc.s(1)
+            qc.h(1)
+            qc.swap(2, 1)
+            qc.cx(1, 2)
+            qc.s(3)
+            qc.h(1)
+            qc.s(1)
+            qc.swap(3, 1)
+            qc.cx(3, 1)
+            qc.z(0)
+            qc.z(1)
+            qc.x(3)
+            qc.x(4)
+            qc.x(5)
+            qc.x(7)
+            cls._ENCODING_CIRCUIT = qc
+
+        return cls._ENCODING_CIRCUIT
+
+    @staticmethod
+    def generate_qubit_mapping(num_nodes: int) -> Tuple[Dict[int, List[int]], Dict[Tuple[int, int], List[int]], int]:
+        """
+        Generate physical qubit mapping for the given number of nodes.
+
+        Returns:
+            Tuple of (node_qubits, path_qubits, total_qubits)
+        """
+        # Node qubits: 14 per node (8 data + 6 ancilla)
+        node_qubits = {}
+        for i in range(num_nodes):
+            start = i * Code823.QUBITS_PER_NODE
+            node_qubits[i] = list(range(start, start + Code823.QUBITS_PER_NODE))
+
+        # Path qubits: 1 per edge
+        path_qubits = {}
+        path_start = num_nodes * Code823.QUBITS_PER_NODE
+        edge_idx = 0
+        for i in range(num_nodes):
+            for j in range(i + 1, num_nodes):
+                path_qubits[(i, j)] = [path_start + edge_idx]
+                edge_idx += 1
+
+        # Total qubits
+        num_edges = num_nodes * (num_nodes - 1) // 2
+        total_qubits = num_nodes * Code823.QUBITS_PER_NODE + num_edges
+
+        return node_qubits, path_qubits, total_qubits
+
+    @staticmethod
+    def get_node_qubits(node_qubits_map: Dict[int, List[int]], node_id: int) -> Dict[str, List[int]]:
+        """Get qubit indices for a node with named access."""
+        if node_id not in node_qubits_map:
+            raise ValueError(f"Invalid node_id: {node_id}")
+        qubits = node_qubits_map[node_id]
+        return {
+            'data': qubits[0:8],
+            'ancilla': qubits[8:14],
+        }
+
+    @classmethod
+    def apply_encoding(cls, qc: QuantumCircuit, qubits: List[int]) -> None:
+        """
+        Apply [[8,2,3]] encoding circuit.
+
+        This encoding is verified to produce a +1 eigenstate of all 6 stabilizers.
+
+        NOTE: This encoding prepares |00⟩_L. To encode |ψ₁ψ₂⟩, apply X gates
+        to qubits[0] and qubits[1] BEFORE calling this function.
+
+        Args:
+            qc: QuantumCircuit to add gates to
+            qubits: List of 8 qubit indices [q0, q1, q2, q3, q4, q5, q6, q7]
+        """
+        if len(qubits) != 8:
+            raise ValueError(f"Expected 8 qubits, got {len(qubits)}")
+
+        # Get the pre-computed encoding circuit
+        enc_circuit = cls._build_encoding_circuit()
+
+        # Apply the encoding circuit with remapped qubits
+        for instruction in enc_circuit.data:
+            gate = instruction.operation
+            gate_qubits = [qubits[enc_circuit.find_bit(q).index] for q in instruction.qubits]
+            qc.append(gate, gate_qubits)
+
+    @staticmethod
+    def _apply_controlled_pauli(qc: QuantumCircuit, control: int, target: int, pauli: str) -> None:
+        """
+        Apply a controlled Pauli gate for syndrome measurement.
+
+        Args:
+            qc: QuantumCircuit
+            control: Ancilla qubit (control)
+            target: Data qubit (target)
+            pauli: 'I', 'X', 'Y', or 'Z'
+        """
+        if pauli == 'I':
+            pass
+        elif pauli == 'X':
+            qc.cx(control, target)
+        elif pauli == 'Z':
+            qc.cz(control, target)
+        elif pauli == 'Y':
+            qc.cy(control, target)
+
+    @classmethod
+    def apply_syndrome_measurement(cls, qc: QuantumCircuit, data_qubits: List[int],
+                                   ancilla_qubits: List[int], classical_bits,
+                                   reset_ancillas: bool = True) -> None:
+        """
+        Extract syndrome and measure ancilla qubits for [[8,2,3]] code.
+
+        Uses the VERIFIED approach:
+        - Ancilla is CONTROL, data is TARGET
+        - Little-endian indexing (string index i → qubit n-1-i)
+        - Native CY gate for controlled-Y
+
+        For stabilizer 'XIIIYZZZ':
+        - Index 0 ('X') → qubit 7
+        - Index 4 ('Y') → qubit 3
+        - Index 5 ('Z') → qubit 2
+        - Index 6 ('Z') → qubit 1
+        - Index 7 ('Z') → qubit 0
+
+        Args:
+            qc: QuantumCircuit to add gates to
+            data_qubits: List of 8 data qubit indices [q0, q1, ..., q7]
+            ancilla_qubits: List of 6 ancilla qubit indices [a0, a1, ..., a5]
+            classical_bits: ClassicalRegister or list of 6 classical bit indices
+            reset_ancillas: If True, reset ancillas to |0⟩ before extraction
+        """
+        if len(data_qubits) != 8:
+            raise ValueError(f"Expected 8 data qubits, got {len(data_qubits)}")
+        if len(ancilla_qubits) != 6:
+            raise ValueError(f"Expected 6 ancilla qubits, got {len(ancilla_qubits)}")
+
+        if reset_ancillas:
+            for ancilla in ancilla_qubits:
+                qc.reset(ancilla)
+
+        n = 8  # Number of data qubits
+
+        for idx, stabilizer in enumerate(cls.STABILIZERS):
+            ancilla = ancilla_qubits[idx]
+
+            # Prepare ancilla in |+⟩
+            qc.h(ancilla)
+
+            # Apply controlled-Pauli gates based on stabilizer
+            # CRITICAL: Little-endian indexing - string position i → qubit (n-1-i)
+            for str_idx, pauli in enumerate(stabilizer):
+                qubit_idx = n - 1 - str_idx
+                cls._apply_controlled_pauli(qc, ancilla, data_qubits[qubit_idx], pauli)
+
+            # Return to Z basis
+            qc.h(ancilla)
+
+            # Measure
+            qc.measure(ancilla, classical_bits[idx])
+
+    @staticmethod
+    def apply_swap_along_edge(qc: QuantumCircuit, source_qubits: List[int],
+                              sink_qubits: List[int], path_qubits: List[int]) -> None:
+        """SWAP all 8 code qubits from source to sink via path qubits."""
+        num_path_qubits = len(path_qubits)
+        for i in range(8):
+            qc.swap(source_qubits[i], path_qubits[0])
+            for j in range(num_path_qubits - 1):
+                qc.swap(path_qubits[j], path_qubits[j + 1])
+            qc.swap(path_qubits[num_path_qubits - 1], sink_qubits[i])
+
+
+# =============================================================================
 # AVAILABLE CODES REGISTRY
 # =============================================================================
 
 AVAILABLE_CODES = {
     '513': Code513,
     '713': Code713,
+    '823': Code823,
     '913': Code913,
 }
 
@@ -586,32 +864,61 @@ def calculate_exact_pauli_rates(z_basis_counts, x_basis_counts, y_basis_counts,
 
 def build_swap_circuit(code_class, node_qubits_map: Dict[int, List[int]],
                        path_qubits_map: Dict[Tuple[int, int], List[int]],
-                       total_qubits: int, path: List[int], 
+                       total_qubits: int, path: List[int],
                        initial_state: str = '0') -> QuantumCircuit:
     """
     Build an encode-swap-syndrome circuit for any code.
-    
+
     Protocol:
-        1. Encode logical qubit at source
+        1. Encode logical qubit(s) at source
         2. SWAP along path to sink
         3. Measure syndrome at sink
+
+    Args:
+        code_class: Code class (Code513, Code713, Code823, Code913)
+        node_qubits_map: Node qubit mapping
+        path_qubits_map: Path qubit mapping
+        total_qubits: Total number of qubits
+        path: List of node IDs for the path
+        initial_state: Initial logical state
+            - For single-logical-qubit codes (513, 713, 913): '0' or '1'
+            - For [[8,2,3]] code: '00', '01', '10', or '11' (two logical qubits)
     """
     source = path[0]
     sink = path[-1]
-    
+
     # Get qubit assignments
     source_qubits = code_class.get_node_qubits(node_qubits_map, source)
     sink_qubits = code_class.get_node_qubits(node_qubits_map, sink)
-    
+
     # Create circuit
     qc = QuantumCircuit(total_qubits)
     syndrome_reg = ClassicalRegister(code_class.NUM_SYNDROME_BITS, name=f'syndrome_{sink}')
     qc.add_register(syndrome_reg)
-    
+
     # 1. ENCODE AT SOURCE
-    if initial_state == '1':
-        qc.x(source_qubits['data'][code_class.LOGICAL_QUBIT_INDEX])
-    
+    # Handle multi-logical-qubit codes (like [[8,2,3]])
+    num_logical = getattr(code_class, 'NUM_LOGICAL_QUBITS', 1)
+
+    if num_logical == 1:
+        # Single logical qubit codes (513, 713, 913)
+        if initial_state == '1':
+            qc.x(source_qubits['data'][code_class.LOGICAL_QUBIT_INDEX])
+    elif num_logical == 2:
+        # Two logical qubit codes ([[8,2,3]])
+        # Initial state should be '00', '01', '10', or '11'
+        if len(initial_state) != 2:
+            initial_state = '00'  # Default to |00⟩_L
+        if initial_state[0] == '1':
+            qc.x(source_qubits['data'][0])  # First logical qubit
+        if initial_state[1] == '1':
+            qc.x(source_qubits['data'][1])  # Second logical qubit
+    else:
+        # Generic handling for other multi-logical-qubit codes
+        for i, bit in enumerate(initial_state):
+            if bit == '1' and i < len(source_qubits['data']):
+                qc.x(source_qubits['data'][i])
+
     code_class.apply_encoding(qc, source_qubits['data'])
     qc.barrier(label='Encode')
     
@@ -749,10 +1056,14 @@ def generate_syndrome_data(code_type: str, network_graph, node_qubits, path_qubi
     
     measurements = []
     
+    # Determine initial state based on code type
+    num_logical = getattr(code_class, 'NUM_LOGICAL_QUBITS', 1)
+    initial_state = '0' * num_logical  # '0' for single-qubit codes, '00' for 823
+
     for path in tqdm(all_paths, desc=f"[{code_type}] Circuits", unit="circuit"):
         # Build and transpile circuit
-        circuit = build_swap_circuit(code_class, node_qubits, path_qubits, 
-                                     total_qubits, path, initial_state='0')
+        circuit = build_swap_circuit(code_class, node_qubits, path_qubits,
+                                     total_qubits, path, initial_state=initial_state)
         transpiled = transpile(circuit, basis_gates=basis_gates, 
                                optimization_level=optimization_level)
         
@@ -923,16 +1234,55 @@ def run_data_generation(code_types: List[str], network_graph_path: str, output_d
     
     # Setup noise model (shared across all codes)
     print("\nSetting up noise model...")
+
+    # Basis gates for transpilation
+    basis_gates = ['cx', 'cz', 'id', 'rz', 'sx', 'x', 'reset']
+
+    # Calculate max circuit qubits needed (based on largest code type)
+    max_qubits_per_node = max(AVAILABLE_CODES[ct].QUBITS_PER_NODE for ct in code_types)
+    num_edges = num_nodes * (num_nodes - 1) // 2
+    max_circuit_qubits = num_nodes * max_qubits_per_node + num_edges
+
+    # Build custom noise model:
+    # 1. Copy 1Q errors from FakeFez (per-qubit depolarizing, realistic rates)
+    # 2. Add custom 2Q depolarizing errors for all qubit pairs (all-to-all connectivity)
     fake_backend = FakeFez()
-    noise_model = NoiseModel.from_backend(fake_backend, 
-                                          readout_error=False, 
-                                          gate_error=False,
-                                          thermal_relaxation=True)
-    basis_gates = ['cz', 'id', 'rz', 'sx', 'x']
-    noisy_sim = AerSimulator(noise_model=noise_model, method='matrix_product_state')
-    
-    print(f"Backend: {fake_backend.name} ({fake_backend.num_qubits} qubits)")
+    target = fake_backend.target
+
+    noise_model = NoiseModel()
+
+    # --- 1. Copy 1Q errors from FakeFez ---
+    gates_to_copy = ['sx', 'x', 'rz', 'id']
+    copied_1q_count = 0
+
+    for gate in gates_to_copy:
+        if gate not in target.operation_names:
+            continue
+        for qargs in target.qargs_for_operation_name(gate):
+            props = target[gate][qargs]
+            if props and props.error and props.error > 0:
+                error = depolarizing_error(props.error, 1)
+                noise_model.add_quantum_error(error, gate, list(qargs))
+                copied_1q_count += 1
+
+    # --- 2. Add custom 2Q depolarizing errors for all qubit pairs ---
+    ERROR_RATE_2Q = 0.01  # 1% error for two-qubit gates
+    error_2q = depolarizing_error(ERROR_RATE_2Q, 2)
+
+    for i in range(max_circuit_qubits):
+        for j in range(i + 1, max_circuit_qubits):
+            noise_model.add_quantum_error(error_2q, 'cx', [i, j])
+            noise_model.add_quantum_error(error_2q, 'cx', [j, i])
+            noise_model.add_quantum_error(error_2q, 'cz', [i, j])
+            noise_model.add_quantum_error(error_2q, 'cz', [j, i])
+
+    print(f"Backend reference: {fake_backend.name} ({fake_backend.num_qubits} qubits)")
+    print(f"Max circuit qubits: {max_circuit_qubits}")
+    print(f"1Q errors copied: {copied_1q_count} entries (from FakeFez)")
+    print(f"2Q error rate: {ERROR_RATE_2Q} (custom, all-to-all)")
     print(f"Basis gates: {basis_gates}")
+
+    noisy_sim = AerSimulator(noise_model=noise_model, method='matrix_product_state')
     
     # Generate data for each code type
     results = {}
@@ -1006,11 +1356,14 @@ Examples:
     # Generate data for [[7,1,3]] code only
     python syndrome_data_generator.py --code 713 --graph ../networkgraphs/network.pkl --output ./output/
     
+    # Generate data for [[8,2,3]] code only
+    python syndrome_data_generator.py --code 823 --graph ../networkgraphs/network.pkl --output ./output/
+    
     # Generate data for [[9,1,3]] Shor code only
     python syndrome_data_generator.py --code 913 --graph ../networkgraphs/network.pkl --output ./output/
     
     # Generate data for multiple codes
-    python syndrome_data_generator.py --code 513 713 913 --graph ../networkgraphs/network.pkl --output ./output/
+    python syndrome_data_generator.py --code 513 713 823 913 --graph ../networkgraphs/network.pkl --output ./output/
     
     # Generate data for ALL available codes (omit --code)
     python syndrome_data_generator.py --graph ../networkgraphs/network.pkl --output ./output/
@@ -1031,6 +1384,10 @@ Output Structure:
     │   ├── measurements.pkl
     │   ├── graph.pkl
     │   └── ground_truth.pkl
+    ├── 823/
+    │   ├── measurements.pkl
+    │   ├── graph.pkl
+    │   └── ground_truth.pkl
     └── 913/
         ├── measurements.pkl
         ├── graph.pkl
@@ -1039,8 +1396,8 @@ Output Structure:
     )
     
     parser.add_argument('--code', type=str, nargs='*', default=None,
-                        choices=['513', '713', '913'],
-                        help='QEC code type(s): 513, 713, 913, or any combination. If omitted, generates for all available codes.')
+                        choices=['513', '713', '823', '913'],
+                        help='QEC code type(s): 513, 713, 823, 913, or any combination. If omitted, generates for all available codes.')
     parser.add_argument('--graph', type=str, required=True,
                         help='Path to network graph pickle file')
     parser.add_argument('--output', type=str, required=True,

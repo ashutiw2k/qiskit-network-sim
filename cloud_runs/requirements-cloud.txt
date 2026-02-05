@@ -1,0 +1,7 @@
+boto3
+networkx
+numpy
+qiskit
+qiskit-aer
+qiskit-ibm-runtime
+tqdm

@@ -1,0 +1,9 @@
+{
+  "jobQueueName": "qec-job-queue",
+  "state": "ENABLED",
+  "priority": 1,
+  "computeEnvironmentOrder": [
+    {"order": 1, "computeEnvironment": "__SPOT_CE_ARN__"},
+    {"order": 2, "computeEnvironment": "__ONDEMAND_CE_ARN__"}
+  ]
+}

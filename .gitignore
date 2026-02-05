@@ -17,3 +17,4 @@ secrets/
 
 # MacOS files
 .DS_Store
+*out*

@@ -1,0 +1,20 @@
+{
+  "computeEnvironmentName": "qec-ondemand-ce",
+  "type": "MANAGED",
+  "state": "ENABLED",
+  "serviceRole": "__BATCH_SERVICE_ROLE_ARN__",
+  "computeResources": {
+    "type": "EC2",
+    "allocationStrategy": "BEST_FIT_PROGRESSIVE",
+    "minvCpus": 0,
+    "desiredvCpus": 0,
+    "maxvCpus": 512,
+    "instanceTypes": ["c7a", "c7i", "c6a", "c6i"],
+    "subnets": ["__SUBNET_ID_1__", "__SUBNET_ID_2__"],
+    "securityGroupIds": ["__SECURITY_GROUP_ID__"],
+    "instanceRole": "__INSTANCE_PROFILE_ARN__",
+    "tags": {
+      "Name": "qec-batch-ondemand"
+    }
+  }
+}
