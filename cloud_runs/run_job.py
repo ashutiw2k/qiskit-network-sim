@@ -97,7 +97,7 @@ def main() -> None:
 
     # Start timing
     job_start_time = time.time()
-    print(f"[Job {job_index}] Starting: code={code_type}, path={path}")
+    print(f"[Job {job_index}] Starting: code={code_type}, path={path}", flush=True)
 
     graph_path = args.graph or jobs_payload.get("graph_path")
     if not graph_path:
@@ -111,12 +111,15 @@ def main() -> None:
     code_class = AVAILABLE_CODES[code_type]
     node_qubits, path_qubits, total_qubits = code_class.generate_qubit_mapping(num_nodes)
 
+    t0 = time.time()
     noisy_sim, basis_gates, _backend = build_simulator(
         noise_type=args.noise_type,
         num_circuit_qubits=total_qubits,
         error_rate_2q=args.error_rate_2q,
     )
+    print(f"[Job {job_index}]   build_simulator: {time.time()-t0:.1f}s (total_qubits={total_qubits})", flush=True)
 
+    t0 = time.time()
     measurement = run_single_path(
         code_type=code_type,
         path=path,
@@ -129,6 +132,7 @@ def main() -> None:
         optimization_level=args.optimization_level,
         initial_state=args.initial_state,
     )
+    print(f"[Job {job_index}]   run_single_path: {time.time()-t0:.1f}s", flush=True)
 
     # Calculate elapsed time
     job_end_time = time.time()

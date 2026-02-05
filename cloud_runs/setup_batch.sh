@@ -5,7 +5,7 @@ set -euo pipefail
 # Required env:
 #   BUCKET_NAME
 # Optional env:
-#   AWS_REGION (default: us-east-1)
+#   AWS_REGION (default: us-east-2)
 #   SUBNET_IDS (comma-separated) or VPC_ID (default VPC used if unset)
 #   SECURITY_GROUP_ID (default VPC's default SG used if unset)
 #   ECR_REPO (default: qec-batch)
@@ -30,7 +30,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
-REGION="${AWS_REGION:-us-east-1}"
+REGION="${AWS_REGION:-us-east-2}"
 BUCKET_NAME="${BUCKET_NAME:?BUCKET_NAME is required}"
 SKIP_BUCKET_CREATE="${SKIP_BUCKET_CREATE:-0}"
 
