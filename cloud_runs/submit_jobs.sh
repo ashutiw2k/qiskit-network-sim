@@ -17,7 +17,9 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Defaults (can be overridden by environment variables)
+# ── Defaults ──
+# These match the resource names created by setup_batch.sh.
+# Override via environment variables or CLI flags.
 JOB_QUEUE_NAME="${JOB_QUEUE_NAME:-qec-job-queue}"
 JOB_QUEUE_SPOT_NAME="${JOB_QUEUE_SPOT_NAME:-qec-job-queue-spot}"
 JOB_QUEUE_OD_NAME="${JOB_QUEUE_OD_NAME:-qec-job-queue-od}"
@@ -26,7 +28,7 @@ BUCKET_NAME="${BUCKET_NAME:-}"
 S3_JOBS_KEY="${S3_JOBS_KEY:-inputs/jobs.json}"
 JOB_ID_FILE="${JOB_ID_FILE:-${SCRIPT_DIR}/last_job_id.txt}"
 
-# Parse arguments
+# ── Parse CLI arguments ──
 JOBS_FILE=""
 PARALLEL_MODE=0
 SPOT_RATIO="0.5"
@@ -115,6 +117,9 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+# ── Handle --rerun-failed shortcut ──
+# Delegates to rerun_failed.sh.  If no parent job ID was given on the CLI,
+# reads the last submitted job ID from the saved file.
 if [[ "${RERUN_FAILED}" == "1" ]]; then
   if [[ -z "${RERUN_PARENT_ID}" ]]; then
     if [[ -f "${JOB_ID_FILE}" ]]; then
@@ -135,7 +140,7 @@ if [[ "${RERUN_FAILED}" == "1" ]]; then
   exit 0
 fi
 
-# Validate required arguments
+# ── Validate inputs ──
 if [[ -z "${JOBS_FILE}" ]]; then
   echo "Error: --jobs-file is required" >&2
   echo "Use --help for usage information" >&2
@@ -147,7 +152,8 @@ if [[ ! -f "${JOBS_FILE}" ]]; then
   exit 1
 fi
 
-# Count jobs in the file
+# Count jobs in the manifest — determines the Batch array size.
+# Supports both bare JSON arrays and dicts with a "jobs" key.
 ARRAY_SIZE=$(python3 -c "
 import json
 with open('${JOBS_FILE}') as f:
@@ -168,7 +174,7 @@ echo "Jobs file:       ${JOBS_FILE}"
 echo "Total jobs:      ${ARRAY_SIZE}"
 echo "Job definition:  ${JOB_DEF_NAME}"
 
-# Upload to S3 if requested
+# ── Upload jobs manifest to S3 (optional) ──
 if [[ "${UPLOAD_TO_S3}" == "1" ]]; then
   if [[ -z "${BUCKET_NAME}" ]]; then
     echo "Error: --bucket is required when using --upload" >&2
@@ -181,13 +187,16 @@ fi
 echo "=============================================="
 echo ""
 
+# Helper: returns 0 (true) if the named Batch job queue exists.
 queue_exists() {
   local qname="$1"
   aws batch describe-job-queues --job-queues "${qname}" --query 'jobQueues[0].jobQueueName' --output text 2>/dev/null | grep -q "${qname}"
 }
 
+# ── Submit the array job(s) ──
 if [[ "${PARALLEL_MODE}" == "1" ]]; then
-  # PARALLEL MODE: Split across Spot and On-Demand
+  # PARALLEL MODE: Split the job array across two queues.
+  # SPOT_RATIO controls the fraction sent to Spot (default 50/50).
   SPOT_SIZE=$(python3 -c "import math; print(int(math.floor(${ARRAY_SIZE} * ${SPOT_RATIO})))")
   OD_SIZE=$((ARRAY_SIZE - SPOT_SIZE))
 
@@ -205,7 +214,7 @@ if [[ "${PARALLEL_MODE}" == "1" ]]; then
     exit 1
   fi
 
-  # Submit to Spot queue (jobs 0 to SPOT_SIZE-1)
+  # Submit to Spot queue — array indices 0 to SPOT_SIZE-1.
   if [[ "${SPOT_SIZE}" -gt 0 ]]; then
     SPOT_JOB_ID=$(aws batch submit-job \
       --job-name qec-array-spot \
@@ -219,7 +228,9 @@ if [[ "${PARALLEL_MODE}" == "1" ]]; then
     echo "Skipping Spot queue (0 jobs)"
   fi
 
-  # Submit to On-Demand queue (jobs SPOT_SIZE to ARRAY_SIZE-1)
+  # Submit to On-Demand queue — array indices SPOT_SIZE to ARRAY_SIZE-1.
+  # JOB_INDEX_OFFSET tells run_job.py to add this offset to
+  # AWS_BATCH_JOB_ARRAY_INDEX so it picks the correct job from the manifest.
   if [[ "${OD_SIZE}" -gt 0 ]]; then
     OD_JOB_ID=$(aws batch submit-job \
       --job-name qec-array-od \
@@ -234,7 +245,7 @@ if [[ "${PARALLEL_MODE}" == "1" ]]; then
     echo "Skipping On-Demand queue (0 jobs)"
   fi
 
-  # Save job IDs
+  # Persist job IDs so watch_batch.sh and --rerun-failed can reference them.
   if [[ -n "${SPOT_JOB_ID}" && -n "${OD_JOB_ID}" ]]; then
     echo "${SPOT_JOB_ID},${OD_JOB_ID}" > "${JOB_ID_FILE}"
   elif [[ -n "${SPOT_JOB_ID}" ]]; then
@@ -244,7 +255,8 @@ if [[ "${PARALLEL_MODE}" == "1" ]]; then
   fi
 
 else
-  # SINGLE QUEUE MODE
+  # SINGLE QUEUE MODE — all jobs go to one queue (backed by Spot, OD, or both
+  # depending on how setup_batch.sh configured the compute environment order).
   echo "Mode:            SINGLE QUEUE (Spot)"
   echo "Queue:           ${JOB_QUEUE_NAME}"
   echo ""

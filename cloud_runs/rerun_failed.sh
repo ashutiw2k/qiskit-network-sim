@@ -14,14 +14,16 @@ set -euo pipefail
 # - Submits one job per failed index using JOB_INDEX env var.
 # - Preserves original job indices and output filenames (job_<index>.pkl).
 
+# ── Parse arguments ──
 PARENT_JOB_ID="${1:-}"
-shift || true
+shift || true  # shift past the positional arg (|| true prevents errexit if $# is 0)
 
 if [[ -z "${PARENT_JOB_ID}" ]]; then
   echo "Usage: $0 <PARENT_JOB_ID> [--queue QUEUE] [--job-def NAME] [--region REGION]" >&2
   exit 1
 fi
 
+# Defaults — these match the names created by setup_batch.sh.
 QUEUE="qec-job-queue"
 JOB_DEF="qec-syndrome-job"
 REGION=""
@@ -51,11 +53,15 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+# Build the base AWS CLI command, optionally pinning to a specific region.
 AWS_CMD=(aws)
 if [[ -n "${REGION}" ]]; then
   AWS_CMD+=(--region "${REGION}")
 fi
 
+# ── Identify failed child indices ──
+# AWS Batch array jobs assign each child a 0-based index.  We query for all
+# children in FAILED status and extract their indices.
 FAILED_IDX=$("${AWS_CMD[@]}" batch list-jobs \
   --array-job-id "${PARENT_JOB_ID}" \
   --job-status FAILED \
@@ -71,6 +77,10 @@ echo "Rerunning failed indices for ${PARENT_JOB_ID}:"
 echo "${FAILED_IDX}"
 echo ""
 
+# ── Resubmit each failed index as a standalone (non-array) job ──
+# We pass the original array index via the JOB_INDEX env var so that
+# run_job.py picks the same job from the manifest, and the output file
+# (job_<index>.pkl) overwrites the missing result.
 for i in ${FAILED_IDX}; do
   JOB_ID=$("${AWS_CMD[@]}" batch submit-job \
     --job-name "qec-rerun-${i}" \
