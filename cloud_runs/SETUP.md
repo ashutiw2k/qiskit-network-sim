@@ -69,7 +69,7 @@ Set:
 
 - **AWS Access Key ID**
 - **AWS Secret Access Key**
-- **Default region nameca**
+- **Default region name**
 - **Default output format**: `json`
 
 Verify:
@@ -147,15 +147,20 @@ echo $SECURITY_GROUP_ID
 python cloud_runs/generate_jobs.py \
   --graph path/to/graph.pkl \
   --codes 513 713 823 913 \
+  --backend heron_r2 \
   --min-hops 2 \
   --max-hops 3 \
   --max-per-code 250 \
   --output cloud_runs/jobs.json
 ```
 
+Available backends: `eagle_r3` (FakeBrisbane, 127q), `heron_r1` (FakeTorino, 133q), `heron_r2` (FakeFez, 156q), `heron_r2_marrakesh` (FakeMarrakesh, 156q).
+
 ---
 
-## 7) Run the one‑command setup
+## 7) Provision infrastructure
+
+`setup_batch.sh` creates all AWS resources but does **not** submit jobs.
 
 If you have a default VPC, this is the easiest path:
 
@@ -163,8 +168,6 @@ If you have a default VPC, this is the easiest path:
 BUCKET_NAME=qec-batch-YOURNAME-$(date +%s) \
 LOCAL_JOBS_JSON=cloud_runs/jobs.json \
 LOCAL_GRAPH_PKL=path/to/graph.pkl \
-SUBMIT_ARRAY=1 \
-ARRAY_SIZE=1000 \
 cloud_runs/setup_batch.sh
 ```
 
@@ -176,23 +179,44 @@ SUBNET_IDS=$SUBNET_IDS \
 SECURITY_GROUP_ID=$SECURITY_GROUP_ID \
 LOCAL_JOBS_JSON=cloud_runs/jobs.json \
 LOCAL_GRAPH_PKL=path/to/graph.pkl \
-SUBMIT_ARRAY=1 \
-ARRAY_SIZE=1000 \
 cloud_runs/setup_batch.sh
 ```
 
 ---
 
-## 8) Monitor jobs
+## 8) Submit jobs
+
+`submit_jobs.sh` reads the job count from `jobs.json` and submits the array:
+
+```bash
+cloud_runs/submit_jobs.sh --jobs-file cloud_runs/jobs.json
+```
+
+For parallel Spot + On-Demand submission:
+
+```bash
+cloud_runs/submit_jobs.sh --jobs-file cloud_runs/jobs.json --parallel --spot-ratio 0.7
+```
+
+---
+
+## 9) Monitor jobs
 
 ```bash
 aws batch list-jobs --job-queue qec-job-queue --job-status RUNNING
 aws batch list-jobs --job-queue qec-job-queue --job-status FAILED
 ```
 
+Or use the watch script:
+
+```bash
+JOB_ID=$(cat cloud_runs/last_job_id.txt)
+cloud_runs/watch_batch.sh "$JOB_ID" 10
+```
+
 ---
 
-## 9) Download outputs + merge
+## 10) Download outputs + merge
 
 ```bash
 python cloud_runs/s3_sync.py download --s3-uri s3://YOUR_BUCKET/outputs/ --dest ./out --recursive

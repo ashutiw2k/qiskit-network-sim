@@ -36,6 +36,8 @@ cloud_runs/
 ├── setup_batch.sh                  # One-command AWS Batch setup + submit
 ├── watch_batch.sh                  # Monitor array job status + child counts
 ├── cleanup_jobs.sh                 # Terminate queued/running jobs
+├── rerun_failed.sh                 # Re-submit failed array children
+├── submit_jobs.sh                  # Submit/split large array jobs across queues
 ├── iam_policy_least_privilege.json # Least-privilege IAM policy template
 ├── SETUP.md                        # macOS setup guide + AWS requirements
 ├── batch_templates/
@@ -80,9 +82,10 @@ node_qubits, path_qubits, total_qubits = code_class.generate_qubit_mapping(num_n
 
 ### `common.py` - Shared Helpers
 
-- `build_simulator(noise_type, num_circuit_qubits, error_rate_2q)`: Creates AerSimulator with configurable noise model
-  - `noise_type="thermal"`: FakeFez thermal relaxation only (default, original behavior)
-  - `noise_type="depolarizing"`: 1Q depolarizing from FakeFez + custom all-to-all 2Q depolarizing
+- `build_simulator(noise_type, num_circuit_qubits, error_rate_2q, backend)`: Creates AerSimulator with configurable noise model
+  - `backend`: Selects the fake backend — `"eagle_r3"` (FakeBrisbane, ECR), `"heron_r1"` (FakeTorino, CZ), `"heron_r2"` (FakeFez, CZ), `"heron_r2_marrakesh"` (FakeMarrakesh, CZ)
+  - `noise_type="thermal"`: Backend thermal relaxation only
+  - `noise_type="depolarizing"`: 1Q depolarizing from backend + custom all-to-all 2Q depolarizing
 - `build_histogram(counts, num_bits, num_syndromes)`: Converts counts dict to fixed-order numpy array
 - `run_single_path(...)`: Executes one (code, path) syndrome circuit, returns `TimeAwareMeasurement`
 
@@ -95,6 +98,7 @@ node_qubits, path_qubits, total_qubits = code_class.generate_qubit_mapping(num_n
 ```json
 {
   "graph_path": "path/to/graph.pkl",
+  "backend": "heron_r2",
   "min_hops": 2,
   "max_hops": 3,
   "codes": ["513", "713", "823", "913"],
@@ -125,6 +129,7 @@ Merging results:
 python cloud_runs/generate_jobs.py \
   --graph networkgraphs/2x3_grid_network_graph.pkl \
   --codes 513 713 823 913 \
+  --backend heron_r2 \
   --min-hops 2 \
   --max-hops 3 \
   --max-per-code 250 \
@@ -151,41 +156,46 @@ python cloud_runs/merge_results.py --input-dir ./out
 ### Quick Start
 
 ```bash
-# Clean old jobs (optional)
+# 1. Clean old jobs (optional)
 cloud_runs/cleanup_jobs.sh qec-job-queue
 
-# Submit new array job
+# 2. Provision infrastructure (does NOT submit jobs)
 BUCKET_NAME=qiskit-net-sim-yourname \
 LOCAL_JOBS_JSON=cloud_runs/jobs.json \
 LOCAL_GRAPH_PKL=networkgraphs/2x3_grid_network_graph.pkl \
-SUBMIT_ARRAY=1 \
-ARRAY_SIZE=24 \
 cloud_runs/setup_batch.sh
 
-# Watch job progress
+# 3. Submit jobs
+cloud_runs/submit_jobs.sh --jobs-file cloud_runs/jobs.json
+
+# 4. Watch job progress
 JOB_ID=$(cat cloud_runs/last_job_id.txt)
 cloud_runs/watch_batch.sh "$JOB_ID" 10
 ```
 
 ### Workflow Steps
 
-1. Build container and push to ECR
-2. Upload `jobs.json` and `graph.pkl` to S3
-3. Create Batch compute environments (Spot and On‑Demand), job queue, and job definition
-4. Submit an array job with size = number of jobs
-5. Each array child job reads `AWS_BATCH_JOB_ARRAY_INDEX` and runs one `(code, path)`
-6. Outputs are uploaded to S3 and merged locally
+1. `setup_batch.sh` — Build container, push to ECR, upload inputs to S3, create IAM roles, compute environments, job queue, and job definition
+2. `submit_jobs.sh` — Submit an array job (reads job count from `jobs.json` automatically)
+3. Each array child job reads `AWS_BATCH_JOB_ARRAY_INDEX` and runs one `(code, path)`
+4. Outputs are uploaded to S3 and merged locally
 
-### One‑Command Setup
+### `setup_batch.sh` — Infrastructure Provisioning
 
-`setup_batch.sh` performs all required AWS steps:
+`setup_batch.sh` provisions all required AWS resources (does **not** submit jobs):
 - S3 bucket creation
 - ECR creation
 - Docker build/push (supports multi-arch with `MULTI_ARCH=1`)
 - IAM role creation
 - Batch compute environment creation
 - Job queue and job definition registration
-- Optional array submit
+
+### `submit_jobs.sh` — Job Submission
+
+`submit_jobs.sh` submits the array job to Batch:
+- Reads job count from `jobs.json` automatically (no manual `ARRAY_SIZE` needed)
+- Supports `--parallel` to split across Spot + On-Demand queues
+- Supports `--upload` to push `jobs.json` to S3 before submitting
 - Writes submitted job ID to `cloud_runs/last_job_id.txt`
 
 ---
@@ -212,10 +222,11 @@ cloud_runs/watch_batch.sh "$JOB_ID" 10
 | `S3_OUTPUT_PREFIX` | `outputs/` | S3 prefix for outputs |
 | `LOCAL_JOBS_JSON` | - | Local path to upload as jobs.json |
 | `LOCAL_GRAPH_PKL` | - | Local path to upload as graph.pkl |
-| `SUBMIT_ARRAY` | `0` | Set to `1` to submit array job |
-| `ARRAY_SIZE` | `1000` | Number of array children |
-| `MAX_VCPUS_SPOT` | `1024` | Max vCPUs for Spot CE |
-| `MAX_VCPUS_OD` | `512` | Max vCPUs for On-Demand CE |
+| `MAX_VCPUS_SPOT` | auto (quota) | Max vCPUs for Spot CE |
+| `MAX_VCPUS_OD` | auto (quota) | Max vCPUs for On-Demand CE |
+| `USE_SPOT` | `1` | Set to `0` for On-Demand only |
+| `USE_BOTH` | `0` | Set to `1` for Spot primary + On-Demand fallback |
+| `PARALLEL_MODE` | `0` | Set to `1` for separate Spot + On-Demand queues |
 | `MULTI_ARCH` | `0` | Set to `1` for linux/amd64 build on ARM Mac |
 
 ---
@@ -232,6 +243,7 @@ cloud_runs/watch_batch.sh "$JOB_ID" 10
 | `SHOTS` | `4096` | Number of shots per circuit |
 | `OPT_LEVEL` | `1` | Transpilation optimization level |
 | `INITIAL_STATE` | `0` | Initial logical state |
+| `BACKEND` | (from jobs.json) | Override fake backend key (eagle_r3, heron_r1, heron_r2, heron_r2_marrakesh) |
 
 ---
 

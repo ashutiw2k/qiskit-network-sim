@@ -12,10 +12,10 @@ from typing import Any, Dict, List
 
 try:
     from cloud_runs.codes import AVAILABLE_CODES
-    from cloud_runs.common import build_simulator, run_single_path
+    from cloud_runs.common import AVAILABLE_BACKENDS, build_simulator, run_single_path
 except ImportError:
     from codes import AVAILABLE_CODES
-    from common import build_simulator, run_single_path
+    from common import AVAILABLE_BACKENDS, build_simulator, run_single_path
 
 
 def _load_jobs(path: str) -> Dict[str, Any]:
@@ -71,13 +71,20 @@ def main() -> None:
         type=str,
         default="depolarizing",
         choices=["thermal", "depolarizing"],
-        help="Noise model type: 'thermal' (FakeFez T1/T2) or 'depolarizing' (1Q+2Q depol)",
+        help="Noise model type: 'thermal' (backend T1/T2) or 'depolarizing' (1Q+2Q depol)",
     )
     parser.add_argument(
         "--error-rate-2q",
         type=float,
         default=0.01,
         help="2Q depolarizing error rate (only used with --noise-type=depolarizing)",
+    )
+    parser.add_argument(
+        "--backend",
+        type=str,
+        default=None,
+        choices=AVAILABLE_BACKENDS,
+        help="Override backend (default: read from jobs JSON, fallback: heron_r2)",
     )
 
     args = parser.parse_args()
@@ -111,13 +118,17 @@ def main() -> None:
     code_class = AVAILABLE_CODES[code_type]
     node_qubits, path_qubits, total_qubits = code_class.generate_qubit_mapping(num_nodes)
 
+    # Backend priority: CLI --backend > jobs JSON "backend" > default "heron_r2"
+    backend_key = args.backend or jobs_payload.get("backend", "heron_r2")
+
     t0 = time.time()
     noisy_sim, basis_gates, _backend = build_simulator(
         noise_type=args.noise_type,
         num_circuit_qubits=total_qubits,
         error_rate_2q=args.error_rate_2q,
+        backend=backend_key,
     )
-    print(f"[Job {job_index}]   build_simulator: {time.time()-t0:.1f}s (total_qubits={total_qubits})", flush=True)
+    print(f"[Job {job_index}]   build_simulator: {time.time()-t0:.1f}s (backend={backend_key}, total_qubits={total_qubits})", flush=True)
 
     t0 = time.time()
     measurement = run_single_path(

@@ -32,14 +32,33 @@ def _parse_s3_uri(uri: str) -> Tuple[str, str]:
     return bucket, key
 
 
-def download(s3_uri: str, dest: str) -> None:
+def download(s3_uri: str, dest: str, recursive: bool = False) -> None:
     boto3 = _require_boto3()
     bucket, key = _parse_s3_uri(s3_uri)
     if not key:
-        raise ValueError("S3 URI must include an object key for download")
+        raise ValueError("S3 URI must include an object key or prefix for download")
+
+    s3 = boto3.client("s3")
+
+    if recursive:
+        # List all objects under the prefix and download each one.
+        prefix = key if key.endswith("/") else key + "/"
+        paginator = s3.get_paginator("list_objects_v2")
+        count = 0
+        for page in paginator.paginate(Bucket=bucket, Prefix=prefix):
+            for obj in page.get("Contents", []):
+                obj_key = obj["Key"]
+                rel_path = obj_key[len(prefix):]
+                if not rel_path:
+                    continue
+                local_path = os.path.join(dest, rel_path)
+                os.makedirs(os.path.dirname(local_path), exist_ok=True)
+                s3.download_file(bucket, obj_key, local_path)
+                count += 1
+        print(f"Downloaded {count} files from s3://{bucket}/{prefix} -> {dest}")
+        return
 
     os.makedirs(os.path.dirname(os.path.abspath(dest)), exist_ok=True)
-    s3 = boto3.client("s3")
     s3.download_file(bucket, key, dest)
     print(f"Downloaded {s3_uri} -> {dest}")
 
@@ -80,8 +99,9 @@ def main() -> None:
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     d = sub.add_parser("download", help="Download from S3")
-    d.add_argument("--s3-uri", required=True, help="s3://bucket/key")
+    d.add_argument("--s3-uri", required=True, help="s3://bucket/key or s3://bucket/prefix/")
     d.add_argument("--dest", required=True, help="Local destination path")
+    d.add_argument("--recursive", action="store_true", help="Download all objects under prefix")
 
     u = sub.add_parser("upload", help="Upload to S3")
     u.add_argument("--src", required=True, help="Local file or directory")
@@ -91,7 +111,7 @@ def main() -> None:
     args = parser.parse_args()
 
     if args.cmd == "download":
-        download(args.s3_uri, args.dest)
+        download(args.s3_uri, args.dest, getattr(args, "recursive", False))
     elif args.cmd == "upload":
         upload(args.src, args.s3_uri, args.recursive)
     else:

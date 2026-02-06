@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import pickle
 import random
 from itertools import combinations
@@ -14,8 +15,10 @@ import networkx as nx
 
 try:
     from cloud_runs.codes import AVAILABLE_CODES
+    from cloud_runs.common import AVAILABLE_BACKENDS
 except ImportError:
     from codes import AVAILABLE_CODES
+    from common import AVAILABLE_BACKENDS
 
 
 def _all_paths_edges(G: nx.Graph, min_hops: int, max_hops: int) -> List[List[int]]:
@@ -56,6 +59,13 @@ def main() -> None:
         help="Random seed for deterministic sampling",
     )
     parser.add_argument(
+        "--backend",
+        type=str,
+        default="heron_r2",
+        choices=AVAILABLE_BACKENDS,
+        help="Fake backend to simulate against (default: heron_r2 = FakeFez)",
+    )
+    parser.add_argument(
         "--output",
         required=True,
         help="Output JSON file for jobs",
@@ -85,11 +95,14 @@ def main() -> None:
 
     payload: Dict[str, object] = {
         "graph_path": args.graph,
+        "backend": args.backend,
         "min_hops": args.min_hops,
         "max_hops": args.max_hops,
         "codes": codes,
         "jobs": jobs,
     }
+
+    os.makedirs(os.path.dirname(args.output), exist_ok=True)
 
     with open(args.output, "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2)

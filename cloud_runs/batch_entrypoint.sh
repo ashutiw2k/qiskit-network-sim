@@ -20,6 +20,7 @@
 #   SHOTS          — Number of measurement shots per circuit (default: 4096)
 #   OPT_LEVEL      — Qiskit transpiler optimization level   (default: 1, range 0-3)
 #   INITIAL_STATE  — Initial qubit state for the simulation (default: 0)
+#   BACKEND        — Override fake backend key (default: read from jobs.json)
 set -euo pipefail
 
 # ── Validate required env vars (fail fast with a descriptive message) ──
@@ -33,6 +34,7 @@ OUT_DIR="${OUT_DIR:-/out}"
 SHOTS="${SHOTS:-4096}"
 OPT_LEVEL="${OPT_LEVEL:-1}"
 INITIAL_STATE="${INITIAL_STATE:-0}"
+BACKEND="${BACKEND:-}"
 
 # ── Prepare local directories ──
 mkdir -p "${WORK_DIR}" "${OUT_DIR}"
@@ -46,13 +48,19 @@ python cloud_runs/s3_sync.py download --s3-uri "${S3_GRAPH}" --dest "${WORK_DIR}
 # run_job.py reads AWS_BATCH_JOB_ARRAY_INDEX to select a single job from the
 # manifest, builds and executes the quantum circuit, and writes a result pickle
 # (e.g. job_<index>.pkl) into OUT_DIR.
+BACKEND_FLAG=""
+if [[ -n "${BACKEND}" ]]; then
+  BACKEND_FLAG="--backend ${BACKEND}"
+fi
+
 python cloud_runs/run_job.py \
   --jobs-file "${WORK_DIR}/jobs.json" \
   --graph "${WORK_DIR}/graph.pkl" \
   --output-dir "${OUT_DIR}" \
   --shots "${SHOTS}" \
   --optimization-level "${OPT_LEVEL}" \
-  --initial-state "${INITIAL_STATE}"
+  --initial-state "${INITIAL_STATE}" \
+  ${BACKEND_FLAG}
 
 # ── Step 3: Upload results back to S3 ──
 # --recursive uploads every file in OUT_DIR under the S3_OUTPUT_PREFIX path.

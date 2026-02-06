@@ -1,0 +1,65 @@
+# --- Eagle ---
+# 1. Setup (uploads jobs.json + graph to S3, provisions infra)
+BUCKET_NAME=qiskit-net-sim-ashutosh \
+LOCAL_JOBS_JSON=cloud_runs/jobs/jobs_eagle.json \
+LOCAL_GRAPH_PKL=networkgraphs/fully_connected_6_node.pkl \
+S3_OUTPUT_PREFIX=outputs/eagle/ \
+cloud_runs/setup_batch.sh
+
+# 2. Submit
+cloud_runs/submit_jobs.sh --jobs-file cloud_runs/jobs/jobs_eagle.json
+
+
+# --- Heron R1 ---
+# 1. Setup (uploads jobs.json + graph to S3, provisions infra)
+BUCKET_NAME=qiskit-net-sim-ashutosh \
+LOCAL_JOBS_JSON=cloud_runs/jobs/jobs_heron_r1.json \
+LOCAL_GRAPH_PKL=networkgraphs/fully_connected_6_node.pkl \
+S3_OUTPUT_PREFIX=outputs/heron_r1/ \
+cloud_runs/setup_batch.sh
+
+# 2. Submit
+cloud_runs/submit_jobs.sh --jobs-file cloud_runs/jobs/jobs_heron_r1.json
+
+
+# --- Heron R2 ---
+# 1. Setup
+BUCKET_NAME=qiskit-net-sim-ashutosh \
+LOCAL_JOBS_JSON=cloud_runs/jobs/jobs_heron_r2.json \
+LOCAL_GRAPH_PKL=networkgraphs/fully_connected_6_node.pkl \
+S3_OUTPUT_PREFIX=outputs/heron_r2/ \
+cloud_runs/setup_batch.sh
+
+# 2. Submit
+cloud_runs/submit_jobs.sh --jobs-file cloud_runs/jobs/jobs_heron_r2.json
+
+
+# --- Heron R2 Marrakesh ---
+# 1. Setup
+BUCKET_NAME=qiskit-net-sim-ashutosh \
+LOCAL_JOBS_JSON=cloud_runs/jobs/jobs_heron_r2_marrakesh.json \
+LOCAL_GRAPH_PKL=networkgraphs/fully_connected_6_node.pkl \
+S3_OUTPUT_PREFIX=outputs/heron_r2_marrakesh/ \
+cloud_runs/setup_batch.sh
+
+# 2. Submit
+cloud_runs/submit_jobs.sh --jobs-file cloud_runs/jobs/jobs_heron_r2_marrakesh.json
+
+
+# --- Download results ---
+python cloud_runs/s3_sync.py download --s3-uri s3://qiskit-net-sim-ashutosh/outputs/eagle_r3/ --dest ./all_error_out/eagle --recursive
+python cloud_runs/s3_sync.py download --s3-uri s3://qiskit-net-sim-ashutosh/outputs/heron_r1/ --dest ./all_error_out/heron_r1 --recursive
+python cloud_runs/s3_sync.py download --s3-uri s3://qiskit-net-sim-ashutosh/outputs/heron_r2/ --dest ./all_error_out/heron_r2 --recursive
+python cloud_runs/s3_sync.py download --s3-uri s3://qiskit-net-sim-ashutosh/outputs/heron_r2_marrakesh/ --dest ./all_error_out/heron_r2_marrakesh --recursive
+
+# --- Merge results ---
+python cloud_runs/merge_results.py --input-dir ./cloud_runs/all_error_out/eagle
+python cloud_runs/merge_results.py --input-dir ./cloud_runs/all_error_out/heron_r1
+python cloud_runs/merge_results.py --input-dir ./cloud_runs/all_error_out/heron_r2
+python cloud_runs/merge_results.py --input-dir ./cloud_runs/all_error_out/heron_r2_marrakesh
+
+# -- Collect All Measurements --
+cloud_runs/collect_measurements.sh ./cloud_runs/all_error_out/eagle ./final_data/eagle
+cloud_runs/collect_measurements.sh ./cloud_runs/all_error_out/heron_r1 ./final_data/heron_r1
+cloud_runs/collect_measurements.sh ./cloud_runs/all_error_out/heron_r2 ./final_data/heron_r2
+cloud_runs/collect_measurements.sh ./cloud_runs/all_error_out/heron_r2_marrakesh ./final_data/heron_r2_marrakesh

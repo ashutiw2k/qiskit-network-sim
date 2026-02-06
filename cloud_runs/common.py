@@ -9,7 +9,23 @@ import numpy as np
 from qiskit import transpile
 from qiskit_aer import AerSimulator
 from qiskit_aer.noise import NoiseModel, depolarizing_error
-from qiskit_ibm_runtime.fake_provider import FakeFez
+from qiskit_ibm_runtime.fake_provider import (
+    FakeBrisbane,
+    FakeFez,
+    FakeMarrakesh,
+    FakeTorino,
+)
+
+# Maps a backend key to (BackendClass, basis_gates).
+# The basis_gates list must match the backend's native gate set.
+BACKEND_MAP = {
+    "eagle_r3":           (FakeBrisbane,  ["ecr", "id", "rz", "sx", "x"]),
+    "heron_r1":           (FakeTorino,    ["cz",  "id", "rz", "sx", "x"]),
+    "heron_r2":           (FakeFez,       ["cz",  "id", "rz", "sx", "x"]),
+    "heron_r2_marrakesh": (FakeMarrakesh, ["cz",  "id", "rz", "sx", "x"]),
+}
+
+AVAILABLE_BACKENDS = list(BACKEND_MAP.keys())
 
 try:
     from cloud_runs.codes import AVAILABLE_CODES, TimeAwareMeasurement
@@ -23,23 +39,28 @@ def build_simulator(
     noise_type: str = "depolarizing",
     num_circuit_qubits: int = 100,
     error_rate_2q: float = 0.01,
+    backend: str = "heron_r2",
 ):
     """
     Create simulator and basis gates for syndrome data generation.
 
     Args:
         noise_type: Type of noise model to use:
-            - "thermal": Only thermal relaxation from FakeFez (original behavior)
-            - "depolarizing": 1Q depolarizing from FakeFez + custom 2Q depolarizing
+            - "thermal": Only thermal relaxation (original behavior)
+            - "depolarizing": 1Q depolarizing from backend + custom 2Q depolarizing
         num_circuit_qubits: Number of qubits in the circuit (for all-to-all 2Q errors)
         error_rate_2q: 2Q depolarizing error rate (only used if noise_type="depolarizing")
+        backend: Backend key from AVAILABLE_BACKENDS (default: "heron_r2" = FakeFez)
 
     Returns:
         Tuple of (noisy_sim, basis_gates, fake_backend)
     """
-    fake_backend = FakeFez()
-    # FakeFez native gates: cz (2Q), id, rz, sx, x (1Q)
-    basis_gates = ["cz", "id", "rz", "sx", "x"]
+    if backend not in BACKEND_MAP:
+        raise ValueError(
+            f"Unknown backend '{backend}'. Choose from: {AVAILABLE_BACKENDS}"
+        )
+    BackendClass, basis_gates = BACKEND_MAP[backend]
+    fake_backend = BackendClass()
 
     if noise_type == "thermal":
         # Original behavior: thermal relaxation only
@@ -50,9 +71,10 @@ def build_simulator(
             thermal_relaxation=True,
         )
     elif noise_type == "depolarizing":
-        # New noise model: 1Q depolarizing + custom 2Q depolarizing
+        # Identify the native 2Q gate for this backend
+        gate_2q = "ecr" if "ecr" in basis_gates else "cz"
         noise_model = _build_depolarizing_noise_model(
-            fake_backend, num_circuit_qubits, error_rate_2q
+            fake_backend, num_circuit_qubits, error_rate_2q, gate_2q
         )
     else:
         raise ValueError(f"Unknown noise_type: {noise_type}. Use 'thermal' or 'depolarizing'")
@@ -65,9 +87,10 @@ def _build_depolarizing_noise_model(
     fake_backend,
     num_circuit_qubits: int,
     error_rate_2q: float,
+    gate_2q: str = "cz",
 ) -> NoiseModel:
     """
-    Build a noise model with 1Q depolarizing errors from FakeFez
+    Build a noise model with 1Q depolarizing errors from the backend
     and custom all-to-all 2Q depolarizing errors.
 
     This matches the noise model used in 513DataGenerationSelfContained.ipynb.
@@ -75,7 +98,7 @@ def _build_depolarizing_noise_model(
     target = fake_backend.target
     noise_model = NoiseModel()
 
-    # --- 1. Add 1Q DEPOLARIZING ERRORS from FakeFez ---
+    # --- 1. Add 1Q DEPOLARIZING ERRORS from backend calibration ---
     gates_to_use = ['sx', 'x', 'rz', 'id']
     for gate in gates_to_use:
         if gate not in target.operation_names:
@@ -86,13 +109,13 @@ def _build_depolarizing_noise_model(
                 depol_err = depolarizing_error(props.error, 1)
                 noise_model.add_quantum_error(depol_err, gate, list(qargs))
 
-    # --- 2. Uniform 2Q depolarizing error on CZ (single call) ---
+    # --- 2. Uniform 2Q depolarizing error on the native gate (single call) ---
     # Use add_all_qubit_quantum_error instead of O(n²) per-pair loop.
-    # This applies the same error to any CZ regardless of qubit pair,
+    # This applies the same error to any 2Q gate regardless of qubit pair,
     # which is equivalent to the previous all-to-all loop but builds
     # the noise model in O(1) instead of O(n²).
     noise_model.add_all_qubit_quantum_error(
-        depolarizing_error(error_rate_2q, 2), "cz"
+        depolarizing_error(error_rate_2q, 2), gate_2q
     )
 
     return noise_model
