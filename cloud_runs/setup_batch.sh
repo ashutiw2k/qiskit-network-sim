@@ -1,34 +1,58 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# One-command AWS Batch setup for qec runs.
+###############################################################################
+# setup_batch.sh — One-command AWS Batch infrastructure provisioning
+###############################################################################
+#
+# This script sets up EVERYTHING needed to run QEC syndrome generation jobs
+# on AWS Batch. It is idempotent — safe to run multiple times. Existing
+# resources are reused, not duplicated.
+#
+# What it does (in order):
+#   1. Creates an S3 bucket (if needed) and uploads jobs.json + graph.pkl
+#   2. Creates an ECR repository and builds/pushes the Docker image
+#   3. Creates IAM roles (Batch service role, EC2 instance role, Spot fleet role)
+#   4. Creates Batch compute environments (Spot and/or On-Demand)
+#   5. Creates a Batch job queue pointing to the compute environment(s)
+#   6. Registers a Batch job definition (container config: 1 vCPU, 4 GB RAM)
+#
+# After this script completes, you can submit jobs with submit_jobs.sh.
+#
 # Required env:
-#   BUCKET_NAME
-# Optional env:
-#   AWS_REGION (default: us-east-2)
-#   SUBNET_IDS (comma-separated) or VPC_ID (default VPC used if unset)
-#   SECURITY_GROUP_ID (default VPC's default SG used if unset)
-#   ECR_REPO (default: qec-batch)
-#   IMAGE_TAG (default: latest)
-#   JOB_QUEUE_NAME (default: qec-job-queue)
-#   JOB_DEF_NAME (default: qec-syndrome-job)
-#   CE_SPOT_NAME (default: qec-spot-ce)
-#   CE_OD_NAME (default: qec-ondemand-ce)
-#   S3_JOBS_KEY (default: inputs/jobs.json)
-#   S3_GRAPH_KEY (default: inputs/graph.pkl)
-#   S3_OUTPUT_PREFIX (default: outputs/)
-#   LOCAL_JOBS_JSON (optional: upload to S3)
-#   LOCAL_GRAPH_PKL (optional: upload to S3)
-#   MAX_VCPUS_SPOT (default: 32)
-#   MAX_VCPUS_OD (default: 32)
-#   USE_SPOT (default: 1, set to 0 for On-Demand only)
-#   USE_BOTH (default: 1, uses Spot as primary + On-Demand as fallback)
-#   PARALLEL_MODE (default: 0, set to 1 for true parallel execution across Spot+OD)
-#   JOB_QUEUE_SPOT_NAME (default: qec-job-queue-spot, used in parallel mode)
-#   JOB_QUEUE_OD_NAME (default: qec-job-queue-od, used in parallel mode)
+#   BUCKET_NAME           S3 bucket for inputs/outputs (e.g. "qiskit-net-sim-ashutosh")
+#
+# Optional env (common):
+#   AWS_REGION            AWS region (default: us-east-2)
+#   LOCAL_JOBS_JSON       Local path to jobs.json — will be uploaded to S3
+#   LOCAL_GRAPH_PKL       Local path to graph.pkl — will be uploaded to S3
+#   MAX_VCPUS_SPOT        Max Spot vCPUs (default: auto-detected from account quota)
+#   MAX_VCPUS_OD          Max On-Demand vCPUs (default: auto-detected from account quota)
+#   PLATFORM              Docker build platform (default: linux/amd64)
+#   IMAGE_TAG             Docker image tag (default: latest)
+#   SKIP_BUCKET_CREATE    Set to 1 to skip S3 bucket creation check
+#
+# Optional env (advanced):
+#   SUBNET_IDS            Comma-separated subnet IDs (default: auto-discovered from default VPC)
+#   SECURITY_GROUP_ID     Security group ID (default: default VPC's default SG)
+#   ECR_REPO              ECR repository name (default: qec-batch)
+#   JOB_QUEUE_NAME        Batch job queue name (default: qec-job-queue)
+#   JOB_DEF_NAME          Batch job definition name (default: qec-syndrome-job)
+#   CE_SPOT_NAME          Spot compute environment name (default: qec-spot-ce)
+#   CE_OD_NAME            On-Demand compute environment name (default: qec-ondemand-ce)
+#   USE_SPOT              Use Spot instances (default: 1, set to 0 for On-Demand only)
+#   USE_BOTH              Use Spot primary + On-Demand fallback in one queue (default: 0)
+#   PARALLEL_MODE         Create separate Spot and OD queues for true parallel execution (default: 0)
+#   MULTI_ARCH            Build Docker image for both amd64 and arm64 (default: 0, slower)
+#   DESIRED_VCPUS_SPOT    Pre-warm Spot instances to this many vCPUs (default: unset, scales from 0)
+#   DESIRED_VCPUS_OD      Pre-warm On-Demand instances (default: unset)
+###############################################################################
 
+# Resolve script and repo root directories
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+# ── Configuration with defaults ──────────────────────────────────────────────
 
 REGION="${AWS_REGION:-us-east-2}"
 BUCKET_NAME="${BUCKET_NAME:?BUCKET_NAME is required}"
@@ -63,6 +87,8 @@ DESIRED_VCPUS_OD="${DESIRED_VCPUS_OD:-}"
 WAIT_ATTEMPTS="${WAIT_ATTEMPTS:-60}"
 WAIT_SECONDS="${WAIT_SECONDS:-10}"
 
+# ── Prerequisite checks ─────────────────────────────────────────────────────
+
 if ! command -v aws >/dev/null 2>&1; then
   echo "aws CLI is required" >&2
   exit 1
@@ -72,7 +98,14 @@ if ! command -v docker >/dev/null 2>&1; then
   exit 1
 fi
 
+# Set the region for all subsequent AWS CLI calls
 export AWS_DEFAULT_REGION="${REGION}"
+
+# ── Helper: query account vCPU quotas from AWS Service Quotas ────────────────
+# Quota codes:
+#   L-1216C47A = "Running On-Demand Standard (A, C, D, H, I, M, R, T, Z) instances"
+#   L-34B43A08 = "All Standard (A, C, D, H, I, M, R, T, Z) Spot Instance Requests"
+# Returns the integer quota value, or fails silently (returns 1) if lookup fails.
 
 get_quota_vcpus() {
   local quota_code="$1"
@@ -83,14 +116,15 @@ get_quota_vcpus() {
     --query 'Quota.Value' \
     --output text 2>/dev/null || true)
   if [[ -n "${val}" && "${val}" != "None" ]]; then
-    # Coerce to integer
+    # Coerce float (e.g. "500.0") to integer
     awk 'BEGIN {printf("%d\n",'"${val}"')}'
     return 0
   fi
   return 1
 }
 
-# If MAX_VCPUS_* not provided, default to account quotas (safe "max").
+# Auto-detect vCPU quotas if not explicitly provided.
+# This ensures we don't request more instances than the account allows.
 if [[ -z "${MAX_VCPUS_OD}" ]]; then
   if quota=$(get_quota_vcpus "L-1216C47A"); then
     MAX_VCPUS_OD="${quota}"
@@ -111,11 +145,16 @@ if [[ -z "${MAX_VCPUS_SPOT}" ]]; then
   fi
 fi
 
+# ── Network discovery ────────────────────────────────────────────────────────
+# Batch compute environments need subnets and a security group.
+# If not provided, we auto-discover them from the default VPC.
+
 SUBNET_IDS="${SUBNET_IDS:-}"
 SECURITY_GROUP_ID="${SECURITY_GROUP_ID:-}"
 VPC_ID="${VPC_ID:-}"
 
 if [[ -z "${SUBNET_IDS}" || -z "${SECURITY_GROUP_ID}" ]]; then
+  # Find the default VPC in this region
   if [[ -z "${VPC_ID}" ]]; then
     VPC_ID=$(aws ec2 describe-vpcs --filters Name=isDefault,Values=true --query 'Vpcs[0].VpcId' --output text)
   fi
@@ -124,10 +163,12 @@ if [[ -z "${SUBNET_IDS}" || -z "${SECURITY_GROUP_ID}" ]]; then
     exit 1
   fi
 
+  # Get all subnets in the VPC (Batch will spread instances across them)
   if [[ -z "${SUBNET_IDS}" ]]; then
     SUBNET_IDS=$(aws ec2 describe-subnets --filters Name=vpc-id,Values="${VPC_ID}" --query 'Subnets[*].SubnetId' --output text | tr '\t' ',')
   fi
 
+  # Get the default security group for the VPC
   if [[ -z "${SECURITY_GROUP_ID}" ]]; then
     SECURITY_GROUP_ID=$(aws ec2 describe-security-groups --filters Name=vpc-id,Values="${VPC_ID}" Name=group-name,Values=default --query 'SecurityGroups[0].GroupId' --output text)
   fi
@@ -138,9 +179,13 @@ if [[ -z "${SUBNET_IDS}" || -z "${SECURITY_GROUP_ID}" || "${SECURITY_GROUP_ID}" 
   exit 1
 fi
 
+# Split comma-separated subnet IDs into an array for template rendering
 IFS=',' read -r -a SUBNET_ARRAY <<< "${SUBNET_IDS}"
 
-# 1) S3 bucket
+###############################################################################
+# STEP 1: S3 bucket — stores job inputs (jobs.json, graph.pkl) and outputs
+###############################################################################
+
 if [[ "${SKIP_BUCKET_CREATE}" == "1" ]]; then
   echo "Skipping S3 bucket create/check (SKIP_BUCKET_CREATE=1): ${BUCKET_NAME}"
 else
@@ -148,6 +193,7 @@ else
     echo "S3 bucket exists: ${BUCKET_NAME}"
   else
     echo "Creating S3 bucket: ${BUCKET_NAME}"
+    # us-east-1 doesn't accept LocationConstraint (AWS quirk)
     if [[ "${REGION}" == "us-east-1" ]]; then
       aws s3api create-bucket --bucket "${BUCKET_NAME}"
     else
@@ -156,7 +202,8 @@ else
   fi
 fi
 
-# Optional uploads
+# Upload local input files to S3 if paths were provided.
+# These are the files each Batch container will download at startup.
 if [[ -n "${LOCAL_JOBS_JSON}" ]]; then
   aws s3 cp "${LOCAL_JOBS_JSON}" "s3://${BUCKET_NAME}/${S3_JOBS_KEY}"
 fi
@@ -164,7 +211,10 @@ if [[ -n "${LOCAL_GRAPH_PKL}" ]]; then
   aws s3 cp "${LOCAL_GRAPH_PKL}" "s3://${BUCKET_NAME}/${S3_GRAPH_KEY}"
 fi
 
-# 2) ECR repo
+###############################################################################
+# STEP 2: ECR — Docker container registry for the job image
+###############################################################################
+
 if aws ecr describe-repositories --repository-names "${ECR_REPO}" >/dev/null 2>&1; then
   echo "ECR repo exists: ${ECR_REPO}"
 else
@@ -172,12 +222,23 @@ else
   aws ecr create-repository --repository-name "${ECR_REPO}" >/dev/null
 fi
 
+# Build the full ECR image URI: <account>.dkr.ecr.<region>.amazonaws.com/<repo>
 ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
 ECR_URI="${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${ECR_REPO}"
 
+# Authenticate Docker with ECR so we can push
 aws ecr get-login-password | docker login --username AWS --password-stdin "${ECR_URI}"
 
-# 3) Build & push image
+###############################################################################
+# STEP 3: Build and push Docker image
+###############################################################################
+# The image contains: Python 3.11 + qiskit + qiskit-aer + qiskit-ibm-runtime
+# + our cloud_runs/ code. See cloud_runs/Dockerfile.
+#
+# buildx is preferred because it can cross-compile (e.g. ARM Mac → x86 image).
+# PLATFORM=linux/amd64 builds for x86 EC2 instances (default).
+# MULTI_ARCH=1 builds for both amd64 and arm64 (slower, rarely needed).
+
 if docker buildx version >/dev/null 2>&1; then
   if [[ "${MULTI_ARCH}" == "1" ]]; then
     docker buildx build --platform "linux/amd64,linux/arm64" -f "${SCRIPT_DIR}/Dockerfile" \
@@ -187,12 +248,17 @@ if docker buildx version >/dev/null 2>&1; then
       -t "${ECR_URI}:${IMAGE_TAG}" --push "${ROOT_DIR}"
   fi
 else
+  # Fallback for Docker without buildx: build locally, tag, and push
   docker build -f "${SCRIPT_DIR}/Dockerfile" -t "${ECR_REPO}:${IMAGE_TAG}" "${ROOT_DIR}"
   docker tag "${ECR_REPO}:${IMAGE_TAG}" "${ECR_URI}:${IMAGE_TAG}"
   docker push "${ECR_URI}:${IMAGE_TAG}"
 fi
 
-# 4) IAM roles
+###############################################################################
+# STEP 4: IAM roles — permissions for Batch, EC2 instances, and Spot fleet
+###############################################################################
+
+# Helper: create an IAM role if it doesn't exist
 ensure_role() {
   local role_name="$1"
   local trust_policy="$2"
@@ -204,6 +270,7 @@ ensure_role() {
   fi
 }
 
+# Helper: poll a compute environment until it reaches VALID or INVALID status
 wait_for_ce() {
   local name="$1"
   local i=0
@@ -229,6 +296,7 @@ wait_for_ce() {
   done
 }
 
+# Helper: poll a job queue until it reaches VALID or INVALID status
 wait_for_queue() {
   local name="$1"
   local i=0
@@ -254,6 +322,8 @@ wait_for_queue() {
   done
 }
 
+# Helper: update maxvCpus and/or desiredvCpus on a compute environment.
+# Skips updates that would set max below current desired (Batch rejects this).
 update_ce_resources() {
   local name="$1"
   local max_vcpus="$2"
@@ -267,7 +337,6 @@ update_ce_resources() {
     --output text)
 
   if [[ -n "${max_vcpus}" ]]; then
-    # Avoid setting max below current desired (Batch rejects manual scale-down).
     if [[ -n "${current_desired}" && "${max_vcpus}" -lt "${current_desired}" ]]; then
       echo "Skipping maxvCpus update for ${name} (max=${max_vcpus} < current desired=${current_desired})"
     else
@@ -294,35 +363,50 @@ update_ce_resources() {
   fi
 }
 
+# ── Create the three required IAM roles ──────────────────────────────────────
+
+# AWSBatchServiceRole: allows Batch to manage EC2 instances, ECS tasks, etc.
 ensure_role "AWSBatchServiceRole" '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"Service":"batch.amazonaws.com"},"Action":"sts:AssumeRole"}]}'
 aws iam attach-role-policy --role-name AWSBatchServiceRole --policy-arn arn:aws:iam::aws:policy/service-role/AWSBatchServiceRole
 
+# ecsInstanceRole: attached to EC2 instances so they can pull Docker images
+# from ECR and read/write S3 for job inputs/outputs.
 ensure_role "ecsInstanceRole" '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"Service":"ec2.amazonaws.com"},"Action":"sts:AssumeRole"}]}'
 aws iam attach-role-policy --role-name ecsInstanceRole --policy-arn arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role
 aws iam attach-role-policy --role-name ecsInstanceRole --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
 
+# Instance profiles wrap IAM roles for EC2 — Batch needs this to assign the role
 if aws iam get-instance-profile --instance-profile-name ecsInstanceRole >/dev/null 2>&1; then
   echo "Instance profile exists: ecsInstanceRole"
 else
   aws iam create-instance-profile --instance-profile-name ecsInstanceRole >/dev/null
 fi
 
+# Attach the role to the instance profile (if not already attached)
 ROLE_PRESENT=$(aws iam get-instance-profile --instance-profile-name ecsInstanceRole --query 'InstanceProfile.Roles[?RoleName==`ecsInstanceRole`].RoleName' --output text)
 if [[ -z "${ROLE_PRESENT}" ]]; then
   aws iam add-role-to-instance-profile --instance-profile-name ecsInstanceRole --role-name ecsInstanceRole
 fi
 
+# AmazonEC2SpotFleetRole: allows Spot Fleet to launch and manage Spot instances
 ensure_role "AmazonEC2SpotFleetRole" '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"Service":"spotfleet.amazonaws.com"},"Action":"sts:AssumeRole"}]}'
 aws iam attach-role-policy --role-name AmazonEC2SpotFleetRole --policy-arn arn:aws:iam::aws:policy/service-role/AmazonEC2SpotFleetTaggingRole
 
+# Fetch ARNs for the roles — needed in the Batch JSON templates
 BATCH_SERVICE_ROLE_ARN=$(aws iam get-role --role-name AWSBatchServiceRole --query 'Role.Arn' --output text)
 INSTANCE_PROFILE_ARN=$(aws iam get-instance-profile --instance-profile-name ecsInstanceRole --query 'InstanceProfile.Arn' --output text)
 SPOT_FLEET_ROLE_ARN=$(aws iam get-role --role-name AmazonEC2SpotFleetRole --query 'Role.Arn' --output text)
 
-# 5) Batch compute environments and queue
+###############################################################################
+# STEP 5: Batch compute environments and job queue
+###############################################################################
+# Batch templates live in batch_templates/*.json with __PLACEHOLDER__ values.
+# We render them by substituting real ARNs, subnet IDs, image URIs, etc.
+
 TMP_DIR=$(mktemp -d)
 trap 'rm -rf "${TMP_DIR}"' EXIT
 
+# Helper: render a JSON template by replacing __PLACEHOLDER__ strings with real values
 render_template() {
   local template="$1"
   local output="$2"
@@ -351,6 +435,7 @@ Path("${output}").write_text(tpl)
 PY
 }
 
+# Render all four templates into the temp directory
 SPOT_TEMPLATE="${SCRIPT_DIR}/batch_templates/compute-env-spot.json"
 OD_TEMPLATE="${SCRIPT_DIR}/batch_templates/compute-env-ondemand.json"
 QUEUE_TEMPLATE="${SCRIPT_DIR}/batch_templates/job-queue.json"
@@ -366,7 +451,8 @@ render_template "${OD_TEMPLATE}" "${OD_JSON}"
 render_template "${QUEUE_TEMPLATE}" "${QUEUE_JSON}"
 render_template "${JOBDEF_TEMPLATE}" "${JOBDEF_JSON}"
 
-# Update maxvCpus
+# Override maxvCpus in the rendered JSON with the actual quota values.
+# The template has a default, but we want to match the account's limit.
 python - <<PY
 import json
 from pathlib import Path
@@ -381,7 +467,13 @@ obj["computeResources"]["maxvCpus"] = int("${MAX_VCPUS_OD}")
 p.write_text(json.dumps(obj, indent=2))
 PY
 
-# Determine which compute environments to create
+# ── Determine execution mode ────────────────────────────────────────────────
+# Three modes:
+#   PARALLEL_MODE=1: Two separate queues (Spot + On-Demand) for max throughput
+#   USE_BOTH=1:      One queue with Spot primary, On-Demand fallback
+#   USE_SPOT=1:      Spot only (default — cheapest)
+#   USE_SPOT=0:      On-Demand only (most reliable)
+
 CREATE_SPOT=0
 CREATE_OD=0
 if [[ "${PARALLEL_MODE}" == "1" ]]; then
@@ -400,7 +492,10 @@ else
   echo "Mode: Using On-Demand only"
 fi
 
-# Create Spot CE if needed
+# ── Create compute environments ──────────────────────────────────────────────
+# A compute environment is a pool of EC2 instances managed by Batch.
+# Batch auto-scales the pool based on job demand (0 → maxvCpus → 0).
+
 if [[ "${CREATE_SPOT}" == "1" ]]; then
   if aws batch describe-compute-environments --compute-environments "${CE_SPOT_NAME}" --query 'computeEnvironments[0].computeEnvironmentName' --output text | grep -q "${CE_SPOT_NAME}"; then
     echo "Compute environment exists: ${CE_SPOT_NAME}"
@@ -410,7 +505,6 @@ if [[ "${CREATE_SPOT}" == "1" ]]; then
   fi
 fi
 
-# Create On-Demand CE if needed
 if [[ "${CREATE_OD}" == "1" ]]; then
   if aws batch describe-compute-environments --compute-environments "${CE_OD_NAME}" --query 'computeEnvironments[0].computeEnvironmentName' --output text | grep -q "${CE_OD_NAME}"; then
     echo "Compute environment exists: ${CE_OD_NAME}"
@@ -420,12 +514,14 @@ if [[ "${CREATE_OD}" == "1" ]]; then
   fi
 fi
 
-# Wait for CEs and get ARNs
+# Wait for compute environments to become VALID before creating queues.
+# New CEs take 30-60 seconds to provision. Existing CEs return VALID immediately.
 SPOT_CE_ARN=""
 OD_CE_ARN=""
 
 if [[ "${CREATE_SPOT}" == "1" ]]; then
   wait_for_ce "${CE_SPOT_NAME}"
+  # Update maxvCpus/desiredvCpus if the CE already existed with different values
   update_ce_resources "${CE_SPOT_NAME}" "${MAX_VCPUS_SPOT}" "${DESIRED_VCPUS_SPOT}"
   SPOT_CE_ARN=$(aws batch describe-compute-environments --compute-environments "${CE_SPOT_NAME}" --query 'computeEnvironments[0].computeEnvironmentArn' --output text)
 fi
@@ -436,13 +532,17 @@ if [[ "${CREATE_OD}" == "1" ]]; then
   OD_CE_ARN=$(aws batch describe-compute-environments --compute-environments "${CE_OD_NAME}" --query 'computeEnvironments[0].computeEnvironmentArn' --output text)
 fi
 
-# Build queue configuration based on mode
+# ── Create job queue(s) ─────────────────────────────────────────────────────
+# A job queue connects submitted jobs to compute environments.
+# Jobs sit in the queue until a CE has capacity to run them.
+
 if [[ "${PARALLEL_MODE}" == "1" ]]; then
-  # PARALLEL MODE: Create two separate queues, one for each CE
+  # PARALLEL MODE: Two separate queues, each backed by its own CE.
+  # submit_jobs.sh splits jobs between them using JOB_INDEX_OFFSET.
   SPOT_QUEUE_JSON="${TMP_DIR}/job-queue-spot.json"
   OD_QUEUE_JSON="${TMP_DIR}/job-queue-od.json"
 
-  # Create Spot queue config
+  # Generate Spot queue config
   python - <<PY
 import json
 from pathlib import Path
@@ -456,7 +556,7 @@ Path("${SPOT_QUEUE_JSON}").write_text(json.dumps(obj, indent=2))
 print("Created Spot queue config: ${JOB_QUEUE_SPOT_NAME}")
 PY
 
-  # Create On-Demand queue config
+  # Generate On-Demand queue config
   python - <<PY
 import json
 from pathlib import Path
@@ -470,7 +570,7 @@ Path("${OD_QUEUE_JSON}").write_text(json.dumps(obj, indent=2))
 print("Created On-Demand queue config: ${JOB_QUEUE_OD_NAME}")
 PY
 
-  # Create Spot queue
+  # Create the two queues
   if aws batch describe-job-queues --job-queues "${JOB_QUEUE_SPOT_NAME}" --query 'jobQueues[0].jobQueueName' --output text | grep -q "${JOB_QUEUE_SPOT_NAME}"; then
     echo "Job queue exists: ${JOB_QUEUE_SPOT_NAME}"
   else
@@ -478,7 +578,6 @@ PY
     echo "Created job queue: ${JOB_QUEUE_SPOT_NAME}"
   fi
 
-  # Create On-Demand queue
   if aws batch describe-job-queues --job-queues "${JOB_QUEUE_OD_NAME}" --query 'jobQueues[0].jobQueueName' --output text | grep -q "${JOB_QUEUE_OD_NAME}"; then
     echo "Job queue exists: ${JOB_QUEUE_OD_NAME}"
   else
@@ -490,7 +589,9 @@ PY
   wait_for_queue "${JOB_QUEUE_OD_NAME}"
 
 else
-  # SINGLE QUEUE MODE (fallback or single CE)
+  # SINGLE QUEUE MODE: One queue backed by one or two CEs.
+  # If USE_BOTH=1, Spot is primary (order 1) and On-Demand is fallback (order 2).
+  # Batch tries Spot first; if no Spot capacity, it falls back to On-Demand.
   python - <<PY
 import json
 from pathlib import Path
@@ -533,7 +634,19 @@ PY
   wait_for_queue "${JOB_QUEUE_NAME}"
 fi
 
-# Register job definition
+###############################################################################
+# STEP 6: Register job definition
+###############################################################################
+# The job definition tells Batch how to run each container:
+#   - Which Docker image to use
+#   - Resource requirements (1 vCPU, 4 GB RAM per job)
+#   - Environment variables (S3 paths for inputs/outputs, shots, etc.)
+#   - Retry strategy (3 attempts — handles Spot interruptions)
+#   - Timeout (600s — kills stuck jobs after 10 minutes)
+#
+# Each call creates a new revision. Batch always uses the latest revision
+# when a job references the definition by name.
+
 JOBDEF_ARN=$(aws batch register-job-definition --cli-input-json file://"${JOBDEF_JSON}" --query 'jobDefinitionArn' --output text)
 echo "Registered job definition: ${JOBDEF_ARN}"
 

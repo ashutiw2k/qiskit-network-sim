@@ -1,23 +1,36 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Submit jobs to AWS Batch.
-# Automatically reads job count from jobs.json file.
+###############################################################################
+# submit_jobs.sh — Submit QEC jobs to AWS Batch
+###############################################################################
+#
+# This script reads a jobs.json file, counts the jobs, and submits them
+# to AWS Batch as an array job. Each array child runs one (code, path) pair.
+#
+# Modes:
+#   Single queue (default): All jobs go to one queue (typically Spot-backed).
+#   Parallel mode:          Jobs are split across Spot and On-Demand queues.
+#                           Uses JOB_INDEX_OFFSET so each child reads the
+#                           correct job from jobs.json.
+#   Rerun failed:           Re-submits only the failed indices from a
+#                           previous array job (delegates to rerun_failed.sh).
 #
 # Usage:
 #   ./submit_jobs.sh --jobs-file /path/to/jobs.json
-#   ./submit_jobs.sh --jobs-file /path/to/jobs.json --parallel   # Split across Spot+OD
-#   ./submit_jobs.sh --jobs-file /path/to/jobs.json --spot-ratio 0.7  # 70% to Spot (parallel mode)
-#   ./submit_jobs.sh --rerun-failed <PARENT_JOB_ID>              # Rerun failed indices only
+#   ./submit_jobs.sh --jobs-file /path/to/jobs.json --parallel
+#   ./submit_jobs.sh --jobs-file /path/to/jobs.json --spot-ratio 0.7
+#   ./submit_jobs.sh --jobs-file /path/to/jobs.json --upload --bucket my-bucket
+#   ./submit_jobs.sh --rerun-failed <PARENT_JOB_ID>
 #
-# The script will:
-#   1. Read the jobs.json file to count total jobs
-#   2. Upload jobs.json to S3 if LOCAL_JOBS_JSON is set or --upload flag is used
-#   3. Submit the correct array size to AWS Batch
+# The submitted job ID is saved to cloud_runs/last_job_id.txt for use
+# by watch_batch.sh, rerun_failed.sh, and cleanup_jobs.sh.
+###############################################################################
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Defaults (can be overridden by environment variables)
+# ── Defaults (overridable via environment variables) ─────────────────────────
+
 JOB_QUEUE_NAME="${JOB_QUEUE_NAME:-qec-job-queue}"
 JOB_QUEUE_SPOT_NAME="${JOB_QUEUE_SPOT_NAME:-qec-job-queue-spot}"
 JOB_QUEUE_OD_NAME="${JOB_QUEUE_OD_NAME:-qec-job-queue-od}"
@@ -26,10 +39,11 @@ BUCKET_NAME="${BUCKET_NAME:-}"
 S3_JOBS_KEY="${S3_JOBS_KEY:-inputs/jobs.json}"
 JOB_ID_FILE="${JOB_ID_FILE:-${SCRIPT_DIR}/last_job_id.txt}"
 
-# Parse arguments
+# ── Parse command-line arguments ─────────────────────────────────────────────
+
 JOBS_FILE=""
 PARALLEL_MODE=0
-SPOT_RATIO="0.5"
+SPOT_RATIO="0.5"       # Fraction of jobs sent to Spot queue in parallel mode
 UPLOAD_TO_S3=0
 RERUN_FAILED=0
 RERUN_PARENT_ID=""
@@ -45,11 +59,13 @@ while [[ $# -gt 0 ]]; do
       shift
       ;;
     --spot-ratio)
+      # e.g. --spot-ratio 0.7 sends 70% of jobs to Spot, 30% to On-Demand
       SPOT_RATIO="$2"
       PARALLEL_MODE=1  # Implies parallel mode
       shift 2
       ;;
     --upload)
+      # Upload the local jobs.json to S3 before submitting
       UPLOAD_TO_S3=1
       shift
       ;;
@@ -74,6 +90,8 @@ while [[ $# -gt 0 ]]; do
       shift 2
       ;;
     --rerun-failed)
+      # Re-submit only failed child jobs from a previous array job.
+      # Optionally takes the parent job ID; if omitted, reads last_job_id.txt.
       RERUN_FAILED=1
       if [[ $# -ge 2 && ! "$2" =~ ^- ]]; then
         RERUN_PARENT_ID="$2"
@@ -115,6 +133,10 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+# ── Handle --rerun-failed mode ───────────────────────────────────────────────
+# Delegates to rerun_failed.sh, which queries Batch for failed child indices
+# and submits individual (non-array) jobs for each one.
+
 if [[ "${RERUN_FAILED}" == "1" ]]; then
   if [[ -z "${RERUN_PARENT_ID}" ]]; then
     if [[ -f "${JOB_ID_FILE}" ]]; then
@@ -135,7 +157,8 @@ if [[ "${RERUN_FAILED}" == "1" ]]; then
   exit 0
 fi
 
-# Validate required arguments
+# ── Validate inputs ─────────────────────────────────────────────────────────
+
 if [[ -z "${JOBS_FILE}" ]]; then
   echo "Error: --jobs-file is required" >&2
   echo "Use --help for usage information" >&2
@@ -147,7 +170,8 @@ if [[ ! -f "${JOBS_FILE}" ]]; then
   exit 1
 fi
 
-# Count jobs in the file
+# Count jobs in the file — this becomes the array size.
+# Each array child gets an index 0..N-1 via AWS_BATCH_JOB_ARRAY_INDEX.
 ARRAY_SIZE=$(python3 -c "
 import json
 with open('${JOBS_FILE}') as f:
@@ -168,7 +192,7 @@ echo "Jobs file:       ${JOBS_FILE}"
 echo "Total jobs:      ${ARRAY_SIZE}"
 echo "Job definition:  ${JOB_DEF_NAME}"
 
-# Upload to S3 if requested
+# Upload jobs.json to S3 if requested (so containers can download it)
 if [[ "${UPLOAD_TO_S3}" == "1" ]]; then
   if [[ -z "${BUCKET_NAME}" ]]; then
     echo "Error: --bucket is required when using --upload" >&2
@@ -181,13 +205,20 @@ fi
 echo "=============================================="
 echo ""
 
+# Helper: check if a Batch job queue exists
 queue_exists() {
   local qname="$1"
   aws batch describe-job-queues --job-queues "${qname}" --query 'jobQueues[0].jobQueueName' --output text 2>/dev/null | grep -q "${qname}"
 }
 
+# ── Submit jobs ──────────────────────────────────────────────────────────────
+
 if [[ "${PARALLEL_MODE}" == "1" ]]; then
-  # PARALLEL MODE: Split across Spot and On-Demand
+  # PARALLEL MODE: Split the job array across two separate queues.
+  # Jobs 0..(SPOT_SIZE-1) go to the Spot queue.
+  # Jobs SPOT_SIZE..(ARRAY_SIZE-1) go to the On-Demand queue.
+  # The OD array uses JOB_INDEX_OFFSET so run_job.py reads the correct
+  # job from jobs.json (OD child index 0 maps to job SPOT_SIZE, etc.).
   SPOT_SIZE=$(python3 -c "import math; print(int(math.floor(${ARRAY_SIZE} * ${SPOT_RATIO})))")
   OD_SIZE=$((ARRAY_SIZE - SPOT_SIZE))
 
@@ -205,7 +236,7 @@ if [[ "${PARALLEL_MODE}" == "1" ]]; then
     exit 1
   fi
 
-  # Submit to Spot queue (jobs 0 to SPOT_SIZE-1)
+  # Submit Spot portion
   if [[ "${SPOT_SIZE}" -gt 0 ]]; then
     SPOT_JOB_ID=$(aws batch submit-job \
       --job-name qec-array-spot \
@@ -219,7 +250,7 @@ if [[ "${PARALLEL_MODE}" == "1" ]]; then
     echo "Skipping Spot queue (0 jobs)"
   fi
 
-  # Submit to On-Demand queue (jobs SPOT_SIZE to ARRAY_SIZE-1)
+  # Submit On-Demand portion with JOB_INDEX_OFFSET
   if [[ "${OD_SIZE}" -gt 0 ]]; then
     OD_JOB_ID=$(aws batch submit-job \
       --job-name qec-array-od \
@@ -234,7 +265,7 @@ if [[ "${PARALLEL_MODE}" == "1" ]]; then
     echo "Skipping On-Demand queue (0 jobs)"
   fi
 
-  # Save job IDs
+  # Save job IDs to file for monitoring/rerun
   if [[ -n "${SPOT_JOB_ID}" && -n "${OD_JOB_ID}" ]]; then
     echo "${SPOT_JOB_ID},${OD_JOB_ID}" > "${JOB_ID_FILE}"
   elif [[ -n "${SPOT_JOB_ID}" ]]; then
@@ -244,7 +275,8 @@ if [[ "${PARALLEL_MODE}" == "1" ]]; then
   fi
 
 else
-  # SINGLE QUEUE MODE
+  # SINGLE QUEUE MODE: Submit all jobs to one queue as a single array job.
+  # Batch assigns each child an index via AWS_BATCH_JOB_ARRAY_INDEX (0..N-1).
   echo "Mode:            SINGLE QUEUE (Spot)"
   echo "Queue:           ${JOB_QUEUE_NAME}"
   echo ""
