@@ -1,0 +1,217 @@
+{
+  "limit_seconds": 600,
+  "processes": [
+    {
+      "args": [
+        "--prepare"
+      ],
+      "charged_seconds": 10.753322582924739,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "A_existing_depolarizing",
+        "matrix_product_state",
+        "--shots",
+        "128",
+        "--repetition",
+        "0"
+      ],
+      "charged_seconds": 2.40454554092139,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "A_existing_depolarizing",
+        "stabilizer",
+        "--shots",
+        "128",
+        "--repetition",
+        "0"
+      ],
+      "charged_seconds": 2.0795442920643836,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "B_calibration_depolarizing_readout",
+        "matrix_product_state",
+        "--shots",
+        "128",
+        "--repetition",
+        "0"
+      ],
+      "charged_seconds": 4.087814333150163,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "B_calibration_depolarizing_readout",
+        "stabilizer",
+        "--shots",
+        "128",
+        "--repetition",
+        "0"
+      ],
+      "charged_seconds": 3.7803045420441777,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--controls"
+      ],
+      "charged_seconds": 0.9820729580242187,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "A_existing_depolarizing",
+        "stabilizer",
+        "--shots",
+        "128",
+        "--repetition",
+        "1"
+      ],
+      "charged_seconds": 1.4787810419220477,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "A_existing_depolarizing",
+        "matrix_product_state",
+        "--shots",
+        "128",
+        "--repetition",
+        "1"
+      ],
+      "charged_seconds": 1.4256230001337826,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "B_calibration_depolarizing_readout",
+        "stabilizer",
+        "--shots",
+        "128",
+        "--repetition",
+        "1"
+      ],
+      "charged_seconds": 2.6188645840156823,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "B_calibration_depolarizing_readout",
+        "matrix_product_state",
+        "--shots",
+        "128",
+        "--repetition",
+        "1"
+      ],
+      "charged_seconds": 2.7772212920244783,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "A_existing_depolarizing",
+        "matrix_product_state",
+        "--shots",
+        "128",
+        "--repetition",
+        "2"
+      ],
+      "charged_seconds": 1.4766552499495447,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "A_existing_depolarizing",
+        "stabilizer",
+        "--shots",
+        "128",
+        "--repetition",
+        "2"
+      ],
+      "charged_seconds": 1.3684954999480397,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "B_calibration_depolarizing_readout",
+        "matrix_product_state",
+        "--shots",
+        "128",
+        "--repetition",
+        "2"
+      ],
+      "charged_seconds": 2.7826506248675287,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "B_calibration_depolarizing_readout",
+        "stabilizer",
+        "--shots",
+        "128",
+        "--repetition",
+        "2"
+      ],
+      "charged_seconds": 2.5689607500098646,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    }
+  ]
+}

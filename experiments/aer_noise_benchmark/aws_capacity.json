@@ -1,0 +1,285 @@
+{
+  "status": "success",
+  "stdout": "",
+  "return_value": {
+    "ondemand_quota": {
+      "Quota": {
+        "ServiceCode": "ec2",
+        "ServiceName": "Amazon Elastic Compute Cloud (Amazon EC2)",
+        "QuotaArn": "arn:aws:servicequotas:us-east-2:241766333838:ec2/L-1216C47A",
+        "QuotaCode": "L-1216C47A",
+        "QuotaName": "Running On-Demand Standard (A, C, D, H, I, M, R, T, Z) instances",
+        "Value": 500,
+        "Unit": "None",
+        "Adjustable": true,
+        "GlobalQuota": false,
+        "UsageMetric": {
+          "MetricNamespace": "AWS/Usage",
+          "MetricName": "ResourceCount",
+          "MetricDimensions": {
+            "Class": "Standard/OnDemand",
+            "Resource": "vCPU",
+            "Service": "EC2",
+            "Type": "Resource"
+          },
+          "MetricStatisticRecommendation": "Maximum"
+        },
+        "QuotaAppliedAtLevel": "ACCOUNT",
+        "Description": "Maximum number of vCPUs assigned to the Running On-Demand Standard (A, C, D, H, I, M, R, T, Z) instances."
+      }
+    },
+    "spot_quota": {
+      "Quota": {
+        "ServiceCode": "ec2",
+        "ServiceName": "Amazon Elastic Compute Cloud (Amazon EC2)",
+        "QuotaArn": "arn:aws:servicequotas:us-east-2:241766333838:ec2/L-34B43A08",
+        "QuotaCode": "L-34B43A08",
+        "QuotaName": "All Standard (A, C, D, H, I, M, R, T, Z) Spot Instance Requests",
+        "Value": 500,
+        "Unit": "None",
+        "Adjustable": true,
+        "GlobalQuota": false,
+        "UsageMetric": {
+          "MetricNamespace": "AWS/Usage",
+          "MetricName": "ResourceCount",
+          "MetricDimensions": {
+            "Class": "Standard/Spot",
+            "Resource": "vCPU",
+            "Service": "EC2",
+            "Type": "Resource"
+          },
+          "MetricStatisticRecommendation": "Maximum"
+        },
+        "QuotaAppliedAtLevel": "ACCOUNT",
+        "Description": "The maximum number of vCPUs for all running or requested Standard (A, C, D, H, I, M, R, T, Z) Spot Instances per Region"
+      }
+    },
+    "instance_types": [
+      {
+        "InstanceType": "c6a.4xlarge",
+        "VCpuInfo": {
+          "DefaultVCpus": 16,
+          "DefaultCores": 8,
+          "DefaultThreadsPerCore": 2,
+          "ValidCores": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "ValidThreadsPerCore": [
+            1,
+            2
+          ]
+        },
+        "MemoryInfo": {
+          "SizeInMiB": 32768
+        }
+      },
+      {
+        "InstanceType": "c7a.4xlarge",
+        "VCpuInfo": {
+          "DefaultVCpus": 16,
+          "DefaultCores": 16,
+          "DefaultThreadsPerCore": 1,
+          "ValidCores": [
+            1,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16
+          ],
+          "ValidThreadsPerCore": [
+            1
+          ]
+        },
+        "MemoryInfo": {
+          "SizeInMiB": 32768
+        }
+      },
+      {
+        "InstanceType": "c6a.8xlarge",
+        "VCpuInfo": {
+          "DefaultVCpus": 32,
+          "DefaultCores": 16,
+          "DefaultThreadsPerCore": 2,
+          "ValidCores": [
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16
+          ],
+          "ValidThreadsPerCore": [
+            1,
+            2
+          ]
+        },
+        "MemoryInfo": {
+          "SizeInMiB": 65536
+        }
+      },
+      {
+        "InstanceType": "c7i.8xlarge",
+        "VCpuInfo": {
+          "DefaultVCpus": 32,
+          "DefaultCores": 16,
+          "DefaultThreadsPerCore": 2,
+          "ValidCores": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "ValidThreadsPerCore": [
+            1,
+            2
+          ]
+        },
+        "MemoryInfo": {
+          "SizeInMiB": 65536
+        }
+      },
+      {
+        "InstanceType": "c6i.4xlarge",
+        "VCpuInfo": {
+          "DefaultVCpus": 16,
+          "DefaultCores": 8,
+          "DefaultThreadsPerCore": 2,
+          "ValidCores": [
+            2,
+            4,
+            6,
+            8
+          ],
+          "ValidThreadsPerCore": [
+            1,
+            2
+          ]
+        },
+        "MemoryInfo": {
+          "SizeInMiB": 32768
+        }
+      },
+      {
+        "InstanceType": "c7i.4xlarge",
+        "VCpuInfo": {
+          "DefaultVCpus": 16,
+          "DefaultCores": 8,
+          "DefaultThreadsPerCore": 2,
+          "ValidCores": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "ValidThreadsPerCore": [
+            1,
+            2
+          ]
+        },
+        "MemoryInfo": {
+          "SizeInMiB": 32768
+        }
+      },
+      {
+        "InstanceType": "c6i.8xlarge",
+        "VCpuInfo": {
+          "DefaultVCpus": 32,
+          "DefaultCores": 16,
+          "DefaultThreadsPerCore": 2,
+          "ValidCores": [
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16
+          ],
+          "ValidThreadsPerCore": [
+            1,
+            2
+          ]
+        },
+        "MemoryInfo": {
+          "SizeInMiB": 65536
+        }
+      },
+      {
+        "InstanceType": "c7a.8xlarge",
+        "VCpuInfo": {
+          "DefaultVCpus": 32,
+          "DefaultCores": 32,
+          "DefaultThreadsPerCore": 1,
+          "ValidCores": [
+            1,
+            2,
+            3,
+            4,
+            8,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32
+          ],
+          "ValidThreadsPerCore": [
+            1
+          ]
+        },
+        "MemoryInfo": {
+          "SizeInMiB": 65536
+        }
+      }
+    ]
+  },
+  "api_calls": [
+    {
+      "service": "service-quotas",
+      "operation": "GetServiceQuota",
+      "status": "success"
+    },
+    {
+      "service": "service-quotas",
+      "operation": "GetServiceQuota",
+      "status": "success"
+    },
+    {
+      "service": "ec2",
+      "operation": "DescribeInstanceTypes",
+      "status": "success",
+      "n_items": {
+        "InstanceTypes": 8
+      }
+    }
+  ]
+}

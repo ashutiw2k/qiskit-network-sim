@@ -1,0 +1,914 @@
+{
+  "compatibility": {
+    "angles_modified": false,
+    "eligible": false,
+    "installed_stabilizer_operations": [
+      "barrier",
+      "break_loop",
+      "continue_loop",
+      "cx",
+      "cy",
+      "cz",
+      "delay",
+      "ecr",
+      "for_loop",
+      "h",
+      "id",
+      "if_else",
+      "measure",
+      "pauli",
+      "reset",
+      "roerror",
+      "rz",
+      "s",
+      "save_amplitudes_sq",
+      "save_clifford",
+      "save_expval",
+      "save_expval_var",
+      "save_probabilities",
+      "save_probabilities_dict",
+      "save_stabilizer",
+      "save_state",
+      "sdg",
+      "set_stabilizer",
+      "store",
+      "swap",
+      "switch_case",
+      "sx",
+      "sxdg",
+      "while_loop",
+      "x",
+      "y",
+      "z"
+    ],
+    "max_rz_multiple_residual": 2.220446049250313e-16,
+    "noise_instruction_names": [
+      "id",
+      "kraus",
+      "reset",
+      "z"
+    ],
+    "problems": [
+      {
+        "operation": "kraus",
+        "reason": "unsupported noise instruction"
+      }
+    ],
+    "runtime_validation": "must also complete the actual stabilizer run"
+  },
+  "coverage": {
+    "failures": [],
+    "occurrences_by_status": {
+      "ideal_measurement": 4,
+      "ideal_virtual_rz_zero_calibration": 56,
+      "noisy": 99,
+      "uncovered_operation": 49
+    },
+    "rows": [
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 2,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          0,
+          4
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 3,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          0,
+          18
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          1,
+          4
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 3,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          1,
+          18
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          2,
+          0
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0037717624378870163,
+        "hardware_supported": true,
+        "model_average_infidelity": 0.0005736810982641671,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": "local",
+        "qubits": [
+          2,
+          1
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          2,
+          4
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 3,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          2,
+          18
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          3,
+          0
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0029846582394649213,
+        "hardware_supported": true,
+        "model_average_infidelity": 0.0006293121008094094,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": "local",
+        "qubits": [
+          3,
+          2
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.004349994010613423,
+        "hardware_supported": true,
+        "model_average_infidelity": 0.0005276417580152293,
+        "occurrences": 2,
+        "operation": "cz",
+        "quantum_channel": "local",
+        "qubits": [
+          3,
+          4
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 3,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          3,
+          18
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 3,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          4,
+          18
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          14,
+          9
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          14,
+          10
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          14,
+          11
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          14,
+          12
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          15,
+          10
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          15,
+          11
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          15,
+          12
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          15,
+          13
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          16,
+          9
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          16,
+          11
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          16,
+          12
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          16,
+          13
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          17,
+          9
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          17,
+          10
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          17,
+          12
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 1,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          17,
+          13
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 3,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          18,
+          9
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 3,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          18,
+          10
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": 0.003578834927444652,
+        "hardware_supported": true,
+        "model_average_infidelity": 0.0012127520898854716,
+        "occurrences": 3,
+        "operation": "cz",
+        "quantum_channel": "local",
+        "qubits": [
+          18,
+          11
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 3,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          18,
+          12
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": false,
+        "occurrences": 3,
+        "operation": "cz",
+        "quantum_channel": null,
+        "qubits": [
+          18,
+          13
+        ],
+        "status": "uncovered_operation"
+      },
+      {
+        "backend_gate_or_measure_error": 0.003662109375,
+        "hardware_supported": true,
+        "occurrences": 1,
+        "operation": "measure",
+        "quantum_channel": null,
+        "qubits": [
+          14
+        ],
+        "readout_probabilities": null,
+        "status": "ideal_measurement"
+      },
+      {
+        "backend_gate_or_measure_error": 0.032958984375,
+        "hardware_supported": true,
+        "occurrences": 1,
+        "operation": "measure",
+        "quantum_channel": null,
+        "qubits": [
+          15
+        ],
+        "readout_probabilities": null,
+        "status": "ideal_measurement"
+      },
+      {
+        "backend_gate_or_measure_error": 0.012939453125,
+        "hardware_supported": true,
+        "occurrences": 1,
+        "operation": "measure",
+        "quantum_channel": null,
+        "qubits": [
+          16
+        ],
+        "readout_probabilities": null,
+        "status": "ideal_measurement"
+      },
+      {
+        "backend_gate_or_measure_error": 0.00537109375,
+        "hardware_supported": true,
+        "occurrences": 1,
+        "operation": "measure",
+        "quantum_channel": null,
+        "qubits": [
+          17
+        ],
+        "readout_probabilities": null,
+        "status": "ideal_measurement"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": true,
+        "occurrences": 1,
+        "operation": "reset",
+        "quantum_channel": "local",
+        "qubits": [
+          14
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": true,
+        "occurrences": 1,
+        "operation": "reset",
+        "quantum_channel": "local",
+        "qubits": [
+          15
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": true,
+        "occurrences": 1,
+        "operation": "reset",
+        "quantum_channel": "local",
+        "qubits": [
+          16
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": null,
+        "hardware_supported": true,
+        "occurrences": 1,
+        "operation": "reset",
+        "quantum_channel": "local",
+        "qubits": [
+          17
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0,
+        "hardware_supported": true,
+        "occurrences": 2,
+        "operation": "rz",
+        "quantum_channel": null,
+        "qubits": [
+          0
+        ],
+        "status": "ideal_virtual_rz_zero_calibration"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0,
+        "hardware_supported": true,
+        "occurrences": 2,
+        "operation": "rz",
+        "quantum_channel": null,
+        "qubits": [
+          1
+        ],
+        "status": "ideal_virtual_rz_zero_calibration"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0,
+        "hardware_supported": true,
+        "occurrences": 2,
+        "operation": "rz",
+        "quantum_channel": null,
+        "qubits": [
+          2
+        ],
+        "status": "ideal_virtual_rz_zero_calibration"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0,
+        "hardware_supported": true,
+        "occurrences": 2,
+        "operation": "rz",
+        "quantum_channel": null,
+        "qubits": [
+          3
+        ],
+        "status": "ideal_virtual_rz_zero_calibration"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0,
+        "hardware_supported": true,
+        "occurrences": 8,
+        "operation": "rz",
+        "quantum_channel": null,
+        "qubits": [
+          4
+        ],
+        "status": "ideal_virtual_rz_zero_calibration"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0,
+        "hardware_supported": true,
+        "occurrences": 4,
+        "operation": "rz",
+        "quantum_channel": null,
+        "qubits": [
+          9
+        ],
+        "status": "ideal_virtual_rz_zero_calibration"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0,
+        "hardware_supported": true,
+        "occurrences": 4,
+        "operation": "rz",
+        "quantum_channel": null,
+        "qubits": [
+          10
+        ],
+        "status": "ideal_virtual_rz_zero_calibration"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0,
+        "hardware_supported": true,
+        "occurrences": 4,
+        "operation": "rz",
+        "quantum_channel": null,
+        "qubits": [
+          11
+        ],
+        "status": "ideal_virtual_rz_zero_calibration"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0,
+        "hardware_supported": true,
+        "occurrences": 8,
+        "operation": "rz",
+        "quantum_channel": null,
+        "qubits": [
+          12
+        ],
+        "status": "ideal_virtual_rz_zero_calibration"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0,
+        "hardware_supported": true,
+        "occurrences": 4,
+        "operation": "rz",
+        "quantum_channel": null,
+        "qubits": [
+          13
+        ],
+        "status": "ideal_virtual_rz_zero_calibration"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0,
+        "hardware_supported": true,
+        "occurrences": 4,
+        "operation": "rz",
+        "quantum_channel": null,
+        "qubits": [
+          14
+        ],
+        "status": "ideal_virtual_rz_zero_calibration"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0,
+        "hardware_supported": true,
+        "occurrences": 4,
+        "operation": "rz",
+        "quantum_channel": null,
+        "qubits": [
+          15
+        ],
+        "status": "ideal_virtual_rz_zero_calibration"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0,
+        "hardware_supported": true,
+        "occurrences": 4,
+        "operation": "rz",
+        "quantum_channel": null,
+        "qubits": [
+          16
+        ],
+        "status": "ideal_virtual_rz_zero_calibration"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0,
+        "hardware_supported": true,
+        "occurrences": 4,
+        "operation": "rz",
+        "quantum_channel": null,
+        "qubits": [
+          17
+        ],
+        "status": "ideal_virtual_rz_zero_calibration"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0007640689403641555,
+        "hardware_supported": true,
+        "model_average_infidelity": 0.00027065327868192046,
+        "occurrences": 4,
+        "operation": "sx",
+        "quantum_channel": "local",
+        "qubits": [
+          0
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.00017830158250577147,
+        "hardware_supported": true,
+        "model_average_infidelity": 4.2062110069629455e-05,
+        "occurrences": 4,
+        "operation": "sx",
+        "quantum_channel": "local",
+        "qubits": [
+          1
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.00019759080931036193,
+        "hardware_supported": true,
+        "model_average_infidelity": 9.457955010161445e-05,
+        "occurrences": 4,
+        "operation": "sx",
+        "quantum_channel": "local",
+        "qubits": [
+          2
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.00023918657563726055,
+        "hardware_supported": true,
+        "model_average_infidelity": 5.531736307651247e-05,
+        "occurrences": 4,
+        "operation": "sx",
+        "quantum_channel": "local",
+        "qubits": [
+          3
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.000212360695609903,
+        "hardware_supported": true,
+        "model_average_infidelity": 7.035214500816789e-05,
+        "occurrences": 7,
+        "operation": "sx",
+        "quantum_channel": "local",
+        "qubits": [
+          4
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0002377305089616369,
+        "hardware_supported": true,
+        "model_average_infidelity": 0.00016464768228763305,
+        "occurrences": 5,
+        "operation": "sx",
+        "quantum_channel": "local",
+        "qubits": [
+          9
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0002414606338335861,
+        "hardware_supported": true,
+        "model_average_infidelity": 9.169995617863691e-05,
+        "occurrences": 5,
+        "operation": "sx",
+        "quantum_channel": "local",
+        "qubits": [
+          10
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.00019574237225861136,
+        "hardware_supported": true,
+        "model_average_infidelity": 0.0001464412274025939,
+        "occurrences": 5,
+        "operation": "sx",
+        "quantum_channel": "local",
+        "qubits": [
+          11
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.000258654056224904,
+        "hardware_supported": true,
+        "model_average_infidelity": 0.0001558244423213173,
+        "occurrences": 7,
+        "operation": "sx",
+        "quantum_channel": "local",
+        "qubits": [
+          12
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.00016794873194207725,
+        "hardware_supported": true,
+        "model_average_infidelity": 5.435174202439441e-05,
+        "occurrences": 5,
+        "operation": "sx",
+        "quantum_channel": "local",
+        "qubits": [
+          13
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.00015022296704867292,
+        "hardware_supported": true,
+        "model_average_infidelity": 0.00019202555935360355,
+        "occurrences": 2,
+        "operation": "sx",
+        "quantum_channel": "local",
+        "qubits": [
+          14
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.0003389018391519696,
+        "hardware_supported": true,
+        "model_average_infidelity": 7.186535310033104e-05,
+        "occurrences": 2,
+        "operation": "sx",
+        "quantum_channel": "local",
+        "qubits": [
+          15
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.000666075010713203,
+        "hardware_supported": true,
+        "model_average_infidelity": 9.546162841322925e-05,
+        "occurrences": 2,
+        "operation": "sx",
+        "quantum_channel": "local",
+        "qubits": [
+          16
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.00022903965791040638,
+        "hardware_supported": true,
+        "model_average_infidelity": 0.00010243805898069169,
+        "occurrences": 2,
+        "operation": "sx",
+        "quantum_channel": "local",
+        "qubits": [
+          17
+        ],
+        "status": "noisy"
+      },
+      {
+        "backend_gate_or_measure_error": 0.00029660123935336104,
+        "hardware_supported": true,
+        "model_average_infidelity": 0.0001425296602018955,
+        "occurrences": 30,
+        "operation": "sx",
+        "quantum_channel": "local",
+        "qubits": [
+          18
+        ],
+        "status": "noisy"
+      }
+    ],
+    "strict": false,
+    "two_qubit_occurrences": 56,
+    "two_qubit_occurrences_outside_hardware_target": 49,
+    "two_qubit_occurrences_without_channel": 49
+  },
+  "noise_construction_seconds": 2.405096833826974,
+  "simulation_performed": false
+}

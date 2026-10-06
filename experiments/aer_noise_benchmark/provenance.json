@@ -1,0 +1,17 @@
+{
+  "client_date": "2026-10-06",
+  "timezone": "America/New_York",
+  "git_head": "7e0b43ea9b990c12243d8b80cb4fe5cd0e47a41d",
+  "host": {
+    "hardware_model": "Mac16,7",
+    "cpu": "Apple M4 Pro",
+    "physical_memory_bytes": 51539607552,
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O"
+  },
+  "harness_sha256": "dbf09773e104abd525374b0211fa5b8b89e4dacda51138e8fcf5d6618881e397",
+  "verifier_sha256": "060b24038e0d93b5ca1ebb25f34835330d926fbfe5957d18cc86a7c2adbb4c44",
+  "requirements_sha256": "beb767d47d8bf7001bd508759f934bc1ece867033a08b32c660b02152d289340",
+  "seed_history": "Archived repetitions used base+repetition. Final harness uses base+10000*repetition; overlapping archived repetitions are excluded from distribution statistics.",
+  "protected_files": 42,
+  "no_commit_push_or_deploy": true
+}

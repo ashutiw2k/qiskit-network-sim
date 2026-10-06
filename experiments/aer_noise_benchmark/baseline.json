@@ -1,0 +1,294 @@
+{
+  "recorded_at_utc": "2026-10-06T17:51:35.922880+00:00",
+  "root": "/Users/ashutoshtiwari/Desktop/Research-Code/qiskit-network-sim",
+  "git_head": "7e0b43ea9b990c12243d8b80cb4fe5cd0e47a41d",
+  "git_status": "?? AGENTS.md\n?? CLAUDE.md\n?? GEMINI.md\n",
+  "git_diff": "",
+  "git_cached_diff": "",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "cloud_runs": [
+    {
+      "path": "cloud_runs/COMMANDS_ALL_ERROR.txt",
+      "type": "file",
+      "size": 2836,
+      "sha256": "9623f0b54c3b46115c0164a5f3a1e4f3f234c88cb0a34b988a4f917b688c9f52"
+    },
+    {
+      "path": "cloud_runs/COMMANDS_SUCCESSFUL.txt",
+      "type": "file",
+      "size": 936,
+      "sha256": "e3c7e02dc1c2bff1bf7fb6c3521d99bcc0f5a581a556bc8b2daa7dbed2433bc7"
+    },
+    {
+      "path": "cloud_runs/Dockerfile",
+      "type": "file",
+      "size": 551,
+      "sha256": "0d8e391496ed27c5e7d1d82f0bfb6b98be3de6575b928ac958d664c7cde3080a"
+    },
+    {
+      "path": "cloud_runs/README.md",
+      "type": "file",
+      "size": 11480,
+      "sha256": "fe7db7c5426cb5e4d20d1c114fb366c6797684ff78cb988d97ebc1d5af59e3b0"
+    },
+    {
+      "path": "cloud_runs/SETUP.md",
+      "type": "file",
+      "size": 7150,
+      "sha256": "2bf81b52716046dfdfa8e078dcb9ce8a3dc70ce23287e51f80d3df6f5b7ab293"
+    },
+    {
+      "path": "cloud_runs/__init__.py",
+      "type": "file",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cloud_runs/alljobs.json",
+      "type": "file",
+      "size": 70902,
+      "sha256": "4bc78532f04c4f18c2a406245d6c477a07606dacd2accfe799f740b141b5cb36"
+    },
+    {
+      "path": "cloud_runs/assets",
+      "type": "directory"
+    },
+    {
+      "path": "cloud_runs/assets/screenshot_placeholder.png",
+      "type": "file",
+      "size": 68,
+      "sha256": "d6ff47b0a2da08294df5fb7b71f4425be80746417f0d85ba2a7eb8b4187f1901"
+    },
+    {
+      "path": "cloud_runs/batch_entrypoint.sh",
+      "type": "file",
+      "size": 3143,
+      "sha256": "4de9e86f0fefd5b55631a7ea1c5cfda402afd74def2de74b733b0c5e0ac86052"
+    },
+    {
+      "path": "cloud_runs/batch_templates",
+      "type": "directory"
+    },
+    {
+      "path": "cloud_runs/batch_templates/compute-env-ondemand.json",
+      "type": "file",
+      "size": 675,
+      "sha256": "a819436cb50612ac9d33281b9870b1c1c16e2ef16b3b8f088d8ab3f071a4bfd5"
+    },
+    {
+      "path": "cloud_runs/batch_templates/compute-env-spot.json",
+      "type": "file",
+      "size": 723,
+      "sha256": "13da6f8217b0da7c9f64fa42358bcd94d0731b0c245fc4bb26d55614e47aac04"
+    },
+    {
+      "path": "cloud_runs/batch_templates/job-definition.json",
+      "type": "file",
+      "size": 652,
+      "sha256": "f5837fe993f3c4eb1c2478df1be7a6e0204aab0ca756670b9861aff278709d56"
+    },
+    {
+      "path": "cloud_runs/batch_templates/job-queue.json",
+      "type": "file",
+      "size": 234,
+      "sha256": "8af8b22205f6d4e3686613a5c4aa1ecc0537d9da9c9787021260a6a02d446329"
+    },
+    {
+      "path": "cloud_runs/circuit.py",
+      "type": "file",
+      "size": 2481,
+      "sha256": "40bb4dd8932893f989183bd81c084375db365f1d29d2276c1ced56ad1c231182"
+    },
+    {
+      "path": "cloud_runs/cleanup_jobs.sh",
+      "type": "file",
+      "size": 1556,
+      "sha256": "ea45b783c9edda22548e2c2f1a378cb5f80eeefb1b854f5d29f5b1db98d7645d"
+    },
+    {
+      "path": "cloud_runs/codes",
+      "type": "directory"
+    },
+    {
+      "path": "cloud_runs/codes/__init__.py",
+      "type": "file",
+      "size": 452,
+      "sha256": "6cae504352c00042efbf1e08bfba7538560d6163225dc80734a92e20ddbd2ae0"
+    },
+    {
+      "path": "cloud_runs/codes/base.py",
+      "type": "file",
+      "size": 934,
+      "sha256": "6e9a3f4b439a9dc96e57cc0496dd43f629e1a58fa2fc19239772ba8228f56043"
+    },
+    {
+      "path": "cloud_runs/codes/code_513.py",
+      "type": "file",
+      "size": 4494,
+      "sha256": "88f459a2eb4ce0734a137185ccc971ae95e9404f50a858f7710a7f3fddd3be06"
+    },
+    {
+      "path": "cloud_runs/codes/code_713.py",
+      "type": "file",
+      "size": 5234,
+      "sha256": "9f7f6b05eef83cadd76388f8fd86d53ef0f518ec36b4b5d6f033456e55d10f37"
+    },
+    {
+      "path": "cloud_runs/codes/code_823.py",
+      "type": "file",
+      "size": 8216,
+      "sha256": "8b8ecb4e00b0b177ae33633cb9e59bf078efaeee715ff8d78333579f7ee38048"
+    },
+    {
+      "path": "cloud_runs/codes/code_913.py",
+      "type": "file",
+      "size": 6050,
+      "sha256": "df369ec7efaa77b70126d52e021d79f17048bfc44c4dcc5c99a586df5aa84e23"
+    },
+    {
+      "path": "cloud_runs/collect_measurements.sh",
+      "type": "file",
+      "size": 1137,
+      "sha256": "10bebd42f0342d970523d1a82ac45e173a357a3b8db2c98cd62560e9f8e6bc18"
+    },
+    {
+      "path": "cloud_runs/common.py",
+      "type": "file",
+      "size": 6380,
+      "sha256": "52f9bb24f05aeabb86c5f1fd01833169be0f6fc47b040fef712bb1f812d7849b"
+    },
+    {
+      "path": "cloud_runs/generate_ground_truth.py",
+      "type": "file",
+      "size": 9669,
+      "sha256": "8f9101f1f51198d251dd644e00477775eb21714ea20f705371029078d253c2fa"
+    },
+    {
+      "path": "cloud_runs/generate_jobs.py",
+      "type": "file",
+      "size": 3341,
+      "sha256": "9235bc375a69ac91fb12823e81fd51d2e08e397915c43ce709e44c781a96aad5"
+    },
+    {
+      "path": "cloud_runs/iam_policy_least_privilege.json",
+      "type": "file",
+      "size": 2359,
+      "sha256": "5166f4a59900a14ec91e73e4f6dcdc1bbcf94af5b2717256134cb748ac594ef5"
+    },
+    {
+      "path": "cloud_runs/jobs",
+      "type": "directory"
+    },
+    {
+      "path": "cloud_runs/jobs/jobs_eagle.json",
+      "type": "file",
+      "size": 94518,
+      "sha256": "4af2467476d9472328b2e460c7c7dcf8124aa0ebb96d9d274cd3a36e6d1b29af"
+    },
+    {
+      "path": "cloud_runs/jobs/jobs_heron_r1.json",
+      "type": "file",
+      "size": 94518,
+      "sha256": "98207fc588950735b0e5a740913582558a19228942311882c96dc9762f236a6e"
+    },
+    {
+      "path": "cloud_runs/jobs/jobs_heron_r2.json",
+      "type": "file",
+      "size": 94518,
+      "sha256": "ba27f2baf8e5fa62b6832f88becb2d249b89562af97a6c46c9ee4b16bbacd02e"
+    },
+    {
+      "path": "cloud_runs/jobs/jobs_heron_r2_marrakesh.json",
+      "type": "file",
+      "size": 94528,
+      "sha256": "5791e4e67e589a7c0f1c88c5d7423e5715c629dcb3b8e6b4b91c9215c35f3c18"
+    },
+    {
+      "path": "cloud_runs/jobs.json",
+      "type": "file",
+      "size": 94493,
+      "sha256": "a4f10fae13e50570bcf24348fd742328c5623c370f6e86cef1633fa95ef7f2ed"
+    },
+    {
+      "path": "cloud_runs/last_job_id.txt",
+      "type": "file",
+      "size": 37,
+      "sha256": "85494d9143fa72668fb4b937427b2353ffccc7405ad3f40cdfc7741979791645"
+    },
+    {
+      "path": "cloud_runs/merge_results.py",
+      "type": "file",
+      "size": 6361,
+      "sha256": "ff01bb310dd181bb10a210aa49132b4aef815a2e6ee06ccec688fc8f74dd4985"
+    },
+    {
+      "path": "cloud_runs/requirements-cloud.txt",
+      "type": "file",
+      "size": 63,
+      "sha256": "2082b866c4f052e8862cb9299a3bee9854e682901525a1e5235fae883c84258d"
+    },
+    {
+      "path": "cloud_runs/rerun_failed.sh",
+      "type": "file",
+      "size": 2645,
+      "sha256": "7e7e991945bef0b405833c3fb95545a325d4b614719a95e8c7f64e24ca734204"
+    },
+    {
+      "path": "cloud_runs/run_job.py",
+      "type": "file",
+      "size": 5857,
+      "sha256": "3a716a6096372ccf6c11c156d656eb9151f25885ef6ab6ae76fc87bdcbd2bda7"
+    },
+    {
+      "path": "cloud_runs/run_jobs_local.sh",
+      "type": "file",
+      "size": 2743,
+      "sha256": "1ef56b36a11dce701f003fd0848d28d15d60460e1d837d9d5e9be5e7b27bfc42"
+    },
+    {
+      "path": "cloud_runs/s3_sync.py",
+      "type": "file",
+      "size": 4258,
+      "sha256": "723adfd55030b627d627dfaf7be726c4b53043d1e94c44ff80327a272eb1d9c8"
+    },
+    {
+      "path": "cloud_runs/setup_batch.sh",
+      "type": "file",
+      "size": 26965,
+      "sha256": "54521b5e15dabf0d7059453f2a716c58cd3bad3e136bb3ba74fe8046fb46d4b1"
+    },
+    {
+      "path": "cloud_runs/smalljobs.json",
+      "type": "file",
+      "size": 9429,
+      "sha256": "df196a91753dcb46a3b0e4ebfca2d16184243d262bfd04a9cf0774c77330be67"
+    },
+    {
+      "path": "cloud_runs/submit_jobs.sh",
+      "type": "file",
+      "size": 9760,
+      "sha256": "673eac94ab9160318659582e6eb7d78dec127e1799d845a6a9be06c5c8c1056e"
+    },
+    {
+      "path": "cloud_runs/watch_batch.sh",
+      "type": "file",
+      "size": 2331,
+      "sha256": "4629a3acec66a479670cb73e4a324f2e62a51f31368e116d90ab97bdf23974fd"
+    }
+  ],
+  "existing_untracked_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "567c6412110e91a7e7d776fdda6713178735274cf44e1aa954a5e4deceb1d8d3"
+    },
+    {
+      "path": "CLAUDE.md",
+      "sha256": "567c6412110e91a7e7d776fdda6713178735274cf44e1aa954a5e4deceb1d8d3"
+    },
+    {
+      "path": "GEMINI.md",
+      "sha256": "567c6412110e91a7e7d776fdda6713178735274cf44e1aa954a5e4deceb1d8d3"
+    }
+  ]
+}

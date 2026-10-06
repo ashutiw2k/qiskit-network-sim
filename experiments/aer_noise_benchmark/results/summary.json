@@ -1,0 +1,497 @@
+{
+  "budget": {
+    "limit_seconds": 600,
+    "processes": [
+      {
+        "args": [
+          "--prepare"
+        ],
+        "charged_seconds": 10.753322582924739,
+        "output": "results",
+        "returncode": 0,
+        "status": "success",
+        "timeout_seconds": 120.0
+      },
+      {
+        "args": [
+          "--worker",
+          "A_existing_depolarizing",
+          "matrix_product_state",
+          "--shots",
+          "128",
+          "--repetition",
+          "0"
+        ],
+        "charged_seconds": 2.40454554092139,
+        "output": "results",
+        "returncode": 0,
+        "status": "success",
+        "timeout_seconds": 120.0
+      },
+      {
+        "args": [
+          "--worker",
+          "A_existing_depolarizing",
+          "stabilizer",
+          "--shots",
+          "128",
+          "--repetition",
+          "0"
+        ],
+        "charged_seconds": 2.0795442920643836,
+        "output": "results",
+        "returncode": 0,
+        "status": "success",
+        "timeout_seconds": 120.0
+      },
+      {
+        "args": [
+          "--worker",
+          "B_calibration_depolarizing_readout",
+          "matrix_product_state",
+          "--shots",
+          "128",
+          "--repetition",
+          "0"
+        ],
+        "charged_seconds": 4.087814333150163,
+        "output": "results",
+        "returncode": 0,
+        "status": "success",
+        "timeout_seconds": 120.0
+      },
+      {
+        "args": [
+          "--worker",
+          "B_calibration_depolarizing_readout",
+          "stabilizer",
+          "--shots",
+          "128",
+          "--repetition",
+          "0"
+        ],
+        "charged_seconds": 3.7803045420441777,
+        "output": "results",
+        "returncode": 0,
+        "status": "success",
+        "timeout_seconds": 120.0
+      },
+      {
+        "args": [
+          "--controls"
+        ],
+        "charged_seconds": 0.9820729580242187,
+        "output": "results",
+        "returncode": 0,
+        "status": "success",
+        "timeout_seconds": 120.0
+      },
+      {
+        "args": [
+          "--worker",
+          "A_existing_depolarizing",
+          "stabilizer",
+          "--shots",
+          "128",
+          "--repetition",
+          "1"
+        ],
+        "charged_seconds": 1.4787810419220477,
+        "output": "results",
+        "returncode": 0,
+        "status": "success",
+        "timeout_seconds": 120.0
+      },
+      {
+        "args": [
+          "--worker",
+          "A_existing_depolarizing",
+          "matrix_product_state",
+          "--shots",
+          "128",
+          "--repetition",
+          "1"
+        ],
+        "charged_seconds": 1.4256230001337826,
+        "output": "results",
+        "returncode": 0,
+        "status": "success",
+        "timeout_seconds": 120.0
+      },
+      {
+        "args": [
+          "--worker",
+          "B_calibration_depolarizing_readout",
+          "stabilizer",
+          "--shots",
+          "128",
+          "--repetition",
+          "1"
+        ],
+        "charged_seconds": 2.6188645840156823,
+        "output": "results",
+        "returncode": 0,
+        "status": "success",
+        "timeout_seconds": 120.0
+      },
+      {
+        "args": [
+          "--worker",
+          "B_calibration_depolarizing_readout",
+          "matrix_product_state",
+          "--shots",
+          "128",
+          "--repetition",
+          "1"
+        ],
+        "charged_seconds": 2.7772212920244783,
+        "output": "results",
+        "returncode": 0,
+        "status": "success",
+        "timeout_seconds": 120.0
+      },
+      {
+        "args": [
+          "--worker",
+          "A_existing_depolarizing",
+          "matrix_product_state",
+          "--shots",
+          "128",
+          "--repetition",
+          "2"
+        ],
+        "charged_seconds": 1.4766552499495447,
+        "output": "results",
+        "returncode": 0,
+        "status": "success",
+        "timeout_seconds": 120.0
+      },
+      {
+        "args": [
+          "--worker",
+          "A_existing_depolarizing",
+          "stabilizer",
+          "--shots",
+          "128",
+          "--repetition",
+          "2"
+        ],
+        "charged_seconds": 1.3684954999480397,
+        "output": "results",
+        "returncode": 0,
+        "status": "success",
+        "timeout_seconds": 120.0
+      },
+      {
+        "args": [
+          "--worker",
+          "B_calibration_depolarizing_readout",
+          "matrix_product_state",
+          "--shots",
+          "128",
+          "--repetition",
+          "2"
+        ],
+        "charged_seconds": 2.7826506248675287,
+        "output": "results",
+        "returncode": 0,
+        "status": "success",
+        "timeout_seconds": 120.0
+      },
+      {
+        "args": [
+          "--worker",
+          "B_calibration_depolarizing_readout",
+          "stabilizer",
+          "--shots",
+          "128",
+          "--repetition",
+          "2"
+        ],
+        "charged_seconds": 2.5689607500098646,
+        "output": "results",
+        "returncode": 0,
+        "status": "success",
+        "timeout_seconds": 120.0
+      }
+    ]
+  },
+  "comparisons": {
+    "A_existing_depolarizing": {
+      "conditional_permutation_p": 0.09878024395120975,
+      "distribution_test": "5000 conditional hypergeometric permutations; seed 8675309; TV statistic",
+      "exclusion_reason": "Overlapping Aer per-shot seed intervals; retained for timing only.",
+      "independent_shots_per_engine": {
+        "matrix_product_state": 128,
+        "stabilizer": 128
+      },
+      "interpretation": "Small-sample consistency check, not proof of distributional equivalence.",
+      "mps_over_stabilizer_ratio": 1.717088494770439,
+      "null_tv_95th_percentile": 0.1875,
+      "repetitions_excluded_from_distribution_test": {
+        "matrix_product_state": [
+          1,
+          2
+        ],
+        "stabilizer": [
+          1,
+          2
+        ]
+      },
+      "simulation_wall_median_seconds": {
+        "matrix_product_state": 0.18011170905083418,
+        "stabilizer": 0.1048936671577394
+      },
+      "successful_runs": {
+        "matrix_product_state": 3,
+        "stabilizer": 3
+      },
+      "total_variation": 0.1796875
+    },
+    "B_calibration_depolarizing_readout": {
+      "conditional_permutation_p": 0.8570285942811438,
+      "distribution_test": "5000 conditional hypergeometric permutations; seed 8675309; TV statistic",
+      "exclusion_reason": "Overlapping Aer per-shot seed intervals; retained for timing only.",
+      "independent_shots_per_engine": {
+        "matrix_product_state": 128,
+        "stabilizer": 128
+      },
+      "interpretation": "Small-sample consistency check, not proof of distributional equivalence.",
+      "mps_over_stabilizer_ratio": 1.1651230115394682,
+      "null_tv_95th_percentile": 0.2421875,
+      "repetitions_excluded_from_distribution_test": {
+        "matrix_product_state": [
+          1,
+          2
+        ],
+        "stabilizer": [
+          1,
+          2
+        ]
+      },
+      "simulation_wall_median_seconds": {
+        "matrix_product_state": 1.3102587920147926,
+        "stabilizer": 1.1245669161435217
+      },
+      "successful_runs": {
+        "matrix_product_state": 3,
+        "stabilizer": 3
+      },
+      "total_variation": 0.140625
+    }
+  },
+  "processes": [
+    {
+      "args": [
+        "--prepare"
+      ],
+      "charged_seconds": 10.753322582924739,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "A_existing_depolarizing",
+        "matrix_product_state",
+        "--shots",
+        "128",
+        "--repetition",
+        "0"
+      ],
+      "charged_seconds": 2.40454554092139,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "A_existing_depolarizing",
+        "stabilizer",
+        "--shots",
+        "128",
+        "--repetition",
+        "0"
+      ],
+      "charged_seconds": 2.0795442920643836,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "B_calibration_depolarizing_readout",
+        "matrix_product_state",
+        "--shots",
+        "128",
+        "--repetition",
+        "0"
+      ],
+      "charged_seconds": 4.087814333150163,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "B_calibration_depolarizing_readout",
+        "stabilizer",
+        "--shots",
+        "128",
+        "--repetition",
+        "0"
+      ],
+      "charged_seconds": 3.7803045420441777,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--controls"
+      ],
+      "charged_seconds": 0.9820729580242187,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "A_existing_depolarizing",
+        "stabilizer",
+        "--shots",
+        "128",
+        "--repetition",
+        "1"
+      ],
+      "charged_seconds": 1.4787810419220477,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "A_existing_depolarizing",
+        "matrix_product_state",
+        "--shots",
+        "128",
+        "--repetition",
+        "1"
+      ],
+      "charged_seconds": 1.4256230001337826,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "B_calibration_depolarizing_readout",
+        "stabilizer",
+        "--shots",
+        "128",
+        "--repetition",
+        "1"
+      ],
+      "charged_seconds": 2.6188645840156823,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "B_calibration_depolarizing_readout",
+        "matrix_product_state",
+        "--shots",
+        "128",
+        "--repetition",
+        "1"
+      ],
+      "charged_seconds": 2.7772212920244783,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "A_existing_depolarizing",
+        "matrix_product_state",
+        "--shots",
+        "128",
+        "--repetition",
+        "2"
+      ],
+      "charged_seconds": 1.4766552499495447,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "A_existing_depolarizing",
+        "stabilizer",
+        "--shots",
+        "128",
+        "--repetition",
+        "2"
+      ],
+      "charged_seconds": 1.3684954999480397,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "B_calibration_depolarizing_readout",
+        "matrix_product_state",
+        "--shots",
+        "128",
+        "--repetition",
+        "2"
+      ],
+      "charged_seconds": 2.7826506248675287,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    },
+    {
+      "args": [
+        "--worker",
+        "B_calibration_depolarizing_readout",
+        "stabilizer",
+        "--shots",
+        "128",
+        "--repetition",
+        "2"
+      ],
+      "charged_seconds": 2.5689607500098646,
+      "output": "results",
+      "returncode": 0,
+      "status": "success",
+      "timeout_seconds": 120.0
+    }
+  ]
+}

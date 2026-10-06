@@ -1,0 +1,6 @@
+# Match the repository uv.lock for the simulation stack; production is unpinned.
+qiskit==2.2.3
+qiskit-aer==0.17.2
+qiskit-ibm-runtime==0.44.0
+numpy==2.4.0
+scipy==1.16.3

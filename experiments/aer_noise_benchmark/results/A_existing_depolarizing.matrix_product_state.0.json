@@ -1,0 +1,222 @@
+{
+  "aer_metadata": {
+    "active_input_qubits": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "batched_shots_optimization": false,
+    "device": "CPU",
+    "fusion": {
+      "enabled": false
+    },
+    "input_qubit_map": [
+      [
+        18,
+        14
+      ],
+      [
+        17,
+        13
+      ],
+      [
+        16,
+        12
+      ],
+      [
+        15,
+        11
+      ],
+      [
+        10,
+        6
+      ],
+      [
+        9,
+        5
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        14,
+        10
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        13,
+        9
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        12,
+        8
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        11,
+        7
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "matrix_product_state_lapack": false,
+    "matrix_product_state_max_bond_dimension": 18446744073709551615,
+    "matrix_product_state_sample_measure_algorithm": 0,
+    "matrix_product_state_truncation_threshold": 1e-16,
+    "max_memory_mb": 4096,
+    "measure_sampling": false,
+    "method": "matrix_product_state",
+    "noise": "circuit",
+    "num_bind_params": 1,
+    "num_clbits": 4,
+    "num_qubits": 15,
+    "parallel_shots": 1,
+    "parallel_state_update": 1,
+    "remapped_qubits": true,
+    "required_memory_mb": 0,
+    "runtime_parameter_bind": false,
+    "time_taken": 0.238961
+  },
+  "aer_time_taken_seconds": 0.26108598709106445,
+  "case": "A_existing_depolarizing",
+  "histogram_0000_through_1111": [
+    91,
+    5,
+    1,
+    1,
+    4,
+    2,
+    1,
+    3,
+    3,
+    3,
+    2,
+    3,
+    2,
+    1,
+    4,
+    2
+  ],
+  "method": "matrix_product_state",
+  "noise_sha256": "d2d16d5a9d432844696e5bb6530138288ea07c644c9f542bf111e24fd77bcdc2",
+  "payload_sha256": "c88952251d980618a31206728aec070bd07a383720e7a81261e42fd45f63b637",
+  "peak_memory_scope": "whole worker process including imports and deserialization",
+  "peak_process_rss_mib": 168.234375,
+  "qpy_sha256": "7fac29405d41fb29ce79f6e35b47f200338aba37b1cce2873ce85858edc8ea3a",
+  "raw_counts": {
+    "0000": 91,
+    "0001": 5,
+    "0010": 1,
+    "0011": 1,
+    "0100": 4,
+    "0101": 2,
+    "0110": 1,
+    "0111": 3,
+    "1000": 3,
+    "1001": 3,
+    "1010": 2,
+    "1011": 3,
+    "1100": 2,
+    "1101": 1,
+    "1110": 4,
+    "1111": 2
+  },
+  "repetition": 0,
+  "seed_simulator": 271828,
+  "shots": 128,
+  "simulation_wall_seconds": 0.2613294590264559,
+  "simulator_options": {
+    "accept_distributed_results": null,
+    "batched_shots_gpu": false,
+    "batched_shots_gpu_max_qubits": 16,
+    "blocking_enable": false,
+    "blocking_qubits": null,
+    "chop_threshold": 1e-08,
+    "chunk_swap_buffer_qubits": null,
+    "cuStateVec_enable": false,
+    "device": "CPU",
+    "enable_truncation": true,
+    "executor": null,
+    "extended_stabilizer_approximation_error": 0.05,
+    "extended_stabilizer_metropolis_mixing_time": 5000,
+    "extended_stabilizer_norm_estimation_repetitions": 3,
+    "extended_stabilizer_norm_estimation_samples": 100,
+    "extended_stabilizer_parallel_threshold": 100,
+    "extended_stabilizer_probabilities_snapshot_samples": 3000,
+    "extended_stabilizer_sampling_method": "resampled_metropolis",
+    "fusion_enable": true,
+    "fusion_max_qubit": null,
+    "fusion_threshold": null,
+    "fusion_verbose": false,
+    "matrix_product_state_max_bond_dimension": null,
+    "matrix_product_state_truncation_threshold": 1e-16,
+    "max_job_size": null,
+    "max_memory_mb": 4096,
+    "max_parallel_experiments": 1,
+    "max_parallel_shots": 1,
+    "max_parallel_threads": 1,
+    "max_shot_size": null,
+    "memory": null,
+    "method": "matrix_product_state",
+    "mps_lapack": false,
+    "mps_log_data": false,
+    "mps_omp_threads": 1,
+    "mps_parallel_threshold": 14,
+    "mps_sample_measure_algorithm": "mps_heuristic",
+    "mps_swap_direction": "mps_swap_left",
+    "num_threads_per_device": 1,
+    "precision": "double",
+    "runtime_parameter_bind_enable": false,
+    "seed_simulator": 271828,
+    "shot_branching_enable": false,
+    "shot_branching_sampling_enable": false,
+    "shots": 1024,
+    "stabilizer_max_snapshot_probabilities": 32,
+    "statevector_parallel_threshold": 14,
+    "statevector_sample_measure_opt": 10,
+    "tensor_network_num_sampling_qubits": 10,
+    "use_cuTensorNet_autotuning": false,
+    "validation_threshold": null,
+    "zero_threshold": 1e-10
+  },
+  "status": "COMPLETED",
+  "success": true,
+  "thread_environment": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "QISKIT_NUM_PROCS": "1",
+    "QISKIT_PARALLEL": "FALSE",
+    "RAYON_NUM_THREADS": "1",
+    "TMPDIR": "/Users/ashutoshtiwari/Desktop/Research-Code/qiskit-network-sim/experiments/aer_noise_benchmark/.tmp",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "XDG_CACHE_HOME": "/Users/ashutoshtiwari/Desktop/Research-Code/qiskit-network-sim/experiments/aer_noise_benchmark/.cache"
+  }
+}

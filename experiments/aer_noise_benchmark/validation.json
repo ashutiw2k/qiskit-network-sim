@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "A_existing_depolarizing_same_artifacts_threads_counts_and_runtime_method": true,
+    "B_calibration_depolarizing_readout_same_artifacts_threads_counts_and_runtime_method": true,
+    "calibration_infidelities_and_depolarizing_conversion": true,
+    "all_routed_two_qubit_gates_have_calibrated_channels": true,
+    "asymmetric_readout_calibrations_preserved": true,
+    "ideal_syndrome_and_routed_classical_bit_mapping": true,
+    "thermal_and_nonclifford_negative_controls_rejected": true,
+    "runtime_limits_and_successful_processes": true,
+    "overlapping_seed_repeats_excluded_from_statistics": true
+  },
+  "all_passed": true,
+  "noisy_runs": 12,
+  "total_noisy_shots": 1536,
+  "simulation_wall_seconds": 9.429114751750603,
+  "charged_process_wall_seconds_including_preparation": 40.58485629200004
+}

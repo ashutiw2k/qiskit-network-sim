@@ -1,0 +1,33 @@
+Audit record only. These two scripts were executed through the existing AWS MCP
+run_script tool in the investigation. They are not local Python entrypoints.
+Account: 241766333838; existing MCP identity matched local profile default.
+Workload region: us-east-2. No mutations or execution of workload code.
+
+First call (response and API-call evidence in aws_inspection.json):
+
+requests = [("definitions", "DescribeJobDefinitions", {"jobDefinitionName": "qec-syndrome-job", "status": "ACTIVE"}), ("queues", "DescribeJobQueues", {"jobQueues": ["qec-job-queue", "qec-job-queue-spot", "qec-job-queue-od"]}), ("compute_environments", "DescribeComputeEnvironments", {"computeEnvironments": ["qec-spot-ce", "qec-ondemand-ce"]})]
+responses = await asyncio.gather(*[call_boto3(service_name="batch", operation_name=op, region_name="us-east-2", params=params) for _, op, params in requests], return_exceptions=True)
+result = {name: (str(response) if isinstance(response, Exception) else response) for (name, _, _), response in zip(requests, responses)}
+result
+
+Second call (response and API-call evidence in aws_capacity.json):
+
+requests = [("ondemand_quota", "service-quotas", "GetServiceQuota", {"ServiceCode": "ec2", "QuotaCode": "L-1216C47A"}), ("spot_quota", "service-quotas", "GetServiceQuota", {"ServiceCode": "ec2", "QuotaCode": "L-34B43A08"}), ("instance_types", "ec2", "DescribeInstanceTypes", {"InstanceTypes": ["c7a.4xlarge", "c7i.4xlarge", "c6a.4xlarge", "c6i.4xlarge", "c7a.8xlarge", "c7i.8xlarge", "c6a.8xlarge", "c6i.8xlarge"]})]
+responses = await asyncio.gather(*[call_boto3(service_name=service, operation_name=op, region_name="us-east-2", params=params) for _, service, op, params in requests], return_exceptions=True)
+result = {}
+for (name, _, _, _), response in zip(requests, responses):
+    if isinstance(response, Exception):
+        result[name] = {"error": str(response)}
+    elif name == "instance_types":
+        result[name] = [{"InstanceType": x["InstanceType"], "VCpuInfo": x["VCpuInfo"], "MemoryInfo": x["MemoryInfo"]} for x in response["InstanceTypes"]]
+    else:
+        result[name] = response
+result
+
+Other AWS-tool use in this investigation was reference-only:
+search_documentation for Batch guidance; retrieve_skill("aws-compute").
+The earlier conversation's default-profile authentication checks used STS
+GetCallerIdentity through MCP and CLI; no new login or permission changes occurred.
+
+No ListJobs polling, CloudWatch Logs or billing query, object download/upload,
+image operation, infrastructure change, or AWS/QPU compute submission was made.

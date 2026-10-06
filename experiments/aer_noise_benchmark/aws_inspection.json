@@ -1,0 +1,1315 @@
+{
+  "client_date": "2026-10-06",
+  "account": "241766333838",
+  "profile": "default (identity matched in prior turn)",
+  "region": "us-east-2",
+  "status": "success",
+  "stdout": "",
+  "return_value": {
+    "definitions": {
+      "jobDefinitions": [
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:20",
+          "revision": 20,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/opp_ring/heron_r1/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/opp_ring/heron_r1/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/opp_ring/heron_r1/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 4800
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:19",
+          "revision": 19,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/opp_ring/eagle/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/opp_ring/eagle/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/opp_ring/eagle/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 4800
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:18",
+          "revision": 18,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/opp_ring/heron_r2_marrakesh/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 4800
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:17",
+          "revision": 17,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/opp_ring/heron_r2_marrakesh/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 4800
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:16",
+          "revision": 16,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/opp_ring/heron_r2/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 4800
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:15",
+          "revision": 15,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/opp_ring/heron_r2/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 4800
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:14",
+          "revision": 14,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/opp_ring/eagle/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 4800
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:13",
+          "revision": 13,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/opp_ring/eagle/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 1800
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:12",
+          "revision": 12,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/complete_graph/eagle/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/complete_graph/eagle/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/complete_graph/eagle/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 600
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:11",
+          "revision": 11,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/heron_r2_marrakesh/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 600
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:10",
+          "revision": 10,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/heron_r2/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 600
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:9",
+          "revision": 9,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/heron_r1/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 600
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:8",
+          "revision": 8,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/eagle/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 600
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:7",
+          "revision": 7,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/eagle/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 600
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:6",
+          "revision": 6,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 600
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:5",
+          "revision": 5,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 600
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:4",
+          "revision": 4,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 600
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:3",
+          "revision": 3,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 3600
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:2",
+          "revision": 2,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 4096,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 3600
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        },
+        {
+          "jobDefinitionName": "qec-syndrome-job",
+          "jobDefinitionArn": "arn:aws:batch:us-east-2:241766333838:job-definition/qec-syndrome-job:1",
+          "revision": 1,
+          "status": "ACTIVE",
+          "type": "container",
+          "parameters": {},
+          "retryStrategy": {
+            "attempts": 3,
+            "evaluateOnExit": []
+          },
+          "containerProperties": {
+            "image": "241766333838.dkr.ecr.us-east-2.amazonaws.com/qec-batch:latest",
+            "vcpus": 1,
+            "memory": 2048,
+            "command": [],
+            "volumes": [],
+            "environment": [
+              {
+                "name": "S3_GRAPH",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/graph.pkl"
+              },
+              {
+                "name": "S3_OUTPUT_PREFIX",
+                "value": "s3://qiskit-net-sim-ashutosh/outputs/"
+              },
+              {
+                "name": "SHOTS",
+                "value": "4096"
+              },
+              {
+                "name": "INITIAL_STATE",
+                "value": "0"
+              },
+              {
+                "name": "OPT_LEVEL",
+                "value": "1"
+              },
+              {
+                "name": "S3_JOBS",
+                "value": "s3://qiskit-net-sim-ashutosh/inputs/jobs.json"
+              }
+            ],
+            "mountPoints": [],
+            "readonlyRootFilesystem": false,
+            "ulimits": [],
+            "resourceRequirements": [],
+            "secrets": []
+          },
+          "timeout": {
+            "attemptDurationSeconds": 3600
+          },
+          "tags": {},
+          "platformCapabilities": [
+            "EC2"
+          ],
+          "containerOrchestrationType": "ECS"
+        }
+      ]
+    },
+    "queues": {
+      "jobQueues": [
+        {
+          "jobQueueName": "qec-job-queue",
+          "jobQueueArn": "arn:aws:batch:us-east-2:241766333838:job-queue/qec-job-queue",
+          "state": "ENABLED",
+          "status": "VALID",
+          "statusReason": "JobQueue Healthy",
+          "priority": 1,
+          "computeEnvironmentOrder": [
+            {
+              "order": 1,
+              "computeEnvironment": "arn:aws:batch:us-east-2:241766333838:compute-environment/qec-spot-ce"
+            },
+            {
+              "order": 2,
+              "computeEnvironment": "arn:aws:batch:us-east-2:241766333838:compute-environment/qec-ondemand-ce"
+            }
+          ],
+          "serviceEnvironmentOrder": [],
+          "jobQueueType": "ECS",
+          "tags": {},
+          "jobStateTimeLimitActions": []
+        }
+      ]
+    },
+    "compute_environments": {
+      "computeEnvironments": [
+        {
+          "computeEnvironmentName": "qec-ondemand-ce",
+          "computeEnvironmentArn": "arn:aws:batch:us-east-2:241766333838:compute-environment/qec-ondemand-ce",
+          "ecsClusterArn": "arn:aws:ecs:us-east-2:241766333838:cluster/qec-ondemand-ce_Batch_ed7a945b-1f2a-377a-a7f2-01daa0ad39fe",
+          "tags": {},
+          "type": "MANAGED",
+          "state": "ENABLED",
+          "status": "VALID",
+          "statusReason": "ComputeEnvironment Healthy",
+          "computeResources": {
+            "type": "EC2",
+            "allocationStrategy": "BEST_FIT_PROGRESSIVE",
+            "minvCpus": 0,
+            "maxvCpus": 32,
+            "desiredvCpus": 0,
+            "instanceTypes": [
+              "c7a",
+              "c7i",
+              "c6a",
+              "c6i"
+            ],
+            "subnets": [
+              "subnet-0a59d18b7f707db90",
+              "subnet-052e40eafa9b4a3aa"
+            ],
+            "securityGroupIds": [
+              "sg-08b4bc48fffe6e91d"
+            ],
+            "instanceRole": "arn:aws:iam::241766333838:instance-profile/ecsInstanceRole",
+            "tags": {
+              "Name": "qec-batch-ondemand"
+            },
+            "ec2Configuration": [
+              {
+                "imageType": "ECS_AL2023"
+              }
+            ]
+          },
+          "serviceRole": "arn:aws:iam::241766333838:role/AWSBatchServiceRole",
+          "containerOrchestrationType": "ECS",
+          "uuid": "bc055864-b56e-30eb-bc79-c7d2e0a30b9d"
+        },
+        {
+          "computeEnvironmentName": "qec-spot-ce",
+          "computeEnvironmentArn": "arn:aws:batch:us-east-2:241766333838:compute-environment/qec-spot-ce",
+          "ecsClusterArn": "arn:aws:ecs:us-east-2:241766333838:cluster/qec-spot-ce_Batch_3ee16f53-26a1-3a35-97f1-276c9f2a5989",
+          "tags": {},
+          "type": "MANAGED",
+          "state": "ENABLED",
+          "status": "VALID",
+          "statusReason": "ComputeEnvironment Healthy",
+          "computeResources": {
+            "type": "SPOT",
+            "allocationStrategy": "SPOT_CAPACITY_OPTIMIZED",
+            "minvCpus": 0,
+            "maxvCpus": 500,
+            "desiredvCpus": 0,
+            "instanceTypes": [
+              "c7a",
+              "c7i",
+              "c6a",
+              "c6i"
+            ],
+            "subnets": [
+              "subnet-0a59d18b7f707db90",
+              "subnet-052e40eafa9b4a3aa"
+            ],
+            "securityGroupIds": [
+              "sg-08b4bc48fffe6e91d"
+            ],
+            "instanceRole": "arn:aws:iam::241766333838:instance-profile/ecsInstanceRole",
+            "tags": {
+              "Name": "qec-batch-spot"
+            },
+            "spotIamFleetRole": "arn:aws:iam::241766333838:role/AmazonEC2SpotFleetRole",
+            "ec2Configuration": [
+              {
+                "imageType": "ECS_AL2023"
+              }
+            ]
+          },
+          "serviceRole": "arn:aws:iam::241766333838:role/AWSBatchServiceRole",
+          "containerOrchestrationType": "ECS",
+          "uuid": "f92f46bc-530a-3403-ae55-b69b76aad602"
+        }
+      ]
+    }
+  },
+  "api_calls": [
+    {
+      "service": "batch",
+      "operation": "DescribeJobDefinitions",
+      "status": "success",
+      "n_items": {
+        "jobDefinitions": 20
+      }
+    },
+    {
+      "service": "batch",
+      "operation": "DescribeJobQueues",
+      "status": "success",
+      "n_items": {
+        "jobQueues": 1
+      }
+    },
+    {
+      "service": "batch",
+      "operation": "DescribeComputeEnvironments",
+      "status": "success",
+      "n_items": {
+        "computeEnvironments": 2
+      }
+    }
+  ]
+}
