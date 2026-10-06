@@ -1,0 +1,18 @@
+{
+  "all_passed": true,
+  "checks": {
+    "exactly_64_successful_attempts": true,
+    "all_counts_and_histograms_sum_to_2000": true,
+    "all_circuits_match_prepared_fingerprint_and_operations": true,
+    "identical_one_qubit_noise": true,
+    "all_MPS_one_Aer_thread": true,
+    "all_B_multiple_strengths_and_complete_CZ_coverage": true,
+    "all_A_one_global_strength": true,
+    "no_readout_or_thermal_and_only_Pauli_noise": true,
+    "all_valid_calibration_entries_represented": true,
+    "unchanged_cloud_runs": true
+  },
+  "attempts": 64,
+  "total_shots": 128000,
+  "statistical_equivalence_tests_performed": false
+}

@@ -1,0 +1,942 @@
+{
+  "aer_metadata": {
+    "active_input_qubits": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      84,
+      89,
+      93
+    ],
+    "batched_shots_optimization": false,
+    "device": "CPU",
+    "fusion": {
+      "enabled": false
+    },
+    "input_qubit_map": [
+      [
+        84,
+        38
+      ],
+      [
+        55,
+        37
+      ],
+      [
+        93,
+        40
+      ],
+      [
+        46,
+        28
+      ],
+      [
+        45,
+        27
+      ],
+      [
+        44,
+        26
+      ],
+      [
+        43,
+        25
+      ],
+      [
+        89,
+        39
+      ],
+      [
+        42,
+        24
+      ],
+      [
+        35,
+        23
+      ],
+      [
+        34,
+        22
+      ],
+      [
+        33,
+        21
+      ],
+      [
+        32,
+        20
+      ],
+      [
+        31,
+        19
+      ],
+      [
+        21,
+        15
+      ],
+      [
+        20,
+        14
+      ],
+      [
+        19,
+        13
+      ],
+      [
+        18,
+        12
+      ],
+      [
+        17,
+        11
+      ],
+      [
+        30,
+        18
+      ],
+      [
+        54,
+        36
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        29,
+        17
+      ],
+      [
+        53,
+        35
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        16,
+        10
+      ],
+      [
+        28,
+        16
+      ],
+      [
+        52,
+        34
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        15,
+        9
+      ],
+      [
+        51,
+        33
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        14,
+        8
+      ],
+      [
+        50,
+        32
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        49,
+        31
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        48,
+        30
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        47,
+        29
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "matrix_product_state_lapack": false,
+    "matrix_product_state_max_bond_dimension": 18446744073709551615,
+    "matrix_product_state_sample_measure_algorithm": 0,
+    "matrix_product_state_truncation_threshold": 1e-16,
+    "max_memory_mb": 49152,
+    "measure_sampling": false,
+    "method": "matrix_product_state",
+    "noise": "circuit",
+    "num_bind_params": 1,
+    "num_clbits": 6,
+    "num_qubits": 41,
+    "parallel_shots": 1,
+    "parallel_state_update": 1,
+    "remapped_qubits": true,
+    "required_memory_mb": 0,
+    "runtime_parameter_bind": false,
+    "time_taken": 22.531802667
+  },
+  "bit_order": "Displayed c5...c0; ci is code STABILIZERS[i]; histogram[int(bitstring,2)]",
+  "case": "A",
+  "circuit": {
+    "active_qubits": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      84,
+      89,
+      93
+    ],
+    "classical_bits": 6,
+    "depth": 230,
+    "native_operation_counts": {
+      "barrier": 2,
+      "cz": 206,
+      "measure": 6,
+      "reset": 6,
+      "rz": 132,
+      "sx": 376,
+      "x": 1
+    },
+    "ordered_cz_pairs": [
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        84
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        84
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        84
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        84
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        84
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        84
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        84
+      ],
+      [
+        7,
+        0
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        84
+      ],
+      [
+        14,
+        89
+      ],
+      [
+        15,
+        89
+      ],
+      [
+        16,
+        89
+      ],
+      [
+        17,
+        89
+      ],
+      [
+        18,
+        89
+      ],
+      [
+        19,
+        89
+      ],
+      [
+        20,
+        89
+      ],
+      [
+        21,
+        89
+      ],
+      [
+        28,
+        93
+      ],
+      [
+        29,
+        93
+      ],
+      [
+        30,
+        93
+      ],
+      [
+        31,
+        93
+      ],
+      [
+        32,
+        93
+      ],
+      [
+        33,
+        93
+      ],
+      [
+        34,
+        93
+      ],
+      [
+        35,
+        93
+      ],
+      [
+        50,
+        42
+      ],
+      [
+        50,
+        43
+      ],
+      [
+        50,
+        44
+      ],
+      [
+        50,
+        45
+      ],
+      [
+        50,
+        49
+      ],
+      [
+        51,
+        44
+      ],
+      [
+        51,
+        46
+      ],
+      [
+        51,
+        49
+      ],
+      [
+        52,
+        42
+      ],
+      [
+        52,
+        44
+      ],
+      [
+        52,
+        45
+      ],
+      [
+        52,
+        46
+      ],
+      [
+        52,
+        48
+      ],
+      [
+        53,
+        42
+      ],
+      [
+        53,
+        43
+      ],
+      [
+        53,
+        44
+      ],
+      [
+        53,
+        45
+      ],
+      [
+        53,
+        46
+      ],
+      [
+        53,
+        48
+      ],
+      [
+        54,
+        42
+      ],
+      [
+        54,
+        43
+      ],
+      [
+        54,
+        44
+      ],
+      [
+        54,
+        45
+      ],
+      [
+        54,
+        46
+      ],
+      [
+        54,
+        47
+      ],
+      [
+        55,
+        42
+      ],
+      [
+        55,
+        43
+      ],
+      [
+        55,
+        47
+      ],
+      [
+        84,
+        14
+      ],
+      [
+        84,
+        15
+      ],
+      [
+        84,
+        16
+      ],
+      [
+        84,
+        17
+      ],
+      [
+        84,
+        18
+      ],
+      [
+        84,
+        19
+      ],
+      [
+        84,
+        20
+      ],
+      [
+        84,
+        21
+      ],
+      [
+        89,
+        28
+      ],
+      [
+        89,
+        29
+      ],
+      [
+        89,
+        30
+      ],
+      [
+        89,
+        31
+      ],
+      [
+        89,
+        32
+      ],
+      [
+        89,
+        33
+      ],
+      [
+        89,
+        34
+      ],
+      [
+        89,
+        35
+      ],
+      [
+        93,
+        42
+      ],
+      [
+        93,
+        43
+      ],
+      [
+        93,
+        44
+      ],
+      [
+        93,
+        45
+      ],
+      [
+        93,
+        46
+      ],
+      [
+        93,
+        47
+      ],
+      [
+        93,
+        48
+      ],
+      [
+        93,
+        49
+      ]
+    ],
+    "qubits": 99,
+    "sha256": "dd2e19c18b2439be4c62f9559fed9f1eb4daf29730e4fa0a8f0d8d45b35e8763",
+    "size": 727
+  },
+  "circuit_construction_seconds": 0.000690666027367115,
+  "code": "823",
+  "counts": {
+    "000000": 387,
+    "000001": 38,
+    "000010": 44,
+    "000011": 29,
+    "000100": 47,
+    "000101": 24,
+    "000110": 34,
+    "000111": 16,
+    "001000": 53,
+    "001001": 50,
+    "001010": 16,
+    "001011": 11,
+    "001100": 48,
+    "001101": 52,
+    "001110": 32,
+    "001111": 21,
+    "010000": 51,
+    "010001": 17,
+    "010010": 15,
+    "010011": 43,
+    "010100": 27,
+    "010101": 43,
+    "010110": 17,
+    "010111": 15,
+    "011000": 48,
+    "011001": 33,
+    "011010": 31,
+    "011011": 12,
+    "011100": 49,
+    "011101": 46,
+    "011110": 14,
+    "011111": 18,
+    "100000": 56,
+    "100001": 15,
+    "100010": 11,
+    "100011": 9,
+    "100100": 22,
+    "100101": 13,
+    "100110": 8,
+    "100111": 8,
+    "101000": 26,
+    "101001": 24,
+    "101010": 12,
+    "101011": 9,
+    "101100": 35,
+    "101101": 21,
+    "101110": 11,
+    "101111": 7,
+    "110000": 50,
+    "110001": 28,
+    "110010": 10,
+    "110011": 16,
+    "110100": 31,
+    "110101": 37,
+    "110110": 15,
+    "110111": 9,
+    "111000": 48,
+    "111001": 14,
+    "111010": 8,
+    "111011": 20,
+    "111100": 14,
+    "111101": 15,
+    "111110": 8,
+    "111111": 9
+  },
+  "distinct_2q_error_strengths": 1,
+  "distinct_2q_noise_channels": 1,
+  "graph_load_and_mapping_seconds": 0.22157095791772008,
+  "histogram": [
+    387,
+    38,
+    44,
+    29,
+    47,
+    24,
+    34,
+    16,
+    53,
+    50,
+    16,
+    11,
+    48,
+    52,
+    32,
+    21,
+    51,
+    17,
+    15,
+    43,
+    27,
+    43,
+    17,
+    15,
+    48,
+    33,
+    31,
+    12,
+    49,
+    46,
+    14,
+    18,
+    56,
+    15,
+    11,
+    9,
+    22,
+    13,
+    8,
+    8,
+    26,
+    24,
+    12,
+    9,
+    35,
+    21,
+    11,
+    7,
+    50,
+    28,
+    10,
+    16,
+    31,
+    37,
+    15,
+    9,
+    48,
+    14,
+    8,
+    20,
+    14,
+    15,
+    8,
+    9
+  ],
+  "hops": 3,
+  "manifest_index": 540,
+  "max_2q_lambda": 0.01,
+  "min_2q_lambda": 0.01,
+  "noise_instructions": [
+    "id",
+    "pauli",
+    "x",
+    "y",
+    "z"
+  ],
+  "one_qubit_noise_sha256": "4f885d442e84aa9a2b4728264229c1207121f9727c06924bfd7457422ed28452",
+  "parallelism": 2,
+  "path": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "peak_rss_mib": 164.34375,
+  "pid": 46175,
+  "process_wall_seconds": 26.28702966705896,
+  "readout_noise": false,
+  "returncode": 0,
+  "seed_simulator": 25661006,
+  "seed_transpiler": 2269,
+  "shots": 2000,
+  "simulation_seconds": 22.54788791690953,
+  "simulation_started_monotonic": 1427951.897840041,
+  "simulator_noise_construction_seconds": 2.936622125096619,
+  "simulator_options": {
+    "accept_distributed_results": null,
+    "batched_shots_gpu": false,
+    "batched_shots_gpu_max_qubits": 16,
+    "blocking_enable": false,
+    "blocking_qubits": null,
+    "chop_threshold": 1e-08,
+    "chunk_swap_buffer_qubits": null,
+    "cuStateVec_enable": false,
+    "device": "CPU",
+    "enable_truncation": true,
+    "executor": null,
+    "extended_stabilizer_approximation_error": 0.05,
+    "extended_stabilizer_metropolis_mixing_time": 5000,
+    "extended_stabilizer_norm_estimation_repetitions": 3,
+    "extended_stabilizer_norm_estimation_samples": 100,
+    "extended_stabilizer_parallel_threshold": 100,
+    "extended_stabilizer_probabilities_snapshot_samples": 3000,
+    "extended_stabilizer_sampling_method": "resampled_metropolis",
+    "fusion_enable": true,
+    "fusion_max_qubit": null,
+    "fusion_threshold": null,
+    "fusion_verbose": false,
+    "matrix_product_state_max_bond_dimension": null,
+    "matrix_product_state_truncation_threshold": 1e-16,
+    "max_job_size": null,
+    "max_memory_mb": null,
+    "max_parallel_experiments": 1,
+    "max_parallel_shots": 1,
+    "max_parallel_threads": 1,
+    "max_shot_size": null,
+    "memory": null,
+    "method": "matrix_product_state",
+    "mps_lapack": false,
+    "mps_log_data": false,
+    "mps_omp_threads": 1,
+    "mps_parallel_threshold": 14,
+    "mps_sample_measure_algorithm": "mps_heuristic",
+    "mps_swap_direction": "mps_swap_left",
+    "num_threads_per_device": 1,
+    "precision": "double",
+    "runtime_parameter_bind_enable": false,
+    "seed_simulator": 25661006,
+    "shot_branching_enable": false,
+    "shot_branching_sampling_enable": false,
+    "shots": 1024,
+    "stabilizer_max_snapshot_probabilities": 32,
+    "statevector_parallel_threshold": 14,
+    "statevector_sample_measure_opt": 10,
+    "tensor_network_num_sampling_qubits": 10,
+    "use_cuTensorNet_autotuning": false,
+    "validation_threshold": null,
+    "zero_threshold": 1e-10
+  },
+  "status": "success",
+  "thermal_relaxation": false,
+  "thread_environment": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "QISKIT_NUM_PROCS": "1",
+    "QISKIT_PARALLEL": "FALSE",
+    "RAYON_NUM_THREADS": "1",
+    "TMPDIR": "/Users/ashutoshtiwari/Desktop/Research-Code/qiskit-network-sim/experiments/pair_specific_2q_runtime/.tmp",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "XDG_CACHE_HOME": "/Users/ashutoshtiwari/Desktop/Research-Code/qiskit-network-sim/experiments/pair_specific_2q_runtime/.cache"
+  },
+  "transpilation_seconds": 0.026329082902520895,
+  "uncovered_cz_pairs": [],
+  "verification_seconds": 0.015180458081886172,
+  "worker_elapsed_seconds": 26.145151334116235
+}

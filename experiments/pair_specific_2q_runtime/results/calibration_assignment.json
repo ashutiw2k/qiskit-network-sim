@@ -1,0 +1,8260 @@
+{
+  "assignments": [
+    {
+      "abstract_pair": [
+        0,
+        1
+      ],
+      "lambda": 0.0028518858299086216,
+      "operational_flag": true,
+      "physical_pair": [
+        22,
+        23
+      ],
+      "pool_index": 0,
+      "reported_infidelity": 0.0021389143724314663
+    },
+    {
+      "abstract_pair": [
+        0,
+        2
+      ],
+      "lambda": 0.0028518858299086216,
+      "operational_flag": true,
+      "physical_pair": [
+        23,
+        22
+      ],
+      "pool_index": 1,
+      "reported_infidelity": 0.0021389143724314663
+    },
+    {
+      "abstract_pair": [
+        0,
+        3
+      ],
+      "lambda": 0.0029699544753760687,
+      "operational_flag": true,
+      "physical_pair": [
+        76,
+        81
+      ],
+      "pool_index": 2,
+      "reported_infidelity": 0.0022274658565320515
+    },
+    {
+      "abstract_pair": [
+        0,
+        4
+      ],
+      "lambda": 0.0029699544753760687,
+      "operational_flag": true,
+      "physical_pair": [
+        81,
+        76
+      ],
+      "pool_index": 3,
+      "reported_infidelity": 0.0022274658565320515
+    },
+    {
+      "abstract_pair": [
+        0,
+        5
+      ],
+      "lambda": 0.003037332296278968,
+      "operational_flag": true,
+      "physical_pair": [
+        87,
+        88
+      ],
+      "pool_index": 4,
+      "reported_infidelity": 0.002277999222209226
+    },
+    {
+      "abstract_pair": [
+        0,
+        6
+      ],
+      "lambda": 0.003037332296278968,
+      "operational_flag": true,
+      "physical_pair": [
+        88,
+        87
+      ],
+      "pool_index": 5,
+      "reported_infidelity": 0.002277999222209226
+    },
+    {
+      "abstract_pair": [
+        0,
+        7
+      ],
+      "lambda": 0.0030694157656258416,
+      "operational_flag": true,
+      "physical_pair": [
+        37,
+        45
+      ],
+      "pool_index": 6,
+      "reported_infidelity": 0.0023020618242193813
+    },
+    {
+      "abstract_pair": [
+        0,
+        54
+      ],
+      "lambda": 0.0030694157656258416,
+      "operational_flag": true,
+      "physical_pair": [
+        37,
+        45
+      ],
+      "pool_index": 6,
+      "reported_infidelity": 0.0023020618242193813
+    },
+    {
+      "abstract_pair": [
+        0,
+        78
+      ],
+      "lambda": 0.0030694157656258416,
+      "operational_flag": true,
+      "physical_pair": [
+        45,
+        37
+      ],
+      "pool_index": 7,
+      "reported_infidelity": 0.0023020618242193813
+    },
+    {
+      "abstract_pair": [
+        0,
+        84
+      ],
+      "lambda": 0.0031083689897744016,
+      "operational_flag": true,
+      "physical_pair": [
+        25,
+        37
+      ],
+      "pool_index": 8,
+      "reported_infidelity": 0.002331276742330801
+    },
+    {
+      "abstract_pair": [
+        0,
+        102
+      ],
+      "lambda": 0.0031083689897744016,
+      "operational_flag": true,
+      "physical_pair": [
+        37,
+        25
+      ],
+      "pool_index": 9,
+      "reported_infidelity": 0.002331276742330801
+    },
+    {
+      "abstract_pair": [
+        1,
+        2
+      ],
+      "lambda": 0.0031765077772523873,
+      "operational_flag": true,
+      "physical_pair": [
+        131,
+        132
+      ],
+      "pool_index": 10,
+      "reported_infidelity": 0.0023823808329392904
+    },
+    {
+      "abstract_pair": [
+        1,
+        3
+      ],
+      "lambda": 0.0031765077772523873,
+      "operational_flag": true,
+      "physical_pair": [
+        132,
+        131
+      ],
+      "pool_index": 11,
+      "reported_infidelity": 0.0023823808329392904
+    },
+    {
+      "abstract_pair": [
+        1,
+        4
+      ],
+      "lambda": 0.0031948763565268212,
+      "operational_flag": true,
+      "physical_pair": [
+        124,
+        125
+      ],
+      "pool_index": 12,
+      "reported_infidelity": 0.002396157267395116
+    },
+    {
+      "abstract_pair": [
+        1,
+        6
+      ],
+      "lambda": 0.0031948763565268212,
+      "operational_flag": true,
+      "physical_pair": [
+        125,
+        124
+      ],
+      "pool_index": 13,
+      "reported_infidelity": 0.002396157267395116
+    },
+    {
+      "abstract_pair": [
+        1,
+        7
+      ],
+      "lambda": 0.0032457462123921164,
+      "operational_flag": true,
+      "physical_pair": [
+        136,
+        143
+      ],
+      "pool_index": 14,
+      "reported_infidelity": 0.002434309659294087
+    },
+    {
+      "abstract_pair": [
+        1,
+        54
+      ],
+      "lambda": 0.0032457462123921164,
+      "operational_flag": true,
+      "physical_pair": [
+        143,
+        136
+      ],
+      "pool_index": 15,
+      "reported_infidelity": 0.002434309659294087
+    },
+    {
+      "abstract_pair": [
+        1,
+        78
+      ],
+      "lambda": 0.0032918731612438337,
+      "operational_flag": true,
+      "physical_pair": [
+        36,
+        41
+      ],
+      "pool_index": 16,
+      "reported_infidelity": 0.0024689048709328754
+    },
+    {
+      "abstract_pair": [
+        1,
+        84
+      ],
+      "lambda": 0.0032918731612438337,
+      "operational_flag": true,
+      "physical_pair": [
+        41,
+        36
+      ],
+      "pool_index": 17,
+      "reported_infidelity": 0.0024689048709328754
+    },
+    {
+      "abstract_pair": [
+        1,
+        102
+      ],
+      "lambda": 0.003378883199087005,
+      "operational_flag": true,
+      "physical_pair": [
+        117,
+        125
+      ],
+      "pool_index": 18,
+      "reported_infidelity": 0.002534162399315254
+    },
+    {
+      "abstract_pair": [
+        2,
+        3
+      ],
+      "lambda": 0.003378883199087005,
+      "operational_flag": true,
+      "physical_pair": [
+        125,
+        117
+      ],
+      "pool_index": 19,
+      "reported_infidelity": 0.002534162399315254
+    },
+    {
+      "abstract_pair": [
+        2,
+        4
+      ],
+      "lambda": 0.0034452694743219623,
+      "operational_flag": true,
+      "physical_pair": [
+        88,
+        89
+      ],
+      "pool_index": 20,
+      "reported_infidelity": 0.0025839521057414716
+    },
+    {
+      "abstract_pair": [
+        2,
+        5
+      ],
+      "lambda": 0.0034452694743219623,
+      "operational_flag": true,
+      "physical_pair": [
+        88,
+        89
+      ],
+      "pool_index": 20,
+      "reported_infidelity": 0.0025839521057414716
+    },
+    {
+      "abstract_pair": [
+        2,
+        6
+      ],
+      "lambda": 0.0034452694743219623,
+      "operational_flag": true,
+      "physical_pair": [
+        89,
+        88
+      ],
+      "pool_index": 21,
+      "reported_infidelity": 0.0025839521057414716
+    },
+    {
+      "abstract_pair": [
+        2,
+        7
+      ],
+      "lambda": 0.0034462989266436463,
+      "operational_flag": true,
+      "physical_pair": [
+        44,
+        45
+      ],
+      "pool_index": 22,
+      "reported_infidelity": 0.002584724194982735
+    },
+    {
+      "abstract_pair": [
+        2,
+        54
+      ],
+      "lambda": 0.0034462989266436463,
+      "operational_flag": true,
+      "physical_pair": [
+        45,
+        44
+      ],
+      "pool_index": 23,
+      "reported_infidelity": 0.002584724194982735
+    },
+    {
+      "abstract_pair": [
+        2,
+        78
+      ],
+      "lambda": 0.0034715529196001813,
+      "operational_flag": true,
+      "physical_pair": [
+        86,
+        87
+      ],
+      "pool_index": 24,
+      "reported_infidelity": 0.002603664689700136
+    },
+    {
+      "abstract_pair": [
+        2,
+        84
+      ],
+      "lambda": 0.0034715529196001813,
+      "operational_flag": true,
+      "physical_pair": [
+        87,
+        86
+      ],
+      "pool_index": 25,
+      "reported_infidelity": 0.002603664689700136
+    },
+    {
+      "abstract_pair": [
+        2,
+        102
+      ],
+      "lambda": 0.0035208049799810106,
+      "operational_flag": true,
+      "physical_pair": [
+        105,
+        106
+      ],
+      "pool_index": 26,
+      "reported_infidelity": 0.002640603734985758
+    },
+    {
+      "abstract_pair": [
+        3,
+        4
+      ],
+      "lambda": 0.0035208049799810106,
+      "operational_flag": true,
+      "physical_pair": [
+        106,
+        105
+      ],
+      "pool_index": 27,
+      "reported_infidelity": 0.002640603734985758
+    },
+    {
+      "abstract_pair": [
+        3,
+        5
+      ],
+      "lambda": 0.003539838719040104,
+      "operational_flag": true,
+      "physical_pair": [
+        144,
+        145
+      ],
+      "pool_index": 28,
+      "reported_infidelity": 0.002654879039280078
+    },
+    {
+      "abstract_pair": [
+        3,
+        6
+      ],
+      "lambda": 0.003539838719040104,
+      "operational_flag": true,
+      "physical_pair": [
+        145,
+        144
+      ],
+      "pool_index": 29,
+      "reported_infidelity": 0.002654879039280078
+    },
+    {
+      "abstract_pair": [
+        3,
+        7
+      ],
+      "lambda": 0.0035714758853226205,
+      "operational_flag": true,
+      "physical_pair": [
+        51,
+        52
+      ],
+      "pool_index": 30,
+      "reported_infidelity": 0.0026786069139919655
+    },
+    {
+      "abstract_pair": [
+        3,
+        54
+      ],
+      "lambda": 0.0035714758853226205,
+      "operational_flag": true,
+      "physical_pair": [
+        52,
+        51
+      ],
+      "pool_index": 31,
+      "reported_infidelity": 0.0026786069139919655
+    },
+    {
+      "abstract_pair": [
+        3,
+        78
+      ],
+      "lambda": 0.003640168755438674,
+      "operational_flag": true,
+      "physical_pair": [
+        140,
+        141
+      ],
+      "pool_index": 32,
+      "reported_infidelity": 0.0027301265665790053
+    },
+    {
+      "abstract_pair": [
+        3,
+        84
+      ],
+      "lambda": 0.003640168755438674,
+      "operational_flag": true,
+      "physical_pair": [
+        141,
+        140
+      ],
+      "pool_index": 33,
+      "reported_infidelity": 0.0027301265665790053
+    },
+    {
+      "abstract_pair": [
+        3,
+        102
+      ],
+      "lambda": 0.003640168755438674,
+      "operational_flag": true,
+      "physical_pair": [
+        141,
+        140
+      ],
+      "pool_index": 33,
+      "reported_infidelity": 0.0027301265665790053
+    },
+    {
+      "abstract_pair": [
+        4,
+        5
+      ],
+      "lambda": 0.00368624109771624,
+      "operational_flag": true,
+      "physical_pair": [
+        4,
+        5
+      ],
+      "pool_index": 34,
+      "reported_infidelity": 0.00276468082328718
+    },
+    {
+      "abstract_pair": [
+        4,
+        7
+      ],
+      "lambda": 0.00368624109771624,
+      "operational_flag": true,
+      "physical_pair": [
+        5,
+        4
+      ],
+      "pool_index": 35,
+      "reported_infidelity": 0.00276468082328718
+    },
+    {
+      "abstract_pair": [
+        4,
+        54
+      ],
+      "lambda": 0.0037111118579857085,
+      "operational_flag": true,
+      "physical_pair": [
+        40,
+        41
+      ],
+      "pool_index": 36,
+      "reported_infidelity": 0.0027833338934892815
+    },
+    {
+      "abstract_pair": [
+        4,
+        78
+      ],
+      "lambda": 0.0037111118579857085,
+      "operational_flag": true,
+      "physical_pair": [
+        41,
+        40
+      ],
+      "pool_index": 37,
+      "reported_infidelity": 0.0027833338934892815
+    },
+    {
+      "abstract_pair": [
+        4,
+        84
+      ],
+      "lambda": 0.0037503495366750053,
+      "operational_flag": true,
+      "physical_pair": [
+        19,
+        35
+      ],
+      "pool_index": 38,
+      "reported_infidelity": 0.002812762152506254
+    },
+    {
+      "abstract_pair": [
+        4,
+        102
+      ],
+      "lambda": 0.0037503495366750053,
+      "operational_flag": true,
+      "physical_pair": [
+        35,
+        19
+      ],
+      "pool_index": 39,
+      "reported_infidelity": 0.002812762152506254
+    },
+    {
+      "abstract_pair": [
+        5,
+        6
+      ],
+      "lambda": 0.003796450243747529,
+      "operational_flag": true,
+      "physical_pair": [
+        83,
+        84
+      ],
+      "pool_index": 40,
+      "reported_infidelity": 0.0028473376828106467
+    },
+    {
+      "abstract_pair": [
+        5,
+        7
+      ],
+      "lambda": 0.003796450243747529,
+      "operational_flag": true,
+      "physical_pair": [
+        84,
+        83
+      ],
+      "pool_index": 41,
+      "reported_infidelity": 0.0028473376828106467
+    },
+    {
+      "abstract_pair": [
+        5,
+        78
+      ],
+      "lambda": 0.003827438706438017,
+      "operational_flag": true,
+      "physical_pair": [
+        130,
+        131
+      ],
+      "pool_index": 42,
+      "reported_infidelity": 0.0028705790298285128
+    },
+    {
+      "abstract_pair": [
+        5,
+        84
+      ],
+      "lambda": 0.003827438706438017,
+      "operational_flag": true,
+      "physical_pair": [
+        131,
+        130
+      ],
+      "pool_index": 43,
+      "reported_infidelity": 0.0028705790298285128
+    },
+    {
+      "abstract_pair": [
+        5,
+        102
+      ],
+      "lambda": 0.0038531476660580064,
+      "operational_flag": true,
+      "physical_pair": [
+        91,
+        92
+      ],
+      "pool_index": 44,
+      "reported_infidelity": 0.0028898607495435047
+    },
+    {
+      "abstract_pair": [
+        6,
+        7
+      ],
+      "lambda": 0.0038531476660580064,
+      "operational_flag": true,
+      "physical_pair": [
+        92,
+        91
+      ],
+      "pool_index": 45,
+      "reported_infidelity": 0.0028898607495435047
+    },
+    {
+      "abstract_pair": [
+        6,
+        8
+      ],
+      "lambda": 0.003884970314256053,
+      "operational_flag": true,
+      "physical_pair": [
+        15,
+        19
+      ],
+      "pool_index": 46,
+      "reported_infidelity": 0.00291372773569204
+    },
+    {
+      "abstract_pair": [
+        6,
+        78
+      ],
+      "lambda": 0.003884970314256053,
+      "operational_flag": true,
+      "physical_pair": [
+        19,
+        15
+      ],
+      "pool_index": 47,
+      "reported_infidelity": 0.00291372773569204
+    },
+    {
+      "abstract_pair": [
+        6,
+        84
+      ],
+      "lambda": 0.003884970314256053,
+      "operational_flag": true,
+      "physical_pair": [
+        19,
+        15
+      ],
+      "pool_index": 47,
+      "reported_infidelity": 0.00291372773569204
+    },
+    {
+      "abstract_pair": [
+        6,
+        102
+      ],
+      "lambda": 0.0038983864551208245,
+      "operational_flag": true,
+      "physical_pair": [
+        141,
+        142
+      ],
+      "pool_index": 48,
+      "reported_infidelity": 0.0029237898413406183
+    },
+    {
+      "abstract_pair": [
+        7,
+        84
+      ],
+      "lambda": 0.0038983864551208245,
+      "operational_flag": true,
+      "physical_pair": [
+        142,
+        141
+      ],
+      "pool_index": 49,
+      "reported_infidelity": 0.0029237898413406183
+    },
+    {
+      "abstract_pair": [
+        7,
+        102
+      ],
+      "lambda": 0.0039027920225827017,
+      "operational_flag": true,
+      "physical_pair": [
+        109,
+        110
+      ],
+      "pool_index": 50,
+      "reported_infidelity": 0.0029270940169370263
+    },
+    {
+      "abstract_pair": [
+        8,
+        102
+      ],
+      "lambda": 0.0039027920225827017,
+      "operational_flag": true,
+      "physical_pair": [
+        110,
+        109
+      ],
+      "pool_index": 51,
+      "reported_infidelity": 0.0029270940169370263
+    },
+    {
+      "abstract_pair": [
+        9,
+        54
+      ],
+      "lambda": 0.003907891002561688,
+      "operational_flag": true,
+      "physical_pair": [
+        125,
+        126
+      ],
+      "pool_index": 52,
+      "reported_infidelity": 0.002930918251921266
+    },
+    {
+      "abstract_pair": [
+        9,
+        59
+      ],
+      "lambda": 0.003907891002561688,
+      "operational_flag": true,
+      "physical_pair": [
+        126,
+        125
+      ],
+      "pool_index": 53,
+      "reported_infidelity": 0.002930918251921266
+    },
+    {
+      "abstract_pair": [
+        10,
+        54
+      ],
+      "lambda": 0.003939638465114322,
+      "operational_flag": true,
+      "physical_pair": [
+        8,
+        9
+      ],
+      "pool_index": 54,
+      "reported_infidelity": 0.0029547288488357415
+    },
+    {
+      "abstract_pair": [
+        10,
+        59
+      ],
+      "lambda": 0.003939638465114322,
+      "operational_flag": true,
+      "physical_pair": [
+        9,
+        8
+      ],
+      "pool_index": 55,
+      "reported_infidelity": 0.0029547288488357415
+    },
+    {
+      "abstract_pair": [
+        11,
+        54
+      ],
+      "lambda": 0.003945109487723197,
+      "operational_flag": true,
+      "physical_pair": [
+        43,
+        44
+      ],
+      "pool_index": 56,
+      "reported_infidelity": 0.002958832115792398
+    },
+    {
+      "abstract_pair": [
+        11,
+        59
+      ],
+      "lambda": 0.003945109487723197,
+      "operational_flag": true,
+      "physical_pair": [
+        44,
+        43
+      ],
+      "pool_index": 57,
+      "reported_infidelity": 0.002958832115792398
+    },
+    {
+      "abstract_pair": [
+        12,
+        54
+      ],
+      "lambda": 0.003954715361638532,
+      "operational_flag": true,
+      "physical_pair": [
+        127,
+        137
+      ],
+      "pool_index": 58,
+      "reported_infidelity": 0.0029660365212288986
+    },
+    {
+      "abstract_pair": [
+        12,
+        59
+      ],
+      "lambda": 0.003954715361638532,
+      "operational_flag": true,
+      "physical_pair": [
+        137,
+        127
+      ],
+      "pool_index": 59,
+      "reported_infidelity": 0.0029660365212288986
+    },
+    {
+      "abstract_pair": [
+        13,
+        54
+      ],
+      "lambda": 0.003958270890833375,
+      "operational_flag": true,
+      "physical_pair": [
+        89,
+        90
+      ],
+      "pool_index": 60,
+      "reported_infidelity": 0.002968703168125031
+    },
+    {
+      "abstract_pair": [
+        13,
+        59
+      ],
+      "lambda": 0.003958270890833375,
+      "operational_flag": true,
+      "physical_pair": [
+        89,
+        90
+      ],
+      "pool_index": 60,
+      "reported_infidelity": 0.002968703168125031
+    },
+    {
+      "abstract_pair": [
+        13,
+        78
+      ],
+      "lambda": 0.003958270890833375,
+      "operational_flag": true,
+      "physical_pair": [
+        90,
+        89
+      ],
+      "pool_index": 61,
+      "reported_infidelity": 0.002968703168125031
+    },
+    {
+      "abstract_pair": [
+        13,
+        83
+      ],
+      "lambda": 0.003979544319286561,
+      "operational_flag": true,
+      "physical_pair": [
+        2,
+        3
+      ],
+      "pool_index": 62,
+      "reported_infidelity": 0.0029846582394649213
+    },
+    {
+      "abstract_pair": [
+        14,
+        78
+      ],
+      "lambda": 0.003979544319286561,
+      "operational_flag": true,
+      "physical_pair": [
+        3,
+        2
+      ],
+      "pool_index": 63,
+      "reported_infidelity": 0.0029846582394649213
+    },
+    {
+      "abstract_pair": [
+        14,
+        83
+      ],
+      "lambda": 0.004031630690149039,
+      "operational_flag": true,
+      "physical_pair": [
+        23,
+        24
+      ],
+      "pool_index": 64,
+      "reported_infidelity": 0.003023723017611779
+    },
+    {
+      "abstract_pair": [
+        14,
+        84
+      ],
+      "lambda": 0.004031630690149039,
+      "operational_flag": true,
+      "physical_pair": [
+        24,
+        23
+      ],
+      "pool_index": 65,
+      "reported_infidelity": 0.003023723017611779
+    },
+    {
+      "abstract_pair": [
+        14,
+        89
+      ],
+      "lambda": 0.004084147524902715,
+      "operational_flag": true,
+      "physical_pair": [
+        84,
+        85
+      ],
+      "pool_index": 66,
+      "reported_infidelity": 0.003063110643677036
+    },
+    {
+      "abstract_pair": [
+        15,
+        78
+      ],
+      "lambda": 0.004084147524902715,
+      "operational_flag": true,
+      "physical_pair": [
+        85,
+        84
+      ],
+      "pool_index": 67,
+      "reported_infidelity": 0.003063110643677036
+    },
+    {
+      "abstract_pair": [
+        15,
+        83
+      ],
+      "lambda": 0.004098411174662105,
+      "operational_flag": true,
+      "physical_pair": [
+        110,
+        111
+      ],
+      "pool_index": 68,
+      "reported_infidelity": 0.003073808380996579
+    },
+    {
+      "abstract_pair": [
+        15,
+        84
+      ],
+      "lambda": 0.004098411174662105,
+      "operational_flag": true,
+      "physical_pair": [
+        111,
+        110
+      ],
+      "pool_index": 69,
+      "reported_infidelity": 0.003073808380996579
+    },
+    {
+      "abstract_pair": [
+        15,
+        89
+      ],
+      "lambda": 0.004100003420746123,
+      "operational_flag": true,
+      "physical_pair": [
+        138,
+        151
+      ],
+      "pool_index": 70,
+      "reported_infidelity": 0.0030750025655595925
+    },
+    {
+      "abstract_pair": [
+        16,
+        78
+      ],
+      "lambda": 0.004100003420746123,
+      "operational_flag": true,
+      "physical_pair": [
+        151,
+        138
+      ],
+      "pool_index": 71,
+      "reported_infidelity": 0.0030750025655595925
+    },
+    {
+      "abstract_pair": [
+        16,
+        83
+      ],
+      "lambda": 0.004103134969772733,
+      "operational_flag": true,
+      "physical_pair": [
+        91,
+        98
+      ],
+      "pool_index": 72,
+      "reported_infidelity": 0.00307735122732955
+    },
+    {
+      "abstract_pair": [
+        16,
+        84
+      ],
+      "lambda": 0.004103134969772733,
+      "operational_flag": true,
+      "physical_pair": [
+        98,
+        91
+      ],
+      "pool_index": 73,
+      "reported_infidelity": 0.00307735122732955
+    },
+    {
+      "abstract_pair": [
+        16,
+        89
+      ],
+      "lambda": 0.004118497164712649,
+      "operational_flag": true,
+      "physical_pair": [
+        83,
+        96
+      ],
+      "pool_index": 74,
+      "reported_infidelity": 0.0030888728735344873
+    },
+    {
+      "abstract_pair": [
+        17,
+        78
+      ],
+      "lambda": 0.004118497164712649,
+      "operational_flag": true,
+      "physical_pair": [
+        83,
+        96
+      ],
+      "pool_index": 74,
+      "reported_infidelity": 0.0030888728735344873
+    },
+    {
+      "abstract_pair": [
+        17,
+        83
+      ],
+      "lambda": 0.004118497164712649,
+      "operational_flag": true,
+      "physical_pair": [
+        96,
+        83
+      ],
+      "pool_index": 75,
+      "reported_infidelity": 0.0030888728735344873
+    },
+    {
+      "abstract_pair": [
+        17,
+        84
+      ],
+      "lambda": 0.004120420283828456,
+      "operational_flag": true,
+      "physical_pair": [
+        12,
+        13
+      ],
+      "pool_index": 76,
+      "reported_infidelity": 0.003090315212871342
+    },
+    {
+      "abstract_pair": [
+        17,
+        89
+      ],
+      "lambda": 0.004120420283828456,
+      "operational_flag": true,
+      "physical_pair": [
+        13,
+        12
+      ],
+      "pool_index": 77,
+      "reported_infidelity": 0.003090315212871342
+    },
+    {
+      "abstract_pair": [
+        17,
+        102
+      ],
+      "lambda": 0.004137894587995443,
+      "operational_flag": true,
+      "physical_pair": [
+        145,
+        146
+      ],
+      "pool_index": 78,
+      "reported_infidelity": 0.003103420940996582
+    },
+    {
+      "abstract_pair": [
+        17,
+        107
+      ],
+      "lambda": 0.004137894587995443,
+      "operational_flag": true,
+      "physical_pair": [
+        146,
+        145
+      ],
+      "pool_index": 79,
+      "reported_infidelity": 0.003103420940996582
+    },
+    {
+      "abstract_pair": [
+        18,
+        23
+      ],
+      "lambda": 0.004150070353853952,
+      "operational_flag": true,
+      "physical_pair": [
+        126,
+        127
+      ],
+      "pool_index": 80,
+      "reported_infidelity": 0.003112552765390464
+    },
+    {
+      "abstract_pair": [
+        18,
+        25
+      ],
+      "lambda": 0.004150070353853952,
+      "operational_flag": true,
+      "physical_pair": [
+        127,
+        126
+      ],
+      "pool_index": 81,
+      "reported_infidelity": 0.003112552765390464
+    },
+    {
+      "abstract_pair": [
+        18,
+        26
+      ],
+      "lambda": 0.004163296706904444,
+      "operational_flag": true,
+      "physical_pair": [
+        97,
+        107
+      ],
+      "pool_index": 82,
+      "reported_infidelity": 0.003122472530178333
+    },
+    {
+      "abstract_pair": [
+        18,
+        59
+      ],
+      "lambda": 0.004163296706904444,
+      "operational_flag": true,
+      "physical_pair": [
+        107,
+        97
+      ],
+      "pool_index": 83,
+      "reported_infidelity": 0.003122472530178333
+    },
+    {
+      "abstract_pair": [
+        18,
+        63
+      ],
+      "lambda": 0.004217460211536572,
+      "operational_flag": true,
+      "physical_pair": [
+        92,
+        93
+      ],
+      "pool_index": 84,
+      "reported_infidelity": 0.003163095158652429
+    },
+    {
+      "abstract_pair": [
+        18,
+        78
+      ],
+      "lambda": 0.004217460211536572,
+      "operational_flag": true,
+      "physical_pair": [
+        93,
+        92
+      ],
+      "pool_index": 85,
+      "reported_infidelity": 0.003163095158652429
+    },
+    {
+      "abstract_pair": [
+        18,
+        83
+      ],
+      "lambda": 0.004230944635035409,
+      "operational_flag": true,
+      "physical_pair": [
+        33,
+        39
+      ],
+      "pool_index": 86,
+      "reported_infidelity": 0.0031732084762765567
+    },
+    {
+      "abstract_pair": [
+        18,
+        84
+      ],
+      "lambda": 0.004230944635035409,
+      "operational_flag": true,
+      "physical_pair": [
+        39,
+        33
+      ],
+      "pool_index": 87,
+      "reported_infidelity": 0.0031732084762765567
+    },
+    {
+      "abstract_pair": [
+        18,
+        89
+      ],
+      "lambda": 0.004230944635035409,
+      "operational_flag": true,
+      "physical_pair": [
+        39,
+        33
+      ],
+      "pool_index": 87,
+      "reported_infidelity": 0.0031732084762765567
+    },
+    {
+      "abstract_pair": [
+        18,
+        102
+      ],
+      "lambda": 0.004264978928690821,
+      "operational_flag": true,
+      "physical_pair": [
+        143,
+        144
+      ],
+      "pool_index": 88,
+      "reported_infidelity": 0.003198734196518116
+    },
+    {
+      "abstract_pair": [
+        18,
+        107
+      ],
+      "lambda": 0.004264978928690821,
+      "operational_flag": true,
+      "physical_pair": [
+        144,
+        143
+      ],
+      "pool_index": 89,
+      "reported_infidelity": 0.003198734196518116
+    },
+    {
+      "abstract_pair": [
+        19,
+        23
+      ],
+      "lambda": 0.004304608811225223,
+      "operational_flag": true,
+      "physical_pair": [
+        85,
+        86
+      ],
+      "pool_index": 90,
+      "reported_infidelity": 0.003228456608418917
+    },
+    {
+      "abstract_pair": [
+        19,
+        24
+      ],
+      "lambda": 0.004304608811225223,
+      "operational_flag": true,
+      "physical_pair": [
+        86,
+        85
+      ],
+      "pool_index": 91,
+      "reported_infidelity": 0.003228456608418917
+    },
+    {
+      "abstract_pair": [
+        19,
+        26
+      ],
+      "lambda": 0.004321226010472208,
+      "operational_flag": true,
+      "physical_pair": [
+        109,
+        118
+      ],
+      "pool_index": 92,
+      "reported_infidelity": 0.0032409195078541564
+    },
+    {
+      "abstract_pair": [
+        19,
+        59
+      ],
+      "lambda": 0.004321226010472208,
+      "operational_flag": true,
+      "physical_pair": [
+        118,
+        109
+      ],
+      "pool_index": 93,
+      "reported_infidelity": 0.0032409195078541564
+    },
+    {
+      "abstract_pair": [
+        19,
+        63
+      ],
+      "lambda": 0.0043324545832762835,
+      "operational_flag": true,
+      "physical_pair": [
+        123,
+        124
+      ],
+      "pool_index": 94,
+      "reported_infidelity": 0.0032493409374572124
+    },
+    {
+      "abstract_pair": [
+        19,
+        78
+      ],
+      "lambda": 0.0043324545832762835,
+      "operational_flag": true,
+      "physical_pair": [
+        124,
+        123
+      ],
+      "pool_index": 95,
+      "reported_infidelity": 0.0032493409374572124
+    },
+    {
+      "abstract_pair": [
+        19,
+        83
+      ],
+      "lambda": 0.004363761533784594,
+      "operational_flag": true,
+      "physical_pair": [
+        43,
+        56
+      ],
+      "pool_index": 96,
+      "reported_infidelity": 0.0032728211503384452
+    },
+    {
+      "abstract_pair": [
+        19,
+        84
+      ],
+      "lambda": 0.004363761533784594,
+      "operational_flag": true,
+      "physical_pair": [
+        56,
+        43
+      ],
+      "pool_index": 97,
+      "reported_infidelity": 0.0032728211503384452
+    },
+    {
+      "abstract_pair": [
+        19,
+        89
+      ],
+      "lambda": 0.004379756974514389,
+      "operational_flag": true,
+      "physical_pair": [
+        131,
+        138
+      ],
+      "pool_index": 98,
+      "reported_infidelity": 0.0032848177308857918
+    },
+    {
+      "abstract_pair": [
+        19,
+        102
+      ],
+      "lambda": 0.004379756974514389,
+      "operational_flag": true,
+      "physical_pair": [
+        138,
+        131
+      ],
+      "pool_index": 99,
+      "reported_infidelity": 0.0032848177308857918
+    },
+    {
+      "abstract_pair": [
+        19,
+        107
+      ],
+      "lambda": 0.004402785195264973,
+      "operational_flag": true,
+      "physical_pair": [
+        47,
+        48
+      ],
+      "pool_index": 100,
+      "reported_infidelity": 0.0033020888964487294
+    },
+    {
+      "abstract_pair": [
+        20,
+        23
+      ],
+      "lambda": 0.004402785195264973,
+      "operational_flag": true,
+      "physical_pair": [
+        48,
+        47
+      ],
+      "pool_index": 101,
+      "reported_infidelity": 0.0033020888964487294
+    },
+    {
+      "abstract_pair": [
+        20,
+        24
+      ],
+      "lambda": 0.004402785195264973,
+      "operational_flag": true,
+      "physical_pair": [
+        48,
+        47
+      ],
+      "pool_index": 101,
+      "reported_infidelity": 0.0033020888964487294
+    },
+    {
+      "abstract_pair": [
+        20,
+        25
+      ],
+      "lambda": 0.004415141310805633,
+      "operational_flag": true,
+      "physical_pair": [
+        142,
+        143
+      ],
+      "pool_index": 102,
+      "reported_infidelity": 0.003311355983104225
+    },
+    {
+      "abstract_pair": [
+        20,
+        59
+      ],
+      "lambda": 0.004415141310805633,
+      "operational_flag": true,
+      "physical_pair": [
+        143,
+        142
+      ],
+      "pool_index": 103,
+      "reported_infidelity": 0.003311355983104225
+    },
+    {
+      "abstract_pair": [
+        20,
+        63
+      ],
+      "lambda": 0.004421336230245432,
+      "operational_flag": true,
+      "physical_pair": [
+        58,
+        71
+      ],
+      "pool_index": 104,
+      "reported_infidelity": 0.003316002172684074
+    },
+    {
+      "abstract_pair": [
+        20,
+        84
+      ],
+      "lambda": 0.004421336230245432,
+      "operational_flag": true,
+      "physical_pair": [
+        71,
+        58
+      ],
+      "pool_index": 105,
+      "reported_infidelity": 0.003316002172684074
+    },
+    {
+      "abstract_pair": [
+        20,
+        89
+      ],
+      "lambda": 0.004433305904777122,
+      "operational_flag": true,
+      "physical_pair": [
+        102,
+        103
+      ],
+      "pool_index": 106,
+      "reported_infidelity": 0.0033249794285828416
+    },
+    {
+      "abstract_pair": [
+        20,
+        102
+      ],
+      "lambda": 0.004433305904777122,
+      "operational_flag": true,
+      "physical_pair": [
+        103,
+        102
+      ],
+      "pool_index": 107,
+      "reported_infidelity": 0.0033249794285828416
+    },
+    {
+      "abstract_pair": [
+        20,
+        107
+      ],
+      "lambda": 0.004433799919404254,
+      "operational_flag": true,
+      "physical_pair": [
+        154,
+        155
+      ],
+      "pool_index": 108,
+      "reported_infidelity": 0.0033253499395531905
+    },
+    {
+      "abstract_pair": [
+        21,
+        23
+      ],
+      "lambda": 0.004433799919404254,
+      "operational_flag": true,
+      "physical_pair": [
+        155,
+        154
+      ],
+      "pool_index": 109,
+      "reported_infidelity": 0.0033253499395531905
+    },
+    {
+      "abstract_pair": [
+        21,
+        24
+      ],
+      "lambda": 0.004462784750861666,
+      "operational_flag": true,
+      "physical_pair": [
+        107,
+        108
+      ],
+      "pool_index": 110,
+      "reported_infidelity": 0.00334708856314625
+    },
+    {
+      "abstract_pair": [
+        21,
+        25
+      ],
+      "lambda": 0.004462784750861666,
+      "operational_flag": true,
+      "physical_pair": [
+        108,
+        107
+      ],
+      "pool_index": 111,
+      "reported_infidelity": 0.00334708856314625
+    },
+    {
+      "abstract_pair": [
+        21,
+        26
+      ],
+      "lambda": 0.0044660754195079795,
+      "operational_flag": true,
+      "physical_pair": [
+        73,
+        74
+      ],
+      "pool_index": 112,
+      "reported_infidelity": 0.0033495565646309844
+    },
+    {
+      "abstract_pair": [
+        21,
+        59
+      ],
+      "lambda": 0.0044660754195079795,
+      "operational_flag": true,
+      "physical_pair": [
+        74,
+        73
+      ],
+      "pool_index": 113,
+      "reported_infidelity": 0.0033495565646309844
+    },
+    {
+      "abstract_pair": [
+        21,
+        63
+      ],
+      "lambda": 0.004486866563832015,
+      "operational_flag": true,
+      "physical_pair": [
+        47,
+        57
+      ],
+      "pool_index": 114,
+      "reported_infidelity": 0.003365149922874011
+    },
+    {
+      "abstract_pair": [
+        21,
+        84
+      ],
+      "lambda": 0.004486866563832015,
+      "operational_flag": true,
+      "physical_pair": [
+        47,
+        57
+      ],
+      "pool_index": 114,
+      "reported_infidelity": 0.003365149922874011
+    },
+    {
+      "abstract_pair": [
+        21,
+        89
+      ],
+      "lambda": 0.004486866563832015,
+      "operational_flag": true,
+      "physical_pair": [
+        57,
+        47
+      ],
+      "pool_index": 115,
+      "reported_infidelity": 0.003365149922874011
+    },
+    {
+      "abstract_pair": [
+        21,
+        102
+      ],
+      "lambda": 0.004499058212104501,
+      "operational_flag": true,
+      "physical_pair": [
+        120,
+        121
+      ],
+      "pool_index": 116,
+      "reported_infidelity": 0.0033742936590783756
+    },
+    {
+      "abstract_pair": [
+        21,
+        107
+      ],
+      "lambda": 0.004499058212104501,
+      "operational_flag": true,
+      "physical_pair": [
+        121,
+        120
+      ],
+      "pool_index": 117,
+      "reported_infidelity": 0.0033742936590783756
+    },
+    {
+      "abstract_pair": [
+        22,
+        24
+      ],
+      "lambda": 0.004533277842911687,
+      "operational_flag": true,
+      "physical_pair": [
+        123,
+        136
+      ],
+      "pool_index": 118,
+      "reported_infidelity": 0.0033999583821837653
+    },
+    {
+      "abstract_pair": [
+        22,
+        25
+      ],
+      "lambda": 0.004533277842911687,
+      "operational_flag": true,
+      "physical_pair": [
+        136,
+        123
+      ],
+      "pool_index": 119,
+      "reported_infidelity": 0.0033999583821837653
+    },
+    {
+      "abstract_pair": [
+        22,
+        26
+      ],
+      "lambda": 0.00454849726496757,
+      "operational_flag": true,
+      "physical_pair": [
+        29,
+        38
+      ],
+      "pool_index": 120,
+      "reported_infidelity": 0.003411372948725677
+    },
+    {
+      "abstract_pair": [
+        22,
+        59
+      ],
+      "lambda": 0.00454849726496757,
+      "operational_flag": true,
+      "physical_pair": [
+        38,
+        29
+      ],
+      "pool_index": 121,
+      "reported_infidelity": 0.003411372948725677
+    },
+    {
+      "abstract_pair": [
+        22,
+        63
+      ],
+      "lambda": 0.004568611990343123,
+      "operational_flag": true,
+      "physical_pair": [
+        77,
+        85
+      ],
+      "pool_index": 122,
+      "reported_infidelity": 0.003426458992757342
+    },
+    {
+      "abstract_pair": [
+        22,
+        102
+      ],
+      "lambda": 0.004568611990343123,
+      "operational_flag": true,
+      "physical_pair": [
+        85,
+        77
+      ],
+      "pool_index": 123,
+      "reported_infidelity": 0.003426458992757342
+    },
+    {
+      "abstract_pair": [
+        22,
+        107
+      ],
+      "lambda": 0.0045826590115869426,
+      "operational_flag": true,
+      "physical_pair": [
+        137,
+        147
+      ],
+      "pool_index": 124,
+      "reported_infidelity": 0.003436994258690207
+    },
+    {
+      "abstract_pair": [
+        23,
+        102
+      ],
+      "lambda": 0.0045826590115869426,
+      "operational_flag": true,
+      "physical_pair": [
+        147,
+        137
+      ],
+      "pool_index": 125,
+      "reported_infidelity": 0.003436994258690207
+    },
+    {
+      "abstract_pair": [
+        23,
+        107
+      ],
+      "lambda": 0.004622026792527434,
+      "operational_flag": true,
+      "physical_pair": [
+        21,
+        22
+      ],
+      "pool_index": 126,
+      "reported_infidelity": 0.0034665200943955754
+    },
+    {
+      "abstract_pair": [
+        24,
+        102
+      ],
+      "lambda": 0.004622026792527434,
+      "operational_flag": true,
+      "physical_pair": [
+        22,
+        21
+      ],
+      "pool_index": 127,
+      "reported_infidelity": 0.0034665200943955754
+    },
+    {
+      "abstract_pair": [
+        24,
+        107
+      ],
+      "lambda": 0.004628222358213178,
+      "operational_flag": true,
+      "physical_pair": [
+        25,
+        26
+      ],
+      "pool_index": 128,
+      "reported_infidelity": 0.0034711667686598835
+    },
+    {
+      "abstract_pair": [
+        25,
+        102
+      ],
+      "lambda": 0.004628222358213178,
+      "operational_flag": true,
+      "physical_pair": [
+        25,
+        26
+      ],
+      "pool_index": 128,
+      "reported_infidelity": 0.0034711667686598835
+    },
+    {
+      "abstract_pair": [
+        25,
+        107
+      ],
+      "lambda": 0.004628222358213178,
+      "operational_flag": true,
+      "physical_pair": [
+        26,
+        25
+      ],
+      "pool_index": 129,
+      "reported_infidelity": 0.0034711667686598835
+    },
+    {
+      "abstract_pair": [
+        26,
+        35
+      ],
+      "lambda": 0.004634258513536309,
+      "operational_flag": true,
+      "physical_pair": [
+        73,
+        79
+      ],
+      "pool_index": 130,
+      "reported_infidelity": 0.003475693885152231
+    },
+    {
+      "abstract_pair": [
+        26,
+        38
+      ],
+      "lambda": 0.004634258513536309,
+      "operational_flag": true,
+      "physical_pair": [
+        79,
+        73
+      ],
+      "pool_index": 131,
+      "reported_infidelity": 0.003475693885152231
+    },
+    {
+      "abstract_pair": [
+        26,
+        83
+      ],
+      "lambda": 0.004644944873142783,
+      "operational_flag": true,
+      "physical_pair": [
+        9,
+        10
+      ],
+      "pool_index": 132,
+      "reported_infidelity": 0.0034837086548570873
+    },
+    {
+      "abstract_pair": [
+        26,
+        87
+      ],
+      "lambda": 0.004644944873142783,
+      "operational_flag": true,
+      "physical_pair": [
+        10,
+        9
+      ],
+      "pool_index": 133,
+      "reported_infidelity": 0.0034837086548570873
+    },
+    {
+      "abstract_pair": [
+        27,
+        32
+      ],
+      "lambda": 0.004656097661862368,
+      "operational_flag": true,
+      "physical_pair": [
+        61,
+        62
+      ],
+      "pool_index": 134,
+      "reported_infidelity": 0.0034920732463967763
+    },
+    {
+      "abstract_pair": [
+        27,
+        34
+      ],
+      "lambda": 0.004656097661862368,
+      "operational_flag": true,
+      "physical_pair": [
+        62,
+        61
+      ],
+      "pool_index": 135,
+      "reported_infidelity": 0.0034920732463967763
+    },
+    {
+      "abstract_pair": [
+        27,
+        35
+      ],
+      "lambda": 0.004741034398501487,
+      "operational_flag": true,
+      "physical_pair": [
+        127,
+        128
+      ],
+      "pool_index": 136,
+      "reported_infidelity": 0.003555775798876115
+    },
+    {
+      "abstract_pair": [
+        27,
+        37
+      ],
+      "lambda": 0.004741034398501487,
+      "operational_flag": true,
+      "physical_pair": [
+        128,
+        127
+      ],
+      "pool_index": 137,
+      "reported_infidelity": 0.003555775798876115
+    },
+    {
+      "abstract_pair": [
+        27,
+        63
+      ],
+      "lambda": 0.004771779903259536,
+      "operational_flag": true,
+      "physical_pair": [
+        11,
+        18
+      ],
+      "pool_index": 138,
+      "reported_infidelity": 0.003578834927444652
+    },
+    {
+      "abstract_pair": [
+        27,
+        83
+      ],
+      "lambda": 0.004771779903259536,
+      "operational_flag": true,
+      "physical_pair": [
+        18,
+        11
+      ],
+      "pool_index": 139,
+      "reported_infidelity": 0.003578834927444652
+    },
+    {
+      "abstract_pair": [
+        27,
+        87
+      ],
+      "lambda": 0.004774352890074329,
+      "operational_flag": true,
+      "physical_pair": [
+        61,
+        76
+      ],
+      "pool_index": 140,
+      "reported_infidelity": 0.003580764667555747
+    },
+    {
+      "abstract_pair": [
+        28,
+        32
+      ],
+      "lambda": 0.004774352890074329,
+      "operational_flag": true,
+      "physical_pair": [
+        76,
+        61
+      ],
+      "pool_index": 141,
+      "reported_infidelity": 0.003580764667555747
+    },
+    {
+      "abstract_pair": [
+        28,
+        33
+      ],
+      "lambda": 0.004774352890074329,
+      "operational_flag": true,
+      "physical_pair": [
+        76,
+        61
+      ],
+      "pool_index": 141,
+      "reported_infidelity": 0.003580764667555747
+    },
+    {
+      "abstract_pair": [
+        28,
+        34
+      ],
+      "lambda": 0.004775398786885117,
+      "operational_flag": true,
+      "physical_pair": [
+        24,
+        25
+      ],
+      "pool_index": 142,
+      "reported_infidelity": 0.003581549090163838
+    },
+    {
+      "abstract_pair": [
+        28,
+        35
+      ],
+      "lambda": 0.004775398786885117,
+      "operational_flag": true,
+      "physical_pair": [
+        25,
+        24
+      ],
+      "pool_index": 143,
+      "reported_infidelity": 0.003581549090163838
+    },
+    {
+      "abstract_pair": [
+        28,
+        36
+      ],
+      "lambda": 0.004782045162734061,
+      "operational_flag": true,
+      "physical_pair": [
+        60,
+        61
+      ],
+      "pool_index": 144,
+      "reported_infidelity": 0.0035865338720505457
+    },
+    {
+      "abstract_pair": [
+        28,
+        37
+      ],
+      "lambda": 0.004782045162734061,
+      "operational_flag": true,
+      "physical_pair": [
+        61,
+        60
+      ],
+      "pool_index": 145,
+      "reported_infidelity": 0.0035865338720505457
+    },
+    {
+      "abstract_pair": [
+        28,
+        38
+      ],
+      "lambda": 0.004817042202272488,
+      "operational_flag": true,
+      "physical_pair": [
+        34,
+        35
+      ],
+      "pool_index": 146,
+      "reported_infidelity": 0.0036127816517043665
+    },
+    {
+      "abstract_pair": [
+        28,
+        39
+      ],
+      "lambda": 0.004817042202272488,
+      "operational_flag": true,
+      "physical_pair": [
+        35,
+        34
+      ],
+      "pool_index": 147,
+      "reported_infidelity": 0.0036127816517043665
+    },
+    {
+      "abstract_pair": [
+        28,
+        40
+      ],
+      "lambda": 0.004847395407724608,
+      "operational_flag": true,
+      "physical_pair": [
+        54,
+        55
+      ],
+      "pool_index": 148,
+      "reported_infidelity": 0.0036355465557934563
+    },
+    {
+      "abstract_pair": [
+        28,
+        41
+      ],
+      "lambda": 0.004847395407724608,
+      "operational_flag": true,
+      "physical_pair": [
+        55,
+        54
+      ],
+      "pool_index": 149,
+      "reported_infidelity": 0.0036355465557934563
+    },
+    {
+      "abstract_pair": [
+        28,
+        63
+      ],
+      "lambda": 0.004853846818299108,
+      "operational_flag": true,
+      "physical_pair": [
+        151,
+        152
+      ],
+      "pool_index": 150,
+      "reported_infidelity": 0.0036403851137243315
+    },
+    {
+      "abstract_pair": [
+        28,
+        83
+      ],
+      "lambda": 0.004853846818299108,
+      "operational_flag": true,
+      "physical_pair": [
+        152,
+        151
+      ],
+      "pool_index": 151,
+      "reported_infidelity": 0.0036403851137243315
+    },
+    {
+      "abstract_pair": [
+        28,
+        87
+      ],
+      "lambda": 0.004881189301225645,
+      "operational_flag": true,
+      "physical_pair": [
+        108,
+        109
+      ],
+      "pool_index": 152,
+      "reported_infidelity": 0.0036608919759192338
+    },
+    {
+      "abstract_pair": [
+        28,
+        89
+      ],
+      "lambda": 0.004881189301225645,
+      "operational_flag": true,
+      "physical_pair": [
+        109,
+        108
+      ],
+      "pool_index": 153,
+      "reported_infidelity": 0.0036608919759192338
+    },
+    {
+      "abstract_pair": [
+        28,
+        93
+      ],
+      "lambda": 0.004908875789703264,
+      "operational_flag": true,
+      "physical_pair": [
+        65,
+        66
+      ],
+      "pool_index": 154,
+      "reported_infidelity": 0.0036816568422774476
+    },
+    {
+      "abstract_pair": [
+        29,
+        32
+      ],
+      "lambda": 0.004908875789703264,
+      "operational_flag": true,
+      "physical_pair": [
+        66,
+        65
+      ],
+      "pool_index": 155,
+      "reported_infidelity": 0.0036816568422774476
+    },
+    {
+      "abstract_pair": [
+        29,
+        33
+      ],
+      "lambda": 0.004908875789703264,
+      "operational_flag": true,
+      "physical_pair": [
+        66,
+        65
+      ],
+      "pool_index": 155,
+      "reported_infidelity": 0.0036816568422774476
+    },
+    {
+      "abstract_pair": [
+        29,
+        34
+      ],
+      "lambda": 0.004949660761906394,
+      "operational_flag": true,
+      "physical_pair": [
+        51,
+        58
+      ],
+      "pool_index": 156,
+      "reported_infidelity": 0.0037122455714297953
+    },
+    {
+      "abstract_pair": [
+        29,
+        36
+      ],
+      "lambda": 0.004949660761906394,
+      "operational_flag": true,
+      "physical_pair": [
+        58,
+        51
+      ],
+      "pool_index": 157,
+      "reported_infidelity": 0.0037122455714297953
+    },
+    {
+      "abstract_pair": [
+        29,
+        39
+      ],
+      "lambda": 0.004955574848991562,
+      "operational_flag": true,
+      "physical_pair": [
+        64,
+        65
+      ],
+      "pool_index": 158,
+      "reported_infidelity": 0.0037166811367436714
+    },
+    {
+      "abstract_pair": [
+        29,
+        40
+      ],
+      "lambda": 0.004955574848991562,
+      "operational_flag": true,
+      "physical_pair": [
+        65,
+        64
+      ],
+      "pool_index": 159,
+      "reported_infidelity": 0.0037166811367436714
+    },
+    {
+      "abstract_pair": [
+        29,
+        41
+      ],
+      "lambda": 0.004973051666538497,
+      "operational_flag": true,
+      "physical_pair": [
+        16,
+        23
+      ],
+      "pool_index": 160,
+      "reported_infidelity": 0.003729788749903873
+    },
+    {
+      "abstract_pair": [
+        29,
+        63
+      ],
+      "lambda": 0.004973051666538497,
+      "operational_flag": true,
+      "physical_pair": [
+        23,
+        16
+      ],
+      "pool_index": 161,
+      "reported_infidelity": 0.003729788749903873
+    },
+    {
+      "abstract_pair": [
+        29,
+        83
+      ],
+      "lambda": 0.004980440947484214,
+      "operational_flag": true,
+      "physical_pair": [
+        118,
+        129
+      ],
+      "pool_index": 162,
+      "reported_infidelity": 0.0037353307106131606
+    },
+    {
+      "abstract_pair": [
+        29,
+        87
+      ],
+      "lambda": 0.004980440947484214,
+      "operational_flag": true,
+      "physical_pair": [
+        129,
+        118
+      ],
+      "pool_index": 163,
+      "reported_infidelity": 0.0037353307106131606
+    },
+    {
+      "abstract_pair": [
+        29,
+        89
+      ],
+      "lambda": 0.005029016583849355,
+      "operational_flag": true,
+      "physical_pair": [
+        1,
+        2
+      ],
+      "pool_index": 164,
+      "reported_infidelity": 0.0037717624378870163
+    },
+    {
+      "abstract_pair": [
+        29,
+        93
+      ],
+      "lambda": 0.005029016583849355,
+      "operational_flag": true,
+      "physical_pair": [
+        2,
+        1
+      ],
+      "pool_index": 165,
+      "reported_infidelity": 0.0037717624378870163
+    },
+    {
+      "abstract_pair": [
+        30,
+        32
+      ],
+      "lambda": 0.005085355150882265,
+      "operational_flag": true,
+      "physical_pair": [
+        55,
+        59
+      ],
+      "pool_index": 166,
+      "reported_infidelity": 0.0038140163631616986
+    },
+    {
+      "abstract_pair": [
+        30,
+        33
+      ],
+      "lambda": 0.005085355150882265,
+      "operational_flag": true,
+      "physical_pair": [
+        59,
+        55
+      ],
+      "pool_index": 167,
+      "reported_infidelity": 0.0038140163631616986
+    },
+    {
+      "abstract_pair": [
+        30,
+        34
+      ],
+      "lambda": 0.005086782181521328,
+      "operational_flag": true,
+      "physical_pair": [
+        13,
+        14
+      ],
+      "pool_index": 168,
+      "reported_infidelity": 0.0038150866361409963
+    },
+    {
+      "abstract_pair": [
+        30,
+        35
+      ],
+      "lambda": 0.005086782181521328,
+      "operational_flag": true,
+      "physical_pair": [
+        14,
+        13
+      ],
+      "pool_index": 169,
+      "reported_infidelity": 0.0038150866361409963
+    },
+    {
+      "abstract_pair": [
+        30,
+        36
+      ],
+      "lambda": 0.005086782181521328,
+      "operational_flag": true,
+      "physical_pair": [
+        14,
+        13
+      ],
+      "pool_index": 169,
+      "reported_infidelity": 0.0038150866361409963
+    },
+    {
+      "abstract_pair": [
+        30,
+        37
+      ],
+      "lambda": 0.005092409923319607,
+      "operational_flag": true,
+      "physical_pair": [
+        129,
+        130
+      ],
+      "pool_index": 170,
+      "reported_infidelity": 0.0038193074424897056
+    },
+    {
+      "abstract_pair": [
+        30,
+        38
+      ],
+      "lambda": 0.005092409923319607,
+      "operational_flag": true,
+      "physical_pair": [
+        130,
+        129
+      ],
+      "pool_index": 171,
+      "reported_infidelity": 0.0038193074424897056
+    },
+    {
+      "abstract_pair": [
+        30,
+        39
+      ],
+      "lambda": 0.005130867775207919,
+      "operational_flag": true,
+      "physical_pair": [
+        38,
+        49
+      ],
+      "pool_index": 172,
+      "reported_infidelity": 0.0038481508314059387
+    },
+    {
+      "abstract_pair": [
+        30,
+        40
+      ],
+      "lambda": 0.005130867775207919,
+      "operational_flag": true,
+      "physical_pair": [
+        49,
+        38
+      ],
+      "pool_index": 173,
+      "reported_infidelity": 0.0038481508314059387
+    },
+    {
+      "abstract_pair": [
+        30,
+        63
+      ],
+      "lambda": 0.005200243603703599,
+      "operational_flag": true,
+      "physical_pair": [
+        132,
+        133
+      ],
+      "pool_index": 174,
+      "reported_infidelity": 0.003900182702777699
+    },
+    {
+      "abstract_pair": [
+        30,
+        83
+      ],
+      "lambda": 0.005200243603703599,
+      "operational_flag": true,
+      "physical_pair": [
+        133,
+        132
+      ],
+      "pool_index": 175,
+      "reported_infidelity": 0.003900182702777699
+    },
+    {
+      "abstract_pair": [
+        30,
+        87
+      ],
+      "lambda": 0.0052087773357918365,
+      "operational_flag": true,
+      "physical_pair": [
+        90,
+        91
+      ],
+      "pool_index": 176,
+      "reported_infidelity": 0.003906583001843877
+    },
+    {
+      "abstract_pair": [
+        30,
+        89
+      ],
+      "lambda": 0.0052087773357918365,
+      "operational_flag": true,
+      "physical_pair": [
+        91,
+        90
+      ],
+      "pool_index": 177,
+      "reported_infidelity": 0.003906583001843877
+    },
+    {
+      "abstract_pair": [
+        30,
+        93
+      ],
+      "lambda": 0.005258104559067833,
+      "operational_flag": true,
+      "physical_pair": [
+        50,
+        51
+      ],
+      "pool_index": 178,
+      "reported_infidelity": 0.003943578419300875
+    },
+    {
+      "abstract_pair": [
+        31,
+        33
+      ],
+      "lambda": 0.005258104559067833,
+      "operational_flag": true,
+      "physical_pair": [
+        51,
+        50
+      ],
+      "pool_index": 179,
+      "reported_infidelity": 0.003943578419300875
+    },
+    {
+      "abstract_pair": [
+        31,
+        34
+      ],
+      "lambda": 0.005262444531779857,
+      "operational_flag": true,
+      "physical_pair": [
+        67,
+        68
+      ],
+      "pool_index": 180,
+      "reported_infidelity": 0.0039468333988348925
+    },
+    {
+      "abstract_pair": [
+        31,
+        35
+      ],
+      "lambda": 0.005262444531779857,
+      "operational_flag": true,
+      "physical_pair": [
+        68,
+        67
+      ],
+      "pool_index": 181,
+      "reported_infidelity": 0.0039468333988348925
+    },
+    {
+      "abstract_pair": [
+        31,
+        36
+      ],
+      "lambda": 0.005267450833481124,
+      "operational_flag": true,
+      "physical_pair": [
+        152,
+        153
+      ],
+      "pool_index": 182,
+      "reported_infidelity": 0.003950588125110843
+    },
+    {
+      "abstract_pair": [
+        31,
+        37
+      ],
+      "lambda": 0.005267450833481124,
+      "operational_flag": true,
+      "physical_pair": [
+        152,
+        153
+      ],
+      "pool_index": 182,
+      "reported_infidelity": 0.003950588125110843
+    },
+    {
+      "abstract_pair": [
+        31,
+        38
+      ],
+      "lambda": 0.005267450833481124,
+      "operational_flag": true,
+      "physical_pair": [
+        153,
+        152
+      ],
+      "pool_index": 183,
+      "reported_infidelity": 0.003950588125110843
+    },
+    {
+      "abstract_pair": [
+        31,
+        39
+      ],
+      "lambda": 0.005276352423439083,
+      "operational_flag": true,
+      "physical_pair": [
+        66,
+        67
+      ],
+      "pool_index": 184,
+      "reported_infidelity": 0.003957264317579312
+    },
+    {
+      "abstract_pair": [
+        31,
+        40
+      ],
+      "lambda": 0.005276352423439083,
+      "operational_flag": true,
+      "physical_pair": [
+        67,
+        66
+      ],
+      "pool_index": 185,
+      "reported_infidelity": 0.003957264317579312
+    },
+    {
+      "abstract_pair": [
+        31,
+        63
+      ],
+      "lambda": 0.005283825320788822,
+      "operational_flag": true,
+      "physical_pair": [
+        134,
+        135
+      ],
+      "pool_index": 186,
+      "reported_infidelity": 0.003962868990591617
+    },
+    {
+      "abstract_pair": [
+        31,
+        83
+      ],
+      "lambda": 0.005283825320788822,
+      "operational_flag": true,
+      "physical_pair": [
+        135,
+        134
+      ],
+      "pool_index": 187,
+      "reported_infidelity": 0.003962868990591617
+    },
+    {
+      "abstract_pair": [
+        31,
+        87
+      ],
+      "lambda": 0.005286447685352617,
+      "operational_flag": true,
+      "physical_pair": [
+        11,
+        12
+      ],
+      "pool_index": 188,
+      "reported_infidelity": 0.003964835764014463
+    },
+    {
+      "abstract_pair": [
+        31,
+        89
+      ],
+      "lambda": 0.005286447685352617,
+      "operational_flag": true,
+      "physical_pair": [
+        12,
+        11
+      ],
+      "pool_index": 189,
+      "reported_infidelity": 0.003964835764014463
+    },
+    {
+      "abstract_pair": [
+        31,
+        93
+      ],
+      "lambda": 0.005298881676540024,
+      "operational_flag": true,
+      "physical_pair": [
+        39,
+        53
+      ],
+      "pool_index": 190,
+      "reported_infidelity": 0.003974161257405018
+    },
+    {
+      "abstract_pair": [
+        32,
+        33
+      ],
+      "lambda": 0.005298881676540024,
+      "operational_flag": true,
+      "physical_pair": [
+        53,
+        39
+      ],
+      "pool_index": 191,
+      "reported_infidelity": 0.003974161257405018
+    },
+    {
+      "abstract_pair": [
+        32,
+        34
+      ],
+      "lambda": 0.005337410797314239,
+      "operational_flag": true,
+      "physical_pair": [
+        52,
+        53
+      ],
+      "pool_index": 192,
+      "reported_infidelity": 0.004003058097985679
+    },
+    {
+      "abstract_pair": [
+        32,
+        35
+      ],
+      "lambda": 0.005337410797314239,
+      "operational_flag": true,
+      "physical_pair": [
+        53,
+        52
+      ],
+      "pool_index": 193,
+      "reported_infidelity": 0.004003058097985679
+    },
+    {
+      "abstract_pair": [
+        32,
+        36
+      ],
+      "lambda": 0.005346631370679811,
+      "operational_flag": true,
+      "physical_pair": [
+        48,
+        49
+      ],
+      "pool_index": 194,
+      "reported_infidelity": 0.004009973528009858
+    },
+    {
+      "abstract_pair": [
+        32,
+        37
+      ],
+      "lambda": 0.005346631370679811,
+      "operational_flag": true,
+      "physical_pair": [
+        49,
+        48
+      ],
+      "pool_index": 195,
+      "reported_infidelity": 0.004009973528009858
+    },
+    {
+      "abstract_pair": [
+        32,
+        38
+      ],
+      "lambda": 0.005346732061388471,
+      "operational_flag": true,
+      "physical_pair": [
+        10,
+        11
+      ],
+      "pool_index": 196,
+      "reported_infidelity": 0.004010049046041353
+    },
+    {
+      "abstract_pair": [
+        32,
+        39
+      ],
+      "lambda": 0.005346732061388471,
+      "operational_flag": true,
+      "physical_pair": [
+        10,
+        11
+      ],
+      "pool_index": 196,
+      "reported_infidelity": 0.004010049046041353
+    },
+    {
+      "abstract_pair": [
+        32,
+        40
+      ],
+      "lambda": 0.005346732061388471,
+      "operational_flag": true,
+      "physical_pair": [
+        11,
+        10
+      ],
+      "pool_index": 197,
+      "reported_infidelity": 0.004010049046041353
+    },
+    {
+      "abstract_pair": [
+        32,
+        83
+      ],
+      "lambda": 0.00537205993199108,
+      "operational_flag": true,
+      "physical_pair": [
+        33,
+        34
+      ],
+      "pool_index": 198,
+      "reported_infidelity": 0.00402904494899331
+    },
+    {
+      "abstract_pair": [
+        32,
+        87
+      ],
+      "lambda": 0.00537205993199108,
+      "operational_flag": true,
+      "physical_pair": [
+        34,
+        33
+      ],
+      "pool_index": 199,
+      "reported_infidelity": 0.00402904494899331
+    },
+    {
+      "abstract_pair": [
+        32,
+        89
+      ],
+      "lambda": 0.005388164509048554,
+      "operational_flag": true,
+      "physical_pair": [
+        146,
+        147
+      ],
+      "pool_index": 200,
+      "reported_infidelity": 0.004041123381786416
+    },
+    {
+      "abstract_pair": [
+        32,
+        93
+      ],
+      "lambda": 0.005388164509048554,
+      "operational_flag": true,
+      "physical_pair": [
+        147,
+        146
+      ],
+      "pool_index": 201,
+      "reported_infidelity": 0.004041123381786416
+    },
+    {
+      "abstract_pair": [
+        33,
+        40
+      ],
+      "lambda": 0.005394675145016163,
+      "operational_flag": true,
+      "physical_pair": [
+        122,
+        123
+      ],
+      "pool_index": 202,
+      "reported_infidelity": 0.004046006358762122
+    },
+    {
+      "abstract_pair": [
+        33,
+        41
+      ],
+      "lambda": 0.005394675145016163,
+      "operational_flag": true,
+      "physical_pair": [
+        123,
+        122
+      ],
+      "pool_index": 203,
+      "reported_infidelity": 0.004046006358762122
+    },
+    {
+      "abstract_pair": [
+        33,
+        89
+      ],
+      "lambda": 0.0054024602322368205,
+      "operational_flag": true,
+      "physical_pair": [
+        133,
+        134
+      ],
+      "pool_index": 204,
+      "reported_infidelity": 0.004051845174177615
+    },
+    {
+      "abstract_pair": [
+        33,
+        93
+      ],
+      "lambda": 0.0054024602322368205,
+      "operational_flag": true,
+      "physical_pair": [
+        134,
+        133
+      ],
+      "pool_index": 205,
+      "reported_infidelity": 0.004051845174177615
+    },
+    {
+      "abstract_pair": [
+        34,
+        38
+      ],
+      "lambda": 0.005416302599744904,
+      "operational_flag": true,
+      "physical_pair": [
+        70,
+        71
+      ],
+      "pool_index": 206,
+      "reported_infidelity": 0.004062226949808678
+    },
+    {
+      "abstract_pair": [
+        34,
+        39
+      ],
+      "lambda": 0.005416302599744904,
+      "operational_flag": true,
+      "physical_pair": [
+        71,
+        70
+      ],
+      "pool_index": 207,
+      "reported_infidelity": 0.004062226949808678
+    },
+    {
+      "abstract_pair": [
+        34,
+        43
+      ],
+      "lambda": 0.0055083873867417905,
+      "operational_flag": true,
+      "physical_pair": [
+        101,
+        116
+      ],
+      "pool_index": 208,
+      "reported_infidelity": 0.004131290540056343
+    },
+    {
+      "abstract_pair": [
+        34,
+        49
+      ],
+      "lambda": 0.0055083873867417905,
+      "operational_flag": true,
+      "physical_pair": [
+        116,
+        101
+      ],
+      "pool_index": 209,
+      "reported_infidelity": 0.004131290540056343
+    },
+    {
+      "abstract_pair": [
+        34,
+        89
+      ],
+      "lambda": 0.0055083873867417905,
+      "operational_flag": true,
+      "physical_pair": [
+        116,
+        101
+      ],
+      "pool_index": 209,
+      "reported_infidelity": 0.004131290540056343
+    },
+    {
+      "abstract_pair": [
+        34,
+        93
+      ],
+      "lambda": 0.005553360389383144,
+      "operational_flag": true,
+      "physical_pair": [
+        79,
+        93
+      ],
+      "pool_index": 210,
+      "reported_infidelity": 0.004165020292037358
+    },
+    {
+      "abstract_pair": [
+        34,
+        107
+      ],
+      "lambda": 0.005553360389383144,
+      "operational_flag": true,
+      "physical_pair": [
+        93,
+        79
+      ],
+      "pool_index": 211,
+      "reported_infidelity": 0.004165020292037358
+    },
+    {
+      "abstract_pair": [
+        34,
+        111
+      ],
+      "lambda": 0.005570324743816431,
+      "operational_flag": true,
+      "physical_pair": [
+        3,
+        16
+      ],
+      "pool_index": 212,
+      "reported_infidelity": 0.004177743557862323
+    },
+    {
+      "abstract_pair": [
+        35,
+        36
+      ],
+      "lambda": 0.005570324743816431,
+      "operational_flag": true,
+      "physical_pair": [
+        16,
+        3
+      ],
+      "pool_index": 213,
+      "reported_infidelity": 0.004177743557862323
+    },
+    {
+      "abstract_pair": [
+        35,
+        37
+      ],
+      "lambda": 0.005629338800651196,
+      "operational_flag": true,
+      "physical_pair": [
+        45,
+        46
+      ],
+      "pool_index": 214,
+      "reported_infidelity": 0.004222004100488397
+    },
+    {
+      "abstract_pair": [
+        35,
+        43
+      ],
+      "lambda": 0.005629338800651196,
+      "operational_flag": true,
+      "physical_pair": [
+        46,
+        45
+      ],
+      "pool_index": 215,
+      "reported_infidelity": 0.004222004100488397
+    },
+    {
+      "abstract_pair": [
+        35,
+        44
+      ],
+      "lambda": 0.005668394321848365,
+      "operational_flag": true,
+      "physical_pair": [
+        104,
+        105
+      ],
+      "pool_index": 216,
+      "reported_infidelity": 0.004251295741386274
+    },
+    {
+      "abstract_pair": [
+        35,
+        49
+      ],
+      "lambda": 0.005668394321848365,
+      "operational_flag": true,
+      "physical_pair": [
+        105,
+        104
+      ],
+      "pool_index": 217,
+      "reported_infidelity": 0.004251295741386274
+    },
+    {
+      "abstract_pair": [
+        35,
+        89
+      ],
+      "lambda": 0.005677799001167901,
+      "operational_flag": true,
+      "physical_pair": [
+        7,
+        17
+      ],
+      "pool_index": 218,
+      "reported_infidelity": 0.004258349250875926
+    },
+    {
+      "abstract_pair": [
+        35,
+        93
+      ],
+      "lambda": 0.005677799001167901,
+      "operational_flag": true,
+      "physical_pair": [
+        17,
+        7
+      ],
+      "pool_index": 219,
+      "reported_infidelity": 0.004258349250875926
+    },
+    {
+      "abstract_pair": [
+        35,
+        107
+      ],
+      "lambda": 0.005703879087217849,
+      "operational_flag": true,
+      "physical_pair": [
+        57,
+        67
+      ],
+      "pool_index": 220,
+      "reported_infidelity": 0.004277909315413386
+    },
+    {
+      "abstract_pair": [
+        35,
+        111
+      ],
+      "lambda": 0.005703879087217849,
+      "operational_flag": true,
+      "physical_pair": [
+        67,
+        57
+      ],
+      "pool_index": 221,
+      "reported_infidelity": 0.004277909315413386
+    },
+    {
+      "abstract_pair": [
+        36,
+        44
+      ],
+      "lambda": 0.00574390182114685,
+      "operational_flag": true,
+      "physical_pair": [
+        121,
+        122
+      ],
+      "pool_index": 222,
+      "reported_infidelity": 0.0043079263658601374
+    },
+    {
+      "abstract_pair": [
+        36,
+        49
+      ],
+      "lambda": 0.00574390182114685,
+      "operational_flag": true,
+      "physical_pair": [
+        122,
+        121
+      ],
+      "pool_index": 223,
+      "reported_infidelity": 0.0043079263658601374
+    },
+    {
+      "abstract_pair": [
+        36,
+        107
+      ],
+      "lambda": 0.00574390182114685,
+      "operational_flag": true,
+      "physical_pair": [
+        122,
+        121
+      ],
+      "pool_index": 223,
+      "reported_infidelity": 0.0043079263658601374
+    },
+    {
+      "abstract_pair": [
+        36,
+        111
+      ],
+      "lambda": 0.005765624890199013,
+      "operational_flag": true,
+      "physical_pair": [
+        49,
+        50
+      ],
+      "pool_index": 224,
+      "reported_infidelity": 0.00432421866764926
+    },
+    {
+      "abstract_pair": [
+        37,
+        45
+      ],
+      "lambda": 0.005765624890199013,
+      "operational_flag": true,
+      "physical_pair": [
+        50,
+        49
+      ],
+      "pool_index": 225,
+      "reported_infidelity": 0.00432421866764926
+    },
+    {
+      "abstract_pair": [
+        37,
+        49
+      ],
+      "lambda": 0.00579999201415123,
+      "operational_flag": true,
+      "physical_pair": [
+        3,
+        4
+      ],
+      "pool_index": 226,
+      "reported_infidelity": 0.004349994010613423
+    },
+    {
+      "abstract_pair": [
+        37,
+        50
+      ],
+      "lambda": 0.00579999201415123,
+      "operational_flag": true,
+      "physical_pair": [
+        4,
+        3
+      ],
+      "pool_index": 227,
+      "reported_infidelity": 0.004349994010613423
+    },
+    {
+      "abstract_pair": [
+        37,
+        107
+      ],
+      "lambda": 0.005827275064796226,
+      "operational_flag": true,
+      "physical_pair": [
+        59,
+        75
+      ],
+      "pool_index": 228,
+      "reported_infidelity": 0.0043704562985971696
+    },
+    {
+      "abstract_pair": [
+        37,
+        111
+      ],
+      "lambda": 0.005827275064796226,
+      "operational_flag": true,
+      "physical_pair": [
+        75,
+        59
+      ],
+      "pool_index": 229,
+      "reported_infidelity": 0.0043704562985971696
+    },
+    {
+      "abstract_pair": [
+        38,
+        45
+      ],
+      "lambda": 0.005851418850196503,
+      "operational_flag": true,
+      "physical_pair": [
+        78,
+        89
+      ],
+      "pool_index": 230,
+      "reported_infidelity": 0.004388564137647377
+    },
+    {
+      "abstract_pair": [
+        38,
+        46
+      ],
+      "lambda": 0.005851418850196503,
+      "operational_flag": true,
+      "physical_pair": [
+        89,
+        78
+      ],
+      "pool_index": 231,
+      "reported_infidelity": 0.004388564137647377
+    },
+    {
+      "abstract_pair": [
+        38,
+        49
+      ],
+      "lambda": 0.005969191873891851,
+      "operational_flag": true,
+      "physical_pair": [
+        18,
+        31
+      ],
+      "pool_index": 232,
+      "reported_infidelity": 0.004476893905418888
+    },
+    {
+      "abstract_pair": [
+        38,
+        50
+      ],
+      "lambda": 0.005969191873891851,
+      "operational_flag": true,
+      "physical_pair": [
+        31,
+        18
+      ],
+      "pool_index": 233,
+      "reported_infidelity": 0.004476893905418888
+    },
+    {
+      "abstract_pair": [
+        38,
+        107
+      ],
+      "lambda": 0.006032761672455293,
+      "operational_flag": true,
+      "physical_pair": [
+        65,
+        77
+      ],
+      "pool_index": 234,
+      "reported_infidelity": 0.0045245712543414696
+    },
+    {
+      "abstract_pair": [
+        38,
+        111
+      ],
+      "lambda": 0.006032761672455293,
+      "operational_flag": true,
+      "physical_pair": [
+        77,
+        65
+      ],
+      "pool_index": 235,
+      "reported_infidelity": 0.0045245712543414696
+    },
+    {
+      "abstract_pair": [
+        39,
+        46
+      ],
+      "lambda": 0.006114281401462677,
+      "operational_flag": true,
+      "physical_pair": [
+        6,
+        7
+      ],
+      "pool_index": 236,
+      "reported_infidelity": 0.004585711051097008
+    },
+    {
+      "abstract_pair": [
+        39,
+        48
+      ],
+      "lambda": 0.006114281401462677,
+      "operational_flag": true,
+      "physical_pair": [
+        6,
+        7
+      ],
+      "pool_index": 236,
+      "reported_infidelity": 0.004585711051097008
+    },
+    {
+      "abstract_pair": [
+        39,
+        49
+      ],
+      "lambda": 0.006114281401462677,
+      "operational_flag": true,
+      "physical_pair": [
+        7,
+        6
+      ],
+      "pool_index": 237,
+      "reported_infidelity": 0.004585711051097008
+    },
+    {
+      "abstract_pair": [
+        39,
+        50
+      ],
+      "lambda": 0.006145727549187259,
+      "operational_flag": true,
+      "physical_pair": [
+        96,
+        103
+      ],
+      "pool_index": 238,
+      "reported_infidelity": 0.004609295661890445
+    },
+    {
+      "abstract_pair": [
+        39,
+        51
+      ],
+      "lambda": 0.006145727549187259,
+      "operational_flag": true,
+      "physical_pair": [
+        103,
+        96
+      ],
+      "pool_index": 239,
+      "reported_infidelity": 0.004609295661890445
+    },
+    {
+      "abstract_pair": [
+        39,
+        87
+      ],
+      "lambda": 0.006308163162564255,
+      "operational_flag": true,
+      "physical_pair": [
+        87,
+        97
+      ],
+      "pool_index": 240,
+      "reported_infidelity": 0.004731122371923191
+    },
+    {
+      "abstract_pair": [
+        39,
+        107
+      ],
+      "lambda": 0.006308163162564255,
+      "operational_flag": true,
+      "physical_pair": [
+        97,
+        87
+      ],
+      "pool_index": 241,
+      "reported_infidelity": 0.004731122371923191
+    },
+    {
+      "abstract_pair": [
+        39,
+        111
+      ],
+      "lambda": 0.006343093422447173,
+      "operational_flag": true,
+      "physical_pair": [
+        103,
+        104
+      ],
+      "pool_index": 242,
+      "reported_infidelity": 0.00475732006683538
+    },
+    {
+      "abstract_pair": [
+        40,
+        47
+      ],
+      "lambda": 0.006343093422447173,
+      "operational_flag": true,
+      "physical_pair": [
+        104,
+        103
+      ],
+      "pool_index": 243,
+      "reported_infidelity": 0.00475732006683538
+    },
+    {
+      "abstract_pair": [
+        40,
+        50
+      ],
+      "lambda": 0.00646606793081439,
+      "operational_flag": true,
+      "physical_pair": [
+        111,
+        112
+      ],
+      "pool_index": 244,
+      "reported_infidelity": 0.004849550948110792
+    },
+    {
+      "abstract_pair": [
+        40,
+        87
+      ],
+      "lambda": 0.00646606793081439,
+      "operational_flag": true,
+      "physical_pair": [
+        112,
+        111
+      ],
+      "pool_index": 245,
+      "reported_infidelity": 0.004849550948110792
+    },
+    {
+      "abstract_pair": [
+        40,
+        107
+      ],
+      "lambda": 0.006467001722179215,
+      "operational_flag": true,
+      "physical_pair": [
+        7,
+        8
+      ],
+      "pool_index": 246,
+      "reported_infidelity": 0.004850251291634411
+    },
+    {
+      "abstract_pair": [
+        40,
+        111
+      ],
+      "lambda": 0.006467001722179215,
+      "operational_flag": true,
+      "physical_pair": [
+        8,
+        7
+      ],
+      "pool_index": 247,
+      "reported_infidelity": 0.004850251291634411
+    },
+    {
+      "abstract_pair": [
+        41,
+        47
+      ],
+      "lambda": 0.00656860909109828,
+      "operational_flag": true,
+      "physical_pair": [
+        46,
+        47
+      ],
+      "pool_index": 248,
+      "reported_infidelity": 0.00492645681832371
+    },
+    {
+      "abstract_pair": [
+        41,
+        48
+      ],
+      "lambda": 0.00656860909109828,
+      "operational_flag": true,
+      "physical_pair": [
+        47,
+        46
+      ],
+      "pool_index": 249,
+      "reported_infidelity": 0.00492645681832371
+    },
+    {
+      "abstract_pair": [
+        41,
+        50
+      ],
+      "lambda": 0.006604781425866439,
+      "operational_flag": true,
+      "physical_pair": [
+        113,
+        119
+      ],
+      "pool_index": 250,
+      "reported_infidelity": 0.004953586069399829
+    },
+    {
+      "abstract_pair": [
+        41,
+        51
+      ],
+      "lambda": 0.006604781425866439,
+      "operational_flag": true,
+      "physical_pair": [
+        113,
+        119
+      ],
+      "pool_index": 250,
+      "reported_infidelity": 0.004953586069399829
+    },
+    {
+      "abstract_pair": [
+        41,
+        87
+      ],
+      "lambda": 0.006604781425866439,
+      "operational_flag": true,
+      "physical_pair": [
+        119,
+        113
+      ],
+      "pool_index": 251,
+      "reported_infidelity": 0.004953586069399829
+    },
+    {
+      "abstract_pair": [
+        41,
+        107
+      ],
+      "lambda": 0.006663344538851683,
+      "operational_flag": true,
+      "physical_pair": [
+        101,
+        102
+      ],
+      "pool_index": 252,
+      "reported_infidelity": 0.004997508404138762
+    },
+    {
+      "abstract_pair": [
+        41,
+        111
+      ],
+      "lambda": 0.006663344538851683,
+      "operational_flag": true,
+      "physical_pair": [
+        102,
+        101
+      ],
+      "pool_index": 253,
+      "reported_infidelity": 0.004997508404138762
+    },
+    {
+      "abstract_pair": [
+        42,
+        46
+      ],
+      "lambda": 0.006744570247303609,
+      "operational_flag": true,
+      "physical_pair": [
+        128,
+        129
+      ],
+      "pool_index": 254,
+      "reported_infidelity": 0.005058427685477707
+    },
+    {
+      "abstract_pair": [
+        42,
+        48
+      ],
+      "lambda": 0.006744570247303609,
+      "operational_flag": true,
+      "physical_pair": [
+        129,
+        128
+      ],
+      "pool_index": 255,
+      "reported_infidelity": 0.005058427685477707
+    },
+    {
+      "abstract_pair": [
+        42,
+        49
+      ],
+      "lambda": 0.006758156922281951,
+      "operational_flag": true,
+      "physical_pair": [
+        74,
+        75
+      ],
+      "pool_index": 256,
+      "reported_infidelity": 0.005068617691711463
+    },
+    {
+      "abstract_pair": [
+        42,
+        50
+      ],
+      "lambda": 0.006758156922281951,
+      "operational_flag": true,
+      "physical_pair": [
+        75,
+        74
+      ],
+      "pool_index": 257,
+      "reported_infidelity": 0.005068617691711463
+    },
+    {
+      "abstract_pair": [
+        42,
+        52
+      ],
+      "lambda": 0.006780104471426703,
+      "operational_flag": true,
+      "physical_pair": [
+        119,
+        133
+      ],
+      "pool_index": 258,
+      "reported_infidelity": 0.005085078353570027
+    },
+    {
+      "abstract_pair": [
+        42,
+        53
+      ],
+      "lambda": 0.006780104471426703,
+      "operational_flag": true,
+      "physical_pair": [
+        133,
+        119
+      ],
+      "pool_index": 259,
+      "reported_infidelity": 0.005085078353570027
+    },
+    {
+      "abstract_pair": [
+        42,
+        54
+      ],
+      "lambda": 0.0073126514375891905,
+      "operational_flag": true,
+      "physical_pair": [
+        69,
+        70
+      ],
+      "pool_index": 260,
+      "reported_infidelity": 0.005484488578191893
+    },
+    {
+      "abstract_pair": [
+        42,
+        55
+      ],
+      "lambda": 0.0073126514375891905,
+      "operational_flag": true,
+      "physical_pair": [
+        70,
+        69
+      ],
+      "pool_index": 261,
+      "reported_infidelity": 0.005484488578191893
+    },
+    {
+      "abstract_pair": [
+        42,
+        87
+      ],
+      "lambda": 0.007398484225948539,
+      "operational_flag": true,
+      "physical_pair": [
+        42,
+        43
+      ],
+      "pool_index": 262,
+      "reported_infidelity": 0.005548863169461404
+    },
+    {
+      "abstract_pair": [
+        42,
+        93
+      ],
+      "lambda": 0.007398484225948539,
+      "operational_flag": true,
+      "physical_pair": [
+        43,
+        42
+      ],
+      "pool_index": 263,
+      "reported_infidelity": 0.005548863169461404
+    },
+    {
+      "abstract_pair": [
+        42,
+        107
+      ],
+      "lambda": 0.007398484225948539,
+      "operational_flag": true,
+      "physical_pair": [
+        43,
+        42
+      ],
+      "pool_index": 263,
+      "reported_infidelity": 0.005548863169461404
+    },
+    {
+      "abstract_pair": [
+        42,
+        111
+      ],
+      "lambda": 0.007476636911511865,
+      "operational_flag": true,
+      "physical_pair": [
+        112,
+        113
+      ],
+      "pool_index": 264,
+      "reported_infidelity": 0.005607477683633899
+    },
+    {
+      "abstract_pair": [
+        43,
+        46
+      ],
+      "lambda": 0.007476636911511865,
+      "operational_flag": true,
+      "physical_pair": [
+        113,
+        112
+      ],
+      "pool_index": 265,
+      "reported_infidelity": 0.005607477683633899
+    },
+    {
+      "abstract_pair": [
+        43,
+        48
+      ],
+      "lambda": 0.007516663231370642,
+      "operational_flag": true,
+      "physical_pair": [
+        56,
+        63
+      ],
+      "pool_index": 266,
+      "reported_infidelity": 0.005637497423527982
+    },
+    {
+      "abstract_pair": [
+        43,
+        49
+      ],
+      "lambda": 0.007516663231370642,
+      "operational_flag": true,
+      "physical_pair": [
+        63,
+        56
+      ],
+      "pool_index": 267,
+      "reported_infidelity": 0.005637497423527982
+    },
+    {
+      "abstract_pair": [
+        43,
+        50
+      ],
+      "lambda": 0.00762180329861617,
+      "operational_flag": true,
+      "physical_pair": [
+        28,
+        29
+      ],
+      "pool_index": 268,
+      "reported_infidelity": 0.005716352473962127
+    },
+    {
+      "abstract_pair": [
+        43,
+        51
+      ],
+      "lambda": 0.00762180329861617,
+      "operational_flag": true,
+      "physical_pair": [
+        29,
+        28
+      ],
+      "pool_index": 269,
+      "reported_infidelity": 0.005716352473962127
+    },
+    {
+      "abstract_pair": [
+        43,
+        53
+      ],
+      "lambda": 0.007648455381381147,
+      "operational_flag": true,
+      "physical_pair": [
+        14,
+        15
+      ],
+      "pool_index": 270,
+      "reported_infidelity": 0.0057363415360358605
+    },
+    {
+      "abstract_pair": [
+        43,
+        54
+      ],
+      "lambda": 0.007648455381381147,
+      "operational_flag": true,
+      "physical_pair": [
+        15,
+        14
+      ],
+      "pool_index": 271,
+      "reported_infidelity": 0.0057363415360358605
+    },
+    {
+      "abstract_pair": [
+        43,
+        55
+      ],
+      "lambda": 0.007808173331689631,
+      "operational_flag": true,
+      "physical_pair": [
+        99,
+        115
+      ],
+      "pool_index": 272,
+      "reported_infidelity": 0.005856129998767223
+    },
+    {
+      "abstract_pair": [
+        43,
+        87
+      ],
+      "lambda": 0.007808173331689631,
+      "operational_flag": true,
+      "physical_pair": [
+        115,
+        99
+      ],
+      "pool_index": 273,
+      "reported_infidelity": 0.005856129998767223
+    },
+    {
+      "abstract_pair": [
+        43,
+        93
+      ],
+      "lambda": 0.008132896151527827,
+      "operational_flag": true,
+      "physical_pair": [
+        114,
+        115
+      ],
+      "pool_index": 274,
+      "reported_infidelity": 0.006099672113645871
+    },
+    {
+      "abstract_pair": [
+        44,
+        46
+      ],
+      "lambda": 0.008132896151527827,
+      "operational_flag": true,
+      "physical_pair": [
+        115,
+        114
+      ],
+      "pool_index": 275,
+      "reported_infidelity": 0.006099672113645871
+    },
+    {
+      "abstract_pair": [
+        44,
+        47
+      ],
+      "lambda": 0.008176378146346641,
+      "operational_flag": true,
+      "physical_pair": [
+        98,
+        111
+      ],
+      "pool_index": 276,
+      "reported_infidelity": 0.006132283609759981
+    },
+    {
+      "abstract_pair": [
+        44,
+        49
+      ],
+      "lambda": 0.008176378146346641,
+      "operational_flag": true,
+      "physical_pair": [
+        111,
+        98
+      ],
+      "pool_index": 277,
+      "reported_infidelity": 0.006132283609759981
+    },
+    {
+      "abstract_pair": [
+        44,
+        50
+      ],
+      "lambda": 0.008176378146346641,
+      "operational_flag": true,
+      "physical_pair": [
+        111,
+        98
+      ],
+      "pool_index": 277,
+      "reported_infidelity": 0.006132283609759981
+    },
+    {
+      "abstract_pair": [
+        44,
+        51
+      ],
+      "lambda": 0.008368865438092529,
+      "operational_flag": true,
+      "physical_pair": [
+        41,
+        42
+      ],
+      "pool_index": 278,
+      "reported_infidelity": 0.006276649078569396
+    },
+    {
+      "abstract_pair": [
+        44,
+        52
+      ],
+      "lambda": 0.008368865438092529,
+      "operational_flag": true,
+      "physical_pair": [
+        42,
+        41
+      ],
+      "pool_index": 279,
+      "reported_infidelity": 0.006276649078569396
+    },
+    {
+      "abstract_pair": [
+        44,
+        53
+      ],
+      "lambda": 0.00845711198470204,
+      "operational_flag": true,
+      "physical_pair": [
+        100,
+        101
+      ],
+      "pool_index": 280,
+      "reported_infidelity": 0.006342833988526531
+    },
+    {
+      "abstract_pair": [
+        44,
+        54
+      ],
+      "lambda": 0.00845711198470204,
+      "operational_flag": true,
+      "physical_pair": [
+        101,
+        100
+      ],
+      "pool_index": 281,
+      "reported_infidelity": 0.006342833988526531
+    },
+    {
+      "abstract_pair": [
+        44,
+        87
+      ],
+      "lambda": 0.00848736500660093,
+      "operational_flag": true,
+      "physical_pair": [
+        69,
+        78
+      ],
+      "pool_index": 282,
+      "reported_infidelity": 0.006365523754950697
+    },
+    {
+      "abstract_pair": [
+        44,
+        93
+      ],
+      "lambda": 0.00848736500660093,
+      "operational_flag": true,
+      "physical_pair": [
+        78,
+        69
+      ],
+      "pool_index": 283,
+      "reported_infidelity": 0.006365523754950697
+    },
+    {
+      "abstract_pair": [
+        45,
+        46
+      ],
+      "lambda": 0.008835596803774104,
+      "operational_flag": true,
+      "physical_pair": [
+        29,
+        30
+      ],
+      "pool_index": 284,
+      "reported_infidelity": 0.006626697602830578
+    },
+    {
+      "abstract_pair": [
+        45,
+        47
+      ],
+      "lambda": 0.008835596803774104,
+      "operational_flag": true,
+      "physical_pair": [
+        30,
+        29
+      ],
+      "pool_index": 285,
+      "reported_infidelity": 0.006626697602830578
+    },
+    {
+      "abstract_pair": [
+        45,
+        48
+      ],
+      "lambda": 0.00900137191457051,
+      "operational_flag": true,
+      "physical_pair": [
+        95,
+        99
+      ],
+      "pool_index": 286,
+      "reported_infidelity": 0.006751028935927883
+    },
+    {
+      "abstract_pair": [
+        45,
+        49
+      ],
+      "lambda": 0.00900137191457051,
+      "operational_flag": true,
+      "physical_pair": [
+        99,
+        95
+      ],
+      "pool_index": 287,
+      "reported_infidelity": 0.006751028935927883
+    },
+    {
+      "abstract_pair": [
+        45,
+        50
+      ],
+      "lambda": 0.009104596448757052,
+      "operational_flag": true,
+      "physical_pair": [
+        135,
+        139
+      ],
+      "pool_index": 288,
+      "reported_infidelity": 0.006828447336567789
+    },
+    {
+      "abstract_pair": [
+        45,
+        51
+      ],
+      "lambda": 0.009104596448757052,
+      "operational_flag": true,
+      "physical_pair": [
+        139,
+        135
+      ],
+      "pool_index": 289,
+      "reported_infidelity": 0.006828447336567789
+    },
+    {
+      "abstract_pair": [
+        45,
+        52
+      ],
+      "lambda": 0.00953016742000686,
+      "operational_flag": true,
+      "physical_pair": [
+        113,
+        114
+      ],
+      "pool_index": 290,
+      "reported_infidelity": 0.0071476255650051446
+    },
+    {
+      "abstract_pair": [
+        45,
+        53
+      ],
+      "lambda": 0.00953016742000686,
+      "operational_flag": true,
+      "physical_pair": [
+        113,
+        114
+      ],
+      "pool_index": 290,
+      "reported_infidelity": 0.0071476255650051446
+    },
+    {
+      "abstract_pair": [
+        45,
+        54
+      ],
+      "lambda": 0.00953016742000686,
+      "operational_flag": true,
+      "physical_pair": [
+        114,
+        113
+      ],
+      "pool_index": 291,
+      "reported_infidelity": 0.0071476255650051446
+    },
+    {
+      "abstract_pair": [
+        45,
+        87
+      ],
+      "lambda": 0.00988162685670361,
+      "operational_flag": true,
+      "physical_pair": [
+        62,
+        63
+      ],
+      "pool_index": 292,
+      "reported_infidelity": 0.007411220142527708
+    },
+    {
+      "abstract_pair": [
+        45,
+        93
+      ],
+      "lambda": 0.00988162685670361,
+      "operational_flag": true,
+      "physical_pair": [
+        63,
+        62
+      ],
+      "pool_index": 293,
+      "reported_infidelity": 0.007411220142527708
+    },
+    {
+      "abstract_pair": [
+        46,
+        51
+      ],
+      "lambda": 0.010018901320586323,
+      "operational_flag": true,
+      "physical_pair": [
+        21,
+        36
+      ],
+      "pool_index": 294,
+      "reported_infidelity": 0.007514175990439742
+    },
+    {
+      "abstract_pair": [
+        46,
+        52
+      ],
+      "lambda": 0.010018901320586323,
+      "operational_flag": true,
+      "physical_pair": [
+        36,
+        21
+      ],
+      "pool_index": 295,
+      "reported_infidelity": 0.007514175990439742
+    },
+    {
+      "abstract_pair": [
+        46,
+        53
+      ],
+      "lambda": 0.010661500723803933,
+      "operational_flag": true,
+      "physical_pair": [
+        81,
+        82
+      ],
+      "pool_index": 296,
+      "reported_infidelity": 0.00799612554285295
+    },
+    {
+      "abstract_pair": [
+        46,
+        54
+      ],
+      "lambda": 0.010661500723803933,
+      "operational_flag": true,
+      "physical_pair": [
+        82,
+        81
+      ],
+      "pool_index": 297,
+      "reported_infidelity": 0.00799612554285295
+    },
+    {
+      "abstract_pair": [
+        46,
+        93
+      ],
+      "lambda": 0.010929285355835075,
+      "operational_flag": true,
+      "physical_pair": [
+        20,
+        21
+      ],
+      "pool_index": 298,
+      "reported_infidelity": 0.008196964016876307
+    },
+    {
+      "abstract_pair": [
+        47,
+        54
+      ],
+      "lambda": 0.010929285355835075,
+      "operational_flag": true,
+      "physical_pair": [
+        21,
+        20
+      ],
+      "pool_index": 299,
+      "reported_infidelity": 0.008196964016876307
+    },
+    {
+      "abstract_pair": [
+        47,
+        55
+      ],
+      "lambda": 0.011463461521522259,
+      "operational_flag": true,
+      "physical_pair": [
+        30,
+        31
+      ],
+      "pool_index": 300,
+      "reported_infidelity": 0.008597596141141695
+    },
+    {
+      "abstract_pair": [
+        47,
+        93
+      ],
+      "lambda": 0.011463461521522259,
+      "operational_flag": true,
+      "physical_pair": [
+        31,
+        30
+      ],
+      "pool_index": 301,
+      "reported_infidelity": 0.008597596141141695
+    },
+    {
+      "abstract_pair": [
+        48,
+        52
+      ],
+      "lambda": 0.012465066909266298,
+      "operational_flag": true,
+      "physical_pair": [
+        82,
+        83
+      ],
+      "pool_index": 302,
+      "reported_infidelity": 0.009348800181949724
+    },
+    {
+      "abstract_pair": [
+        48,
+        53
+      ],
+      "lambda": 0.012465066909266298,
+      "operational_flag": true,
+      "physical_pair": [
+        83,
+        82
+      ],
+      "pool_index": 303,
+      "reported_infidelity": 0.009348800181949724
+    },
+    {
+      "abstract_pair": [
+        48,
+        93
+      ],
+      "lambda": 0.013207674199747407,
+      "operational_flag": true,
+      "physical_pair": [
+        53,
+        54
+      ],
+      "pool_index": 304,
+      "reported_infidelity": 0.009905755649810555
+    },
+    {
+      "abstract_pair": [
+        49,
+        50
+      ],
+      "lambda": 0.013207674199747407,
+      "operational_flag": true,
+      "physical_pair": [
+        53,
+        54
+      ],
+      "pool_index": 304,
+      "reported_infidelity": 0.009905755649810555
+    },
+    {
+      "abstract_pair": [
+        49,
+        51
+      ],
+      "lambda": 0.013207674199747407,
+      "operational_flag": true,
+      "physical_pair": [
+        54,
+        53
+      ],
+      "pool_index": 305,
+      "reported_infidelity": 0.009905755649810555
+    },
+    {
+      "abstract_pair": [
+        49,
+        93
+      ],
+      "lambda": 0.013542228779164667,
+      "operational_flag": true,
+      "physical_pair": [
+        0,
+        1
+      ],
+      "pool_index": 306,
+      "reported_infidelity": 0.0101566715843735
+    },
+    {
+      "abstract_pair": [
+        51,
+        60
+      ],
+      "lambda": 0.013542228779164667,
+      "operational_flag": true,
+      "physical_pair": [
+        1,
+        0
+      ],
+      "pool_index": 307,
+      "reported_infidelity": 0.0101566715843735
+    },
+    {
+      "abstract_pair": [
+        51,
+        66
+      ],
+      "lambda": 0.013698461889034341,
+      "operational_flag": true,
+      "physical_pair": [
+        26,
+        27
+      ],
+      "pool_index": 308,
+      "reported_infidelity": 0.010273846416775756
+    },
+    {
+      "abstract_pair": [
+        51,
+        111
+      ],
+      "lambda": 0.013698461889034341,
+      "operational_flag": true,
+      "physical_pair": [
+        27,
+        26
+      ],
+      "pool_index": 309,
+      "reported_infidelity": 0.010273846416775756
+    },
+    {
+      "abstract_pair": [
+        52,
+        60
+      ],
+      "lambda": 0.015277688795979868,
+      "operational_flag": true,
+      "physical_pair": [
+        94,
+        95
+      ],
+      "pool_index": 310,
+      "reported_infidelity": 0.0114582665969849
+    },
+    {
+      "abstract_pair": [
+        52,
+        61
+      ],
+      "lambda": 0.015277688795979868,
+      "operational_flag": true,
+      "physical_pair": [
+        95,
+        94
+      ],
+      "pool_index": 311,
+      "reported_infidelity": 0.0114582665969849
+    },
+    {
+      "abstract_pair": [
+        52,
+        66
+      ],
+      "lambda": 0.017096485600703204,
+      "operational_flag": true,
+      "physical_pair": [
+        150,
+        151
+      ],
+      "pool_index": 312,
+      "reported_infidelity": 0.012822364200527403
+    },
+    {
+      "abstract_pair": [
+        52,
+        111
+      ],
+      "lambda": 0.017096485600703204,
+      "operational_flag": true,
+      "physical_pair": [
+        151,
+        150
+      ],
+      "pool_index": 313,
+      "reported_infidelity": 0.012822364200527403
+    },
+    {
+      "abstract_pair": [
+        53,
+        61
+      ],
+      "lambda": 0.01758293424525374,
+      "operational_flag": true,
+      "physical_pair": [
+        93,
+        94
+      ],
+      "pool_index": 314,
+      "reported_infidelity": 0.013187200683940303
+    },
+    {
+      "abstract_pair": [
+        53,
+        66
+      ],
+      "lambda": 0.01758293424525374,
+      "operational_flag": true,
+      "physical_pair": [
+        94,
+        93
+      ],
+      "pool_index": 315,
+      "reported_infidelity": 0.013187200683940303
+    },
+    {
+      "abstract_pair": [
+        53,
+        111
+      ],
+      "lambda": 0.019203567991669706,
+      "operational_flag": true,
+      "physical_pair": [
+        17,
+        27
+      ],
+      "pool_index": 316,
+      "reported_infidelity": 0.014402675993752279
+    },
+    {
+      "abstract_pair": [
+        54,
+        62
+      ],
+      "lambda": 0.019203567991669706,
+      "operational_flag": true,
+      "physical_pair": [
+        27,
+        17
+      ],
+      "pool_index": 317,
+      "reported_infidelity": 0.014402675993752279
+    },
+    {
+      "abstract_pair": [
+        54,
+        66
+      ],
+      "lambda": 0.019203567991669706,
+      "operational_flag": true,
+      "physical_pair": [
+        27,
+        17
+      ],
+      "pool_index": 317,
+      "reported_infidelity": 0.014402675993752279
+    },
+    {
+      "abstract_pair": [
+        54,
+        67
+      ],
+      "lambda": 0.019894146917274425,
+      "operational_flag": true,
+      "physical_pair": [
+        5,
+        6
+      ],
+      "pool_index": 318,
+      "reported_infidelity": 0.014920610187955818
+    },
+    {
+      "abstract_pair": [
+        54,
+        111
+      ],
+      "lambda": 0.019894146917274425,
+      "operational_flag": true,
+      "physical_pair": [
+        6,
+        5
+      ],
+      "pool_index": 319,
+      "reported_infidelity": 0.014920610187955818
+    },
+    {
+      "abstract_pair": [
+        55,
+        62
+      ],
+      "lambda": 0.02090660876095411,
+      "operational_flag": true,
+      "physical_pair": [
+        116,
+        121
+      ],
+      "pool_index": 320,
+      "reported_infidelity": 0.01567995657071558
+    },
+    {
+      "abstract_pair": [
+        55,
+        63
+      ],
+      "lambda": 0.02090660876095411,
+      "operational_flag": true,
+      "physical_pair": [
+        121,
+        116
+      ],
+      "pool_index": 321,
+      "reported_infidelity": 0.01567995657071558
+    },
+    {
+      "abstract_pair": [
+        55,
+        66
+      ],
+      "lambda": 0.021409052823125958,
+      "operational_flag": true,
+      "physical_pair": [
+        149,
+        150
+      ],
+      "pool_index": 322,
+      "reported_infidelity": 0.01605678961734447
+    },
+    {
+      "abstract_pair": [
+        55,
+        67
+      ],
+      "lambda": 0.021409052823125958,
+      "operational_flag": true,
+      "physical_pair": [
+        150,
+        149
+      ],
+      "pool_index": 323,
+      "reported_infidelity": 0.01605678961734447
+    },
+    {
+      "abstract_pair": [
+        55,
+        111
+      ],
+      "lambda": 0.02149232329778572,
+      "operational_flag": true,
+      "physical_pair": [
+        148,
+        149
+      ],
+      "pool_index": 324,
+      "reported_infidelity": 0.01611924247333929
+    },
+    {
+      "abstract_pair": [
+        56,
+        63
+      ],
+      "lambda": 0.02149232329778572,
+      "operational_flag": true,
+      "physical_pair": [
+        149,
+        148
+      ],
+      "pool_index": 325,
+      "reported_infidelity": 0.01611924247333929
+    },
+    {
+      "abstract_pair": [
+        56,
+        66
+      ],
+      "lambda": 0.023482815898475822,
+      "operational_flag": true,
+      "physical_pair": [
+        147,
+        148
+      ],
+      "pool_index": 326,
+      "reported_infidelity": 0.017612111923856866
+    },
+    {
+      "abstract_pair": [
+        56,
+        67
+      ],
+      "lambda": 0.023482815898475822,
+      "operational_flag": true,
+      "physical_pair": [
+        148,
+        147
+      ],
+      "pool_index": 327,
+      "reported_infidelity": 0.017612111923856866
+    },
+    {
+      "abstract_pair": [
+        56,
+        111
+      ],
+      "lambda": 0.025554350219071893,
+      "operational_flag": true,
+      "physical_pair": [
+        105,
+        117
+      ],
+      "pool_index": 328,
+      "reported_infidelity": 0.01916576266430392
+    },
+    {
+      "abstract_pair": [
+        57,
+        64
+      ],
+      "lambda": 0.025554350219071893,
+      "operational_flag": true,
+      "physical_pair": [
+        117,
+        105
+      ],
+      "pool_index": 329,
+      "reported_infidelity": 0.01916576266430392
+    },
+    {
+      "abstract_pair": [
+        57,
+        67
+      ],
+      "lambda": 0.03720400829892786,
+      "operational_flag": true,
+      "physical_pair": [
+        72,
+        73
+      ],
+      "pool_index": 330,
+      "reported_infidelity": 0.027903006224195892
+    },
+    {
+      "abstract_pair": [
+        57,
+        111
+      ],
+      "lambda": 0.03720400829892786,
+      "operational_flag": true,
+      "physical_pair": [
+        73,
+        72
+      ],
+      "pool_index": 331,
+      "reported_infidelity": 0.027903006224195892
+    },
+    {
+      "abstract_pair": [
+        58,
+        64
+      ],
+      "lambda": 0.03720400829892786,
+      "operational_flag": true,
+      "physical_pair": [
+        73,
+        72
+      ],
+      "pool_index": 331,
+      "reported_infidelity": 0.027903006224195892
+    },
+    {
+      "abstract_pair": [
+        58,
+        65
+      ],
+      "lambda": 0.04434429229607691,
+      "operational_flag": true,
+      "physical_pair": [
+        63,
+        64
+      ],
+      "pool_index": 332,
+      "reported_infidelity": 0.03325821922205768
+    },
+    {
+      "abstract_pair": [
+        58,
+        67
+      ],
+      "lambda": 0.04434429229607691,
+      "operational_flag": true,
+      "physical_pair": [
+        64,
+        63
+      ],
+      "pool_index": 333,
+      "reported_infidelity": 0.03325821922205768
+    },
+    {
+      "abstract_pair": [
+        58,
+        111
+      ],
+      "lambda": 0.053070823184784954,
+      "operational_flag": true,
+      "physical_pair": [
+        71,
+        72
+      ],
+      "pool_index": 334,
+      "reported_infidelity": 0.039803117388588716
+    },
+    {
+      "abstract_pair": [
+        59,
+        65
+      ],
+      "lambda": 0.053070823184784954,
+      "operational_flag": true,
+      "physical_pair": [
+        72,
+        71
+      ],
+      "pool_index": 335,
+      "reported_infidelity": 0.039803117388588716
+    },
+    {
+      "abstract_pair": [
+        59,
+        67
+      ],
+      "lambda": 0.0667319176824596,
+      "operational_flag": true,
+      "physical_pair": [
+        153,
+        154
+      ],
+      "pool_index": 336,
+      "reported_infidelity": 0.0500489382618447
+    },
+    {
+      "abstract_pair": [
+        59,
+        111
+      ],
+      "lambda": 0.0667319176824596,
+      "operational_flag": true,
+      "physical_pair": [
+        154,
+        153
+      ],
+      "pool_index": 337,
+      "reported_infidelity": 0.0500489382618447
+    }
+  ],
+  "excluded": [
+    {
+      "operational_flag": true,
+      "physical_pair": [
+        27,
+        28
+      ],
+      "reason": "missing, nonpositive, or outside valid pure-depolarizing infidelity range (0,0.8]",
+      "reported_infidelity": 1.0
+    },
+    {
+      "operational_flag": true,
+      "physical_pair": [
+        28,
+        27
+      ],
+      "reason": "missing, nonpositive, or outside valid pure-depolarizing infidelity range (0,0.8]",
+      "reported_infidelity": 1.0
+    },
+    {
+      "operational_flag": true,
+      "physical_pair": [
+        31,
+        32
+      ],
+      "reason": "missing, nonpositive, or outside valid pure-depolarizing infidelity range (0,0.8]",
+      "reported_infidelity": 1.0
+    },
+    {
+      "operational_flag": true,
+      "physical_pair": [
+        32,
+        31
+      ],
+      "reason": "missing, nonpositive, or outside valid pure-depolarizing infidelity range (0,0.8]",
+      "reported_infidelity": 1.0
+    },
+    {
+      "operational_flag": true,
+      "physical_pair": [
+        32,
+        33
+      ],
+      "reason": "missing, nonpositive, or outside valid pure-depolarizing infidelity range (0,0.8]",
+      "reported_infidelity": 1.0
+    },
+    {
+      "operational_flag": true,
+      "physical_pair": [
+        33,
+        32
+      ],
+      "reason": "missing, nonpositive, or outside valid pure-depolarizing infidelity range (0,0.8]",
+      "reported_infidelity": 1.0
+    },
+    {
+      "operational_flag": true,
+      "physical_pair": [
+        68,
+        69
+      ],
+      "reason": "missing, nonpositive, or outside valid pure-depolarizing infidelity range (0,0.8]",
+      "reported_infidelity": 1.0
+    },
+    {
+      "operational_flag": true,
+      "physical_pair": [
+        69,
+        68
+      ],
+      "reason": "missing, nonpositive, or outside valid pure-depolarizing infidelity range (0,0.8]",
+      "reported_infidelity": 1.0
+    },
+    {
+      "operational_flag": true,
+      "physical_pair": [
+        80,
+        81
+      ],
+      "reason": "missing, nonpositive, or outside valid pure-depolarizing infidelity range (0,0.8]",
+      "reported_infidelity": 1.0
+    },
+    {
+      "operational_flag": true,
+      "physical_pair": [
+        81,
+        80
+      ],
+      "reason": "missing, nonpositive, or outside valid pure-depolarizing infidelity range (0,0.8]",
+      "reported_infidelity": 1.0
+    },
+    {
+      "operational_flag": true,
+      "physical_pair": [
+        106,
+        107
+      ],
+      "reason": "missing, nonpositive, or outside valid pure-depolarizing infidelity range (0,0.8]",
+      "reported_infidelity": 1.0
+    },
+    {
+      "operational_flag": true,
+      "physical_pair": [
+        107,
+        106
+      ],
+      "reason": "missing, nonpositive, or outside valid pure-depolarizing infidelity range (0,0.8]",
+      "reported_infidelity": 1.0
+    },
+    {
+      "operational_flag": true,
+      "physical_pair": [
+        139,
+        155
+      ],
+      "reason": "missing, nonpositive, or outside valid pure-depolarizing infidelity range (0,0.8]",
+      "reported_infidelity": 1.0
+    },
+    {
+      "operational_flag": true,
+      "physical_pair": [
+        155,
+        139
+      ],
+      "reason": "missing, nonpositive, or outside valid pure-depolarizing infidelity range (0,0.8]",
+      "reported_infidelity": 1.0
+    }
+  ],
+  "pool": [
+    {
+      "lambda": 0.0028518858299086216,
+      "operational_flag": true,
+      "physical_pair": [
+        22,
+        23
+      ],
+      "reported_infidelity": 0.0021389143724314663
+    },
+    {
+      "lambda": 0.0028518858299086216,
+      "operational_flag": true,
+      "physical_pair": [
+        23,
+        22
+      ],
+      "reported_infidelity": 0.0021389143724314663
+    },
+    {
+      "lambda": 0.0029699544753760687,
+      "operational_flag": true,
+      "physical_pair": [
+        76,
+        81
+      ],
+      "reported_infidelity": 0.0022274658565320515
+    },
+    {
+      "lambda": 0.0029699544753760687,
+      "operational_flag": true,
+      "physical_pair": [
+        81,
+        76
+      ],
+      "reported_infidelity": 0.0022274658565320515
+    },
+    {
+      "lambda": 0.003037332296278968,
+      "operational_flag": true,
+      "physical_pair": [
+        87,
+        88
+      ],
+      "reported_infidelity": 0.002277999222209226
+    },
+    {
+      "lambda": 0.003037332296278968,
+      "operational_flag": true,
+      "physical_pair": [
+        88,
+        87
+      ],
+      "reported_infidelity": 0.002277999222209226
+    },
+    {
+      "lambda": 0.0030694157656258416,
+      "operational_flag": true,
+      "physical_pair": [
+        37,
+        45
+      ],
+      "reported_infidelity": 0.0023020618242193813
+    },
+    {
+      "lambda": 0.0030694157656258416,
+      "operational_flag": true,
+      "physical_pair": [
+        45,
+        37
+      ],
+      "reported_infidelity": 0.0023020618242193813
+    },
+    {
+      "lambda": 0.0031083689897744016,
+      "operational_flag": true,
+      "physical_pair": [
+        25,
+        37
+      ],
+      "reported_infidelity": 0.002331276742330801
+    },
+    {
+      "lambda": 0.0031083689897744016,
+      "operational_flag": true,
+      "physical_pair": [
+        37,
+        25
+      ],
+      "reported_infidelity": 0.002331276742330801
+    },
+    {
+      "lambda": 0.0031765077772523873,
+      "operational_flag": true,
+      "physical_pair": [
+        131,
+        132
+      ],
+      "reported_infidelity": 0.0023823808329392904
+    },
+    {
+      "lambda": 0.0031765077772523873,
+      "operational_flag": true,
+      "physical_pair": [
+        132,
+        131
+      ],
+      "reported_infidelity": 0.0023823808329392904
+    },
+    {
+      "lambda": 0.0031948763565268212,
+      "operational_flag": true,
+      "physical_pair": [
+        124,
+        125
+      ],
+      "reported_infidelity": 0.002396157267395116
+    },
+    {
+      "lambda": 0.0031948763565268212,
+      "operational_flag": true,
+      "physical_pair": [
+        125,
+        124
+      ],
+      "reported_infidelity": 0.002396157267395116
+    },
+    {
+      "lambda": 0.0032457462123921164,
+      "operational_flag": true,
+      "physical_pair": [
+        136,
+        143
+      ],
+      "reported_infidelity": 0.002434309659294087
+    },
+    {
+      "lambda": 0.0032457462123921164,
+      "operational_flag": true,
+      "physical_pair": [
+        143,
+        136
+      ],
+      "reported_infidelity": 0.002434309659294087
+    },
+    {
+      "lambda": 0.0032918731612438337,
+      "operational_flag": true,
+      "physical_pair": [
+        36,
+        41
+      ],
+      "reported_infidelity": 0.0024689048709328754
+    },
+    {
+      "lambda": 0.0032918731612438337,
+      "operational_flag": true,
+      "physical_pair": [
+        41,
+        36
+      ],
+      "reported_infidelity": 0.0024689048709328754
+    },
+    {
+      "lambda": 0.003378883199087005,
+      "operational_flag": true,
+      "physical_pair": [
+        117,
+        125
+      ],
+      "reported_infidelity": 0.002534162399315254
+    },
+    {
+      "lambda": 0.003378883199087005,
+      "operational_flag": true,
+      "physical_pair": [
+        125,
+        117
+      ],
+      "reported_infidelity": 0.002534162399315254
+    },
+    {
+      "lambda": 0.0034452694743219623,
+      "operational_flag": true,
+      "physical_pair": [
+        88,
+        89
+      ],
+      "reported_infidelity": 0.0025839521057414716
+    },
+    {
+      "lambda": 0.0034452694743219623,
+      "operational_flag": true,
+      "physical_pair": [
+        89,
+        88
+      ],
+      "reported_infidelity": 0.0025839521057414716
+    },
+    {
+      "lambda": 0.0034462989266436463,
+      "operational_flag": true,
+      "physical_pair": [
+        44,
+        45
+      ],
+      "reported_infidelity": 0.002584724194982735
+    },
+    {
+      "lambda": 0.0034462989266436463,
+      "operational_flag": true,
+      "physical_pair": [
+        45,
+        44
+      ],
+      "reported_infidelity": 0.002584724194982735
+    },
+    {
+      "lambda": 0.0034715529196001813,
+      "operational_flag": true,
+      "physical_pair": [
+        86,
+        87
+      ],
+      "reported_infidelity": 0.002603664689700136
+    },
+    {
+      "lambda": 0.0034715529196001813,
+      "operational_flag": true,
+      "physical_pair": [
+        87,
+        86
+      ],
+      "reported_infidelity": 0.002603664689700136
+    },
+    {
+      "lambda": 0.0035208049799810106,
+      "operational_flag": true,
+      "physical_pair": [
+        105,
+        106
+      ],
+      "reported_infidelity": 0.002640603734985758
+    },
+    {
+      "lambda": 0.0035208049799810106,
+      "operational_flag": true,
+      "physical_pair": [
+        106,
+        105
+      ],
+      "reported_infidelity": 0.002640603734985758
+    },
+    {
+      "lambda": 0.003539838719040104,
+      "operational_flag": true,
+      "physical_pair": [
+        144,
+        145
+      ],
+      "reported_infidelity": 0.002654879039280078
+    },
+    {
+      "lambda": 0.003539838719040104,
+      "operational_flag": true,
+      "physical_pair": [
+        145,
+        144
+      ],
+      "reported_infidelity": 0.002654879039280078
+    },
+    {
+      "lambda": 0.0035714758853226205,
+      "operational_flag": true,
+      "physical_pair": [
+        51,
+        52
+      ],
+      "reported_infidelity": 0.0026786069139919655
+    },
+    {
+      "lambda": 0.0035714758853226205,
+      "operational_flag": true,
+      "physical_pair": [
+        52,
+        51
+      ],
+      "reported_infidelity": 0.0026786069139919655
+    },
+    {
+      "lambda": 0.003640168755438674,
+      "operational_flag": true,
+      "physical_pair": [
+        140,
+        141
+      ],
+      "reported_infidelity": 0.0027301265665790053
+    },
+    {
+      "lambda": 0.003640168755438674,
+      "operational_flag": true,
+      "physical_pair": [
+        141,
+        140
+      ],
+      "reported_infidelity": 0.0027301265665790053
+    },
+    {
+      "lambda": 0.00368624109771624,
+      "operational_flag": true,
+      "physical_pair": [
+        4,
+        5
+      ],
+      "reported_infidelity": 0.00276468082328718
+    },
+    {
+      "lambda": 0.00368624109771624,
+      "operational_flag": true,
+      "physical_pair": [
+        5,
+        4
+      ],
+      "reported_infidelity": 0.00276468082328718
+    },
+    {
+      "lambda": 0.0037111118579857085,
+      "operational_flag": true,
+      "physical_pair": [
+        40,
+        41
+      ],
+      "reported_infidelity": 0.0027833338934892815
+    },
+    {
+      "lambda": 0.0037111118579857085,
+      "operational_flag": true,
+      "physical_pair": [
+        41,
+        40
+      ],
+      "reported_infidelity": 0.0027833338934892815
+    },
+    {
+      "lambda": 0.0037503495366750053,
+      "operational_flag": true,
+      "physical_pair": [
+        19,
+        35
+      ],
+      "reported_infidelity": 0.002812762152506254
+    },
+    {
+      "lambda": 0.0037503495366750053,
+      "operational_flag": true,
+      "physical_pair": [
+        35,
+        19
+      ],
+      "reported_infidelity": 0.002812762152506254
+    },
+    {
+      "lambda": 0.003796450243747529,
+      "operational_flag": true,
+      "physical_pair": [
+        83,
+        84
+      ],
+      "reported_infidelity": 0.0028473376828106467
+    },
+    {
+      "lambda": 0.003796450243747529,
+      "operational_flag": true,
+      "physical_pair": [
+        84,
+        83
+      ],
+      "reported_infidelity": 0.0028473376828106467
+    },
+    {
+      "lambda": 0.003827438706438017,
+      "operational_flag": true,
+      "physical_pair": [
+        130,
+        131
+      ],
+      "reported_infidelity": 0.0028705790298285128
+    },
+    {
+      "lambda": 0.003827438706438017,
+      "operational_flag": true,
+      "physical_pair": [
+        131,
+        130
+      ],
+      "reported_infidelity": 0.0028705790298285128
+    },
+    {
+      "lambda": 0.0038531476660580064,
+      "operational_flag": true,
+      "physical_pair": [
+        91,
+        92
+      ],
+      "reported_infidelity": 0.0028898607495435047
+    },
+    {
+      "lambda": 0.0038531476660580064,
+      "operational_flag": true,
+      "physical_pair": [
+        92,
+        91
+      ],
+      "reported_infidelity": 0.0028898607495435047
+    },
+    {
+      "lambda": 0.003884970314256053,
+      "operational_flag": true,
+      "physical_pair": [
+        15,
+        19
+      ],
+      "reported_infidelity": 0.00291372773569204
+    },
+    {
+      "lambda": 0.003884970314256053,
+      "operational_flag": true,
+      "physical_pair": [
+        19,
+        15
+      ],
+      "reported_infidelity": 0.00291372773569204
+    },
+    {
+      "lambda": 0.0038983864551208245,
+      "operational_flag": true,
+      "physical_pair": [
+        141,
+        142
+      ],
+      "reported_infidelity": 0.0029237898413406183
+    },
+    {
+      "lambda": 0.0038983864551208245,
+      "operational_flag": true,
+      "physical_pair": [
+        142,
+        141
+      ],
+      "reported_infidelity": 0.0029237898413406183
+    },
+    {
+      "lambda": 0.0039027920225827017,
+      "operational_flag": true,
+      "physical_pair": [
+        109,
+        110
+      ],
+      "reported_infidelity": 0.0029270940169370263
+    },
+    {
+      "lambda": 0.0039027920225827017,
+      "operational_flag": true,
+      "physical_pair": [
+        110,
+        109
+      ],
+      "reported_infidelity": 0.0029270940169370263
+    },
+    {
+      "lambda": 0.003907891002561688,
+      "operational_flag": true,
+      "physical_pair": [
+        125,
+        126
+      ],
+      "reported_infidelity": 0.002930918251921266
+    },
+    {
+      "lambda": 0.003907891002561688,
+      "operational_flag": true,
+      "physical_pair": [
+        126,
+        125
+      ],
+      "reported_infidelity": 0.002930918251921266
+    },
+    {
+      "lambda": 0.003939638465114322,
+      "operational_flag": true,
+      "physical_pair": [
+        8,
+        9
+      ],
+      "reported_infidelity": 0.0029547288488357415
+    },
+    {
+      "lambda": 0.003939638465114322,
+      "operational_flag": true,
+      "physical_pair": [
+        9,
+        8
+      ],
+      "reported_infidelity": 0.0029547288488357415
+    },
+    {
+      "lambda": 0.003945109487723197,
+      "operational_flag": true,
+      "physical_pair": [
+        43,
+        44
+      ],
+      "reported_infidelity": 0.002958832115792398
+    },
+    {
+      "lambda": 0.003945109487723197,
+      "operational_flag": true,
+      "physical_pair": [
+        44,
+        43
+      ],
+      "reported_infidelity": 0.002958832115792398
+    },
+    {
+      "lambda": 0.003954715361638532,
+      "operational_flag": true,
+      "physical_pair": [
+        127,
+        137
+      ],
+      "reported_infidelity": 0.0029660365212288986
+    },
+    {
+      "lambda": 0.003954715361638532,
+      "operational_flag": true,
+      "physical_pair": [
+        137,
+        127
+      ],
+      "reported_infidelity": 0.0029660365212288986
+    },
+    {
+      "lambda": 0.003958270890833375,
+      "operational_flag": true,
+      "physical_pair": [
+        89,
+        90
+      ],
+      "reported_infidelity": 0.002968703168125031
+    },
+    {
+      "lambda": 0.003958270890833375,
+      "operational_flag": true,
+      "physical_pair": [
+        90,
+        89
+      ],
+      "reported_infidelity": 0.002968703168125031
+    },
+    {
+      "lambda": 0.003979544319286561,
+      "operational_flag": true,
+      "physical_pair": [
+        2,
+        3
+      ],
+      "reported_infidelity": 0.0029846582394649213
+    },
+    {
+      "lambda": 0.003979544319286561,
+      "operational_flag": true,
+      "physical_pair": [
+        3,
+        2
+      ],
+      "reported_infidelity": 0.0029846582394649213
+    },
+    {
+      "lambda": 0.004031630690149039,
+      "operational_flag": true,
+      "physical_pair": [
+        23,
+        24
+      ],
+      "reported_infidelity": 0.003023723017611779
+    },
+    {
+      "lambda": 0.004031630690149039,
+      "operational_flag": true,
+      "physical_pair": [
+        24,
+        23
+      ],
+      "reported_infidelity": 0.003023723017611779
+    },
+    {
+      "lambda": 0.004084147524902715,
+      "operational_flag": true,
+      "physical_pair": [
+        84,
+        85
+      ],
+      "reported_infidelity": 0.003063110643677036
+    },
+    {
+      "lambda": 0.004084147524902715,
+      "operational_flag": true,
+      "physical_pair": [
+        85,
+        84
+      ],
+      "reported_infidelity": 0.003063110643677036
+    },
+    {
+      "lambda": 0.004098411174662105,
+      "operational_flag": true,
+      "physical_pair": [
+        110,
+        111
+      ],
+      "reported_infidelity": 0.003073808380996579
+    },
+    {
+      "lambda": 0.004098411174662105,
+      "operational_flag": true,
+      "physical_pair": [
+        111,
+        110
+      ],
+      "reported_infidelity": 0.003073808380996579
+    },
+    {
+      "lambda": 0.004100003420746123,
+      "operational_flag": true,
+      "physical_pair": [
+        138,
+        151
+      ],
+      "reported_infidelity": 0.0030750025655595925
+    },
+    {
+      "lambda": 0.004100003420746123,
+      "operational_flag": true,
+      "physical_pair": [
+        151,
+        138
+      ],
+      "reported_infidelity": 0.0030750025655595925
+    },
+    {
+      "lambda": 0.004103134969772733,
+      "operational_flag": true,
+      "physical_pair": [
+        91,
+        98
+      ],
+      "reported_infidelity": 0.00307735122732955
+    },
+    {
+      "lambda": 0.004103134969772733,
+      "operational_flag": true,
+      "physical_pair": [
+        98,
+        91
+      ],
+      "reported_infidelity": 0.00307735122732955
+    },
+    {
+      "lambda": 0.004118497164712649,
+      "operational_flag": true,
+      "physical_pair": [
+        83,
+        96
+      ],
+      "reported_infidelity": 0.0030888728735344873
+    },
+    {
+      "lambda": 0.004118497164712649,
+      "operational_flag": true,
+      "physical_pair": [
+        96,
+        83
+      ],
+      "reported_infidelity": 0.0030888728735344873
+    },
+    {
+      "lambda": 0.004120420283828456,
+      "operational_flag": true,
+      "physical_pair": [
+        12,
+        13
+      ],
+      "reported_infidelity": 0.003090315212871342
+    },
+    {
+      "lambda": 0.004120420283828456,
+      "operational_flag": true,
+      "physical_pair": [
+        13,
+        12
+      ],
+      "reported_infidelity": 0.003090315212871342
+    },
+    {
+      "lambda": 0.004137894587995443,
+      "operational_flag": true,
+      "physical_pair": [
+        145,
+        146
+      ],
+      "reported_infidelity": 0.003103420940996582
+    },
+    {
+      "lambda": 0.004137894587995443,
+      "operational_flag": true,
+      "physical_pair": [
+        146,
+        145
+      ],
+      "reported_infidelity": 0.003103420940996582
+    },
+    {
+      "lambda": 0.004150070353853952,
+      "operational_flag": true,
+      "physical_pair": [
+        126,
+        127
+      ],
+      "reported_infidelity": 0.003112552765390464
+    },
+    {
+      "lambda": 0.004150070353853952,
+      "operational_flag": true,
+      "physical_pair": [
+        127,
+        126
+      ],
+      "reported_infidelity": 0.003112552765390464
+    },
+    {
+      "lambda": 0.004163296706904444,
+      "operational_flag": true,
+      "physical_pair": [
+        97,
+        107
+      ],
+      "reported_infidelity": 0.003122472530178333
+    },
+    {
+      "lambda": 0.004163296706904444,
+      "operational_flag": true,
+      "physical_pair": [
+        107,
+        97
+      ],
+      "reported_infidelity": 0.003122472530178333
+    },
+    {
+      "lambda": 0.004217460211536572,
+      "operational_flag": true,
+      "physical_pair": [
+        92,
+        93
+      ],
+      "reported_infidelity": 0.003163095158652429
+    },
+    {
+      "lambda": 0.004217460211536572,
+      "operational_flag": true,
+      "physical_pair": [
+        93,
+        92
+      ],
+      "reported_infidelity": 0.003163095158652429
+    },
+    {
+      "lambda": 0.004230944635035409,
+      "operational_flag": true,
+      "physical_pair": [
+        33,
+        39
+      ],
+      "reported_infidelity": 0.0031732084762765567
+    },
+    {
+      "lambda": 0.004230944635035409,
+      "operational_flag": true,
+      "physical_pair": [
+        39,
+        33
+      ],
+      "reported_infidelity": 0.0031732084762765567
+    },
+    {
+      "lambda": 0.004264978928690821,
+      "operational_flag": true,
+      "physical_pair": [
+        143,
+        144
+      ],
+      "reported_infidelity": 0.003198734196518116
+    },
+    {
+      "lambda": 0.004264978928690821,
+      "operational_flag": true,
+      "physical_pair": [
+        144,
+        143
+      ],
+      "reported_infidelity": 0.003198734196518116
+    },
+    {
+      "lambda": 0.004304608811225223,
+      "operational_flag": true,
+      "physical_pair": [
+        85,
+        86
+      ],
+      "reported_infidelity": 0.003228456608418917
+    },
+    {
+      "lambda": 0.004304608811225223,
+      "operational_flag": true,
+      "physical_pair": [
+        86,
+        85
+      ],
+      "reported_infidelity": 0.003228456608418917
+    },
+    {
+      "lambda": 0.004321226010472208,
+      "operational_flag": true,
+      "physical_pair": [
+        109,
+        118
+      ],
+      "reported_infidelity": 0.0032409195078541564
+    },
+    {
+      "lambda": 0.004321226010472208,
+      "operational_flag": true,
+      "physical_pair": [
+        118,
+        109
+      ],
+      "reported_infidelity": 0.0032409195078541564
+    },
+    {
+      "lambda": 0.0043324545832762835,
+      "operational_flag": true,
+      "physical_pair": [
+        123,
+        124
+      ],
+      "reported_infidelity": 0.0032493409374572124
+    },
+    {
+      "lambda": 0.0043324545832762835,
+      "operational_flag": true,
+      "physical_pair": [
+        124,
+        123
+      ],
+      "reported_infidelity": 0.0032493409374572124
+    },
+    {
+      "lambda": 0.004363761533784594,
+      "operational_flag": true,
+      "physical_pair": [
+        43,
+        56
+      ],
+      "reported_infidelity": 0.0032728211503384452
+    },
+    {
+      "lambda": 0.004363761533784594,
+      "operational_flag": true,
+      "physical_pair": [
+        56,
+        43
+      ],
+      "reported_infidelity": 0.0032728211503384452
+    },
+    {
+      "lambda": 0.004379756974514389,
+      "operational_flag": true,
+      "physical_pair": [
+        131,
+        138
+      ],
+      "reported_infidelity": 0.0032848177308857918
+    },
+    {
+      "lambda": 0.004379756974514389,
+      "operational_flag": true,
+      "physical_pair": [
+        138,
+        131
+      ],
+      "reported_infidelity": 0.0032848177308857918
+    },
+    {
+      "lambda": 0.004402785195264973,
+      "operational_flag": true,
+      "physical_pair": [
+        47,
+        48
+      ],
+      "reported_infidelity": 0.0033020888964487294
+    },
+    {
+      "lambda": 0.004402785195264973,
+      "operational_flag": true,
+      "physical_pair": [
+        48,
+        47
+      ],
+      "reported_infidelity": 0.0033020888964487294
+    },
+    {
+      "lambda": 0.004415141310805633,
+      "operational_flag": true,
+      "physical_pair": [
+        142,
+        143
+      ],
+      "reported_infidelity": 0.003311355983104225
+    },
+    {
+      "lambda": 0.004415141310805633,
+      "operational_flag": true,
+      "physical_pair": [
+        143,
+        142
+      ],
+      "reported_infidelity": 0.003311355983104225
+    },
+    {
+      "lambda": 0.004421336230245432,
+      "operational_flag": true,
+      "physical_pair": [
+        58,
+        71
+      ],
+      "reported_infidelity": 0.003316002172684074
+    },
+    {
+      "lambda": 0.004421336230245432,
+      "operational_flag": true,
+      "physical_pair": [
+        71,
+        58
+      ],
+      "reported_infidelity": 0.003316002172684074
+    },
+    {
+      "lambda": 0.004433305904777122,
+      "operational_flag": true,
+      "physical_pair": [
+        102,
+        103
+      ],
+      "reported_infidelity": 0.0033249794285828416
+    },
+    {
+      "lambda": 0.004433305904777122,
+      "operational_flag": true,
+      "physical_pair": [
+        103,
+        102
+      ],
+      "reported_infidelity": 0.0033249794285828416
+    },
+    {
+      "lambda": 0.004433799919404254,
+      "operational_flag": true,
+      "physical_pair": [
+        154,
+        155
+      ],
+      "reported_infidelity": 0.0033253499395531905
+    },
+    {
+      "lambda": 0.004433799919404254,
+      "operational_flag": true,
+      "physical_pair": [
+        155,
+        154
+      ],
+      "reported_infidelity": 0.0033253499395531905
+    },
+    {
+      "lambda": 0.004462784750861666,
+      "operational_flag": true,
+      "physical_pair": [
+        107,
+        108
+      ],
+      "reported_infidelity": 0.00334708856314625
+    },
+    {
+      "lambda": 0.004462784750861666,
+      "operational_flag": true,
+      "physical_pair": [
+        108,
+        107
+      ],
+      "reported_infidelity": 0.00334708856314625
+    },
+    {
+      "lambda": 0.0044660754195079795,
+      "operational_flag": true,
+      "physical_pair": [
+        73,
+        74
+      ],
+      "reported_infidelity": 0.0033495565646309844
+    },
+    {
+      "lambda": 0.0044660754195079795,
+      "operational_flag": true,
+      "physical_pair": [
+        74,
+        73
+      ],
+      "reported_infidelity": 0.0033495565646309844
+    },
+    {
+      "lambda": 0.004486866563832015,
+      "operational_flag": true,
+      "physical_pair": [
+        47,
+        57
+      ],
+      "reported_infidelity": 0.003365149922874011
+    },
+    {
+      "lambda": 0.004486866563832015,
+      "operational_flag": true,
+      "physical_pair": [
+        57,
+        47
+      ],
+      "reported_infidelity": 0.003365149922874011
+    },
+    {
+      "lambda": 0.004499058212104501,
+      "operational_flag": true,
+      "physical_pair": [
+        120,
+        121
+      ],
+      "reported_infidelity": 0.0033742936590783756
+    },
+    {
+      "lambda": 0.004499058212104501,
+      "operational_flag": true,
+      "physical_pair": [
+        121,
+        120
+      ],
+      "reported_infidelity": 0.0033742936590783756
+    },
+    {
+      "lambda": 0.004533277842911687,
+      "operational_flag": true,
+      "physical_pair": [
+        123,
+        136
+      ],
+      "reported_infidelity": 0.0033999583821837653
+    },
+    {
+      "lambda": 0.004533277842911687,
+      "operational_flag": true,
+      "physical_pair": [
+        136,
+        123
+      ],
+      "reported_infidelity": 0.0033999583821837653
+    },
+    {
+      "lambda": 0.00454849726496757,
+      "operational_flag": true,
+      "physical_pair": [
+        29,
+        38
+      ],
+      "reported_infidelity": 0.003411372948725677
+    },
+    {
+      "lambda": 0.00454849726496757,
+      "operational_flag": true,
+      "physical_pair": [
+        38,
+        29
+      ],
+      "reported_infidelity": 0.003411372948725677
+    },
+    {
+      "lambda": 0.004568611990343123,
+      "operational_flag": true,
+      "physical_pair": [
+        77,
+        85
+      ],
+      "reported_infidelity": 0.003426458992757342
+    },
+    {
+      "lambda": 0.004568611990343123,
+      "operational_flag": true,
+      "physical_pair": [
+        85,
+        77
+      ],
+      "reported_infidelity": 0.003426458992757342
+    },
+    {
+      "lambda": 0.0045826590115869426,
+      "operational_flag": true,
+      "physical_pair": [
+        137,
+        147
+      ],
+      "reported_infidelity": 0.003436994258690207
+    },
+    {
+      "lambda": 0.0045826590115869426,
+      "operational_flag": true,
+      "physical_pair": [
+        147,
+        137
+      ],
+      "reported_infidelity": 0.003436994258690207
+    },
+    {
+      "lambda": 0.004622026792527434,
+      "operational_flag": true,
+      "physical_pair": [
+        21,
+        22
+      ],
+      "reported_infidelity": 0.0034665200943955754
+    },
+    {
+      "lambda": 0.004622026792527434,
+      "operational_flag": true,
+      "physical_pair": [
+        22,
+        21
+      ],
+      "reported_infidelity": 0.0034665200943955754
+    },
+    {
+      "lambda": 0.004628222358213178,
+      "operational_flag": true,
+      "physical_pair": [
+        25,
+        26
+      ],
+      "reported_infidelity": 0.0034711667686598835
+    },
+    {
+      "lambda": 0.004628222358213178,
+      "operational_flag": true,
+      "physical_pair": [
+        26,
+        25
+      ],
+      "reported_infidelity": 0.0034711667686598835
+    },
+    {
+      "lambda": 0.004634258513536309,
+      "operational_flag": true,
+      "physical_pair": [
+        73,
+        79
+      ],
+      "reported_infidelity": 0.003475693885152231
+    },
+    {
+      "lambda": 0.004634258513536309,
+      "operational_flag": true,
+      "physical_pair": [
+        79,
+        73
+      ],
+      "reported_infidelity": 0.003475693885152231
+    },
+    {
+      "lambda": 0.004644944873142783,
+      "operational_flag": true,
+      "physical_pair": [
+        9,
+        10
+      ],
+      "reported_infidelity": 0.0034837086548570873
+    },
+    {
+      "lambda": 0.004644944873142783,
+      "operational_flag": true,
+      "physical_pair": [
+        10,
+        9
+      ],
+      "reported_infidelity": 0.0034837086548570873
+    },
+    {
+      "lambda": 0.004656097661862368,
+      "operational_flag": true,
+      "physical_pair": [
+        61,
+        62
+      ],
+      "reported_infidelity": 0.0034920732463967763
+    },
+    {
+      "lambda": 0.004656097661862368,
+      "operational_flag": true,
+      "physical_pair": [
+        62,
+        61
+      ],
+      "reported_infidelity": 0.0034920732463967763
+    },
+    {
+      "lambda": 0.004741034398501487,
+      "operational_flag": true,
+      "physical_pair": [
+        127,
+        128
+      ],
+      "reported_infidelity": 0.003555775798876115
+    },
+    {
+      "lambda": 0.004741034398501487,
+      "operational_flag": true,
+      "physical_pair": [
+        128,
+        127
+      ],
+      "reported_infidelity": 0.003555775798876115
+    },
+    {
+      "lambda": 0.004771779903259536,
+      "operational_flag": true,
+      "physical_pair": [
+        11,
+        18
+      ],
+      "reported_infidelity": 0.003578834927444652
+    },
+    {
+      "lambda": 0.004771779903259536,
+      "operational_flag": true,
+      "physical_pair": [
+        18,
+        11
+      ],
+      "reported_infidelity": 0.003578834927444652
+    },
+    {
+      "lambda": 0.004774352890074329,
+      "operational_flag": true,
+      "physical_pair": [
+        61,
+        76
+      ],
+      "reported_infidelity": 0.003580764667555747
+    },
+    {
+      "lambda": 0.004774352890074329,
+      "operational_flag": true,
+      "physical_pair": [
+        76,
+        61
+      ],
+      "reported_infidelity": 0.003580764667555747
+    },
+    {
+      "lambda": 0.004775398786885117,
+      "operational_flag": true,
+      "physical_pair": [
+        24,
+        25
+      ],
+      "reported_infidelity": 0.003581549090163838
+    },
+    {
+      "lambda": 0.004775398786885117,
+      "operational_flag": true,
+      "physical_pair": [
+        25,
+        24
+      ],
+      "reported_infidelity": 0.003581549090163838
+    },
+    {
+      "lambda": 0.004782045162734061,
+      "operational_flag": true,
+      "physical_pair": [
+        60,
+        61
+      ],
+      "reported_infidelity": 0.0035865338720505457
+    },
+    {
+      "lambda": 0.004782045162734061,
+      "operational_flag": true,
+      "physical_pair": [
+        61,
+        60
+      ],
+      "reported_infidelity": 0.0035865338720505457
+    },
+    {
+      "lambda": 0.004817042202272488,
+      "operational_flag": true,
+      "physical_pair": [
+        34,
+        35
+      ],
+      "reported_infidelity": 0.0036127816517043665
+    },
+    {
+      "lambda": 0.004817042202272488,
+      "operational_flag": true,
+      "physical_pair": [
+        35,
+        34
+      ],
+      "reported_infidelity": 0.0036127816517043665
+    },
+    {
+      "lambda": 0.004847395407724608,
+      "operational_flag": true,
+      "physical_pair": [
+        54,
+        55
+      ],
+      "reported_infidelity": 0.0036355465557934563
+    },
+    {
+      "lambda": 0.004847395407724608,
+      "operational_flag": true,
+      "physical_pair": [
+        55,
+        54
+      ],
+      "reported_infidelity": 0.0036355465557934563
+    },
+    {
+      "lambda": 0.004853846818299108,
+      "operational_flag": true,
+      "physical_pair": [
+        151,
+        152
+      ],
+      "reported_infidelity": 0.0036403851137243315
+    },
+    {
+      "lambda": 0.004853846818299108,
+      "operational_flag": true,
+      "physical_pair": [
+        152,
+        151
+      ],
+      "reported_infidelity": 0.0036403851137243315
+    },
+    {
+      "lambda": 0.004881189301225645,
+      "operational_flag": true,
+      "physical_pair": [
+        108,
+        109
+      ],
+      "reported_infidelity": 0.0036608919759192338
+    },
+    {
+      "lambda": 0.004881189301225645,
+      "operational_flag": true,
+      "physical_pair": [
+        109,
+        108
+      ],
+      "reported_infidelity": 0.0036608919759192338
+    },
+    {
+      "lambda": 0.004908875789703264,
+      "operational_flag": true,
+      "physical_pair": [
+        65,
+        66
+      ],
+      "reported_infidelity": 0.0036816568422774476
+    },
+    {
+      "lambda": 0.004908875789703264,
+      "operational_flag": true,
+      "physical_pair": [
+        66,
+        65
+      ],
+      "reported_infidelity": 0.0036816568422774476
+    },
+    {
+      "lambda": 0.004949660761906394,
+      "operational_flag": true,
+      "physical_pair": [
+        51,
+        58
+      ],
+      "reported_infidelity": 0.0037122455714297953
+    },
+    {
+      "lambda": 0.004949660761906394,
+      "operational_flag": true,
+      "physical_pair": [
+        58,
+        51
+      ],
+      "reported_infidelity": 0.0037122455714297953
+    },
+    {
+      "lambda": 0.004955574848991562,
+      "operational_flag": true,
+      "physical_pair": [
+        64,
+        65
+      ],
+      "reported_infidelity": 0.0037166811367436714
+    },
+    {
+      "lambda": 0.004955574848991562,
+      "operational_flag": true,
+      "physical_pair": [
+        65,
+        64
+      ],
+      "reported_infidelity": 0.0037166811367436714
+    },
+    {
+      "lambda": 0.004973051666538497,
+      "operational_flag": true,
+      "physical_pair": [
+        16,
+        23
+      ],
+      "reported_infidelity": 0.003729788749903873
+    },
+    {
+      "lambda": 0.004973051666538497,
+      "operational_flag": true,
+      "physical_pair": [
+        23,
+        16
+      ],
+      "reported_infidelity": 0.003729788749903873
+    },
+    {
+      "lambda": 0.004980440947484214,
+      "operational_flag": true,
+      "physical_pair": [
+        118,
+        129
+      ],
+      "reported_infidelity": 0.0037353307106131606
+    },
+    {
+      "lambda": 0.004980440947484214,
+      "operational_flag": true,
+      "physical_pair": [
+        129,
+        118
+      ],
+      "reported_infidelity": 0.0037353307106131606
+    },
+    {
+      "lambda": 0.005029016583849355,
+      "operational_flag": true,
+      "physical_pair": [
+        1,
+        2
+      ],
+      "reported_infidelity": 0.0037717624378870163
+    },
+    {
+      "lambda": 0.005029016583849355,
+      "operational_flag": true,
+      "physical_pair": [
+        2,
+        1
+      ],
+      "reported_infidelity": 0.0037717624378870163
+    },
+    {
+      "lambda": 0.005085355150882265,
+      "operational_flag": true,
+      "physical_pair": [
+        55,
+        59
+      ],
+      "reported_infidelity": 0.0038140163631616986
+    },
+    {
+      "lambda": 0.005085355150882265,
+      "operational_flag": true,
+      "physical_pair": [
+        59,
+        55
+      ],
+      "reported_infidelity": 0.0038140163631616986
+    },
+    {
+      "lambda": 0.005086782181521328,
+      "operational_flag": true,
+      "physical_pair": [
+        13,
+        14
+      ],
+      "reported_infidelity": 0.0038150866361409963
+    },
+    {
+      "lambda": 0.005086782181521328,
+      "operational_flag": true,
+      "physical_pair": [
+        14,
+        13
+      ],
+      "reported_infidelity": 0.0038150866361409963
+    },
+    {
+      "lambda": 0.005092409923319607,
+      "operational_flag": true,
+      "physical_pair": [
+        129,
+        130
+      ],
+      "reported_infidelity": 0.0038193074424897056
+    },
+    {
+      "lambda": 0.005092409923319607,
+      "operational_flag": true,
+      "physical_pair": [
+        130,
+        129
+      ],
+      "reported_infidelity": 0.0038193074424897056
+    },
+    {
+      "lambda": 0.005130867775207919,
+      "operational_flag": true,
+      "physical_pair": [
+        38,
+        49
+      ],
+      "reported_infidelity": 0.0038481508314059387
+    },
+    {
+      "lambda": 0.005130867775207919,
+      "operational_flag": true,
+      "physical_pair": [
+        49,
+        38
+      ],
+      "reported_infidelity": 0.0038481508314059387
+    },
+    {
+      "lambda": 0.005200243603703599,
+      "operational_flag": true,
+      "physical_pair": [
+        132,
+        133
+      ],
+      "reported_infidelity": 0.003900182702777699
+    },
+    {
+      "lambda": 0.005200243603703599,
+      "operational_flag": true,
+      "physical_pair": [
+        133,
+        132
+      ],
+      "reported_infidelity": 0.003900182702777699
+    },
+    {
+      "lambda": 0.0052087773357918365,
+      "operational_flag": true,
+      "physical_pair": [
+        90,
+        91
+      ],
+      "reported_infidelity": 0.003906583001843877
+    },
+    {
+      "lambda": 0.0052087773357918365,
+      "operational_flag": true,
+      "physical_pair": [
+        91,
+        90
+      ],
+      "reported_infidelity": 0.003906583001843877
+    },
+    {
+      "lambda": 0.005258104559067833,
+      "operational_flag": true,
+      "physical_pair": [
+        50,
+        51
+      ],
+      "reported_infidelity": 0.003943578419300875
+    },
+    {
+      "lambda": 0.005258104559067833,
+      "operational_flag": true,
+      "physical_pair": [
+        51,
+        50
+      ],
+      "reported_infidelity": 0.003943578419300875
+    },
+    {
+      "lambda": 0.005262444531779857,
+      "operational_flag": true,
+      "physical_pair": [
+        67,
+        68
+      ],
+      "reported_infidelity": 0.0039468333988348925
+    },
+    {
+      "lambda": 0.005262444531779857,
+      "operational_flag": true,
+      "physical_pair": [
+        68,
+        67
+      ],
+      "reported_infidelity": 0.0039468333988348925
+    },
+    {
+      "lambda": 0.005267450833481124,
+      "operational_flag": true,
+      "physical_pair": [
+        152,
+        153
+      ],
+      "reported_infidelity": 0.003950588125110843
+    },
+    {
+      "lambda": 0.005267450833481124,
+      "operational_flag": true,
+      "physical_pair": [
+        153,
+        152
+      ],
+      "reported_infidelity": 0.003950588125110843
+    },
+    {
+      "lambda": 0.005276352423439083,
+      "operational_flag": true,
+      "physical_pair": [
+        66,
+        67
+      ],
+      "reported_infidelity": 0.003957264317579312
+    },
+    {
+      "lambda": 0.005276352423439083,
+      "operational_flag": true,
+      "physical_pair": [
+        67,
+        66
+      ],
+      "reported_infidelity": 0.003957264317579312
+    },
+    {
+      "lambda": 0.005283825320788822,
+      "operational_flag": true,
+      "physical_pair": [
+        134,
+        135
+      ],
+      "reported_infidelity": 0.003962868990591617
+    },
+    {
+      "lambda": 0.005283825320788822,
+      "operational_flag": true,
+      "physical_pair": [
+        135,
+        134
+      ],
+      "reported_infidelity": 0.003962868990591617
+    },
+    {
+      "lambda": 0.005286447685352617,
+      "operational_flag": true,
+      "physical_pair": [
+        11,
+        12
+      ],
+      "reported_infidelity": 0.003964835764014463
+    },
+    {
+      "lambda": 0.005286447685352617,
+      "operational_flag": true,
+      "physical_pair": [
+        12,
+        11
+      ],
+      "reported_infidelity": 0.003964835764014463
+    },
+    {
+      "lambda": 0.005298881676540024,
+      "operational_flag": true,
+      "physical_pair": [
+        39,
+        53
+      ],
+      "reported_infidelity": 0.003974161257405018
+    },
+    {
+      "lambda": 0.005298881676540024,
+      "operational_flag": true,
+      "physical_pair": [
+        53,
+        39
+      ],
+      "reported_infidelity": 0.003974161257405018
+    },
+    {
+      "lambda": 0.005337410797314239,
+      "operational_flag": true,
+      "physical_pair": [
+        52,
+        53
+      ],
+      "reported_infidelity": 0.004003058097985679
+    },
+    {
+      "lambda": 0.005337410797314239,
+      "operational_flag": true,
+      "physical_pair": [
+        53,
+        52
+      ],
+      "reported_infidelity": 0.004003058097985679
+    },
+    {
+      "lambda": 0.005346631370679811,
+      "operational_flag": true,
+      "physical_pair": [
+        48,
+        49
+      ],
+      "reported_infidelity": 0.004009973528009858
+    },
+    {
+      "lambda": 0.005346631370679811,
+      "operational_flag": true,
+      "physical_pair": [
+        49,
+        48
+      ],
+      "reported_infidelity": 0.004009973528009858
+    },
+    {
+      "lambda": 0.005346732061388471,
+      "operational_flag": true,
+      "physical_pair": [
+        10,
+        11
+      ],
+      "reported_infidelity": 0.004010049046041353
+    },
+    {
+      "lambda": 0.005346732061388471,
+      "operational_flag": true,
+      "physical_pair": [
+        11,
+        10
+      ],
+      "reported_infidelity": 0.004010049046041353
+    },
+    {
+      "lambda": 0.00537205993199108,
+      "operational_flag": true,
+      "physical_pair": [
+        33,
+        34
+      ],
+      "reported_infidelity": 0.00402904494899331
+    },
+    {
+      "lambda": 0.00537205993199108,
+      "operational_flag": true,
+      "physical_pair": [
+        34,
+        33
+      ],
+      "reported_infidelity": 0.00402904494899331
+    },
+    {
+      "lambda": 0.005388164509048554,
+      "operational_flag": true,
+      "physical_pair": [
+        146,
+        147
+      ],
+      "reported_infidelity": 0.004041123381786416
+    },
+    {
+      "lambda": 0.005388164509048554,
+      "operational_flag": true,
+      "physical_pair": [
+        147,
+        146
+      ],
+      "reported_infidelity": 0.004041123381786416
+    },
+    {
+      "lambda": 0.005394675145016163,
+      "operational_flag": true,
+      "physical_pair": [
+        122,
+        123
+      ],
+      "reported_infidelity": 0.004046006358762122
+    },
+    {
+      "lambda": 0.005394675145016163,
+      "operational_flag": true,
+      "physical_pair": [
+        123,
+        122
+      ],
+      "reported_infidelity": 0.004046006358762122
+    },
+    {
+      "lambda": 0.0054024602322368205,
+      "operational_flag": true,
+      "physical_pair": [
+        133,
+        134
+      ],
+      "reported_infidelity": 0.004051845174177615
+    },
+    {
+      "lambda": 0.0054024602322368205,
+      "operational_flag": true,
+      "physical_pair": [
+        134,
+        133
+      ],
+      "reported_infidelity": 0.004051845174177615
+    },
+    {
+      "lambda": 0.005416302599744904,
+      "operational_flag": true,
+      "physical_pair": [
+        70,
+        71
+      ],
+      "reported_infidelity": 0.004062226949808678
+    },
+    {
+      "lambda": 0.005416302599744904,
+      "operational_flag": true,
+      "physical_pair": [
+        71,
+        70
+      ],
+      "reported_infidelity": 0.004062226949808678
+    },
+    {
+      "lambda": 0.0055083873867417905,
+      "operational_flag": true,
+      "physical_pair": [
+        101,
+        116
+      ],
+      "reported_infidelity": 0.004131290540056343
+    },
+    {
+      "lambda": 0.0055083873867417905,
+      "operational_flag": true,
+      "physical_pair": [
+        116,
+        101
+      ],
+      "reported_infidelity": 0.004131290540056343
+    },
+    {
+      "lambda": 0.005553360389383144,
+      "operational_flag": true,
+      "physical_pair": [
+        79,
+        93
+      ],
+      "reported_infidelity": 0.004165020292037358
+    },
+    {
+      "lambda": 0.005553360389383144,
+      "operational_flag": true,
+      "physical_pair": [
+        93,
+        79
+      ],
+      "reported_infidelity": 0.004165020292037358
+    },
+    {
+      "lambda": 0.005570324743816431,
+      "operational_flag": true,
+      "physical_pair": [
+        3,
+        16
+      ],
+      "reported_infidelity": 0.004177743557862323
+    },
+    {
+      "lambda": 0.005570324743816431,
+      "operational_flag": true,
+      "physical_pair": [
+        16,
+        3
+      ],
+      "reported_infidelity": 0.004177743557862323
+    },
+    {
+      "lambda": 0.005629338800651196,
+      "operational_flag": true,
+      "physical_pair": [
+        45,
+        46
+      ],
+      "reported_infidelity": 0.004222004100488397
+    },
+    {
+      "lambda": 0.005629338800651196,
+      "operational_flag": true,
+      "physical_pair": [
+        46,
+        45
+      ],
+      "reported_infidelity": 0.004222004100488397
+    },
+    {
+      "lambda": 0.005668394321848365,
+      "operational_flag": true,
+      "physical_pair": [
+        104,
+        105
+      ],
+      "reported_infidelity": 0.004251295741386274
+    },
+    {
+      "lambda": 0.005668394321848365,
+      "operational_flag": true,
+      "physical_pair": [
+        105,
+        104
+      ],
+      "reported_infidelity": 0.004251295741386274
+    },
+    {
+      "lambda": 0.005677799001167901,
+      "operational_flag": true,
+      "physical_pair": [
+        7,
+        17
+      ],
+      "reported_infidelity": 0.004258349250875926
+    },
+    {
+      "lambda": 0.005677799001167901,
+      "operational_flag": true,
+      "physical_pair": [
+        17,
+        7
+      ],
+      "reported_infidelity": 0.004258349250875926
+    },
+    {
+      "lambda": 0.005703879087217849,
+      "operational_flag": true,
+      "physical_pair": [
+        57,
+        67
+      ],
+      "reported_infidelity": 0.004277909315413386
+    },
+    {
+      "lambda": 0.005703879087217849,
+      "operational_flag": true,
+      "physical_pair": [
+        67,
+        57
+      ],
+      "reported_infidelity": 0.004277909315413386
+    },
+    {
+      "lambda": 0.00574390182114685,
+      "operational_flag": true,
+      "physical_pair": [
+        121,
+        122
+      ],
+      "reported_infidelity": 0.0043079263658601374
+    },
+    {
+      "lambda": 0.00574390182114685,
+      "operational_flag": true,
+      "physical_pair": [
+        122,
+        121
+      ],
+      "reported_infidelity": 0.0043079263658601374
+    },
+    {
+      "lambda": 0.005765624890199013,
+      "operational_flag": true,
+      "physical_pair": [
+        49,
+        50
+      ],
+      "reported_infidelity": 0.00432421866764926
+    },
+    {
+      "lambda": 0.005765624890199013,
+      "operational_flag": true,
+      "physical_pair": [
+        50,
+        49
+      ],
+      "reported_infidelity": 0.00432421866764926
+    },
+    {
+      "lambda": 0.00579999201415123,
+      "operational_flag": true,
+      "physical_pair": [
+        3,
+        4
+      ],
+      "reported_infidelity": 0.004349994010613423
+    },
+    {
+      "lambda": 0.00579999201415123,
+      "operational_flag": true,
+      "physical_pair": [
+        4,
+        3
+      ],
+      "reported_infidelity": 0.004349994010613423
+    },
+    {
+      "lambda": 0.005827275064796226,
+      "operational_flag": true,
+      "physical_pair": [
+        59,
+        75
+      ],
+      "reported_infidelity": 0.0043704562985971696
+    },
+    {
+      "lambda": 0.005827275064796226,
+      "operational_flag": true,
+      "physical_pair": [
+        75,
+        59
+      ],
+      "reported_infidelity": 0.0043704562985971696
+    },
+    {
+      "lambda": 0.005851418850196503,
+      "operational_flag": true,
+      "physical_pair": [
+        78,
+        89
+      ],
+      "reported_infidelity": 0.004388564137647377
+    },
+    {
+      "lambda": 0.005851418850196503,
+      "operational_flag": true,
+      "physical_pair": [
+        89,
+        78
+      ],
+      "reported_infidelity": 0.004388564137647377
+    },
+    {
+      "lambda": 0.005969191873891851,
+      "operational_flag": true,
+      "physical_pair": [
+        18,
+        31
+      ],
+      "reported_infidelity": 0.004476893905418888
+    },
+    {
+      "lambda": 0.005969191873891851,
+      "operational_flag": true,
+      "physical_pair": [
+        31,
+        18
+      ],
+      "reported_infidelity": 0.004476893905418888
+    },
+    {
+      "lambda": 0.006032761672455293,
+      "operational_flag": true,
+      "physical_pair": [
+        65,
+        77
+      ],
+      "reported_infidelity": 0.0045245712543414696
+    },
+    {
+      "lambda": 0.006032761672455293,
+      "operational_flag": true,
+      "physical_pair": [
+        77,
+        65
+      ],
+      "reported_infidelity": 0.0045245712543414696
+    },
+    {
+      "lambda": 0.006114281401462677,
+      "operational_flag": true,
+      "physical_pair": [
+        6,
+        7
+      ],
+      "reported_infidelity": 0.004585711051097008
+    },
+    {
+      "lambda": 0.006114281401462677,
+      "operational_flag": true,
+      "physical_pair": [
+        7,
+        6
+      ],
+      "reported_infidelity": 0.004585711051097008
+    },
+    {
+      "lambda": 0.006145727549187259,
+      "operational_flag": true,
+      "physical_pair": [
+        96,
+        103
+      ],
+      "reported_infidelity": 0.004609295661890445
+    },
+    {
+      "lambda": 0.006145727549187259,
+      "operational_flag": true,
+      "physical_pair": [
+        103,
+        96
+      ],
+      "reported_infidelity": 0.004609295661890445
+    },
+    {
+      "lambda": 0.006308163162564255,
+      "operational_flag": true,
+      "physical_pair": [
+        87,
+        97
+      ],
+      "reported_infidelity": 0.004731122371923191
+    },
+    {
+      "lambda": 0.006308163162564255,
+      "operational_flag": true,
+      "physical_pair": [
+        97,
+        87
+      ],
+      "reported_infidelity": 0.004731122371923191
+    },
+    {
+      "lambda": 0.006343093422447173,
+      "operational_flag": true,
+      "physical_pair": [
+        103,
+        104
+      ],
+      "reported_infidelity": 0.00475732006683538
+    },
+    {
+      "lambda": 0.006343093422447173,
+      "operational_flag": true,
+      "physical_pair": [
+        104,
+        103
+      ],
+      "reported_infidelity": 0.00475732006683538
+    },
+    {
+      "lambda": 0.00646606793081439,
+      "operational_flag": true,
+      "physical_pair": [
+        111,
+        112
+      ],
+      "reported_infidelity": 0.004849550948110792
+    },
+    {
+      "lambda": 0.00646606793081439,
+      "operational_flag": true,
+      "physical_pair": [
+        112,
+        111
+      ],
+      "reported_infidelity": 0.004849550948110792
+    },
+    {
+      "lambda": 0.006467001722179215,
+      "operational_flag": true,
+      "physical_pair": [
+        7,
+        8
+      ],
+      "reported_infidelity": 0.004850251291634411
+    },
+    {
+      "lambda": 0.006467001722179215,
+      "operational_flag": true,
+      "physical_pair": [
+        8,
+        7
+      ],
+      "reported_infidelity": 0.004850251291634411
+    },
+    {
+      "lambda": 0.00656860909109828,
+      "operational_flag": true,
+      "physical_pair": [
+        46,
+        47
+      ],
+      "reported_infidelity": 0.00492645681832371
+    },
+    {
+      "lambda": 0.00656860909109828,
+      "operational_flag": true,
+      "physical_pair": [
+        47,
+        46
+      ],
+      "reported_infidelity": 0.00492645681832371
+    },
+    {
+      "lambda": 0.006604781425866439,
+      "operational_flag": true,
+      "physical_pair": [
+        113,
+        119
+      ],
+      "reported_infidelity": 0.004953586069399829
+    },
+    {
+      "lambda": 0.006604781425866439,
+      "operational_flag": true,
+      "physical_pair": [
+        119,
+        113
+      ],
+      "reported_infidelity": 0.004953586069399829
+    },
+    {
+      "lambda": 0.006663344538851683,
+      "operational_flag": true,
+      "physical_pair": [
+        101,
+        102
+      ],
+      "reported_infidelity": 0.004997508404138762
+    },
+    {
+      "lambda": 0.006663344538851683,
+      "operational_flag": true,
+      "physical_pair": [
+        102,
+        101
+      ],
+      "reported_infidelity": 0.004997508404138762
+    },
+    {
+      "lambda": 0.006744570247303609,
+      "operational_flag": true,
+      "physical_pair": [
+        128,
+        129
+      ],
+      "reported_infidelity": 0.005058427685477707
+    },
+    {
+      "lambda": 0.006744570247303609,
+      "operational_flag": true,
+      "physical_pair": [
+        129,
+        128
+      ],
+      "reported_infidelity": 0.005058427685477707
+    },
+    {
+      "lambda": 0.006758156922281951,
+      "operational_flag": true,
+      "physical_pair": [
+        74,
+        75
+      ],
+      "reported_infidelity": 0.005068617691711463
+    },
+    {
+      "lambda": 0.006758156922281951,
+      "operational_flag": true,
+      "physical_pair": [
+        75,
+        74
+      ],
+      "reported_infidelity": 0.005068617691711463
+    },
+    {
+      "lambda": 0.006780104471426703,
+      "operational_flag": true,
+      "physical_pair": [
+        119,
+        133
+      ],
+      "reported_infidelity": 0.005085078353570027
+    },
+    {
+      "lambda": 0.006780104471426703,
+      "operational_flag": true,
+      "physical_pair": [
+        133,
+        119
+      ],
+      "reported_infidelity": 0.005085078353570027
+    },
+    {
+      "lambda": 0.0073126514375891905,
+      "operational_flag": true,
+      "physical_pair": [
+        69,
+        70
+      ],
+      "reported_infidelity": 0.005484488578191893
+    },
+    {
+      "lambda": 0.0073126514375891905,
+      "operational_flag": true,
+      "physical_pair": [
+        70,
+        69
+      ],
+      "reported_infidelity": 0.005484488578191893
+    },
+    {
+      "lambda": 0.007398484225948539,
+      "operational_flag": true,
+      "physical_pair": [
+        42,
+        43
+      ],
+      "reported_infidelity": 0.005548863169461404
+    },
+    {
+      "lambda": 0.007398484225948539,
+      "operational_flag": true,
+      "physical_pair": [
+        43,
+        42
+      ],
+      "reported_infidelity": 0.005548863169461404
+    },
+    {
+      "lambda": 0.007476636911511865,
+      "operational_flag": true,
+      "physical_pair": [
+        112,
+        113
+      ],
+      "reported_infidelity": 0.005607477683633899
+    },
+    {
+      "lambda": 0.007476636911511865,
+      "operational_flag": true,
+      "physical_pair": [
+        113,
+        112
+      ],
+      "reported_infidelity": 0.005607477683633899
+    },
+    {
+      "lambda": 0.007516663231370642,
+      "operational_flag": true,
+      "physical_pair": [
+        56,
+        63
+      ],
+      "reported_infidelity": 0.005637497423527982
+    },
+    {
+      "lambda": 0.007516663231370642,
+      "operational_flag": true,
+      "physical_pair": [
+        63,
+        56
+      ],
+      "reported_infidelity": 0.005637497423527982
+    },
+    {
+      "lambda": 0.00762180329861617,
+      "operational_flag": true,
+      "physical_pair": [
+        28,
+        29
+      ],
+      "reported_infidelity": 0.005716352473962127
+    },
+    {
+      "lambda": 0.00762180329861617,
+      "operational_flag": true,
+      "physical_pair": [
+        29,
+        28
+      ],
+      "reported_infidelity": 0.005716352473962127
+    },
+    {
+      "lambda": 0.007648455381381147,
+      "operational_flag": true,
+      "physical_pair": [
+        14,
+        15
+      ],
+      "reported_infidelity": 0.0057363415360358605
+    },
+    {
+      "lambda": 0.007648455381381147,
+      "operational_flag": true,
+      "physical_pair": [
+        15,
+        14
+      ],
+      "reported_infidelity": 0.0057363415360358605
+    },
+    {
+      "lambda": 0.007808173331689631,
+      "operational_flag": true,
+      "physical_pair": [
+        99,
+        115
+      ],
+      "reported_infidelity": 0.005856129998767223
+    },
+    {
+      "lambda": 0.007808173331689631,
+      "operational_flag": true,
+      "physical_pair": [
+        115,
+        99
+      ],
+      "reported_infidelity": 0.005856129998767223
+    },
+    {
+      "lambda": 0.008132896151527827,
+      "operational_flag": true,
+      "physical_pair": [
+        114,
+        115
+      ],
+      "reported_infidelity": 0.006099672113645871
+    },
+    {
+      "lambda": 0.008132896151527827,
+      "operational_flag": true,
+      "physical_pair": [
+        115,
+        114
+      ],
+      "reported_infidelity": 0.006099672113645871
+    },
+    {
+      "lambda": 0.008176378146346641,
+      "operational_flag": true,
+      "physical_pair": [
+        98,
+        111
+      ],
+      "reported_infidelity": 0.006132283609759981
+    },
+    {
+      "lambda": 0.008176378146346641,
+      "operational_flag": true,
+      "physical_pair": [
+        111,
+        98
+      ],
+      "reported_infidelity": 0.006132283609759981
+    },
+    {
+      "lambda": 0.008368865438092529,
+      "operational_flag": true,
+      "physical_pair": [
+        41,
+        42
+      ],
+      "reported_infidelity": 0.006276649078569396
+    },
+    {
+      "lambda": 0.008368865438092529,
+      "operational_flag": true,
+      "physical_pair": [
+        42,
+        41
+      ],
+      "reported_infidelity": 0.006276649078569396
+    },
+    {
+      "lambda": 0.00845711198470204,
+      "operational_flag": true,
+      "physical_pair": [
+        100,
+        101
+      ],
+      "reported_infidelity": 0.006342833988526531
+    },
+    {
+      "lambda": 0.00845711198470204,
+      "operational_flag": true,
+      "physical_pair": [
+        101,
+        100
+      ],
+      "reported_infidelity": 0.006342833988526531
+    },
+    {
+      "lambda": 0.00848736500660093,
+      "operational_flag": true,
+      "physical_pair": [
+        69,
+        78
+      ],
+      "reported_infidelity": 0.006365523754950697
+    },
+    {
+      "lambda": 0.00848736500660093,
+      "operational_flag": true,
+      "physical_pair": [
+        78,
+        69
+      ],
+      "reported_infidelity": 0.006365523754950697
+    },
+    {
+      "lambda": 0.008835596803774104,
+      "operational_flag": true,
+      "physical_pair": [
+        29,
+        30
+      ],
+      "reported_infidelity": 0.006626697602830578
+    },
+    {
+      "lambda": 0.008835596803774104,
+      "operational_flag": true,
+      "physical_pair": [
+        30,
+        29
+      ],
+      "reported_infidelity": 0.006626697602830578
+    },
+    {
+      "lambda": 0.00900137191457051,
+      "operational_flag": true,
+      "physical_pair": [
+        95,
+        99
+      ],
+      "reported_infidelity": 0.006751028935927883
+    },
+    {
+      "lambda": 0.00900137191457051,
+      "operational_flag": true,
+      "physical_pair": [
+        99,
+        95
+      ],
+      "reported_infidelity": 0.006751028935927883
+    },
+    {
+      "lambda": 0.009104596448757052,
+      "operational_flag": true,
+      "physical_pair": [
+        135,
+        139
+      ],
+      "reported_infidelity": 0.006828447336567789
+    },
+    {
+      "lambda": 0.009104596448757052,
+      "operational_flag": true,
+      "physical_pair": [
+        139,
+        135
+      ],
+      "reported_infidelity": 0.006828447336567789
+    },
+    {
+      "lambda": 0.00953016742000686,
+      "operational_flag": true,
+      "physical_pair": [
+        113,
+        114
+      ],
+      "reported_infidelity": 0.0071476255650051446
+    },
+    {
+      "lambda": 0.00953016742000686,
+      "operational_flag": true,
+      "physical_pair": [
+        114,
+        113
+      ],
+      "reported_infidelity": 0.0071476255650051446
+    },
+    {
+      "lambda": 0.00988162685670361,
+      "operational_flag": true,
+      "physical_pair": [
+        62,
+        63
+      ],
+      "reported_infidelity": 0.007411220142527708
+    },
+    {
+      "lambda": 0.00988162685670361,
+      "operational_flag": true,
+      "physical_pair": [
+        63,
+        62
+      ],
+      "reported_infidelity": 0.007411220142527708
+    },
+    {
+      "lambda": 0.010018901320586323,
+      "operational_flag": true,
+      "physical_pair": [
+        21,
+        36
+      ],
+      "reported_infidelity": 0.007514175990439742
+    },
+    {
+      "lambda": 0.010018901320586323,
+      "operational_flag": true,
+      "physical_pair": [
+        36,
+        21
+      ],
+      "reported_infidelity": 0.007514175990439742
+    },
+    {
+      "lambda": 0.010661500723803933,
+      "operational_flag": true,
+      "physical_pair": [
+        81,
+        82
+      ],
+      "reported_infidelity": 0.00799612554285295
+    },
+    {
+      "lambda": 0.010661500723803933,
+      "operational_flag": true,
+      "physical_pair": [
+        82,
+        81
+      ],
+      "reported_infidelity": 0.00799612554285295
+    },
+    {
+      "lambda": 0.010929285355835075,
+      "operational_flag": true,
+      "physical_pair": [
+        20,
+        21
+      ],
+      "reported_infidelity": 0.008196964016876307
+    },
+    {
+      "lambda": 0.010929285355835075,
+      "operational_flag": true,
+      "physical_pair": [
+        21,
+        20
+      ],
+      "reported_infidelity": 0.008196964016876307
+    },
+    {
+      "lambda": 0.011463461521522259,
+      "operational_flag": true,
+      "physical_pair": [
+        30,
+        31
+      ],
+      "reported_infidelity": 0.008597596141141695
+    },
+    {
+      "lambda": 0.011463461521522259,
+      "operational_flag": true,
+      "physical_pair": [
+        31,
+        30
+      ],
+      "reported_infidelity": 0.008597596141141695
+    },
+    {
+      "lambda": 0.012465066909266298,
+      "operational_flag": true,
+      "physical_pair": [
+        82,
+        83
+      ],
+      "reported_infidelity": 0.009348800181949724
+    },
+    {
+      "lambda": 0.012465066909266298,
+      "operational_flag": true,
+      "physical_pair": [
+        83,
+        82
+      ],
+      "reported_infidelity": 0.009348800181949724
+    },
+    {
+      "lambda": 0.013207674199747407,
+      "operational_flag": true,
+      "physical_pair": [
+        53,
+        54
+      ],
+      "reported_infidelity": 0.009905755649810555
+    },
+    {
+      "lambda": 0.013207674199747407,
+      "operational_flag": true,
+      "physical_pair": [
+        54,
+        53
+      ],
+      "reported_infidelity": 0.009905755649810555
+    },
+    {
+      "lambda": 0.013542228779164667,
+      "operational_flag": true,
+      "physical_pair": [
+        0,
+        1
+      ],
+      "reported_infidelity": 0.0101566715843735
+    },
+    {
+      "lambda": 0.013542228779164667,
+      "operational_flag": true,
+      "physical_pair": [
+        1,
+        0
+      ],
+      "reported_infidelity": 0.0101566715843735
+    },
+    {
+      "lambda": 0.013698461889034341,
+      "operational_flag": true,
+      "physical_pair": [
+        26,
+        27
+      ],
+      "reported_infidelity": 0.010273846416775756
+    },
+    {
+      "lambda": 0.013698461889034341,
+      "operational_flag": true,
+      "physical_pair": [
+        27,
+        26
+      ],
+      "reported_infidelity": 0.010273846416775756
+    },
+    {
+      "lambda": 0.015277688795979868,
+      "operational_flag": true,
+      "physical_pair": [
+        94,
+        95
+      ],
+      "reported_infidelity": 0.0114582665969849
+    },
+    {
+      "lambda": 0.015277688795979868,
+      "operational_flag": true,
+      "physical_pair": [
+        95,
+        94
+      ],
+      "reported_infidelity": 0.0114582665969849
+    },
+    {
+      "lambda": 0.017096485600703204,
+      "operational_flag": true,
+      "physical_pair": [
+        150,
+        151
+      ],
+      "reported_infidelity": 0.012822364200527403
+    },
+    {
+      "lambda": 0.017096485600703204,
+      "operational_flag": true,
+      "physical_pair": [
+        151,
+        150
+      ],
+      "reported_infidelity": 0.012822364200527403
+    },
+    {
+      "lambda": 0.01758293424525374,
+      "operational_flag": true,
+      "physical_pair": [
+        93,
+        94
+      ],
+      "reported_infidelity": 0.013187200683940303
+    },
+    {
+      "lambda": 0.01758293424525374,
+      "operational_flag": true,
+      "physical_pair": [
+        94,
+        93
+      ],
+      "reported_infidelity": 0.013187200683940303
+    },
+    {
+      "lambda": 0.019203567991669706,
+      "operational_flag": true,
+      "physical_pair": [
+        17,
+        27
+      ],
+      "reported_infidelity": 0.014402675993752279
+    },
+    {
+      "lambda": 0.019203567991669706,
+      "operational_flag": true,
+      "physical_pair": [
+        27,
+        17
+      ],
+      "reported_infidelity": 0.014402675993752279
+    },
+    {
+      "lambda": 0.019894146917274425,
+      "operational_flag": true,
+      "physical_pair": [
+        5,
+        6
+      ],
+      "reported_infidelity": 0.014920610187955818
+    },
+    {
+      "lambda": 0.019894146917274425,
+      "operational_flag": true,
+      "physical_pair": [
+        6,
+        5
+      ],
+      "reported_infidelity": 0.014920610187955818
+    },
+    {
+      "lambda": 0.02090660876095411,
+      "operational_flag": true,
+      "physical_pair": [
+        116,
+        121
+      ],
+      "reported_infidelity": 0.01567995657071558
+    },
+    {
+      "lambda": 0.02090660876095411,
+      "operational_flag": true,
+      "physical_pair": [
+        121,
+        116
+      ],
+      "reported_infidelity": 0.01567995657071558
+    },
+    {
+      "lambda": 0.021409052823125958,
+      "operational_flag": true,
+      "physical_pair": [
+        149,
+        150
+      ],
+      "reported_infidelity": 0.01605678961734447
+    },
+    {
+      "lambda": 0.021409052823125958,
+      "operational_flag": true,
+      "physical_pair": [
+        150,
+        149
+      ],
+      "reported_infidelity": 0.01605678961734447
+    },
+    {
+      "lambda": 0.02149232329778572,
+      "operational_flag": true,
+      "physical_pair": [
+        148,
+        149
+      ],
+      "reported_infidelity": 0.01611924247333929
+    },
+    {
+      "lambda": 0.02149232329778572,
+      "operational_flag": true,
+      "physical_pair": [
+        149,
+        148
+      ],
+      "reported_infidelity": 0.01611924247333929
+    },
+    {
+      "lambda": 0.023482815898475822,
+      "operational_flag": true,
+      "physical_pair": [
+        147,
+        148
+      ],
+      "reported_infidelity": 0.017612111923856866
+    },
+    {
+      "lambda": 0.023482815898475822,
+      "operational_flag": true,
+      "physical_pair": [
+        148,
+        147
+      ],
+      "reported_infidelity": 0.017612111923856866
+    },
+    {
+      "lambda": 0.025554350219071893,
+      "operational_flag": true,
+      "physical_pair": [
+        105,
+        117
+      ],
+      "reported_infidelity": 0.01916576266430392
+    },
+    {
+      "lambda": 0.025554350219071893,
+      "operational_flag": true,
+      "physical_pair": [
+        117,
+        105
+      ],
+      "reported_infidelity": 0.01916576266430392
+    },
+    {
+      "lambda": 0.03720400829892786,
+      "operational_flag": true,
+      "physical_pair": [
+        72,
+        73
+      ],
+      "reported_infidelity": 0.027903006224195892
+    },
+    {
+      "lambda": 0.03720400829892786,
+      "operational_flag": true,
+      "physical_pair": [
+        73,
+        72
+      ],
+      "reported_infidelity": 0.027903006224195892
+    },
+    {
+      "lambda": 0.04434429229607691,
+      "operational_flag": true,
+      "physical_pair": [
+        63,
+        64
+      ],
+      "reported_infidelity": 0.03325821922205768
+    },
+    {
+      "lambda": 0.04434429229607691,
+      "operational_flag": true,
+      "physical_pair": [
+        64,
+        63
+      ],
+      "reported_infidelity": 0.03325821922205768
+    },
+    {
+      "lambda": 0.053070823184784954,
+      "operational_flag": true,
+      "physical_pair": [
+        71,
+        72
+      ],
+      "reported_infidelity": 0.039803117388588716
+    },
+    {
+      "lambda": 0.053070823184784954,
+      "operational_flag": true,
+      "physical_pair": [
+        72,
+        71
+      ],
+      "reported_infidelity": 0.039803117388588716
+    },
+    {
+      "lambda": 0.0667319176824596,
+      "operational_flag": true,
+      "physical_pair": [
+        153,
+        154
+      ],
+      "reported_infidelity": 0.0500489382618447
+    },
+    {
+      "lambda": 0.0667319176824596,
+      "operational_flag": true,
+      "physical_pair": [
+        154,
+        153
+      ],
+      "reported_infidelity": 0.0500489382618447
+    }
+  ],
+  "rule": "Sort valid ordered physical entries by (r, pair), union abstract unordered pairs lexicographically; abstract rank i gets physical pool floor((i+0.5)*M/K). Both abstract orientations get the same rate.",
+  "scope": "Timing assignment only; no physical connectivity or network fidelity claim."
+}

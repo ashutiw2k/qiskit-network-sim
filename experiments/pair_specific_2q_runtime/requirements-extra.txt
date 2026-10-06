@@ -1,0 +1,2 @@
+# The project's existing .venv supplies the unchanged simulation stack.
+networkx==3.7

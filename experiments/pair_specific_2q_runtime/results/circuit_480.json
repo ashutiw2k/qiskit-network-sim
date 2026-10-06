@@ -1,0 +1,5914 @@
+{
+  "clbits": 6,
+  "cregs": [
+    [
+      "syndrome_2",
+      6
+    ]
+  ],
+  "global_phase": "0.7853981633975291",
+  "instructions": [
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-3.141592653589793"
+      ],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        5,
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        5
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        5
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        5
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        2,
+        5
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        3,
+        5
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        4,
+        5
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        6,
+        5
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-1.5707963267948966"
+      ],
+      "qubits": [
+        5
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        5
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        5
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        6
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        6
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        0,
+        6
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        2,
+        6
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        7,
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        3,
+        6
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-3.141592653589793"
+      ],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-3.141592653589793"
+      ],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        3,
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        6
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        6
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        6
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        6,
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        7,
+        0
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        4,
+        0
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        0,
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "3.141592653589793"
+      ],
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-3.141592653589793"
+      ],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        7,
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        7,
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        7,
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        4,
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        2,
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        1,
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-3.141592653589793"
+      ],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-3.141592653589793"
+      ],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        4,
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        4,
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        4,
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        4,
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-3.141592653589793"
+      ],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        4,
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-1.5707963267948966"
+      ],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        1,
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-1.5707963267948968"
+      ],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        2,
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        2,
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        2,
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-1.5707963267948966"
+      ],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        3,
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        3,
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        3,
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        3,
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-1.570796326794897"
+      ],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "x",
+      "params": [],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-1.5707963267948966"
+      ],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-1.5707963267948966"
+      ],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": "Encode",
+      "name": "barrier",
+      "params": [],
+      "qubits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        5
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        6
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        14
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        15
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        16
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        17
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        18
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        19
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        20
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        21
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        33
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        34
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        35
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        0,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        0,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        0,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        14
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        14
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        14
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        14
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        14
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        14
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        1,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        1,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        1,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        15
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        15
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        15
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        15
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        15
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        15
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        2,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        2,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        2
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        2,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        16
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        16
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        16
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        16
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        16
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        16
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        3,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        3,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        3
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        3,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        17
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        17
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        17
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        17
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        17
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        17
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        4,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        4,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        4
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        4,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        18
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        18
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        18
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        18
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        18
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        18
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        5,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        5
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        5,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        5
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        5,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        19
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        19
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        19
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        19
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        19
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        19
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        6,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        6
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        6,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        6
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        6,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        20
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        20
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        20
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        20
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        20
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        20
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        7,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        7,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        7
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        7,
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        21
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        21
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        21
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        21
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        84
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        84,
+        21
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        21
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        14,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        14
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        14,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        14
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        14,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        15,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        15
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        15,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        15
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        15,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        16,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        16
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        16,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        16
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        16,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        17,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        17
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        17,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        17
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        17,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        18,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        18
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        18,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        18
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        18,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        19,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        19
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        19,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        19
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        19,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        33
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        33
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        33
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        33
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        33
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        20,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        20
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        20,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        20
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        20,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        34
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        34
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        34
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        34
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        34
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        21,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        21
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        21,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        21
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        21,
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        35
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        35
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        35
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        35
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        89
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        89,
+        35
+      ]
+    },
+    {
+      "clbits": [],
+      "label": "Swap",
+      "name": "barrier",
+      "params": [],
+      "qubits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        33
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        33
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        33
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        34
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        34
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        34
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        35
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        35
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        35
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "reset",
+      "params": [],
+      "qubits": [
+        36
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        36
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        36
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        36
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        36,
+        35
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        35
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        35
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        35
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        36,
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        36,
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        36,
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        36,
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        36
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        36
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        36
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "reset",
+      "params": [],
+      "qubits": [
+        37
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        37
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        37
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        37
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        37,
+        35
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        37,
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        37,
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        37
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        37
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        37
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "reset",
+      "params": [],
+      "qubits": [
+        38
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        38
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        38
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        38
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        38,
+        34
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        34
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        34
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        34
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        38,
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        38,
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-3.141592653589793"
+      ],
+      "qubits": [
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        38,
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        38,
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-3.141592653589793"
+      ],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-3.141592653589793"
+      ],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        38
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        38
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        38
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "reset",
+      "params": [],
+      "qubits": [
+        39
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        39
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        39
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        39
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        39,
+        34
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        39,
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        39,
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        39,
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        39,
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-3.141592653589793"
+      ],
+      "qubits": [
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-3.141592653589793"
+      ],
+      "qubits": [
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        39,
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-3.141592653589793"
+      ],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        39
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        39
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        39
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "reset",
+      "params": [],
+      "qubits": [
+        40
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        40
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        40
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        40
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        40,
+        33
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        33
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        33
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        33
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        40,
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-3.141592653589793"
+      ],
+      "qubits": [
+        32
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        40,
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        31
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        40,
+        30
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        40,
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        40,
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        40
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        40
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        40
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "reset",
+      "params": [],
+      "qubits": [
+        41
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        41
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        41
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        41
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        41,
+        33
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        41,
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "-3.141592653589793"
+      ],
+      "qubits": [
+        29
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "cz",
+      "params": [],
+      "qubits": [
+        41,
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        28
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        41
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "sx",
+      "params": [],
+      "qubits": [
+        41
+      ]
+    },
+    {
+      "clbits": [],
+      "label": null,
+      "name": "rz",
+      "params": [
+        "1.5707963267948966"
+      ],
+      "qubits": [
+        41
+      ]
+    },
+    {
+      "clbits": [
+        0
+      ],
+      "label": null,
+      "name": "measure",
+      "params": [],
+      "qubits": [
+        36
+      ]
+    },
+    {
+      "clbits": [
+        1
+      ],
+      "label": null,
+      "name": "measure",
+      "params": [],
+      "qubits": [
+        37
+      ]
+    },
+    {
+      "clbits": [
+        2
+      ],
+      "label": null,
+      "name": "measure",
+      "params": [],
+      "qubits": [
+        38
+      ]
+    },
+    {
+      "clbits": [
+        3
+      ],
+      "label": null,
+      "name": "measure",
+      "params": [],
+      "qubits": [
+        39
+      ]
+    },
+    {
+      "clbits": [
+        4
+      ],
+      "label": null,
+      "name": "measure",
+      "params": [],
+      "qubits": [
+        40
+      ]
+    },
+    {
+      "clbits": [
+        5
+      ],
+      "label": null,
+      "name": "measure",
+      "params": [],
+      "qubits": [
+        41
+      ]
+    }
+  ],
+  "qregs": [
+    [
+      "q",
+      99
+    ]
+  ],
+  "qubits": 99
+}

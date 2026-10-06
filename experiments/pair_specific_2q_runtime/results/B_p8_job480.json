@@ -1,0 +1,822 @@
+{
+  "aer_metadata": {
+    "active_input_qubits": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      84,
+      89
+    ],
+    "batched_shots_optimization": false,
+    "device": "CPU",
+    "fusion": {
+      "enabled": false
+    },
+    "input_qubit_map": [
+      [
+        89,
+        31
+      ],
+      [
+        41,
+        29
+      ],
+      [
+        40,
+        28
+      ],
+      [
+        39,
+        27
+      ],
+      [
+        38,
+        26
+      ],
+      [
+        84,
+        30
+      ],
+      [
+        37,
+        25
+      ],
+      [
+        36,
+        24
+      ],
+      [
+        35,
+        23
+      ],
+      [
+        34,
+        22
+      ],
+      [
+        33,
+        21
+      ],
+      [
+        32,
+        20
+      ],
+      [
+        31,
+        19
+      ],
+      [
+        21,
+        15
+      ],
+      [
+        20,
+        14
+      ],
+      [
+        19,
+        13
+      ],
+      [
+        18,
+        12
+      ],
+      [
+        17,
+        11
+      ],
+      [
+        30,
+        18
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        29,
+        17
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        16,
+        10
+      ],
+      [
+        28,
+        16
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        15,
+        9
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        14,
+        8
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "matrix_product_state_lapack": false,
+    "matrix_product_state_max_bond_dimension": 18446744073709551615,
+    "matrix_product_state_sample_measure_algorithm": 0,
+    "matrix_product_state_truncation_threshold": 1e-16,
+    "max_memory_mb": 49152,
+    "measure_sampling": false,
+    "method": "matrix_product_state",
+    "noise": "circuit",
+    "num_bind_params": 1,
+    "num_clbits": 6,
+    "num_qubits": 32,
+    "parallel_shots": 1,
+    "parallel_state_update": 1,
+    "remapped_qubits": true,
+    "required_memory_mb": 0,
+    "runtime_parameter_bind": false,
+    "time_taken": 17.905041875
+  },
+  "bit_order": "Displayed c5...c0; ci is code STABILIZERS[i]; histogram[int(bitstring,2)]",
+  "case": "B",
+  "circuit": {
+    "active_qubits": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      84,
+      89
+    ],
+    "classical_bits": 6,
+    "depth": 218,
+    "native_operation_counts": {
+      "barrier": 2,
+      "cz": 158,
+      "measure": 6,
+      "reset": 6,
+      "rz": 132,
+      "sx": 280,
+      "x": 1
+    },
+    "ordered_cz_pairs": [
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        84
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        84
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        84
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        84
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        84
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        84
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        84
+      ],
+      [
+        7,
+        0
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        84
+      ],
+      [
+        14,
+        89
+      ],
+      [
+        15,
+        89
+      ],
+      [
+        16,
+        89
+      ],
+      [
+        17,
+        89
+      ],
+      [
+        18,
+        89
+      ],
+      [
+        19,
+        89
+      ],
+      [
+        20,
+        89
+      ],
+      [
+        21,
+        89
+      ],
+      [
+        36,
+        28
+      ],
+      [
+        36,
+        29
+      ],
+      [
+        36,
+        30
+      ],
+      [
+        36,
+        31
+      ],
+      [
+        36,
+        35
+      ],
+      [
+        37,
+        30
+      ],
+      [
+        37,
+        32
+      ],
+      [
+        37,
+        35
+      ],
+      [
+        38,
+        28
+      ],
+      [
+        38,
+        30
+      ],
+      [
+        38,
+        31
+      ],
+      [
+        38,
+        32
+      ],
+      [
+        38,
+        34
+      ],
+      [
+        39,
+        28
+      ],
+      [
+        39,
+        29
+      ],
+      [
+        39,
+        30
+      ],
+      [
+        39,
+        31
+      ],
+      [
+        39,
+        32
+      ],
+      [
+        39,
+        34
+      ],
+      [
+        40,
+        28
+      ],
+      [
+        40,
+        29
+      ],
+      [
+        40,
+        30
+      ],
+      [
+        40,
+        31
+      ],
+      [
+        40,
+        32
+      ],
+      [
+        40,
+        33
+      ],
+      [
+        41,
+        28
+      ],
+      [
+        41,
+        29
+      ],
+      [
+        41,
+        33
+      ],
+      [
+        84,
+        14
+      ],
+      [
+        84,
+        15
+      ],
+      [
+        84,
+        16
+      ],
+      [
+        84,
+        17
+      ],
+      [
+        84,
+        18
+      ],
+      [
+        84,
+        19
+      ],
+      [
+        84,
+        20
+      ],
+      [
+        84,
+        21
+      ],
+      [
+        89,
+        28
+      ],
+      [
+        89,
+        29
+      ],
+      [
+        89,
+        30
+      ],
+      [
+        89,
+        31
+      ],
+      [
+        89,
+        32
+      ],
+      [
+        89,
+        33
+      ],
+      [
+        89,
+        34
+      ],
+      [
+        89,
+        35
+      ]
+    ],
+    "qubits": 99,
+    "sha256": "c8056fb32e37ef2c137a3db47f6eab4439d0d482a6df1a92bb08cbbd6cd6596f",
+    "size": 583
+  },
+  "circuit_construction_seconds": 0.0006907500792294741,
+  "code": "823",
+  "counts": {
+    "000000": 1168,
+    "000001": 28,
+    "000010": 20,
+    "000011": 33,
+    "000100": 29,
+    "000101": 2,
+    "000110": 20,
+    "000111": 4,
+    "001000": 28,
+    "001001": 35,
+    "001010": 2,
+    "001011": 5,
+    "001100": 32,
+    "001101": 22,
+    "001110": 24,
+    "001111": 7,
+    "010000": 35,
+    "010001": 9,
+    "010010": 2,
+    "010011": 24,
+    "010100": 8,
+    "010101": 19,
+    "010110": 7,
+    "010111": 3,
+    "011000": 24,
+    "011001": 19,
+    "011010": 23,
+    "011011": 5,
+    "011100": 32,
+    "011101": 19,
+    "011110": 5,
+    "011111": 2,
+    "100000": 54,
+    "100001": 10,
+    "100010": 4,
+    "100011": 3,
+    "100100": 5,
+    "100101": 6,
+    "100110": 3,
+    "100111": 2,
+    "101000": 23,
+    "101001": 6,
+    "101011": 1,
+    "101100": 18,
+    "101101": 5,
+    "101110": 3,
+    "101111": 3,
+    "110000": 46,
+    "110001": 22,
+    "110010": 4,
+    "110011": 4,
+    "110100": 7,
+    "110101": 19,
+    "110110": 3,
+    "110111": 3,
+    "111000": 27,
+    "111001": 3,
+    "111010": 3,
+    "111011": 2,
+    "111100": 9,
+    "111101": 3,
+    "111110": 2,
+    "111111": 2
+  },
+  "distinct_2q_error_strengths": 60,
+  "distinct_2q_noise_channels": 85,
+  "graph_load_and_mapping_seconds": 0.22751895803958178,
+  "histogram": [
+    1168,
+    28,
+    20,
+    33,
+    29,
+    2,
+    20,
+    4,
+    28,
+    35,
+    2,
+    5,
+    32,
+    22,
+    24,
+    7,
+    35,
+    9,
+    2,
+    24,
+    8,
+    19,
+    7,
+    3,
+    24,
+    19,
+    23,
+    5,
+    32,
+    19,
+    5,
+    2,
+    54,
+    10,
+    4,
+    3,
+    5,
+    6,
+    3,
+    2,
+    23,
+    6,
+    0,
+    1,
+    18,
+    5,
+    3,
+    3,
+    46,
+    22,
+    4,
+    4,
+    7,
+    19,
+    3,
+    3,
+    27,
+    3,
+    3,
+    2,
+    9,
+    3,
+    2,
+    2
+  ],
+  "hops": 2,
+  "manifest_index": 480,
+  "max_2q_lambda": 0.005677799001167901,
+  "min_2q_lambda": 0.0029699544753760687,
+  "noise_instructions": [
+    "id",
+    "pauli",
+    "x",
+    "y",
+    "z"
+  ],
+  "one_qubit_noise_sha256": "4f885d442e84aa9a2b4728264229c1207121f9727c06924bfd7457422ed28452",
+  "parallelism": 8,
+  "path": [
+    0,
+    1,
+    2
+  ],
+  "peak_rss_mib": 173.421875,
+  "pid": 48773,
+  "process_wall_seconds": 28.495985750108957,
+  "readout_noise": false,
+  "returncode": 0,
+  "seed_simulator": 25061006,
+  "seed_transpiler": 2209,
+  "shots": 2000,
+  "simulation_seconds": 17.92638049996458,
+  "simulation_started_monotonic": 1428079.400668208,
+  "simulator_noise_construction_seconds": 9.686903499998152,
+  "simulator_options": {
+    "accept_distributed_results": null,
+    "batched_shots_gpu": false,
+    "batched_shots_gpu_max_qubits": 16,
+    "blocking_enable": false,
+    "blocking_qubits": null,
+    "chop_threshold": 1e-08,
+    "chunk_swap_buffer_qubits": null,
+    "cuStateVec_enable": false,
+    "device": "CPU",
+    "enable_truncation": true,
+    "executor": null,
+    "extended_stabilizer_approximation_error": 0.05,
+    "extended_stabilizer_metropolis_mixing_time": 5000,
+    "extended_stabilizer_norm_estimation_repetitions": 3,
+    "extended_stabilizer_norm_estimation_samples": 100,
+    "extended_stabilizer_parallel_threshold": 100,
+    "extended_stabilizer_probabilities_snapshot_samples": 3000,
+    "extended_stabilizer_sampling_method": "resampled_metropolis",
+    "fusion_enable": true,
+    "fusion_max_qubit": null,
+    "fusion_threshold": null,
+    "fusion_verbose": false,
+    "matrix_product_state_max_bond_dimension": null,
+    "matrix_product_state_truncation_threshold": 1e-16,
+    "max_job_size": null,
+    "max_memory_mb": null,
+    "max_parallel_experiments": 1,
+    "max_parallel_shots": 1,
+    "max_parallel_threads": 1,
+    "max_shot_size": null,
+    "memory": null,
+    "method": "matrix_product_state",
+    "mps_lapack": false,
+    "mps_log_data": false,
+    "mps_omp_threads": 1,
+    "mps_parallel_threshold": 14,
+    "mps_sample_measure_algorithm": "mps_heuristic",
+    "mps_swap_direction": "mps_swap_left",
+    "num_threads_per_device": 1,
+    "precision": "double",
+    "runtime_parameter_bind_enable": false,
+    "seed_simulator": 25061006,
+    "shot_branching_enable": false,
+    "shot_branching_sampling_enable": false,
+    "shots": 1024,
+    "stabilizer_max_snapshot_probabilities": 32,
+    "statevector_parallel_threshold": 14,
+    "statevector_sample_measure_opt": 10,
+    "tensor_network_num_sampling_qubits": 10,
+    "use_cuTensorNet_autotuning": false,
+    "validation_threshold": null,
+    "zero_threshold": 1e-10
+  },
+  "status": "success",
+  "thermal_relaxation": false,
+  "thread_environment": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "QISKIT_NUM_PROCS": "1",
+    "QISKIT_PARALLEL": "FALSE",
+    "RAYON_NUM_THREADS": "1",
+    "TMPDIR": "/Users/ashutoshtiwari/Desktop/Research-Code/qiskit-network-sim/experiments/pair_specific_2q_runtime/.tmp",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "XDG_CACHE_HOME": "/Users/ashutoshtiwari/Desktop/Research-Code/qiskit-network-sim/experiments/pair_specific_2q_runtime/.cache"
+  },
+  "transpilation_seconds": 0.026288457913324237,
+  "uncovered_cz_pairs": [],
+  "verification_seconds": 0.022288416977971792,
+  "worker_elapsed_seconds": 28.3501176671125
+}

@@ -1,0 +1,22 @@
+{
+  "all_successful": true,
+  "attempted_jobs": 8,
+  "case": "A",
+  "completed_jobs": 8,
+  "job_results": [
+    "A_p4_job0.json",
+    "A_p4_job60.json",
+    "A_p4_job240.json",
+    "A_p4_job300.json",
+    "A_p4_job480.json",
+    "A_p4_job540.json",
+    "A_p4_job720.json",
+    "A_p4_job780.json"
+  ],
+  "max_individual_job_seconds": 26.58805699995719,
+  "median_individual_job_seconds": 15.396811062470078,
+  "parallelism": 4,
+  "sum_simulation_seconds": 93.35774370911531,
+  "throughput_jobs_per_minute": 12.389084596286574,
+  "total_wall_seconds": 38.74378258292563
+}

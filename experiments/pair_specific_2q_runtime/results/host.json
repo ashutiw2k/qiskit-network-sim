@@ -1,0 +1,9 @@
+{
+  "model": "Mac16,7",
+  "cpu": "Apple M4 Pro",
+  "memory_bytes": 51539607552,
+  "memory_gib": 48,
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "verification": "sysctl -n hw.model hw.memsize machdep.cpu.brand_string; local host only",
+  "execution": "Local Mac; no AWS resources or IBM service calls"
+}

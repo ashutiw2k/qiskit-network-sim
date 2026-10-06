@@ -1,0 +1,12 @@
+{
+  "all_passed": true,
+  "checked_utc": "2026-10-06T20:42:19.791154+00:00",
+  "checks": {
+    "cloud_runs_file_list_and_hashes_unchanged": true,
+    "no_unexpected_changes_outside_experiment": true,
+    "other_staged_diff_unchanged": true,
+    "other_tracked_diff_unchanged": true
+  },
+  "cloud_runs_entries": 46,
+  "independent_changes_excluded_from_non_cloud_checks": []
+}
