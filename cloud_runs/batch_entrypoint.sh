@@ -21,6 +21,7 @@
 #   OPT_LEVEL      — Qiskit transpiler optimization level   (default: 1, range 0-3)
 #   INITIAL_STATE  — Initial qubit state for the simulation (default: 0)
 #   BACKEND        — Override fake backend key (default: read from jobs.json)
+#   S3_CALIBRATION — Optional calibration JSON; replaces FakeBackend gate errors
 set -euo pipefail
 
 # ── Validate required env vars (fail fast with a descriptive message) ──
@@ -35,6 +36,7 @@ SHOTS="${SHOTS:-4096}"
 OPT_LEVEL="${OPT_LEVEL:-1}"
 INITIAL_STATE="${INITIAL_STATE:-0}"
 BACKEND="${BACKEND:-}"
+S3_CALIBRATION="${S3_CALIBRATION:-}"
 
 # ── Prepare local directories ──
 mkdir -p "${WORK_DIR}" "${OUT_DIR}"
@@ -43,6 +45,11 @@ mkdir -p "${WORK_DIR}" "${OUT_DIR}"
 # s3_sync.py is a thin wrapper around boto3 that handles S3 ↔ local transfers.
 python cloud_runs/s3_sync.py download --s3-uri "${S3_JOBS}" --dest "${WORK_DIR}/jobs.json"
 python cloud_runs/s3_sync.py download --s3-uri "${S3_GRAPH}" --dest "${WORK_DIR}/graph.pkl"
+CALIBRATION_ARGS=()
+if [[ -n "${S3_CALIBRATION}" ]]; then
+  python cloud_runs/s3_sync.py download --s3-uri "${S3_CALIBRATION}" --dest "${WORK_DIR}/calibration.json"
+  CALIBRATION_ARGS=(--calibration-file "${WORK_DIR}/calibration.json")
+fi
 
 # ── Step 2: Run the simulation ──
 # run_job.py reads AWS_BATCH_JOB_ARRAY_INDEX to select a single job from the
@@ -60,6 +67,7 @@ python cloud_runs/run_job.py \
   --shots "${SHOTS}" \
   --optimization-level "${OPT_LEVEL}" \
   --initial-state "${INITIAL_STATE}" \
+  "${CALIBRATION_ARGS[@]}" \
   ${BACKEND_FLAG}
 
 # ── Step 3: Upload results back to S3 ──

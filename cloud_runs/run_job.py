@@ -12,10 +12,10 @@ from typing import Any, Dict, List
 
 try:
     from cloud_runs.codes import AVAILABLE_CODES
-    from cloud_runs.common import AVAILABLE_BACKENDS, build_simulator, run_single_path
+    from cloud_runs.common import AVAILABLE_BACKENDS, BACKEND_MAP, build_simulator, run_single_path
 except ImportError:
     from codes import AVAILABLE_CODES
-    from common import AVAILABLE_BACKENDS, build_simulator, run_single_path
+    from common import AVAILABLE_BACKENDS, BACKEND_MAP, build_simulator, run_single_path
 
 
 def _load_jobs(path: str) -> Dict[str, Any]:
@@ -52,6 +52,7 @@ def main() -> None:
     parser.add_argument("--graph", default=None, help="Override graph pickle path")
     parser.add_argument("--output-dir", required=True, help="Base output directory")
     parser.add_argument("--shots", type=int, default=4096, help="Number of shots per circuit")
+    parser.add_argument("--calibration-file", help="Calibration JSON; replaces FakeBackend and uniform 2Q errors")
     parser.add_argument(
         "--optimization-level",
         type=int,
@@ -77,7 +78,7 @@ def main() -> None:
         "--error-rate-2q",
         type=float,
         default=0.01,
-        help="2Q depolarizing error rate (only used with --noise-type=depolarizing)",
+        help="Uniform 2Q depolarizing parameter (only used without --calibration-file)",
     )
     parser.add_argument(
         "--backend",
@@ -88,6 +89,10 @@ def main() -> None:
     )
 
     args = parser.parse_args()
+    if args.calibration_file and args.noise_type != "depolarizing":
+        parser.error("--calibration-file supports depolarizing noise only")
+    if args.shots <= 0:
+        parser.error("--shots must be positive")
 
     jobs_payload = _load_jobs(args.jobs_file)
     jobs: List[Dict[str, Any]] = jobs_payload.get("jobs", [])
@@ -122,15 +127,20 @@ def main() -> None:
     backend_key = args.backend or jobs_payload.get("backend", "heron_r2")
 
     t0 = time.time()
-    noisy_sim, basis_gates, _backend = build_simulator(
-        noise_type=args.noise_type,
-        num_circuit_qubits=total_qubits,
-        error_rate_2q=args.error_rate_2q,
-        backend=backend_key,
-    )
-    print(f"[Job {job_index}]   build_simulator: {time.time()-t0:.1f}s (backend={backend_key}, total_qubits={total_qubits})", flush=True)
+    if args.calibration_file:
+        # The JSON model is built after transpilation to cover every used pair.
+        noisy_sim, basis_gates = None, BACKEND_MAP[backend_key][1]
+    else:
+        noisy_sim, basis_gates, _backend = build_simulator(
+            noise_type=args.noise_type,
+            num_circuit_qubits=total_qubits,
+            error_rate_2q=args.error_rate_2q,
+            backend=backend_key,
+        )
+        print(f"[Job {job_index}]   build_simulator: {time.time()-t0:.1f}s (backend={backend_key}, total_qubits={total_qubits})", flush=True)
 
     t0 = time.time()
+    calibration_metadata = {}
     measurement = run_single_path(
         code_type=code_type,
         path=path,
@@ -142,6 +152,8 @@ def main() -> None:
         num_shots=args.shots,
         optimization_level=args.optimization_level,
         initial_state=args.initial_state,
+        calibration_file=args.calibration_file,
+        calibration_metadata=calibration_metadata,
     )
     print(f"[Job {job_index}]   run_single_path: {time.time()-t0:.1f}s", flush=True)
 
@@ -161,6 +173,9 @@ def main() -> None:
             "elapsed_seconds": elapsed_seconds,
         },
     }
+    if args.calibration_file:
+        output_data["calibration"] = calibration_metadata
+        output_data["shots"] = args.shots
 
     os.makedirs(os.path.join(args.output_dir, code_type), exist_ok=True)
     out_path = os.path.join(args.output_dir, code_type, f"job_{job_index}.pkl")

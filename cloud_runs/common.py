@@ -3,6 +3,10 @@
 
 from __future__ import annotations
 
+import hashlib
+import json
+import math
+from pathlib import Path
 from typing import Dict, List, Tuple
 
 import numpy as np
@@ -130,6 +134,90 @@ def build_histogram(counts: Dict[str, int], num_bits: int, num_syndromes: int):
     )
 
 
+def build_calibrated_simulator(calibration_file, circuit, basis_gates):
+    """Use JSON gate infidelities on abstract wires, without physical routing.
+
+    Calibrated source qubits/pairs are sorted by their indices, not their error
+    values, so assignments stay fixed across days with the same valid entries.
+    Invalid entries are reported and excluded, never clipped or made noiseless.
+    Only gates present in the compiled circuit need channels.
+    """
+    content = Path(calibration_file).read_bytes()
+    payload = json.loads(content)
+    properties = payload.get("properties", payload)
+    gate_2q = "ecr" if "ecr" in basis_gates else "cz"
+    one_q_gates = set(basis_gates) - {gate_2q}
+    errors, excluded = {}, []
+    for gate in properties["gates"]:
+        name, pair = gate["gate"], tuple(gate["qubits"])
+        if name not in basis_gates:
+            continue
+        arity = 2 if name == gate_2q else 1
+        if len(pair) != arity:
+            raise ValueError(f"Unexpected calibration arity: {name}{pair}")
+        r = next((p["value"] for p in gate["parameters"] if p["name"] == "gate_error"), None)
+        d = 2**arity
+        # lambda=d*r/(d-1); complete positivity requires r<=d/(d+1).
+        if r is None or not math.isfinite(r) or not 0 <= r <= d / (d + 1):
+            excluded.append({"gate": name, "qubits": list(pair), "reported_error": r})
+            continue
+        errors[name, pair] = r
+
+    source_qubits = [q for q in range(len(properties["qubits"]))
+                     if all((gate, (q,)) in errors for gate in one_q_gates)]
+    source_pairs = sorted(pair for gate, pair in errors if gate == gate_2q)
+    if not source_qubits or not source_pairs:
+        raise ValueError("Calibration has no complete valid 1Q pool or no valid 2Q pool")
+
+    used = sorted({(inst.operation.name, tuple(circuit.find_bit(q).index for q in inst.qubits))
+                   for inst in circuit.data if inst.operation.name in basis_gates})
+    unsupported = {inst.operation.name for inst in circuit.data} - set(basis_gates) - {
+        "barrier", "measure", "reset", "delay"}
+    if unsupported:
+        raise ValueError(f"Circuit contains gates outside calibrated basis: {unsupported}")
+    model = NoiseModel()
+    assignments = []
+    channels = {}
+    for gate, pair in used:
+        if gate == gate_2q:
+            a, b = sorted(pair)
+            # Triangular indexing gives a stable ID independent of circuit width,
+            # job path, gate order, and pair orientation.
+            source = source_pairs[(b * (b - 1) // 2 + a) % len(source_pairs)]
+        else:
+            source = (source_qubits[pair[0] % len(source_qubits)],)
+        r = errors[gate, source]
+        d = 2**len(pair)
+        strength = d * r / (d - 1)
+        assignments.append({"gate": gate, "qubits": list(pair), "source_qubits": list(source),
+                            "reported_error": r, "lambda": strength})
+        if strength > 0:  # Explicit zero calibration (e.g. virtual RZ) is ideal.
+            key = (len(pair), strength)
+            if key not in channels:
+                channels[key] = depolarizing_error(strength, len(pair))
+            model.add_quantum_error(channels[key], gate, list(pair))
+
+    simulator = AerSimulator(noise_model=model, method="matrix_product_state",
+                             max_parallel_threads=1, max_parallel_shots=1,
+                             max_parallel_experiments=1)
+    metadata = {
+        "file": Path(calibration_file).name,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "backend": properties["backend_name"],
+        "requested_date_utc": payload.get("requested_date_utc"),
+        "actual_last_update_date": properties["last_update_date"],
+        "assignment_rule": "sorted-valid-sources-v1: 1Q q%N; 2Q (b*(b-1)//2+a)%M for a<b",
+        "valid_source_qubits": source_qubits,
+        "valid_source_pair_count": len(source_pairs),
+        "excluded_entries": excluded,
+        "assignments": assignments,
+        "circuit_depth": circuit.depth(),
+        "circuit_size": circuit.size(),
+        "operation_counts": dict(circuit.count_ops()),
+    }
+    return simulator, metadata
+
+
 def run_single_path(
     code_type: str,
     path: List[int],
@@ -141,6 +229,8 @@ def run_single_path(
     num_shots: int,
     optimization_level: int,
     initial_state: str = "0",
+    calibration_file: str | None = None,
+    calibration_metadata: Dict | None = None,
 ) -> TimeAwareMeasurement:
     """Run a single (code, path) syndrome circuit and return a measurement."""
     import time as _time
@@ -166,16 +256,30 @@ def run_single_path(
     )
     print(f"    transpile:     {_time.time()-_t:.1f}s  depth={transpiled.depth()} ops={transpiled.size()}", flush=True)
 
+    if calibration_file:
+        _t = _time.time()
+        noisy_sim, metadata = build_calibrated_simulator(calibration_file, transpiled, basis_gates)
+        if calibration_metadata is not None:
+            calibration_metadata.update(metadata)
+        print(f"    calibration:   {_time.time()-_t:.1f}s  excluded={len(metadata['excluded_entries'])} "
+              f"assigned={len(metadata['assignments'])} sha256={metadata['sha256']}", flush=True)
+    if noisy_sim is None:
+        raise ValueError("A simulator or calibration file is required")
+
     _t = _time.time()
     result = noisy_sim.run(transpiled, shots=num_shots).result()
     print(f"    simulate:      {_time.time()-_t:.1f}s  ({num_shots} shots)", flush=True)
     counts = result.get_counts()
+    if not result.success or sum(counts.values()) != num_shots:
+        raise RuntimeError("Simulation failed or returned an incomplete shot count")
 
     histogram = build_histogram(
         counts,
         num_bits=code_class.NUM_SYNDROME_BITS,
         num_syndromes=code_class.NUM_SYNDROMES,
     )
+    if int(histogram.sum()) != num_shots:
+        raise RuntimeError("Syndrome histogram does not contain every shot")
 
     path_edges = [(path[i], path[i + 1]) for i in range(len(path) - 1)]
     return TimeAwareMeasurement(

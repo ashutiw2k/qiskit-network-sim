@@ -119,6 +119,128 @@ Each job writes one file:
 Merging results:
 - `merge_results.py` writes `<output_dir>/<code>/measurements.pkl` containing a list of `TimeAwareMeasurement`.
 
+### One-command historical AWS run
+
+From the repository root, use the project environment (including the existing
+`boto3` dependency in `requirements-cloud.txt`):
+
+```bash
+.venv/bin/python cloud_runs/run_history.py noise_history cloud_runs/out/history
+```
+
+There are exactly two positional arguments: the calibration location and output
+directory. The first can be one JSON file or a directory of Fez calibration JSONs
+from `download_calibrations.py`. Every JSON in the directory is included; dates
+come from `requested_date_utc`. The runner does not download new calibrations.
+
+Each file runs the full existing 960-job manifest: all four codes, all existing
+2-hop/3-hop paths, and 2,000 shots per job. Thus 521 files mean 500,160 jobs and
+1,000,320,000 shots. The current `noise_history` directory contains 10 files;
+the script prints the actual totals before submitting.
+
+The runner uses AWS profile `default`, region `us-east-2`, bucket
+`qiskit-net-sim-ashutosh`, queue `qec-job-queue`, and the already deployed,
+digest-pinned calibration worker `qec-syndrome-job:21`. These are constants at
+the top of the script. No Docker build or registry login is needed to reuse this
+worker. Changes to simulation code require deploying an updated worker and
+updating the pinned job definition/image digest before a new run.
+
+The script copies inputs into the output directory, uploads them under a unique
+S3 run prefix, and keeps up to four date arrays submitted at once. AWS controls
+worker concurrency through the existing compute environments. Every 10 seconds
+it reports succeeded/running/failed/downloaded counts and downloads newly
+available results using eight download threads. Collection starts while other
+jobs are still running. AWS profile access must already be configured.
+
+```text
+2026-10-04 succeeded=214/960 running=103 failed=0 downloaded=214/960
+TOTAL dates=0/521 downloaded=214/500160 session_elapsed=85s
+```
+
+For each complete date, basic identity, calibration-hash, histogram and shot-total
+checks run automatically, followed by the existing merge script. Outputs are:
+
+```text
+<output_dir>/run.json
+<output_dir>/inputs/
+<output_dir>/results/<date>/<code>/job_<index>.pkl
+<output_dir>/results/<date>/<code>/measurements.pkl
+<output_dir>/merge-<date>.log
+```
+
+Rerun the same command with the same output directory to resume monitoring and
+collection. Ctrl-C stops the local process; already submitted AWS jobs continue.
+The runner saves job IDs, skips completed dates, and rejects changed inputs in an
+existing run directory. If a submission response was interrupted, it looks up
+the saved unique job name instead of blindly submitting again. An unresolved
+submission stops with an explicit error. AWS's configured worker retries remain
+active; terminal failures retain their results/details and cause a nonzero exit.
+The runner does not automatically resubmit terminal failures.
+
+`test_calibration.py` and `test_run_history.py` are development tests, not separate
+steps required for this command. The former checks noise-model mathematics; the
+latter checks submission, early collection and resume without contacting AWS.
+The one-off `out/.../validate_results.py` used to audit the October 4-6 run is also
+not required by this runner.
+
+### Calibration JSON runs
+
+Supply `--calibration-file` to use a downloaded daily calibration instead of a
+FakeBackend and the uniform 2Q channel:
+
+```bash
+python cloud_runs/run_job.py \
+  --jobs-file cloud_runs/jobs/jobs_heron_r2.json \
+  --job-index 0 \
+  --calibration-file noise_history/ibm_fez_2026-10-06.json \
+  --shots 2000 \
+  --output-dir cloud_runs/out/2026-10-06
+```
+
+Both the downloader's `properties` wrapper and plain BackendProperties JSON are
+accepted. This mode uses depolarizing errors only, MPS, and one Aer CPU thread.
+It preserves the existing circuits, basis, optimization level, ideal resets,
+and measurement behavior. It does not add routing, a coupling map, readout noise,
+thermal relaxation, or decoding. The legacy mode remains available when the
+calibration argument is omitted; `--error-rate-2q` applies only to that mode.
+
+The JSON `gate_error` is average gate infidelity `r`, so the calibrated mode uses
+`lambda = 2*r` for 1Q gates and `lambda = 4*r/3` for CZ. This corrects the old
+1Q convention that passed `r` directly to Aer. Zero values (such as virtual RZ)
+are explicitly ideal. Missing/nonfinite/out-of-range entries are recorded and
+excluded: a depolarizing channel requires `0 <= r <= 2/3` for 1Q and
+`0 <= r <= 4/5` for 2Q. Values are never clipped.
+
+Only error values are transferred to the abstract circuit wires. Sort calibrated
+source qubits with valid `id/rz/sx/x` values by index; abstract qubit `q` uses
+source `q % N`. Sort valid ordered CZ source pairs lexicographically; abstract
+pair `(a,b)`, with `a<b`, uses source `(b*(b-1)//2+a) % M`. Both orientations get
+the same value. This cyclic assignment is independent of circuit width and job
+path, and stays fixed across dates with the same valid source entries. Sorting
+by source indices rather than error rank keeps day-to-day assignments stable.
+It makes no claim that abstract wires correspond to physical Fez connectivity.
+Every used native gate is assigned a recorded value; absent valid source pools
+fail before simulation. Only used gates/pairs receive channels, avoiding an
+unnecessary all-pairs noise-model construction.
+
+The October 4–6, 2026 snapshots each exclude source qubit 72 (three 1Q entries
+with `r=1`) and eight ordered CZ entries with `r=1`, leaving 155 source qubits
+and 344 CZ entries. Outputs retain the original `measurement` and `timing`
+fields and add `shots` and `calibration`, containing the snapshot date/hash,
+assignment rule, exact per-gate source/error assignments, exclusions, depth,
+size, and operation counts. Shot totals are checked before saving.
+
+For AWS, add `S3_CALIBRATION=s3://bucket/path/calibration.json` to the container
+environment alongside the existing `S3_JOBS`, `S3_GRAPH`, and `S3_OUTPUT_PREFIX`.
+Use a separate output prefix for each date. The entrypoint downloads the JSON
+and forwards `--calibration-file`; it requires an image containing these changes.
+Set `SHOTS=2000` through an AWS container environment override when submitting
+(the existing job-definition default is 4096). Focused validation:
+
+```bash
+python -m unittest cloud_runs.test_calibration -v
+```
+
 ---
 
 ## Local Workflow
